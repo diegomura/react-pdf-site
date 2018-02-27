@@ -1,0 +1,27 @@
+@font-face {
+	font-family: "Source Sans Pro";
+  src: url("../static/fonts/SourceSansPro-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Taviraj';
+  src: url("../static/fonts/Taviraj-ExtraLight.ttf");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Taviraj';
+  src: url("../static/fonts/Taviraj-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Taviraj';
+  src: url("../static/fonts/Taviraj-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
