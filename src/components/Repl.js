@@ -42,7 +42,7 @@ const DEFAULT_CODE_MIRROR_OPTIONS = {
 class Repl extends React.Component {
   componentDidMount() {
     this._codeMirror = CodeMirror.fromTextArea(this.textarea, DEFAULT_CODE_MIRROR_OPTIONS);
-    // this._codeMirror.on("change", this._onChange);
+    this._codeMirror.on("change", this.onChange);
     // this._codeMirror.setValue(this.props.value || "");
   }
 
@@ -50,6 +50,10 @@ class Repl extends React.Component {
     if (this._codeMirror) {
       this._codeMirror.toTextArea();
     }
+  }
+
+  onChange({ doc }) {
+    console.log(doc.getValue());
   }
 
   render() {
