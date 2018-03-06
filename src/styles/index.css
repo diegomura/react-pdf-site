@@ -36,18 +36,6 @@ a {
   text-decoration: none;
 }
 
-blockquote {
-  padding: 8px 30px;
-  margin-bottom: 40px;
-  background-color: #F8F8F8;
-  border-radius: 0 6px 6px 0;
-  border-left: 2px solid var(--red);
-}
-
-blockquote p {
-  margin: 0px;
-}
-
 table {
   width: 100%;
   margin-bottom: 48px;
