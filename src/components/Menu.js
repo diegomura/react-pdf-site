@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { withState } from 'recompose';
+import Link from './Link';
 import toLowerCase from '../utils/toLowerCase';
 import docs from '../index.md';
 
-const Link = styled.a`
+const MenuLink = Link.extend`
   padding: 6px 10px;
   color: ${props => (props.active ? '#3E3E3E' : '#A6A6A6')};
   border-left: ${props => props.active && '2px solid #F01E00'};
@@ -20,13 +21,13 @@ const List = styled.ul`
 
 const Item = styled(({ index, href, onClick, className, children, ...props }) =>
   <li className={className}>
-    <Link
+    <MenuLink
       href={href || `#${toLowerCase(children)}`}
       onClick={() => onClick(index)}
       {...props}
     >
       {children}
-    </Link>
+    </MenuLink>
   </li>,
 )`padding: 6px 12px;`;
 

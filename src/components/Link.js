@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Paragraph = styled.p`
-  margin-bottom: 40px;
-  color: #3E3E3E;
+const Link = styled.a`
+  color: #4F8FED;
   font-size: 16px;
   line-height: 24px;
+  text-decoration: none;
 `;
 
-export default Paragraph;
+export default Link;

@@ -3,6 +3,7 @@ import Markdown from 'react-markdown';
 import styled from 'styled-components';
 
 // components
+import Link from '../components/Link';
 import List from '../components/List';
 import Title from '../components/Title';
 import Heading from '../components/Heading';
@@ -20,6 +21,7 @@ const renderers = {
   heading: Heading,
   code: CodeBlock,
   list: List,
+  link: Link,
   listItem: ListItem,
   blockquote: Blockquote,
   paragraph: Paragraph,
