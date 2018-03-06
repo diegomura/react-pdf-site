@@ -1,6 +1,6 @@
 .CodeMirror {
   height: 100%;
-  background-color: #3E3E3E;
+  background-color: #323639;
 }
 
 .CodeMirror-gutters {
@@ -9,7 +9,7 @@
   color: #A6A6A6;
   font-size: 12px;
   line-height: 24px;
-	background-color: #2E2E2E;
+	background-color: rgba(0, 0, 0, 0.2);
   font-family: "Source Sans Pro";
 }
 
@@ -23,7 +23,7 @@
 }
 
 .CodeMirror-activeline-background {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.02);
 }
 
 .CodeMirror-matchingbracket {

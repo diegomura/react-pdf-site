@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import CodeMirror from "codemirror";
 import Paragraph from './Paragraph';
+import Document from './Document';
+import Button from '../components/Button';
 import 'codemirror/mode/jsx/jsx';
 import 'codemirror/keymap/sublime';
 import 'codemirror/addon/comment/comment';
@@ -21,7 +23,7 @@ const CodePanel = styled.div`
   overflow: hidden;
 `;
 
-const PDFPanel = styled.div`
+const PDFPanel = styled(Document)`
   flex: 1;
 `;
 
@@ -56,10 +58,10 @@ class Repl extends React.Component {
         <CodePanel>
           <textarea
             autoComplete="off"
-            autoFocus={this.props.autoFocus}
+            autoFocus={true}
             defaultValue={this.props.value}
             ref={node => this.textarea = node}
-            placeholder={this.props.placeholder}
+            placeholder="Write code here..."
           />
         </CodePanel>
         <PDFPanel />

@@ -16,6 +16,10 @@ const config = {
   module: {
     rules: [
       {
+        test: /(pdfkit|linebreak|fontkit|unicode|brotli|png-js).*\.js$/,
+        loader: 'transform-loader?brfs',
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [
@@ -73,6 +77,11 @@ const config = {
       inject: 'body',
     }),
   ],
+  node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
+  },
 };
 
 module.exports = config;
