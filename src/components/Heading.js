@@ -59,7 +59,7 @@ const H6 = styled.h6`
 const Headings = [H1, H2, H3, H4, H5, H6];
 
 const Heading = ({ level, children, ...props }) => {
-  let HeadingComponent = Headings[level];
+  let HeadingComponent = Headings[level - 1];
 
   return (
     <HeadingComponent {...props}>
