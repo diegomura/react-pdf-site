@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Heading from './Heading';
 
 const Wrapper = styled.div`
   padding: 0px 32px;
@@ -19,17 +20,13 @@ const Wrapper = styled.div`
   }
 `;
 
-const Heading = styled.h1`
-  margin: 0px;
-`;
-
 const SubHeading = styled.p`
   margin: 0px;
 `;
 
 const Title = () =>
   <Wrapper>
-    <Heading>
+    <Heading level={1}>
       React-pdf
     </Heading>
     <SubHeading>

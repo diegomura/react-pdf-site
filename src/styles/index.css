@@ -16,56 +16,6 @@ body {
   font-size: 18px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Taviraj";
-  margin-bottom: 16px;
-}
-
-h1 {
-  color: var(--black);
-  font-size: 48px;
-  font-weight: 200;
-  letter-spacing: 2px;
-  line-height: 56px;
-}
-
-h2 {
-  color: var(--black);
-  font-size: 32px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  line-height: 40px;
-}
-
-h3 {
-  color: var(--black);
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  line-height: 32px;
-}
-
-h4 {
-  color: var(--black);
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-}
-
-h5 {
-  color: var(--dark-red);
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-}
-
-h6 {
-  color: var(--gray-1);
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-}
-
 hr {
   width: 20px;
   margin-top: 33px;

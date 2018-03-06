@@ -8,6 +8,11 @@ import CornerGraphics from '../static/images/corner-graphics.png';
 import DocumentGraphic from '../static/images/document-graphic.png';
 import index from '../index.md';
 
+const renderers = {
+  heading: Heading,
+  code: CodeBlock,
+};
+
 const CornerGraphicsImage = styled.img`
   position: absolute;
   top: 0;
@@ -24,7 +29,7 @@ const Home = () =>
     <CornerGraphicsImage src={CornerGraphics} />
     <Title />
     <DocumentGraphicImage src={DocumentGraphic} />
-    <Markdown source={index} renderers={{ Heading, code: CodeBlock }} />
+    <Markdown source={index} renderers={renderers} />
   </div>;
 
 export default Home;
