@@ -12,6 +12,7 @@ import Paragraph from '../components/Paragraph';
 import CodeBlock from '../components/CodeBlock';
 import InlineCode from '../components/InlineCode';
 import Blockquote from '../components/Blockquote';
+import ThematicBreak from '../components/ThematicBreak';
 import Table, { TableRow, TableCell } from '../components/Table';
 
 // assets
@@ -20,17 +21,18 @@ import DocumentGraphic from '../static/images/document-graphic.png';
 import index from '../index.md';
 
 const renderers = {
-  heading: Heading,
-  code: CodeBlock,
   list: List,
   link: Link,
   table: Table,
+  code: CodeBlock,
+  heading: Heading,
   tableRow: TableRow,
-  tableCell: TableCell,
   listItem: ListItem,
+  tableCell: TableCell,
+  paragraph: Paragraph,
   inlineCode: InlineCode,
   blockquote: Blockquote,
-  paragraph: Paragraph,
+  thematicBreak: ThematicBreak,
 };
 
 const CornerGraphicsImage = styled.img`
@@ -46,10 +48,10 @@ const DocumentGraphicImage = styled.img`
 
 const Home = () =>
   <div>
-    <CornerGraphicsImage src={CornerGraphics} />
     <Title />
     <DocumentGraphicImage src={DocumentGraphic} />
     <Markdown source={index} renderers={renderers} />
+    <CornerGraphicsImage src={CornerGraphics} />
   </div>;
 
 export default Home;
