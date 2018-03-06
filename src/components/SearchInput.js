@@ -7,6 +7,11 @@ const Input = styled.input`
   color: white;
   background-color: #3E3E3E;
   box-sizing: border-box;
+  padding: 20px;
+  font-size: 16px;
+  line-height: 24px;
+  border: none;
+  outline: none;
 `;
 
 const SearchInput = ({ onChange }) =>

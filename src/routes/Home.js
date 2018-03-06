@@ -11,6 +11,7 @@ import ListItem from '../components/ListItem';
 import Paragraph from '../components/Paragraph';
 import CodeBlock from '../components/CodeBlock';
 import Blockquote from '../components/Blockquote';
+import Table, { TableRow, TableCell } from '../components/Table';
 
 // assets
 import CornerGraphics from '../static/images/corner-graphics.png';
@@ -22,6 +23,9 @@ const renderers = {
   code: CodeBlock,
   list: List,
   link: Link,
+  table: Table,
+  tableRow: TableRow,
+  tableCell: TableCell,
   listItem: ListItem,
   blockquote: Blockquote,
   paragraph: Paragraph,
