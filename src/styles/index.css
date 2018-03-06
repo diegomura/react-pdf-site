@@ -97,38 +97,6 @@ li {
   line-height: 36px;
 }
 
-code {
-  padding: 4px 6px;
-  margin: 0px 4px;
-  font-size: 16px;
-  line-height: 24px;
-  border-radius: 4px;
-  color: var(--dark-red);
-  background-color: var(--light-red);
-}
-
-pre {
-  border-radius: 8px;
-  background-color: var(--black);
-}
-
-pre div {
-  padding: 10px 0px;
-  text-align: right;
-}
-
-pre i {
-  color: white;
-  font-size: 16px;
-  margin-right: 31px;
-}
-
-pre code {
-  display: block;
-  color: var(--gray-1);
-  background-color: initial;
-  padding: 0px 20px 24px 20px;
-}
 
 blockquote {
   padding: 8px 30px;

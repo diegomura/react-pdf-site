@@ -24,7 +24,7 @@ const Home = () =>
     <CornerGraphicsImage src={CornerGraphics} />
     <Title />
     <DocumentGraphicImage src={DocumentGraphic} />
-    <Markdown source={index} renderers={{ Heading, CodeBlock }} />
+    <Markdown source={index} renderers={{ Heading, code: CodeBlock }} />
   </div>;
 
 export default Home;
