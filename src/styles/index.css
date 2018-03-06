@@ -36,18 +36,6 @@ a {
   text-decoration: none;
 }
 
-ul, ol {
-  margin-left: 12px;
-  list-style-position: inside;
-}
-
-li {
-  color: var(--black);
-  font-size: 16px;
-  line-height: 36px;
-}
-
-
 blockquote {
   padding: 8px 30px;
   margin-bottom: 40px;
