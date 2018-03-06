@@ -7,6 +7,7 @@ const Wrapper = styled.pre`
   position: relative;
   border-radius: 8px;
   background-color: #3E3E3E;
+  margin-bottom: 40px;
 `;
 
 const Handlers = styled.div`

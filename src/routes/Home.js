@@ -10,6 +10,7 @@ import Heading from '../components/Heading';
 import ListItem from '../components/ListItem';
 import Paragraph from '../components/Paragraph';
 import CodeBlock from '../components/CodeBlock';
+import InlineCode from '../components/InlineCode';
 import Blockquote from '../components/Blockquote';
 import Table, { TableRow, TableCell } from '../components/Table';
 
@@ -27,6 +28,7 @@ const renderers = {
   tableRow: TableRow,
   tableCell: TableCell,
   listItem: ListItem,
+  inlineCode: InlineCode,
   blockquote: Blockquote,
   paragraph: Paragraph,
 };
