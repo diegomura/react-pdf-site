@@ -6,7 +6,7 @@ import toLowerCase from '../utils/toLowerCase';
 const BaseHeading = css`
   font-family: "Taviraj";
   margin-bottom: 16px;
-  color: #3E3E3E;
+  color: ${({ theme }) => theme.black};
 `;
 
 const H1 = styled.h1`
@@ -42,15 +42,15 @@ const H4 = styled.h4`
 
 const H5 = styled.h5`
   ${BaseHeading}
-  color: #8D1602;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
+  color: ${({ theme }) => theme.darkRed};
 `;
 
 const H6 = styled.h6`
   ${BaseHeading}
-  color: #A6A6A6;
+  color: ${({ theme }) => theme.gray1};
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;

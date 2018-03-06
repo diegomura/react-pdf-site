@@ -6,8 +6,8 @@ const InlineCode = styled.code`
 	font-size: 16px;
 	border-radius: 4px;
   padding: 4px 6px;
-	color: #8D1602;
-	background-color: #FCD3CC;
+	color: ${({ theme }) => theme.darkRed};
+	background-color: ${({ theme }) => theme.lightRed};
 `;
 
 export default InlineCode;

@@ -6,7 +6,7 @@ import Paragraph from './Paragraph';
 const Wrapper = styled.div`
   padding: 0px 32px;
   position: relative;
-  border-left: 2px solid #F22300;
+  border-left: ${({ theme }) => `2px solid ${theme.red}`};
 
   &::after {
     top: calc(50% - 8px);
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
     height: 0;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
-    border-right:8px solid #F22300;
+    border-right: ${({ theme }) => `8px solid ${theme.red}`};
   }
 `;
 

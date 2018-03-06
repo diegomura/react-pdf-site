@@ -8,7 +8,7 @@ import docs from '../index.md';
 
 const MenuLink = Link.extend`
   padding: 6px 10px;
-  color: ${props => (props.active ? '#3E3E3E' : '#A6A6A6')};
+  color: ${props => (props.active ? props.theme.black : props.theme.gray1)};
   border-left: ${props => props.active && '2px solid #F01E00'};
 `;
 

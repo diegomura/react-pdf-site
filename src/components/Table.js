@@ -16,13 +16,13 @@ const Table = styled.table.attrs({
 `;
 
 const TH = styled.th`
-  padding: 5px 11px;
   text-align: left;
-  font-family: 'Taviraj';
-  color: #8D1602;
-  background-color: #FCD3CC;
-  border: 1px solid rgba(141,22,2,0.2);
+  padding: 5px 11px;
   border-right: 0px;
+  font-family: 'Taviraj';
+  border: 1px solid rgba(141,22,2,0.2);
+  color: ${({ theme }) => theme.darkRed};
+  background-color: ${({ theme }) => theme.lightRed};;
 
   &:first-child {
     border-top-left-radius: 6px;

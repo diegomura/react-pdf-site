@@ -8,6 +8,7 @@ import Section from '../components/Section';
 import Logo from '../components/Logo';
 import Icon from '../components/Icon';
 import Menu from '../components/Menu';
+import withTheme from '../styled/withTheme';
 
 const Fixed = styled.div`
   width: inherit;
@@ -53,4 +54,4 @@ App.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default App;
+export default withTheme(App);

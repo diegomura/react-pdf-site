@@ -48,7 +48,7 @@ const DocumentGraphicImage = styled.img`
 
 const Home = () =>
   <div>
-    <Title />
+    <Title level={1} />
     <DocumentGraphicImage src={DocumentGraphic} />
     <Markdown source={index} renderers={renderers} />
     <CornerGraphicsImage src={CornerGraphics} />

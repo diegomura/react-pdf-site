@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Heading from '../components/Heading';
 import CornerGraphics from '../static/images/corner-graphics.png';
 
 const CornerGraphicsImage = styled.img`
@@ -8,10 +9,10 @@ const CornerGraphicsImage = styled.img`
   right: 0;
 `;
 
-const Title = styled.h1`
+const Title = styled(Heading)`
   padding: 0px 32px;
   position: relative;
-  border-left: 2px solid #F22300;
+  border-left: ${({ theme }) => `2px solid ${theme.red}`};
 
   &::after {
     top: calc(50% - 8px);
@@ -22,14 +23,14 @@ const Title = styled.h1`
     height: 0;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
-    border-right:8px solid #F22300;
+    border-right: ${({ theme }) => `8px solid ${theme.red}`};
   }
 `;
 
 const NotFound = () =>
   <div>
     <CornerGraphicsImage src={CornerGraphics} />
-    <Title>
+    <Title level={1}>
       404: Oops! This page does not exist
     </Title>
   </div>;
