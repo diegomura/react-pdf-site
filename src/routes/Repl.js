@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Main from '../components/Main';
 import Nav from '../components/Nav';
 import Icon from '../components/Icon';
 import Logo from '../components/Logo';
@@ -10,6 +9,17 @@ import Repl from '../components/Repl';
 import Button from '../components/Button';
 import GitHubIcon from '../components/GitHubIcon';
 import withTheme from '../styled/withTheme';
+
+const Section = styled.section`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Main = styled.main`
+  display: flex;
+  height: 100vh;
+`;
 
 const NavWrapper = Nav.extend`
   display: flex;
@@ -50,12 +60,6 @@ const LeftNav = () => (
     <GitHubIcon />
   </NavWrapper>
 );
-
-const Section = styled.section`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-`;
 
 const BottomBanner = styled.div`
   height: 56px;
