@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const Nav = styled.nav`
-  width: 240px;
   position: relative;
+  width: ${props => props.width || '240px'};
   background-color: ${({ theme }) => theme.gray3};
 `;
 

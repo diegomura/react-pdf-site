@@ -7,8 +7,8 @@ const rotate360 = keyframes`
 `;
 
 const LogoImage = styled.img.attrs({ src: Logo })`
-  width: 54px;
   padding: 56px;
+  width: ${props => props.size || '54px'};
   animation: ${rotate360} 4s linear infinite;
 `;
 

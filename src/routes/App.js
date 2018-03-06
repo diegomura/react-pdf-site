@@ -4,11 +4,15 @@ import styled from 'styled-components';
 import SearchInput from '../components/SearchInput';
 import Main from '../components/Main';
 import Nav from '../components/Nav';
-import Section from '../components/Section';
 import Logo from '../components/Logo';
-import Icon from '../components/Icon';
 import Menu from '../components/Menu';
+import GitHubIcon from '../components/GitHubIcon';
 import withTheme from '../styled/withTheme';
+
+const Section = styled.section`
+  flex: 1;
+  padding: ${props => props.padding || '110px'};
+`;
 
 const Fixed = styled.div`
   width: inherit;
@@ -17,21 +21,6 @@ const Fixed = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const GitHubIcon = styled(({ className }) =>
-  <a
-    target="_blank"
-    rel="noopener noreferrer"
-    href="http://www.github.com/diegomura/react-pdf"
-    className={className}
-  >
-    <Icon type="github" size={30} />
-  </a>,
-)`
-  color: black;
-  margin-bottom: 36px;
-  opacity: 0.3;
 `;
 
 const App = ({ children }) =>
