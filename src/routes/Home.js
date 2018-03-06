@@ -7,6 +7,7 @@ import List from '../components/List';
 import Title from '../components/Title';
 import Heading from '../components/Heading';
 import ListItem from '../components/ListItem';
+import Paragraph from '../components/Paragraph';
 import CodeBlock from '../components/CodeBlock';
 import Blockquote from '../components/Blockquote';
 
@@ -21,6 +22,7 @@ const renderers = {
   list: List,
   listItem: ListItem,
   blockquote: Blockquote,
+  paragraph: Paragraph,
 };
 
 const CornerGraphicsImage = styled.img`
