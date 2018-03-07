@@ -4,18 +4,18 @@ import styled from 'styled-components';
 import { browserHistory } from 'react-router';
 
 // components
-import Link from '../components/Link';
-import List from '../components/List';
-import Title from '../components/Title';
-import Button from '../components/Button';
-import Heading from '../components/Heading';
-import ListItem from '../components/ListItem';
-import Paragraph from '../components/Paragraph';
-import CodeBlock from '../components/CodeBlock';
-import InlineCode from '../components/InlineCode';
-import Blockquote from '../components/Blockquote';
-import ThematicBreak from '../components/ThematicBreak';
-import Table, { TableRow, TableCell } from '../components/Table';
+import Link from './Link';
+import List from './List';
+import Title from './Title';
+import Button from './Button';
+import Heading from './Heading';
+import ListItem from './ListItem';
+import Paragraph from './Paragraph';
+import CodeBlock from './CodeBlock';
+import InlineCode from './InlineCode';
+import Blockquote from './Blockquote';
+import ThematicBreak from './ThematicBreak';
+import Table, { TableRow, TableCell } from './Table';
 
 // assets
 import CornerGraphics from '../static/images/corner-graphics.png';

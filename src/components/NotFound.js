@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Heading from '../components/Heading';
+import Heading from './Heading';
 import CornerGraphics from '../static/images/corner-graphics.png';
 
 const CornerGraphicsImage = styled.img`

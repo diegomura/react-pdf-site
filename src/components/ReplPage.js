@@ -1,16 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { compose, withState, withHandlers } from 'recompose';
-import { browserHistory } from 'react-router';
-import Nav from '../components/Nav';
-import Icon from '../components/Icon';
-import Logo from '../components/Logo';
-import Menu from '../components/Menu';
-import Repl from '../components/Repl';
-import Button from '../components/Button';
-import GitHubIcon from '../components/GitHubIcon';
-import withTheme from '../styled/withTheme';
+import Nav from './Nav';
+import Icon from './Icon';
+import Logo from './Logo';
+import Menu from './Menu';
+import Repl from './Repl';
+import Button from './Button';
+import GitHubIcon from './GitHubIcon';
 
 const Section = styled.section`
   flex: 1;
@@ -85,15 +82,7 @@ const BannerButton = styled(Button)`
   margin-right: 16px;
 `;
 
-const onBackClick = props => () => {
-  browserHistory.push('/');
-};
-
-export default compose(
-  withTheme,
-  withHandlers({ onBackClick }),
-  withState('documentUrl', 'setDocumentUrl', null),
-)(({ documentUrl, setDocumentUrl, children, onBackClick }) => (
+export default ({ documentUrl, setDocumentUrl, children, onBackClick }) => (
   <Main>
     <LeftNav onBackClick={onBackClick} />
     <Section>
@@ -120,4 +109,4 @@ export default compose(
       </BottomBanner>
     </Section>
   </Main>
-));
+);

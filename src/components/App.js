@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import SearchInput from '../components/SearchInput';
-import Nav from '../components/Nav';
-import Logo from '../components/Logo';
-import Menu from '../components/Menu';
-import GitHubIcon from '../components/GitHubIcon';
+import { Link } from 'react-router';
+import SearchInput from './SearchInput';
+import Nav from './Nav';
+import Logo from './Logo';
+import Menu from './Menu';
+import GitHubIcon from './GitHubIcon';
 import withTheme from '../styled/withTheme';
 import HeadingRegistry from '../lib/headings';
 
@@ -34,7 +35,9 @@ const App = ({ children }) => (
       <Nav>
         <Fixed>
           <SearchInput />
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
           <Menu />
           <GitHubIcon />
         </Fixed>

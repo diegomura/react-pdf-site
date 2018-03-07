@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, IndexRedirect } from 'react-router';
-import App from './App';
-import Home from './Home';
-import Repl from './Repl';
-import NotFound from './NotFound';
+import App from './components/App';
+import NotFound from './components/NotFound';
+import Home from './containers/HomeContainer';
+import Repl from './containers/ReplContainer';
 
 const createRoutes = () => (
   <div>
