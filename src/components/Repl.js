@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import debounce from 'lodash.debounce';
 import CodeMirror from 'codemirror';
 import Paragraph from './Paragraph';
 import PDFViewer from './PDFViewer';
@@ -15,6 +16,8 @@ import 'codemirror/addon/edit/matchbrackets';
 import 'codemirror/addon/edit/closebrackets';
 import 'codemirror/addon/selection/active-line';
 import 'codemirror/addon/display/placeholder.js';
+
+const debounceTranspile = debounce(transpile, 1000);
 
 const Wrapper = styled.div`
   flex: 1;
@@ -51,24 +54,28 @@ class Repl extends React.PureComponent {
   };
 
   componentDidMount() {
-    this._codeMirror = CodeMirror.fromTextArea(
+    this.codeMirror = CodeMirror.fromTextArea(
       this.textarea,
       DEFAULT_CODE_MIRROR_OPTIONS,
     );
-    this._codeMirror.on('change', this.onChange.bind(this));
+    this.codeMirror.on('change', this.onChange.bind(this));
   }
 
   componentWillUnmount() {
-    if (this._codeMirror) {
-      this._codeMirror.toTextArea();
+    if (this.codeMirror) {
+      this.codeMirror.toTextArea();
     }
   }
 
   onChange({ doc }) {
     const code = doc.getValue();
 
+    this.transpile(code);
+  }
+
+  transpile(code) {
     try {
-      transpile(code, element => {
+      debounceTranspile(code, element => {
         this.setState({ element });
       });
     } catch (e) {
