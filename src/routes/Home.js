@@ -1,11 +1,13 @@
 import React from 'react';
 import Markdown from 'react-markdown';
 import styled from 'styled-components';
+import { browserHistory } from 'react-router';
 
 // components
 import Link from '../components/Link';
 import List from '../components/List';
 import Title from '../components/Title';
+import Button from '../components/Button';
 import Heading from '../components/Heading';
 import ListItem from '../components/ListItem';
 import Paragraph from '../components/Paragraph';
@@ -41,15 +43,29 @@ const CornerGraphicsImage = styled.img`
   right: 0;
 `;
 
-const DocumentGraphicImage = styled.img`
+const DocumentGraphicImage = styled.img.attrs({
+  src: DocumentGraphic,
+})`
   margin: 50px;
   width: 210px;
 `;
 
+const HeroWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Hero = () => (
+  <HeroWrapper>
+    <DocumentGraphicImage />
+    <Button onClick={() => browserHistory.push('/repl')}>Try it out!</Button>
+  </HeroWrapper>
+);
+
 const Home = () => (
   <div>
-    <Title level={1} />
-    <DocumentGraphicImage src={DocumentGraphic} />
+    <Title />
+    <Hero />
     <Markdown source={index} renderers={renderers} />
     <CornerGraphicsImage src={CornerGraphics} />
   </div>

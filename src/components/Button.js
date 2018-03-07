@@ -27,14 +27,14 @@ const Wrapper = styled.a`
   }
 `;
 
-const Text = styled.span`
-  margin-right: 10px;
+const ButtonIcon = styled(Icon)`
+  margin-left: 10px;
 `;
 
 const Button = ({ icon, children, ...props }) => (
   <Wrapper {...props}>
-    <Text>{children}</Text>
-    <Icon type={icon} />
+    <span>{children}</span>
+    {icon && <ButtonIcon type={icon} />}
   </Wrapper>
 );
 
