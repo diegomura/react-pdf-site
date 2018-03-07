@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import toLowerCase from '../utils/toLowerCase';
+import { mapHeadingRegistry } from '../lib/headings';
 
 const BaseHeading = css`
   font-family: 'Taviraj';
@@ -53,15 +54,34 @@ const H6 = styled.h6`
 
 const Headings = [H1, H2, H3, H4, H5, H6];
 
-const Heading = ({ level, children, ...props }) => {
-  let HeadingComponent = Headings[level - 1];
+class Heading extends React.Component {
+  componentDidMount() {
+    this.props.registerHeading({
+      level: this.props.level,
+      name: this.props.children[0],
+      element: this.node,
+    });
+  }
 
-  return <HeadingComponent {...props}>{children}</HeadingComponent>;
-};
+  render() {
+    const { level, children, ...props } = this.props;
+    const HeadingComponent = Headings[level - 1];
+
+    return (
+      <HeadingComponent
+        innerRef={n => (this.node = n)}
+        id={toLowerCase(children[0])}
+        {...props}
+      >
+        {children}
+      </HeadingComponent>
+    );
+  }
+}
 
 Heading.propTypes = {
   level: PropTypes.number,
   children: PropTypes.node,
 };
 
-export default Heading;
+export default mapHeadingRegistry(Heading);

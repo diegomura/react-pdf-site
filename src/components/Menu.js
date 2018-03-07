@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { withState } from 'recompose';
+import { compose, withState, withProps, lifecycle } from 'recompose';
 import { Link } from 'react-router';
 import toLowerCase from '../utils/toLowerCase';
-import docs from '../index.md';
+import { getElementHeight } from '../utils/dom';
+import { mapHeadingRegistry } from '../lib/headings';
 
 const MenuLink = styled(Link)`
   padding: 6px 10px;
@@ -38,20 +39,16 @@ const Item = styled(
   padding: 6px 12px;
 `;
 
-const docItems = docs
-  .match(/###(.*)/g)
-  .map(match => match.replace('###', '').trim());
-
-const Menu = ({ activeItem, setActiveItem }) => (
+const Menu = ({ headings, activeItem, setActiveItem }) => (
   <List>
-    {docItems.map((item, index) => (
+    {headings.map((item, index) => (
       <Item
-        key={item}
+        key={item.name}
         index={index}
         active={activeItem === index}
         onClick={setActiveItem}
       >
-        {item}
+        {item.name}
       </Item>
     ))}
     <Item to="/repl">Playground / REPL</Item>
@@ -73,4 +70,35 @@ Item.defaultProps = {
   onClick: () => {},
 };
 
-export default withState('activeItem', 'setActiveItem', 0)(Menu);
+const filterHeadings = props => ({
+  headings: props.headings.filter(heading => heading.level === 3),
+});
+
+function componentDidUpdate() {
+  const scrollMargin = 48;
+  const { headings, setActiveItem } = this.props;
+
+  window.onscroll = function() {
+    const position = window.scrollY + scrollMargin;
+
+    headings.forEach(({ element }, index) => {
+      const top = element.offsetTop;
+      const bottom = top + getElementHeight(element);
+
+      if (position >= top && position <= bottom) {
+        setActiveItem(index);
+      }
+    });
+  };
+}
+
+function componentWillUnmount() {
+  window.onscroll = null;
+}
+
+export default compose(
+  mapHeadingRegistry,
+  withProps(filterHeadings),
+  withState('activeItem', 'setActiveItem', 0),
+  lifecycle({ componentDidUpdate, componentWillUnmount }),
+)(Menu);

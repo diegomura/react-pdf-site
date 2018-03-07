@@ -7,6 +7,7 @@ import Logo from '../components/Logo';
 import Menu from '../components/Menu';
 import GitHubIcon from '../components/GitHubIcon';
 import withTheme from '../styled/withTheme';
+import HeadingRegistry from '../lib/headings';
 
 const Section = styled.section`
   flex: 1;
@@ -28,18 +29,20 @@ const Fixed = styled.div`
 `;
 
 const App = ({ children }) => (
-  <Main>
-    <Nav>
-      <Fixed>
-        <SearchInput />
-        <Logo />
-        <Menu />
-        <GitHubIcon />
-      </Fixed>
-    </Nav>
+  <HeadingRegistry>
+    <Main>
+      <Nav>
+        <Fixed>
+          <SearchInput />
+          <Logo />
+          <Menu />
+          <GitHubIcon />
+        </Fixed>
+      </Nav>
 
-    <Section>{children}</Section>
-  </Main>
+      <Section>{children}</Section>
+    </Main>
+  </HeadingRegistry>
 );
 
 App.propTypes = {
