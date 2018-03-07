@@ -22,25 +22,29 @@ const List = styled.ul`
   list-style: none;
 `;
 
-const Item = styled(({ index, href, onClick, className, children, ...props }) =>
-  <li className={className}>
-    <MenuLink
-      href={href || `#${toLowerCase(children)}`}
-      onClick={() => onClick(index)}
-      {...props}
-    >
-      {children}
-    </MenuLink>
-  </li>,
-)`padding: 6px 12px;`;
+const Item = styled(
+  ({ index, href, onClick, className, children, ...props }) => (
+    <li className={className}>
+      <MenuLink
+        href={href || `#${toLowerCase(children)}`}
+        onClick={() => onClick(index)}
+        {...props}
+      >
+        {children}
+      </MenuLink>
+    </li>
+  ),
+)`
+  padding: 6px 12px;
+`;
 
 const docItems = docs
   .match(/###(.*)/g)
   .map(match => match.replace('###', '').trim());
 
-const Menu = ({ activeItem, setActiveItem }) =>
+const Menu = ({ activeItem, setActiveItem }) => (
   <List>
-    {docItems.map((item, index) =>
+    {docItems.map((item, index) => (
       <Item
         key={item}
         index={index}
@@ -48,8 +52,8 @@ const Menu = ({ activeItem, setActiveItem }) =>
         onClick={setActiveItem}
       >
         {item}
-      </Item>,
-    )}
+      </Item>
+    ))}
     <Item to="/repl">Playground / REPL</Item>
     <Item href="https://opencollective.com/react-pdf" target="_blank">
       Donate
@@ -57,7 +61,8 @@ const Menu = ({ activeItem, setActiveItem }) =>
     <Item href="https://github.com/diegomura/react-pdf/issues" target="_blank">
       Forum
     </Item>
-  </List>;
+  </List>
+);
 
 Menu.propTypes = {
   activeItem: PropTypes.number,

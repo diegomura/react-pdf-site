@@ -27,12 +27,11 @@ const Title = styled(Heading)`
   }
 `;
 
-const NotFound = () =>
+const NotFound = () => (
   <div>
     <CornerGraphicsImage src={CornerGraphics} />
-    <Title level={1}>
-      404: Oops! This page does not exist
-    </Title>
-  </div>;
+    <Title level={1}>404: Oops! This page does not exist</Title>
+  </div>
+);
 
 export default NotFound;

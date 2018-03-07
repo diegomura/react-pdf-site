@@ -9,7 +9,9 @@ const Blockquote = styled.blockquote`
   background-color: ${({ theme }) => theme.gray3};
   border-left: ${({ theme }) => `2px solid ${theme.red}`};
 
-  p { margin: 0px; }
+  p {
+    margin: 0px;
+  }
 `;
 
 export default Blockquote;

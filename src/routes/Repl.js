@@ -52,7 +52,7 @@ const SmallLogo = Logo.extend`
 `;
 
 const LeftNav = ({ onBackClick }) => (
-  <NavWrapper width="64px" >
+  <NavWrapper width="64px">
     <BackButton onClick={onBackClick}>
       <Icon type="arrow-left" size={18} />
     </BackButton>
@@ -93,41 +93,31 @@ export default compose(
   withTheme,
   withHandlers({ onBackClick }),
   withState('documentUrl', 'setDocumentUrl', null),
-)(
-  ({ documentUrl, setDocumentUrl, children, onBackClick }) => (
-    <Main>
-      <LeftNav onBackClick={onBackClick} />
-      <Section>
-        <Repl onUrlChange={setDocumentUrl} />
-        <BottomBanner>
-          <Title>
-            React-PDF Repl
-          </Title>
-          {documentUrl && (
-            <BannerButton
-              icon="download"
-              href={documentUrl}
-              target="_blank"
-              download='document.pdf'
-              secondary
-            >
-              Download
-            </BannerButton>
-          )}
+)(({ documentUrl, setDocumentUrl, children, onBackClick }) => (
+  <Main>
+    <LeftNav onBackClick={onBackClick} />
+    <Section>
+      <Repl onUrlChange={setDocumentUrl} />
+      <BottomBanner>
+        <Title>React-PDF Repl</Title>
+        {documentUrl && (
           <BannerButton
-            icon="share-alt"
+            icon="download"
+            href={documentUrl}
+            target="_blank"
+            download="document.pdf"
             secondary
           >
-            Share
+            Download
           </BannerButton>
-          <BannerButton
-            icon="copy"
-            secondary
-          >
-            Copy
-          </BannerButton>
-        </BottomBanner>
-      </Section>
-    </Main>
-  )
-);
+        )}
+        <BannerButton icon="share-alt" secondary>
+          Share
+        </BannerButton>
+        <BannerButton icon="copy" secondary>
+          Copy
+        </BannerButton>
+      </BottomBanner>
+    </Section>
+  </Main>
+));

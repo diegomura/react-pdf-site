@@ -8,7 +8,8 @@
   "author": "Diego Muracciole <diegomuracciole@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --content-base src --open --historyApiFallback"
+    "start": "webpack-dev-server --content-base src --open --historyApiFallback",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "@react-pdf/core": "^0.7.3",
@@ -16,7 +17,6 @@
     "classnames": "^2.2.5",
     "codemirror": "^5.30.0",
     "font-awesome": "^4.7.0",
-    "prettier": "^1.7.4",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -38,13 +38,22 @@
     "favicons-webpack-plugin": "^0.0.7",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.29.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^10.0.0",
     "postcss-loader": "^2.0.6",
+    "prettier": "^1.11.1",
     "style-loader": "^0.18.2",
     "text-loader": "^0.0.1",
     "url-loader": "^0.5.9",
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.6.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

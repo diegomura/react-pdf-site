@@ -10,11 +10,7 @@ import './static/styles/index.css';
 
 const MOUNT_NODE = document.getElementById('root');
 
-const App = () => (
-  <Router history={browserHistory}>
-    {createRoutes()}
-  </Router>
-);
+const App = () => <Router history={browserHistory}>{createRoutes()}</Router>;
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<App />, MOUNT_NODE);

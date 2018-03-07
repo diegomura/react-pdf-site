@@ -10,19 +10,20 @@ const Wrapper = styled.a`
   padding: 4px 16px;
   line-height: 24px;
   text-decoration: none;
-  font-family: "Source Sans Pro";
+  font-family: 'Source Sans Pro';
   transition: color 0.2s, background 0.2s;
-  color: ${props => props.secondary ? 'white' : props.theme.red};
-  background: ${props => props.secondary ? props.theme.red : 'white'};
-  outline: ${props => `1px solid ${ props.secondary ? 'white' : props.theme.red}`};
+  color: ${props => (props.secondary ? 'white' : props.theme.red)};
+  background: ${props => (props.secondary ? props.theme.red : 'white')};
+  outline: ${props =>
+    `1px solid ${props.secondary ? 'white' : props.theme.red}`};
 
   &:hover {
     outline-width: 2px;
   }
 
   &:active {
-    color: ${props => props.secondary ? props.theme.red : 'white'};
-    background: ${props => props.secondary ? 'white' : props.theme.red};
+    color: ${props => (props.secondary ? props.theme.red : 'white')};
+    background: ${props => (props.secondary ? 'white' : props.theme.red)};
   }
 `;
 
@@ -32,11 +33,9 @@ const Text = styled.span`
 
 const Button = ({ icon, children, ...props }) => (
   <Wrapper {...props}>
-    <Text>
-      {children}
-    </Text>
+    <Text>{children}</Text>
     <Icon type={icon} />
   </Wrapper>
-)
+);
 
 export default Button;

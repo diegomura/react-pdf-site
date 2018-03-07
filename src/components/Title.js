@@ -29,12 +29,11 @@ const SubHeading = Paragraph.extend`
   margin: 0px;
 `;
 
-export default () =>
+export default () => (
   <Wrapper>
-    <Title level={1}>
-      React-pdf
-    </Title>
+    <Title level={1}>React-pdf</Title>
     <SubHeading>
       React renderer for creating PDF files on the browser, mobile and server.
     </SubHeading>
-  </Wrapper>;
+  </Wrapper>
+);

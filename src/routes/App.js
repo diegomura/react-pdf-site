@@ -27,7 +27,7 @@ const Fixed = styled.div`
   align-items: center;
 `;
 
-const App = ({ children }) =>
+const App = ({ children }) => (
   <Main>
     <Nav>
       <Fixed>
@@ -38,10 +38,9 @@ const App = ({ children }) =>
       </Fixed>
     </Nav>
 
-    <Section>
-      {children}
-    </Section>
-  </Main>;
+    <Section>{children}</Section>
+  </Main>
+);
 
 App.propTypes = {
   children: PropTypes.node.isRequired,

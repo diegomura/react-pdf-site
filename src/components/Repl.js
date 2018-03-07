@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import CodeMirror from "codemirror";
+import CodeMirror from 'codemirror';
 import Paragraph from './Paragraph';
 import PDFViewer from './PDFViewer';
 import Button from '../components/Button';
@@ -35,19 +35,19 @@ const PDFPanel = styled.div`
 
 const DEFAULT_CODE_MIRROR_OPTIONS = {
   autoCloseBrackets: true,
-  keyMap: "sublime",
+  keyMap: 'sublime',
   lineNumbers: true,
   matchBrackets: true,
-  mode: "text/jsx",
+  mode: 'text/jsx',
   showCursorWhenSelecting: true,
   styleActiveLine: true,
   tabWidth: 2,
-  autoCloseTags: true
+  autoCloseTags: true,
 };
 
 class Repl extends React.PureComponent {
   state = {
-    element: null
+    element: null,
   };
 
   componentDidMount() {
@@ -55,7 +55,7 @@ class Repl extends React.PureComponent {
       this.textarea,
       DEFAULT_CODE_MIRROR_OPTIONS,
     );
-    this._codeMirror.on("change", this.onChange.bind(this));
+    this._codeMirror.on('change', this.onChange.bind(this));
   }
 
   componentWillUnmount() {
@@ -69,7 +69,7 @@ class Repl extends React.PureComponent {
 
     try {
       transpile(code, element => {
-        this.setState({ element })
+        this.setState({ element });
       });
     } catch (e) {
       // noob
@@ -84,7 +84,7 @@ class Repl extends React.PureComponent {
             autoComplete="off"
             autoFocus={true}
             defaultValue={this.props.value}
-            ref={node => this.textarea = node}
+            ref={node => (this.textarea = node)}
             placeholder="Write code here..."
           />
         </CodePanel>

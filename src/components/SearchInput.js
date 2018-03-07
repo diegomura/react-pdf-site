@@ -14,8 +14,9 @@ const Input = styled.input`
   outline: none;
 `;
 
-const SearchInput = ({ onChange }) =>
-  <Input type="text" placeholder="Search" onChange={onChange} />;
+const SearchInput = ({ onChange }) => (
+  <Input type="text" placeholder="Search" onChange={onChange} />
+);
 
 SearchInput.propTypes = {
   onChange: PropTypes.func,

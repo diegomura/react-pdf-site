@@ -43,15 +43,16 @@ const CornerGraphicsImage = styled.img`
 
 const DocumentGraphicImage = styled.img`
   margin: 50px;
-  width: 210px
+  width: 210px;
 `;
 
-const Home = () =>
+const Home = () => (
   <div>
     <Title level={1} />
     <DocumentGraphicImage src={DocumentGraphic} />
     <Markdown source={index} renderers={renderers} />
     <CornerGraphicsImage src={CornerGraphics} />
-  </div>;
+  </div>
+);
 
 export default Home;

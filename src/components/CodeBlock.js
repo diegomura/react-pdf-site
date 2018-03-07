@@ -39,9 +39,7 @@ const CodeBlock = props => (
       <Handler type="eye" />
       <Handler type="files-o" />
     </Handlers>
-    <Code>
-      {props.value}
-    </Code>
+    <Code>{props.value}</Code>
   </Wrapper>
 );
 

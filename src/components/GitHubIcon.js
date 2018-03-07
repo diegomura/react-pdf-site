@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Icon from './Icon';
 
-const GitHubIcon = styled(({ size, className }) =>
+const GitHubIcon = styled(({ size, className }) => (
   <a
     target="_blank"
     rel="noopener noreferrer"
@@ -10,8 +10,8 @@ const GitHubIcon = styled(({ size, className }) =>
     className={className}
   >
     <Icon type="github" size={size || 30} />
-  </a>,
-)`
+  </a>
+))`
   color: black;
   margin-bottom: 36px;
   opacity: 0.3;
