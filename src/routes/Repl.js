@@ -46,7 +46,7 @@ const NavBody = styled.div`
   flex: 1;
 `;
 
-const SmallLogo = Logo.extend`
+const SmallLogo = styled(Logo)`
   padding: 0px;
   margin-top: 64px;
 `;
