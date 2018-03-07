@@ -37,6 +37,10 @@ const config = {
         loader: 'url-loader?limit=8192',
       },
       {
+        test: /\.pdf$/,
+        loader: 'url-loader',
+      },
+      {
         test: /\.woff(\?.*)?$/,
         loader:
           'url-loader?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=application/font-woff',

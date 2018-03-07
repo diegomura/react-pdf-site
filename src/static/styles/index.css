@@ -15,8 +15,3 @@ body {
   font-family: "Source Sans Pro";
   font-size: 18px;
 }
-
-iframe {
-  flex: 1;
-  border: 0px;
-}

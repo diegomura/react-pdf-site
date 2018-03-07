@@ -23,8 +23,11 @@ const CodePanel = styled.div`
   overflow: hidden;
 `;
 
-const PDFPanel = styled(Document)`
+const PDFPanel = styled.div`
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const DEFAULT_CODE_MIRROR_OPTIONS = {
@@ -68,7 +71,9 @@ class Repl extends React.Component {
             placeholder="Write code here..."
           />
         </CodePanel>
-        <PDFPanel />
+        <PDFPanel>
+          <Document />
+        </PDFPanel>
       </Wrapper>
     );
   }
