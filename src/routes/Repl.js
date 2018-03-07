@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { compose, withState } from 'recompose';
 import Nav from '../components/Nav';
 import Icon from '../components/Icon';
 import Logo from '../components/Logo';
@@ -83,17 +84,30 @@ const BannerButton = styled(Button)`
   margin-right: 16px;
 `;
 
-export default withTheme(
-  ({ children }) => (
+export default compose(
+  withTheme,
+  withState('documentUrl', 'setDocumentUrl', null),
+)(
+  ({ documentUrl, setDocumentUrl, children }) => (
     <Main>
       <LeftNav />
-
       <Section>
-        <Repl />
+        <Repl onUrlChange={setDocumentUrl} />
         <BottomBanner>
           <Title>
             React-PDF Repl
           </Title>
+          {documentUrl && (
+            <BannerButton
+              icon="download"
+              href={documentUrl}
+              target="_blank"
+              download='document.pdf'
+              secondary
+            >
+              Download
+            </BannerButton>
+          )}
           <BannerButton
             icon="share-alt"
             secondary

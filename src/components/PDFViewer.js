@@ -14,7 +14,13 @@ export default class extends React.Component {
     pdf(container)
       .toBlob()
       .then(blob => {
-        this.setState({ document: URL.createObjectURL(blob) });
+        const url = URL.createObjectURL(blob);
+
+        if (this.props.onUrlChange) {
+          this.props.onUrlChange(url);
+        }
+
+        this.setState({ document: url });
       });
   }
 

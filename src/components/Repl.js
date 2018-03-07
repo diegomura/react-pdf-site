@@ -45,7 +45,7 @@ const DEFAULT_CODE_MIRROR_OPTIONS = {
   autoCloseTags: true
 };
 
-class Repl extends React.Component {
+class Repl extends React.PureComponent {
   state = {
     element: null
   };
@@ -89,7 +89,10 @@ class Repl extends React.Component {
           />
         </CodePanel>
         <PDFPanel>
-          <PDFViewer document={this.state.element} />
+          <PDFViewer
+            document={this.state.element}
+            onUrlChange={this.props.onUrlChange}
+          />
         </PDFPanel>
       </Wrapper>
     );

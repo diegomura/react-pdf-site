@@ -2,13 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import Icon from './Icon';
 
-const Wrapper = styled.button`
+const Wrapper = styled.a`
   border: 0px;
   outline: none;
   cursor: pointer;
   font-size: 16px;
   padding: 4px 16px;
   line-height: 24px;
+  text-decoration: none;
   font-family: "Source Sans Pro";
   transition: color 0.2s, background 0.2s;
   color: ${props => props.secondary ? 'white' : props.theme.red};
