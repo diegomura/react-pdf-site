@@ -2,14 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { withState } from 'recompose';
-import Link from './Link';
+import { Link } from 'react-router';
 import toLowerCase from '../utils/toLowerCase';
 import docs from '../index.md';
 
-const MenuLink = Link.extend`
+const MenuLink = styled(Link)`
   padding: 6px 10px;
-  color: ${props => (props.active ? props.theme.black : props.theme.gray1)};
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: none;
   border-left: ${props => props.active && '2px solid #F01E00'};
+  color: ${props => (props.active ? props.theme.black : props.theme.gray1)};
 `;
 
 const List = styled.ul`
@@ -47,7 +50,7 @@ const Menu = ({ activeItem, setActiveItem }) =>
         {item}
       </Item>,
     )}
-    <Item>Playground / REPL</Item>
+    <Item to="/repl">Playground / REPL</Item>
     <Item href="https://opencollective.com/react-pdf" target="_blank">
       Donate
     </Item>
