@@ -2,6 +2,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const config = {
   context: path.join(__dirname, 'src'),
@@ -80,6 +81,9 @@ const config = {
       template: 'index.html',
       inject: 'body',
     }),
+    new FaviconsWebpackPlugin(
+      path.join(__dirname, 'src/static/images/logo.png')
+    ),
   ],
   node: {
     fs: 'empty',
