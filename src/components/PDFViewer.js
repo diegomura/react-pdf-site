@@ -24,10 +24,6 @@ export default class extends React.Component {
       });
   }
 
-  componentWillUnmount() {
-    PDFRenderer.updateContainer(null, this.mountNode, this);
-  }
-
   render() {
     if (!this.state.document) {
       return null;

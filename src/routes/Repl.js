@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { compose, withState } from 'recompose';
+import { compose, withState, withHandlers } from 'recompose';
+import { browserHistory } from 'react-router';
 import Nav from '../components/Nav';
 import Icon from '../components/Icon';
 import Logo from '../components/Logo';
@@ -50,9 +51,9 @@ const SmallLogo = Logo.extend`
   margin-top: 64px;
 `;
 
-const LeftNav = () => (
+const LeftNav = ({ onBackClick }) => (
   <NavWrapper width="64px" >
-    <BackButton>
+    <BackButton onClick={onBackClick}>
       <Icon type="arrow-left" size={18} />
     </BackButton>
     <NavBody>
@@ -84,13 +85,18 @@ const BannerButton = styled(Button)`
   margin-right: 16px;
 `;
 
+const onBackClick = props => () => {
+  browserHistory.push('/');
+};
+
 export default compose(
   withTheme,
+  withHandlers({ onBackClick }),
   withState('documentUrl', 'setDocumentUrl', null),
 )(
-  ({ documentUrl, setDocumentUrl, children }) => (
+  ({ documentUrl, setDocumentUrl, children, onBackClick }) => (
     <Main>
-      <LeftNav />
+      <LeftNav onBackClick={onBackClick} />
       <Section>
         <Repl onUrlChange={setDocumentUrl} />
         <BottomBanner>
