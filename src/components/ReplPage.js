@@ -85,23 +85,18 @@ const BannerButton = styled(Button)`
 `;
 
 export default ({
-  initialValue,
   code,
   shareUrl,
   documentUrl,
   children,
-  onCodeChange,
+  onChange,
   onUrlChange,
   onBackClick,
 }) => (
   <Main>
     <LeftNav onBackClick={onBackClick} />
     <Section>
-      <Repl
-        initialValue={initialValue}
-        onCodeChange={onCodeChange}
-        onUrlChange={onUrlChange}
-      />
+      <Repl value={code} onChange={onChange} onUrlChange={onUrlChange} />
       <BottomBanner>
         <Title>React-PDF Repl</Title>
         {documentUrl && (

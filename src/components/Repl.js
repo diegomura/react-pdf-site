@@ -32,6 +32,7 @@ const CodePanel = styled.div`
 const PDFPanel = styled.div`
   flex: 1;
   display: flex;
+  overflow: scroll;
   align-items: center;
   justify-content: center;
 `;
@@ -59,7 +60,7 @@ class Repl extends React.PureComponent {
       DEFAULT_CODE_MIRROR_OPTIONS,
     );
     this.codeMirror.on('change', this.onChange.bind(this));
-    this.codeMirror.setValue(this.props.initialValue);
+    this.codeMirror.setValue(this.props.value);
   }
 
   componentWillUnmount() {
@@ -68,11 +69,17 @@ class Repl extends React.PureComponent {
     }
   }
 
+  componentWillReceiveNewProps(newProps) {
+    if (this.props.value !== newProps.value) {
+      this.codeMirror.setValue(newProps.value);
+    }
+  }
+
   onChange({ doc }) {
     const code = doc.getValue();
 
-    if (this.props.onCodeChange) {
-      this.props.onCodeChange(code);
+    if (this.props.onChange) {
+      this.props.onChange(code);
     }
 
     this.transpile(code);

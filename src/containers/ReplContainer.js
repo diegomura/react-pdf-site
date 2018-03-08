@@ -1,10 +1,25 @@
 import React from 'react';
 import Loadable from 'react-loadable';
-import { compose, withState, withHandlers, withProps } from 'recompose';
+import {
+  compose,
+  withState,
+  withHandlers,
+  withProps,
+  lifecycle,
+} from 'recompose';
 import { browserHistory } from 'react-router';
 import Loading from '../components/Loading';
 import withTheme from '../styled/withTheme';
 import { compress, decompress } from '../utils/compress';
+
+const examples = {
+  text: import('raw-loader!../examples/text.txt'),
+  knobs: import('raw-loader!../examples/knobs.txt'),
+  resume: import('raw-loader!../examples/resume.txt'),
+  images: import('raw-loader!../examples/images.txt'),
+  fractals: import('raw-loader!../examples/fractals.txt'),
+  'media-queries': import('raw-loader!../examples/media-queries.txt'),
+};
 
 const LoadableComponent = Loadable({
   loader: () => import('../components/ReplPage'),
@@ -15,7 +30,7 @@ const onBackClick = props => () => {
   browserHistory.push('/');
 };
 
-const onCodeChange = props => code => {
+const onChange = props => code => {
   props.setCode(code);
 };
 
@@ -27,27 +42,50 @@ const setShareUrl = ({ code }) => ({
   shareUrl: `${window.location.host}/repl?code=${compress(code)}`,
 });
 
-const setInitialValue = ({ location }) => {
-  let initialValue;
+const setInitialValueFromCode = code => {
+  let initialValue = '';
 
   try {
-    initialValue = decompress(location.query.code);
+    initialValue = decompress(code);
   } catch (e) {
     // noob
   }
 
-  return { initialValue: initialValue || '' };
+  return initialValue;
 };
+
+const setInitialValueFromExample = async example => {
+  let initialValue = '';
+
+  if (examples[example]) {
+    initialValue = await examples[example];
+  }
+
+  return initialValue;
+};
+
+async function componentDidMount() {
+  let initialValue = '';
+  const { code, example } = this.props.location.query;
+
+  if (code) {
+    initialValue = setInitialValueFromCode(code);
+  } else if (example) {
+    initialValue = await setInitialValueFromExample(example);
+  }
+
+  this.props.setCode(initialValue);
+}
 
 export default compose(
   withTheme,
   withState('code', 'setCode', ''),
   withState('documentUrl', 'setDocumentUrl', null),
+  lifecycle({ componentDidMount }),
   withProps(setShareUrl),
-  withProps(setInitialValue),
   withHandlers({
     onBackClick,
-    onCodeChange,
+    onChange,
     onUrlChange,
   }),
 )(LoadableComponent);

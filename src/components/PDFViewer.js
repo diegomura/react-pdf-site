@@ -6,6 +6,9 @@ export default class extends React.Component {
   state = { document: null };
 
   componentWillReceiveProps(newProps) {
+    // Don't update if document didn't change
+    if (this.props.document === newProps.document) return;
+
     const container = createElement('ROOT');
     const mountNode = PDFRenderer.createContainer(container);
 
