@@ -13,7 +13,13 @@ import {
 const primitives = { Document, Page, Text, Link, View, Image, StyleSheet };
 
 const transpile = (code, callback) => {
-  const result = transform(code);
+  const result = transform(code, {
+    objectAssign: 'Object.assign',
+    transforms: {
+      dangerousForOf: true,
+      dangerousTaggedTemplateString: true,
+    },
+  });
   const res = new Function(
     'React',
     'ReactPDF',
