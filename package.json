@@ -9,10 +9,11 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --content-base src --open --historyApiFallback",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "build": "webpack -p"
   },
   "dependencies": {
-    "@react-pdf/core": "^0.7.3",
+    "@react-pdf/core": "^0.7.5",
     "buble": "^0.19.3",
     "classnames": "^2.2.5",
     "codemirror": "^5.30.0",
@@ -34,6 +35,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.1",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
