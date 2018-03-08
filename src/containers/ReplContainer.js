@@ -14,8 +14,21 @@ const onBackClick = props => () => {
   browserHistory.push('/');
 };
 
+const onCodeChange = props => code => {
+  props.setCode(code);
+};
+
+const onUrlChange = props => url => {
+  props.setDocumentUrl(url);
+};
+
 export default compose(
   withTheme,
-  withHandlers({ onBackClick }),
+  withState('code', 'setCode', ''),
   withState('documentUrl', 'setDocumentUrl', null),
+  withHandlers({
+    onBackClick,
+    onCodeChange,
+    onUrlChange,
+  }),
 )(LoadableComponent);

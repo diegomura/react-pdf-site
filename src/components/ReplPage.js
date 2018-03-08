@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Nav from './Nav';
 import Icon from './Icon';
 import Logo from './Logo';
@@ -82,11 +83,18 @@ const BannerButton = styled(Button)`
   margin-right: 16px;
 `;
 
-export default ({ documentUrl, setDocumentUrl, children, onBackClick }) => (
+export default ({
+  code,
+  documentUrl,
+  children,
+  onCodeChange,
+  onUrlChange,
+  onBackClick,
+}) => (
   <Main>
     <LeftNav onBackClick={onBackClick} />
     <Section>
-      <Repl onUrlChange={setDocumentUrl} />
+      <Repl onCodeChange={onCodeChange} onUrlChange={onUrlChange} />
       <BottomBanner>
         <Title>React-PDF Repl</Title>
         {documentUrl && (
@@ -103,9 +111,11 @@ export default ({ documentUrl, setDocumentUrl, children, onBackClick }) => (
         <BannerButton icon="share-alt" secondary>
           Share
         </BannerButton>
-        <BannerButton icon="copy" secondary>
-          Copy
-        </BannerButton>
+        <CopyToClipboard text={code}>
+          <BannerButton icon="copy" secondary>
+            Copy
+          </BannerButton>
+        </CopyToClipboard>
       </BottomBanner>
     </Section>
   </Main>

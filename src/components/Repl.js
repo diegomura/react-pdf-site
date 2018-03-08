@@ -70,6 +70,10 @@ class Repl extends React.PureComponent {
   onChange({ doc }) {
     const code = doc.getValue();
 
+    if (this.props.onCodeChange) {
+      this.props.onCodeChange(code);
+    }
+
     this.transpile(code);
   }
 
