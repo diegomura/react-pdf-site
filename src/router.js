@@ -7,8 +7,8 @@ import Repl from './containers/ReplContainer';
 
 const createRoutes = () => (
   <div>
-    <Route path="/repl" component={Repl} />
-    <Route path="/" component={App}>
+    <Route path={`${process.env.PUBLIC_URL}/repl`} component={Repl} />
+    <Route path={`${process.env.PUBLIC_URL}/`} component={App}>
       <IndexRedirect to="home" />
       <Route path="home" component={Home} />
       <Route path="*" component={NotFound} />
