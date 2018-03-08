@@ -59,6 +59,7 @@ class Repl extends React.PureComponent {
       DEFAULT_CODE_MIRROR_OPTIONS,
     );
     this.codeMirror.on('change', this.onChange.bind(this));
+    this.codeMirror.setValue(this.props.initialValue);
   }
 
   componentWillUnmount() {

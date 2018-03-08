@@ -20,6 +20,7 @@
     "codemirror": "^5.30.0",
     "font-awesome": "^4.7.0",
     "lodash.debounce": "^4.0.8",
+    "lz-string": "^1.4.4",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-copy-to-clipboard": "^5.0.1",

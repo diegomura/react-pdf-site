@@ -14,6 +14,7 @@ const Section = styled.section`
   flex: 1;
   display: flex;
   flex-direction: column;
+  width: calc(100% - 64px);
 `;
 
 const Main = styled.main`
@@ -84,7 +85,9 @@ const BannerButton = styled(Button)`
 `;
 
 export default ({
+  initialValue,
   code,
+  compressedCode,
   documentUrl,
   children,
   onCodeChange,
@@ -94,7 +97,11 @@ export default ({
   <Main>
     <LeftNav onBackClick={onBackClick} />
     <Section>
-      <Repl onCodeChange={onCodeChange} onUrlChange={onUrlChange} />
+      <Repl
+        initialValue={initialValue}
+        onCodeChange={onCodeChange}
+        onUrlChange={onUrlChange}
+      />
       <BottomBanner>
         <Title>React-PDF Repl</Title>
         {documentUrl && (
@@ -108,9 +115,11 @@ export default ({
             Download
           </BannerButton>
         )}
-        <BannerButton icon="share-alt" secondary>
-          Share
-        </BannerButton>
+        <CopyToClipboard text={compressedCode}>
+          <BannerButton icon="share-alt" secondary>
+            Share
+          </BannerButton>
+        </CopyToClipboard>
         <CopyToClipboard text={code}>
           <BannerButton icon="copy" secondary>
             Copy
