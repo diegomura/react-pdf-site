@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Nav from './Nav';
 import Icon from './Icon';
 import Logo from './Logo';
 import Menu from './Menu';
 import Repl from './Repl';
 import Button from './Button';
+import Clipboard from './Clipboard';
 import GitHubIcon from './GitHubIcon';
 
 const Section = styled.section`
@@ -115,16 +115,16 @@ export default ({
             Download
           </BannerButton>
         )}
-        <CopyToClipboard text={compressedCode}>
+        <Clipboard text={compressedCode} tooltip="URL copied to clipboard!">
           <BannerButton icon="share-alt" secondary>
             Share
           </BannerButton>
-        </CopyToClipboard>
-        <CopyToClipboard text={code}>
+        </Clipboard>
+        <Clipboard text={code}>
           <BannerButton icon="copy" secondary>
             Copy
           </BannerButton>
-        </CopyToClipboard>
+        </Clipboard>
       </BottomBanner>
     </Section>
   </Main>

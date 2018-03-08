@@ -29,6 +29,7 @@
     "react-markdown": "^3.0.0",
     "react-pdf": "^2.5.3",
     "react-router": "^3.0.2",
+    "react-tippy": "^1.2.2",
     "recompose": "^0.26.0",
     "regenerator-runtime": "^0.11.1",
     "styled-components": "^2.2.1",
