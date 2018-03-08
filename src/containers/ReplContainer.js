@@ -23,8 +23,8 @@ const onUrlChange = props => url => {
   props.setDocumentUrl(url);
 };
 
-const compressCode = ({ code }) => ({
-  compressedCode: compress(code),
+const setShareUrl = ({ code }) => ({
+  shareUrl: `${window.location.host}/repl?code=${compress(code)}`,
 });
 
 const setInitialValue = ({ location }) => {
@@ -43,7 +43,7 @@ export default compose(
   withTheme,
   withState('code', 'setCode', ''),
   withState('documentUrl', 'setDocumentUrl', null),
-  withProps(compressCode),
+  withProps(setShareUrl),
   withProps(setInitialValue),
   withHandlers({
     onBackClick,

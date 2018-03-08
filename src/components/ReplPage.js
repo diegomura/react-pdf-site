@@ -87,7 +87,7 @@ const BannerButton = styled(Button)`
 export default ({
   initialValue,
   code,
-  compressedCode,
+  shareUrl,
   documentUrl,
   children,
   onCodeChange,
@@ -115,7 +115,7 @@ export default ({
             Download
           </BannerButton>
         )}
-        <Clipboard text={compressedCode} tooltip="URL copied to clipboard!">
+        <Clipboard text={shareUrl} tooltip="URL copied to clipboard!">
           <BannerButton icon="share-alt" secondary>
             Share
           </BannerButton>
