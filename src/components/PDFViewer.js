@@ -1,9 +1,25 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Document, Page } from 'react-pdf/build/entry.webpack';
 import { PDFRenderer, createElement, pdf } from '@react-pdf/core';
+import PageNavigator from './PageNavigator';
+
+const Wrapper = styled.div`
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const DocumentWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export default class extends React.Component {
-  state = { document: null };
+  state = { document: null, numPages: null, currentPage: 1 };
 
   componentWillReceiveProps(newProps) {
     // Don't update if document didn't change
@@ -27,15 +43,45 @@ export default class extends React.Component {
       });
   }
 
+  onDocumentLoad = ({ numPages }) => {
+    this.setState({ numPages });
+  };
+
+  onPreviousPage = () => {
+    this.setState(state => ({
+      currentPage: state.currentPage - 1,
+    }));
+  };
+
+  onNextPage = () => {
+    this.setState(state => ({
+      currentPage: state.currentPage + 1,
+    }));
+  };
+
   render() {
     if (!this.state.document) {
       return null;
     }
 
     return (
-      <Document file={this.state.document} {...this.props}>
-        <Page pageNumber={1} />
-      </Document>
+      <Wrapper>
+        <DocumentWrapper>
+          <Document
+            file={this.state.document}
+            onLoadSuccess={this.onDocumentLoad}
+            {...this.props}
+          >
+            <Page pageNumber={this.state.currentPage} />
+          </Document>
+        </DocumentWrapper>
+        <PageNavigator
+          currentPage={this.state.currentPage}
+          numPages={this.state.numPages}
+          onNextPage={this.onNextPage}
+          onPreviousPage={this.onPreviousPage}
+        />
+      </Wrapper>
     );
   }
 }
