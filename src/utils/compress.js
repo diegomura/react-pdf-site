@@ -21,6 +21,5 @@ export const compress = str =>
 
 export const decompress = str => {
   const compressed = str.match(/.{2}/g).map(hexToDecimal);
-
   return LZString.decompressFromUint8Array(compressed);
 };

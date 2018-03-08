@@ -28,9 +28,15 @@ const compressCode = ({ code }) => ({
 });
 
 const setInitialValue = ({ location }) => {
-  return {
-    initialValue: decompress(location.query.code),
-  };
+  let initialValue;
+
+  try {
+    initialValue = decompress(location.query.code);
+  } catch (e) {
+    // noob
+  }
+
+  return { initialValue: initialValue || '' };
 };
 
 export default compose(
