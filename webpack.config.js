@@ -81,6 +81,12 @@ const config = {
       template: 'index.html',
       inject: 'body',
     }),
+    // Surge needs 200.html to make SPA routing work
+    new HtmlWebpackPlugin({
+      filename: '200.html',
+      template: 'index.html',
+      inject: 'body',
+    }),
     new FaviconsWebpackPlugin(
       path.join(__dirname, 'src/static/images/logo.png')
     ),
