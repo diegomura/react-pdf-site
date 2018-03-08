@@ -10,7 +10,8 @@
   "scripts": {
     "start": "webpack-dev-server --content-base src --open --historyApiFallback",
     "precommit": "lint-staged",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "prebuild": "rimraf ./dist"
   },
   "dependencies": {
     "@react-pdf/core": "^0.7.5",
@@ -49,6 +50,7 @@
     "postcss-import": "^10.0.0",
     "postcss-loader": "^2.0.6",
     "prettier": "^1.11.1",
+    "rimraf": "^2.6.2",
     "style-loader": "^0.18.2",
     "text-loader": "^0.0.1",
     "url-loader": "^0.5.9",
