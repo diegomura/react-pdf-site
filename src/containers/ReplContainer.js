@@ -18,7 +18,7 @@ const examples = {
   resume: import('raw-loader!../examples/resume.txt'),
   images: import('raw-loader!../examples/images.txt'),
   fractals: import('raw-loader!../examples/fractals.txt'),
-  'text-wrap': import('raw-loader!../examples/text-wrap.txt'),
+  'page-wrap': import('raw-loader!../examples/page-wrap.txt'),
   'media-queries': import('raw-loader!../examples/media-queries.txt'),
 };
 
