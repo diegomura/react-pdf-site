@@ -34,4 +34,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: yarn build
-      - run: node_modules/.bin/surge --project ./dist --domain react-pdf.surge.sh
+      - run: node_modules/.bin/surge ./dist react-pdf.diegomura.com
