@@ -33,4 +33,5 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: ./scripts/deploy-ghpages.sh
+      - run: yarn build
+      - run: node_modules/.bin/surge --project ./dist --domain react-pdf.surge.sh
