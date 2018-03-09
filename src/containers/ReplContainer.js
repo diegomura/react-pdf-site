@@ -73,6 +73,8 @@ async function componentDidMount() {
     initialValue = setInitialValueFromCode(code);
   } else if (example) {
     initialValue = await setInitialValueFromExample(example);
+  } else {
+    initialValue = await setInitialValueFromExample('page-wrap');
   }
 
   this.props.setCode(initialValue);
