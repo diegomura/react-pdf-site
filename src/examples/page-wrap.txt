@@ -57,7 +57,7 @@ const doc = (
       <Text style={styles.author}>Miguel de Cervantes</Text>
       <Image
         style={styles.image}
-        src="http://static.donquijote.org/images/blogs/dq-reg/don-quijote-de-la-mancha.jpg"
+        src={`http://${window.location.host}/quijote1.jpg`}
       />
       <Subtitle>
         Capítulo I: Que trata de la condición y ejercicio del famoso hidalgo D.
@@ -139,7 +139,7 @@ const doc = (
       </Subtitle>
       <Image
         style={styles.image}
-        src="https://panampost.com/wp-content/uploads/don-quijote-lessons.jpg"
+        src={`http://${window.location.host}/quijote2.jpg`}
       />
       <Text style={styles.text}>
         Hechas, pues, estas prevenciones, no quiso aguardar más tiempo a poner

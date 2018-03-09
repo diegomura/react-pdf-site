@@ -2,6 +2,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const config = {
@@ -90,6 +91,9 @@ const config = {
     new FaviconsWebpackPlugin(
       path.join(__dirname, 'src/static/images/logo.png')
     ),
+    new CopyWebpackPlugin([
+      { from: './static/images/examples/*.jpg', to: './', flatten: true }
+    ])
   ],
   node: {
     fs: 'empty',
