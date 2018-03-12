@@ -4,6 +4,7 @@ import debounce from 'lodash.debounce';
 import CodeMirror from 'codemirror';
 import Paragraph from './Paragraph';
 import PDFViewer from './PDFViewer';
+import ErrorMessage from './ErrorMessage';
 import Button from '../components/Button';
 import transpile from '../utils/transpile';
 
@@ -27,6 +28,7 @@ const Wrapper = styled.div`
 const CodePanel = styled.div`
   flex: 1;
   overflow: hidden;
+  position: relative;
 `;
 
 const PDFPanel = styled.div`
@@ -35,6 +37,13 @@ const PDFPanel = styled.div`
   overflow: scroll;
   align-items: center;
   justify-content: center;
+`;
+
+const CodeError = styled(ErrorMessage)`
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  position: absolute;
 `;
 
 const DEFAULT_CODE_MIRROR_OPTIONS = {
@@ -52,6 +61,7 @@ const DEFAULT_CODE_MIRROR_OPTIONS = {
 class Repl extends React.PureComponent {
   state = {
     element: null,
+    error: null,
   };
 
   componentDidMount() {
@@ -82,17 +92,26 @@ class Repl extends React.PureComponent {
       this.props.onChange(code);
     }
 
+    if (code.length === 0) {
+      this.setState({
+        error: null,
+        element: null,
+      });
+    }
+
     this.transpile(code);
   }
 
+  onErrorClose = () => {
+    this.setState({ error: null });
+  };
+
   transpile(code) {
-    try {
-      debounceTranspile(code, element => {
-        this.setState({ element });
-      });
-    } catch (e) {
-      // noob
-    }
+    debounceTranspile(
+      code,
+      element => this.setState({ element, error: null }),
+      error => this.setState({ error: error.message }),
+    );
   }
 
   render() {
@@ -106,6 +125,7 @@ class Repl extends React.PureComponent {
             ref={node => (this.textarea = node)}
             placeholder="Write code here..."
           />
+          <CodeError onClose={this.onErrorClose}>{this.state.error}</CodeError>
         </CodePanel>
         <PDFPanel>
           <PDFViewer

@@ -12,7 +12,7 @@ import {
 
 const primitives = { Document, Page, Text, Link, View, Image, StyleSheet };
 
-const transpile = (code, callback) => {
+const transpile = (code, callback, onError) => {
   const result = transform(code, {
     objectAssign: 'Object.assign',
     transforms: {
@@ -26,7 +26,14 @@ const transpile = (code, callback) => {
     ...Object.keys(primitives),
     result.code,
   );
-  res(React, { render: doc => callback(doc) }, ...Object.values(primitives));
+
+  try {
+    res(React, { render: doc => callback(doc) }, ...Object.values(primitives));
+  } catch (e) {
+    if (onError) {
+      onError(e);
+    }
+  }
 };
 
 export default transpile;

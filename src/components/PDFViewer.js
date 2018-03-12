@@ -25,6 +25,11 @@ export default class extends React.Component {
     // Don't update if document didn't change
     if (this.props.document === newProps.document) return;
 
+    if (!newProps.document) {
+      this.setState({ document: null });
+      return;
+    }
+
     const container = createElement('ROOT');
     const mountNode = PDFRenderer.createContainer(container);
 

@@ -14,13 +14,13 @@ const Wrapper = styled.div`
 
 const Info = styled.div`
   flex: 1;
+  margin-left: 25px;
 `;
 
 const Title = styled.h2`
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
-  margin-left: 48px;
   display: inline-block;
   font-family: 'Taviraj';
 `;
