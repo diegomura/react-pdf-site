@@ -6,8 +6,7 @@ import Icon from './Icon';
 import Logo from './Logo';
 import Menu from './Menu';
 import Repl from './Repl';
-import Button from './Button';
-import Clipboard from './Clipboard';
+import ReplBanner from './ReplBanner';
 import GitHubIcon from './GitHubIcon';
 
 const Section = styled.section`
@@ -52,37 +51,17 @@ const SmallLogo = styled(Logo)`
 
 const LeftNav = ({ onBackClick }) => (
   <NavWrapper width="64px">
-    <BackButton onClick={onBackClick}>
-      <Icon type="arrow-left" size={18} />
-    </BackButton>
+    {process.env.NODE_ENV !== 'production' && (
+      <BackButton onClick={onBackClick}>
+        <Icon type="arrow-left" size={18} />
+      </BackButton>
+    )}
     <NavBody>
       <SmallLogo size="32px" />
     </NavBody>
     <GitHubIcon />
   </NavWrapper>
 );
-
-const BottomBanner = styled.div`
-  height: 56px;
-  color: white;
-  padding: 8px;
-  display: flex;
-  align-items: center;
-  background: ${({ theme }) => theme.red};
-`;
-
-const Title = styled.h2`
-  flex: 1;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  margin-left: 48px;
-  font-family: 'Taviraj';
-`;
-
-const BannerButton = styled(Button)`
-  margin-right: 16px;
-`;
 
 export default ({
   code,
@@ -97,30 +76,7 @@ export default ({
     <LeftNav onBackClick={onBackClick} />
     <Section>
       <Repl value={code} onChange={onChange} onUrlChange={onUrlChange} />
-      <BottomBanner>
-        <Title>React-PDF Repl</Title>
-        {documentUrl && (
-          <BannerButton
-            icon="download"
-            href={documentUrl}
-            target="_blank"
-            download="document.pdf"
-            secondary
-          >
-            Download
-          </BannerButton>
-        )}
-        <Clipboard text={shareUrl} tooltip="URL copied to clipboard!">
-          <BannerButton icon="share-alt" secondary>
-            Share
-          </BannerButton>
-        </Clipboard>
-        <Clipboard text={code}>
-          <BannerButton icon="copy" secondary>
-            Copy
-          </BannerButton>
-        </Clipboard>
-      </BottomBanner>
+      <ReplBanner code={code} documentUrl={documentUrl} shareUrl={shareUrl} />
     </Section>
   </Main>
 );
