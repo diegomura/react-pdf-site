@@ -1,7 +1,7 @@
 /* CodeMirror overrides */
 
 .CodeMirror {
-  height: 100%;
+  height: calc(100vh - 72px);
   background-color: #3E3E3E;
 }
 
@@ -17,7 +17,6 @@
 
 .CodeMirror-scroll {
   color: white;
-  padding-top: 24px;
 }
 
 .CodeMirror-cursor {
@@ -30,6 +29,11 @@
 
 .CodeMirror-matchingbracket {
   color: #EB606B !important;
+}
+
+.CodeMirror-linenumber {
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .cm-comment {
