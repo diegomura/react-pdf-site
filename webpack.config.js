@@ -5,6 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
+require('dotenv').config();
+
 const config = {
   context: path.join(__dirname, 'src'),
   entry: {
@@ -78,6 +80,9 @@ const config = {
   },
   devtool: 'source-map',
   plugins: [
+    new webpack.DefinePlugin({
+      GA_TOKEN: JSON.stringify(process.env.GA_TOKEN),
+    }),
     new HtmlWebpackPlugin({
       template: 'index.html',
       inject: 'body',

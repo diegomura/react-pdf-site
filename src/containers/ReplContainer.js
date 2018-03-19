@@ -10,6 +10,7 @@ import {
 import { browserHistory } from 'react-router';
 import Loading from '../components/Loading';
 import withTheme from '../styled/withTheme';
+import trackAnalytics from '../lib/analytics';
 import { compress, decompress } from '../utils/compress';
 
 const examples = {
@@ -82,6 +83,7 @@ async function componentDidMount() {
 
 export default compose(
   withTheme,
+  trackAnalytics,
   withState('code', 'setCode', ''),
   withState('documentUrl', 'setDocumentUrl', null),
   lifecycle({ componentDidMount }),
