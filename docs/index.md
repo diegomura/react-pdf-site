@@ -5,6 +5,7 @@ import Page from './page.md'
 import View from './view.md'
 import Text from './text.md'
 import Link from './link.md'
+import Styling from './styling.md'
 import PageWrapping from './page-wrapping.md'
 import OrphanWidowProtection from './orphan-widow-protection.md'
 import EmojiRendering from './emoji-rendering.md'
@@ -24,6 +25,8 @@ import RenderingProcess from './rendering-process.md'
 <Link components={components} />
 
 ---
+
+<Styling components={components} />
 
 ## Advanced
 <PageWrapping components={components} />

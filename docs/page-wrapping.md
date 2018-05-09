@@ -69,6 +69,8 @@ const doc = () => (
 );
 ```
 
-By that, the `<View />` component will be layout repeatedly throughout all pages. Very handy for creating nice absolute headers or footers, page numbers, among other use cases.
+By that, the `<View />` component will be layout repeatedly throughout all pages.
+
+> **Protip:** This feature can be very handy for creating nice headers, footers or page numbers, among other use cases. You can even absolute position fixed elements into your page to create more complex layouts!
 
 <GoToExample />
