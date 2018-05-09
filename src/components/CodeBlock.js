@@ -18,6 +18,7 @@ const Handlers = styled.div`
 
 const Handler = styled(Icon)`
   color: white;
+  opacity: 0.5;
   font-size: 16px;
   margin-right: 15px;
 `;
@@ -36,7 +37,7 @@ const Code = styled.code`
 const CodeBlock = props => (
   <Wrapper>
     <Handlers>
-      <Handler type="eye" />
+      {props.isPlayable && <Handler type="eye" />}
       <Handler type="files-o" />
     </Handlers>
     <Code>{props.children}</Code>

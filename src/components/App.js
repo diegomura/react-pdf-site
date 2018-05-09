@@ -12,6 +12,8 @@ import HeadingRegistry from '../lib/headings';
 
 const Section = styled.section`
   flex: 1;
+  margin: 0 auto;
+  max-width: 1000px;
   padding: ${props => props.padding || '110px'};
 `;
 

@@ -4,11 +4,13 @@ import styled from 'styled-components';
 
 const OL = styled.ol`
   margin-left: 12px;
+  margin-bottom: 32px;
   list-style-position: inside;
 `;
 
 const UL = styled.ol`
   margin-left: 12px;
+  margin-bottom: 32px;
   list-style-position: inside;
 `;
 

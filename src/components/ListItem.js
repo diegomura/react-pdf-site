@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const ListItem = styled.li`
   color: ${({ theme }) => theme.black};
-  font-size: 16px;
+  font-size: 20px;
   line-height: 36px;
   font-family: 'Source Sans Pro';
 `;

@@ -37,7 +37,7 @@ const Heading3 = styled.h3`
 
 const Heading4 = styled.h4`
   ${BaseHeading};
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 24px;
 `;
