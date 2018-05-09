@@ -55,9 +55,6 @@ const Menu = ({ headings, activeItem, setActiveItem }) => (
     <Item href="https://opencollective.com/react-pdf" target="_blank">
       Donate
     </Item>
-    <Item href="https://github.com/diegomura/react-pdf/issues" target="_blank">
-      Forum
-    </Item>
   </List>
 );
 

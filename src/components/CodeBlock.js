@@ -21,6 +21,10 @@ const Handler = styled(Icon)`
   opacity: 0.5;
   font-size: 16px;
   margin-right: 15px;
+
+  :last-child {
+    margin-right: 0px;
+  }
 `;
 
 const Code = styled.code`

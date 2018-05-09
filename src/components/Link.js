@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Link = styled.a`
-  font-size: 16px;
+  font-size: 20px;
   line-height: 24px;
   text-decoration: none;
   color: ${({ theme }) => theme.blue};

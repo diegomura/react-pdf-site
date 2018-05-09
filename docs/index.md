@@ -12,8 +12,6 @@ import EmojiRendering from './emoji-rendering.md'
 import Hyphenation from './hyphenation.md'
 import RenderingProcess from './rendering-process.md'
 
-> Under construction
-
 <Installation components={components} />
 <QuickStart components={components} />
 
