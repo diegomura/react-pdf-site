@@ -3,7 +3,6 @@ import QuickStart from './quick-start.md'
 import Document from './document.md'
 import Page from './page.md'
 import View from './view.md'
-import Image from './image.md'
 import Text from './text.md'
 import Link from './link.md'
 import PageWrapping from './page-wrapping.md'
@@ -21,7 +20,6 @@ import RenderingProcess from './rendering-process.md'
 <Document components={components} />
 <Page components={components} />
 <View components={components} />
-<Image components={components} />
 <Text components={components} />
 <Link components={components} />
 
