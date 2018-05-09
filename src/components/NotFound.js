@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Heading from './Heading';
+import { H1 } from './Heading';
 import CornerGraphics from '../static/images/corner-graphics.png';
 
 const CornerGraphicsImage = styled.img`
@@ -9,7 +9,7 @@ const CornerGraphicsImage = styled.img`
   right: 0;
 `;
 
-const Title = styled(Heading)`
+const Title = styled(H1)`
   padding: 0px 32px;
   position: relative;
   border-left: ${({ theme }) => `2px solid ${theme.red}`};

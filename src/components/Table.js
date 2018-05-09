@@ -15,7 +15,7 @@ const Table = styled.table.attrs({
   overflow: hidden;
 `;
 
-const TH = styled.th`
+export const TableHeading = styled.th`
   text-align: left;
   padding: 5px 11px;
   border-right: 0px;
@@ -34,7 +34,7 @@ const TH = styled.th`
   }
 `;
 
-const TD = styled.td`
+export const TableCell = styled.td`
   font-size: 16px;
   line-height: 24px;
   padding: 5px 11px;
@@ -57,10 +57,5 @@ export const TableRow = styled.tr`
     background-color: #fbfbfb;
   }
 `;
-
-export const TableCell = ({ isHeader, children }) => {
-  const Component = isHeader ? TH : TD;
-  return <Component>{children}</Component>;
-};
 
 export default Table;

@@ -71,7 +71,7 @@ Item.defaultProps = {
 };
 
 const filterHeadings = props => ({
-  headings: props.headings.filter(heading => heading.level === 3),
+  headings: props.headings.filter(heading => heading.level === 2),
 });
 
 function componentDidUpdate() {

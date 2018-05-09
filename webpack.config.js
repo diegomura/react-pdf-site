@@ -74,7 +74,7 @@ const config = {
       },
       {
         test: /\.md$/,
-        loader: 'text-loader',
+        use: ['babel-loader', '@mdx-js/loader']
       },
     ],
   },

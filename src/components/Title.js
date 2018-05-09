@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Heading from './Heading';
+import { H1 } from './Heading';
 import Paragraph from './Paragraph';
 
 const Wrapper = styled.div`
@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Title = styled(Heading)`
+const Title = styled(H1)`
   margin: 0;
 `;
 
@@ -31,7 +31,7 @@ const SubHeading = Paragraph.extend`
 
 export default () => (
   <Wrapper>
-    <Title level={1}>React-pdf</Title>
+    <Title>React-pdf</Title>
     <SubHeading>
       React renderer for creating PDF files on the browser, mobile and server.
     </SubHeading>

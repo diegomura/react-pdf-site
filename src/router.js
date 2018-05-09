@@ -8,13 +8,11 @@ import Repl from './containers/ReplContainer';
 const createRoutes = () => (
   <div>
     <Route path="/repl" component={Repl} />
-    {process.env.NODE_ENV !== 'production' && (
-      <Route path="/" component={App}>
-        <IndexRedirect to="home" />
-        <Route path="home" component={Home} />
-        <Route path="*" component={NotFound} />
-      </Route>
-    )}
+    <Route path="/temp" component={App}>
+      <IndexRedirect to="home" />
+      <Route path="home" component={Home} />
+      <Route path="*" component={NotFound} />
+    </Route>
   </div>
 );
 

@@ -8,33 +8,39 @@ import Link from './Link';
 import List from './List';
 import Title from './Title';
 import Button from './Button';
-import Heading from './Heading';
 import ListItem from './ListItem';
 import Paragraph from './Paragraph';
 import CodeBlock from './CodeBlock';
 import InlineCode from './InlineCode';
 import Blockquote from './Blockquote';
 import ThematicBreak from './ThematicBreak';
-import Table, { TableRow, TableCell } from './Table';
+import { H1, H2, H3, H4, H5, H6 } from './Heading';
+import Table, { TableRow, TableCell, TableHeading } from './Table';
 
 // assets
 import CornerGraphics from '../static/images/corner-graphics.png';
 import DocumentGraphic from '../static/images/document-graphic.png';
-import index from '../index.md';
+import Content from '../../docs/index.md';
 
-const renderers = {
-  list: List,
-  link: Link,
+const components = {
+  h1: H1,
+  h2: H2,
+  h3: H3,
+  h4: H4,
+  h5: H5,
+  h6: H6,
+  a: Link,
+  ul: List,
   table: Table,
+  p: Paragraph,
+  tr: TableRow,
+  li: ListItem,
+  td: TableCell,
   code: CodeBlock,
-  heading: Heading,
-  tableRow: TableRow,
-  listItem: ListItem,
-  tableCell: TableCell,
-  paragraph: Paragraph,
+  th: TableHeading,
+  hr: ThematicBreak,
   inlineCode: InlineCode,
   blockquote: Blockquote,
-  thematicBreak: ThematicBreak,
 };
 
 const CornerGraphicsImage = styled.img`
@@ -66,7 +72,7 @@ const Home = () => (
   <div>
     <Title />
     <Hero />
-    <Markdown source={index} renderers={renderers} />
+    <Content components={components} />
     <CornerGraphicsImage src={CornerGraphics} />
   </div>
 );

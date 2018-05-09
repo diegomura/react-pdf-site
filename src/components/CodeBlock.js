@@ -39,12 +39,12 @@ const CodeBlock = props => (
       <Handler type="eye" />
       <Handler type="files-o" />
     </Handlers>
-    <Code>{props.value}</Code>
+    <Code>{props.children}</Code>
   </Wrapper>
 );
 
 CodeBlock.propTypes = {
-  value: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
 export default CodeBlock;
