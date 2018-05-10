@@ -46,8 +46,8 @@ const ItemWrapper = styled.li`
 `;
 
 const ItemIcon = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   color: white;
   z-index: 100;
   display: flex;
