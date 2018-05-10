@@ -34,14 +34,14 @@ const ItemWrapper = styled.li`
   position: relative;
 
   &:before {
-    top: ${props => (props.position === 'bottom' ? '20px' : null)};
-    bottom: ${props => (props.position === 'top' ? '20px' : null)};
-    width: 2px;
+    width: 0px;
     content: '';
     height: 60px;
     display: block;
     position: absolute;
-    background: ${({ theme }) => theme.black};
+    border: ${({ theme }) => `1px dashed ${theme.black}`};
+    top: ${props => (props.position === 'bottom' ? '20px' : null)};
+    bottom: ${props => (props.position === 'top' ? '20px' : null)};
   }
 `;
 

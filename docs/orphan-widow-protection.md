@@ -8,14 +8,11 @@ When layout text, orphans and widows can make the difference between a *good* do
 
 But react-pdf does not reserve this protection just for text. You can adjust this protection to your convenience, by just overriding a some props attributes to **any react-pdf primitive**:
 
-| Prop name       | Description          | Type | Default  |
-| ------------- |:-------------:| ------:| -----:|
-| **orhpans**      | Enable/disable orphans protection   | *boolean*   |   *true* for Text, *false* otherwise |
-| **widows**      | Enable/disable widows protection     | *boolean* |   *true* for Text, *false* otherwise |
-| **orphanThreashold**      | Distance from the bottom of the page that an element needs to have to apply orphans protection | *integer* | 15 |
-| **widowThreashold**    | The minimum height in points an element should have to apply widows protection on it  | *integer* |   *Infinity* |
-| **orphanLines** *(text only)*     | Specify the minimum amount of lines a text should leave behind to be consider orphan | *integer* |   1 |
-| **widowLines** *(text only)*     | Specify the minimum amount of lines you want to leave for widow  | *integer* |   2 |
+| Prop name                  | Description   |  Type  | Default  |
+| -------------------------- |:-------------:| ------:| --------:|
+| minPresenceAhead       | Hint that no page wrapping should occur between all sibling elements following the element within _n_ points     | *Integer* |   0 |
+| orhpans *(text only)*  | Specifies the minimum number of lines in a text element that must be shown at the bottom of a page or its container.   | *Integer*   |   2 |
+| widows *(text only)*   | Specifies the minimum number of lines in a text element that must be shown at the top of a page or its container.     | *Integer* |   2 |
 
 > **Protip:** You can use this API to ensure that headings doesn't get rendered at the bottom of a page
 
