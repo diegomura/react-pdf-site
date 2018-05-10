@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Prism from 'prismjs';
+import { PrismCode } from 'react-prism';
 import Icon from './Icon';
 
 const Wrapper = styled.pre`
   position: relative;
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.black};
   margin-bottom: 40px;
+  background-color: ${({ theme }) => theme.black};
 `;
 
 const Handlers = styled.div`
@@ -27,15 +29,10 @@ const Handler = styled(Icon)`
   }
 `;
 
-const Code = styled.code`
-  display: block;
-  color: ${({ theme }) => theme.gray1};
-  background-color: initial;
-  padding: 24px 20px;
-  margin: 0px 4px;
-  font-size: 16px;
-  line-height: 24px;
-  border-radius: 4px;
+const Code = styled(PrismCode).attrs({
+  className: 'language-js',
+})`
+  color: #d8dee9;
 `;
 
 const CodeBlock = props => (

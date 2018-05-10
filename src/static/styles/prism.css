@@ -1,0 +1,141 @@
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"] {
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+  display: block;
+  background-color: initial;
+  padding: 24px 20px;
+  margin: 0px 4px;
+  border-radius: 4px;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	overflow: auto;
+	font-size: 16px;
+  line-height: 24px;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #3E3E3E;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: rgba(255, 255, 255, 0.4);
+}
+
+.token.punctuation {
+	color: #5FB3B3;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #CDD3DE;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #99C794;
+}
+
+.token.entity,
+.token.function-variable {
+	color: #6699CC;
+}
+
+.token.operator,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #CDD3DE;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #C594C5;
+}
+
+.token.class-name {
+	color: #CDD3DE;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #F99157;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}

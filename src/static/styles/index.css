@@ -1,5 +1,6 @@
 @import 'react-tippy/dist/tippy.css';
 @import "./fonts";
+@import './prism';
 @import "./shame";
 
 * {
