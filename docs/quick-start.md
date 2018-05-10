@@ -77,6 +77,10 @@ const App = () => (
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
+#### Render in mobile
+
+*Working on it...*
+
 <GoToExample />
 
 ### 4. Have fun!
