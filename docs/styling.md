@@ -83,7 +83,7 @@ const MyDocument = () => (
 
 ### Media queries
 
-There may be times in which applying different styles based on the document context. For that, we provide media-queries support (just as you would do it for the web!). You can query based on both `width` and `height` (min and max), and also `orientation`:
+There may be times in which you'll need to apply different styles based on the document context. For that, we provide media-queries support (just as you would do it for the web!). You can query based on both `width` and `height` (min and max), and also `orientation`:
 
 ```
 import React from 'react';
