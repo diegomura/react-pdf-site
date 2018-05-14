@@ -1,12 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import { H1 } from './Heading';
+import { H1 } from '../components/Heading';
 import CornerGraphics from '../static/images/corner-graphics.png';
 
 const CornerGraphicsImage = styled.img`
   position: absolute;
   top: 0;
   right: 0;
+`;
+
+const Section = styled.section`
+  flex: 1;
+  padding: 80px;
+  margin: 0 auto;
+  max-width: 1000px;
 `;
 
 const Title = styled(H1)`
@@ -28,10 +35,10 @@ const Title = styled(H1)`
 `;
 
 const NotFound = () => (
-  <div>
+  <Section>
     <CornerGraphicsImage src={CornerGraphics} />
     <Title level={1}>404: Oops! This page does not exist</Title>
-  </div>
+  </Section>
 );
 
 export default NotFound;

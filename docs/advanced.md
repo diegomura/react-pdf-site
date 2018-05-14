@@ -4,7 +4,6 @@ import EmojiRendering from './emoji-rendering.md'
 import DynamicContent from './dynamic-content.md'
 import Hyphenation from './hyphenation.md'
 import Debugging from './debugging.md'
-import RenderingProcess from './rendering-process.md'
 
 ## Advanced
 <PageWrapping components={components} />
@@ -13,4 +12,3 @@ import RenderingProcess from './rendering-process.md'
 <DynamicContent components={components} />
 <Debugging components={components} />
 <Hyphenation components={components} />
-<RenderingProcess components={components} />

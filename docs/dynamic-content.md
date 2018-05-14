@@ -1,4 +1,4 @@
-### Rendering dynamic content
+### Dynamic content
 
 With react-pdf is now possible to render dynamic text content based on the context in which a certain element is being rendered.
 

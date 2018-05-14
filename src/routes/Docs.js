@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Route, Switch, NavLink } from 'react-router-dom';
-import Home from '../routes/Home';
-import Guide from '../routes/Guide';
-import Components from '../routes/Components';
-import Styling from '../routes/Styling';
-import Advanced from '../routes/Advanced';
-import NotFound from '../components/NotFound';
+import Home from './Home';
+import Guide from './Guide';
+import RenderingProcess from './RenderingProcess';
+import Components from './Components';
+import Styling from './Styling';
+import Advanced from './Advanced';
+import NotFound from './NotFound';
 import SearchInput from '../components/SearchInput';
 import Nav from '../components/Nav';
 import Logo from '../components/Logo';
@@ -35,31 +36,30 @@ const Fixed = styled.div`
 `;
 
 const Docs = () => (
-  <div>
-    <Main>
-      <Nav>
-        <Fixed>
-          <SearchInput />
-          <NavLink to="/">
-            <Logo />
-          </NavLink>
-          <Menu />
-          <GitHubIcon />
-        </Fixed>
-      </Nav>
+  <Main>
+    <Nav>
+      <Fixed>
+        <SearchInput />
+        <NavLink to="/">
+          <Logo />
+        </NavLink>
+        <Menu />
+        <GitHubIcon />
+      </Fixed>
+    </Nav>
 
-      <Section>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/quick-start-guide" component={Guide} />
-          <Route path="/components" component={Components} />
-          <Route path="/styling" component={Styling} />
-          <Route path="/advanced" component={Advanced} />
-          <Route path="*" component={NotFound} />
-        </Switch>
-      </Section>
-    </Main>
-  </div>
+    <Section>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/quick-start-guide" component={Guide} />
+        <Route path="/rendering-process" component={RenderingProcess} />
+        <Route path="/components" component={Components} />
+        <Route path="/styling" component={Styling} />
+        <Route path="/advanced" component={Advanced} />
+        <Route path="*" component={NotFound} />
+      </Switch>
+    </Section>
+  </Main>
 );
 
 export default Docs;

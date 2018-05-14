@@ -34,6 +34,7 @@
     "react-pdf": "^2.5.3",
     "react-prism": "^4.3.2",
     "react-router-dom": "^4.2.2",
+    "react-router-hash-link": "^1.2.0",
     "react-tippy": "^1.2.2",
     "recompose": "^0.26.0",
     "regenerator-runtime": "^0.11.1",

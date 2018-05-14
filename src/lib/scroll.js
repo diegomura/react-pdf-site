@@ -5,7 +5,7 @@ const ScrollToTop = ({ children }) => children;
 
 function componentDidUpdate(prevProps) {
   if (this.props.location !== prevProps.location) {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }
 }
 

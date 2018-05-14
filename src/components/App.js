@@ -10,7 +10,7 @@ const App = () => (
     <ScrollToTop>
       <Switch>
         <Route exact path="/repl" component={Repl} />
-        <Route path="/" component={Docs} />
+        <Route strict path="/" component={Docs} />
       </Switch>
     </ScrollToTop>
   </BrowserRouter>
