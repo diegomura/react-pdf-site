@@ -1,3 +1,4 @@
+import NavigationButtons from '../src/components/NavigationButtons'
 import Document from './document.md'
 import Page from './page.md'
 import View from './view.md'
@@ -14,3 +15,10 @@ React-pdf follows the [React primitives](https://github.com/lelandrichardson/rea
 <Image components={components} />
 <Text components={components} />
 <Link components={components} />
+
+<NavigationButtons
+  backSrc="/rendering-process"
+  backText="Rendering process"
+  nextSrc="/styling"
+  nextText="Styling"
+/>

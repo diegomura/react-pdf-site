@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { withRouter } from 'react-router-dom';
-import { NavHashLink } from 'react-router-hash-link';
+import { NavHashLink as NavLink } from 'react-router-hash-link';
 import { compose, withState } from 'recompose';
 
 const activeClassName = 'nav-item-active';
 
-const MenuLink = styled(NavHashLink)`
+const MenuLink = styled(NavLink)`
   font-size: 16px;
   line-height: 24px;
   padding: 4px 10px;
@@ -58,7 +58,7 @@ const scroll = el => {
   const elemRect = el.getBoundingClientRect();
   const offset = elemRect.top - bodyRect.top;
 
-  window.scroll({
+  return window.scrollTo({
     top: offset - margin,
     left: 0,
     behavior: 'smooth',
@@ -68,8 +68,8 @@ const scroll = el => {
 const Item = withRouter(({ to, title, location, children, ...props }) => (
   <ItemWrapper>
     <MenuLink
-      scroll={scroll}
       to={to}
+      scroll={scroll}
       activeClassName={activeClassName}
       {...props}
     >

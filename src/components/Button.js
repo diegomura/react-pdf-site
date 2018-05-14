@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Icon from './Icon';
 
-const Wrapper = styled.a`
+const Wrapper = styled.button`
   border: 0px;
   outline: none;
   cursor: pointer;

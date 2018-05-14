@@ -1,3 +1,5 @@
+import NavigationButtons from '../src/components/NavigationButtons'
+
 ## Installation
 
 Starting with react-pdf is extremely simple.
@@ -14,3 +16,8 @@ yarn add @react-pdf/node
 yarn add @react-pdf/dom
 yarn add @react-pdf/mobile
 ```
+
+<NavigationButtons
+  nextSrc="/quick-start-guide"
+  nextText="Quick start guide"
+/>

@@ -1,4 +1,5 @@
 import OverviewTimeline from '../src/components/OverviewTimeline'
+import NavigationButtons from '../src/components/NavigationButtons'
 
 ## Rendering process overview
 
@@ -41,3 +42,10 @@ At this point we now have each element dimensions, and in which page they are. A
 ### 6. Finish document
 
 Once in this stage, we have a valid PDF document instance with a bunch of stuff in it. All it remain is deciding what we want to do with this data. This will vary depending on the binding you are using, but basically means either displaying or saving it.
+
+<NavigationButtons
+  backSrc="/quick-start-guide"
+  backText="Quick start guide"
+  nextSrc="/components"
+  nextText="Components"
+/>

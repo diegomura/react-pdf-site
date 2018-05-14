@@ -1,4 +1,5 @@
 import GoToExample from '../src/components/GoToExample'
+import NavigationButtons from '../src/components/NavigationButtons'
 
 ## Quick start guide
 > *If you know React, you already know react-pdf*
@@ -86,3 +87,10 @@ ReactDOM.render(<App />, document.getElementById('root'));
 ### 4. Have fun!
 
 Maybe the most important step: make use of all react-pdf capabilities to create beautiful and awesome documents!
+
+<NavigationButtons
+  backSrc="/"
+  backText="Installation"
+  nextSrc="/rendering-process"
+  nextText="Rendering process"
+/>

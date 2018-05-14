@@ -1,3 +1,4 @@
+import NavigationButtons from '../src/components/NavigationButtons'
 import PageWrapping from './page-wrapping.md'
 import OrphanWidowProtection from './orphan-widow-protection.md'
 import EmojiRendering from './emoji-rendering.md'
@@ -12,3 +13,8 @@ import Debugging from './debugging.md'
 <DynamicContent components={components} />
 <Debugging components={components} />
 <Hyphenation components={components} />
+
+<NavigationButtons
+  backSrc="/styling"
+  backText="Styling"
+/>

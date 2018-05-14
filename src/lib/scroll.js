@@ -4,8 +4,8 @@ import { compose, lifecycle } from 'recompose';
 const ScrollToTop = ({ children }) => children;
 
 function componentDidUpdate(prevProps) {
-  if (this.props.location !== prevProps.location) {
-    // window.scrollTo(0, 0);
+  if (this.props.location.pathname !== prevProps.location.pathname) {
+    window.scrollTo(0, 0);
   }
 }
 

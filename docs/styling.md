@@ -1,4 +1,5 @@
 import GoToExample from '../src/components/GoToExample'
+import NavigationButtons from '../src/components/NavigationButtons'
 
 ## Styling
 
@@ -114,4 +115,9 @@ const MyDocument = () => (
 
 <GoToExample />
 
----
+<NavigationButtons
+  backSrc="/components"
+  backText="Components"
+  nextSrc="/advanced"
+  nextText="Advanced"
+/>
