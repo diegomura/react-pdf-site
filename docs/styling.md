@@ -21,10 +21,11 @@ import React from 'react';
 import { Page, Text, View, Document, StyleSheet } from '@react-pdf/core';
 
 const styles = StyleSheet.create({
-  section: { color: red, textAlign: center }
+  page: { backgroundColor: 'blue' },
+  section: { color: 'white', textAlign: 'center', margin: 30 }
 });
 
-const MyDocument = () => (
+const doc = (
   <Document>
     <Page size="A4" style={styles.page}>
       <View style={styles.section}>
@@ -33,9 +34,11 @@ const MyDocument = () => (
     </Page>
   </Document>
 );
+
+ReactPDF.render(doc);
 ```
 
-<GoToExample />
+<GoToExample name="styles" />
 
 #### Inline styling
 
@@ -47,8 +50,8 @@ import { Page, Text, View, Document } from '@react-pdf/core';
 
 const MyDocument = () => (
   <Document>
-    <Page size="A4" style={styles.page}>
-      <View style={{ color: red, textAlign: center }}>
+    <Page size="A4" style={{ backgroundColor: 'blue' }}>
+      <View style={{ color: 'white', textAlign: 'center', margin: 30 }}>
         <Text>Section #1</Text>
       </View>
     </Page>
@@ -56,7 +59,7 @@ const MyDocument = () => (
 );
 ```
 
-<GoToExample />
+<GoToExample name="inline-styles" />
 
 #### Mixing both solutions
 
@@ -67,13 +70,14 @@ import React from 'react';
 import { Page, Text, View, Document, StyleSheet } from '@react-pdf/core';
 
 const styles = StyleSheet.create({
-  section: { textAlign: center }
+  page: { backgroundColor: 'blue' },
+  section: { textAlign: 'center', margin: 30 }
 });
 
 const MyDocument = () => (
   <Document>
     <Page size="A4" style={styles.page}>
-      <View style={[styles.section, { color }]}>
+      <View style={[styles.section, { color: 'white' }]}>
         <Text>Section #1</Text>
       </View>
     </Page>
@@ -83,7 +87,7 @@ const MyDocument = () => (
 
 > **Protip:** This can be useful when you want to apply both predefined styles, and styles based on props
 
-<GoToExample />
+<GoToExample name="mixed-styles" />
 
 ---
 
@@ -118,7 +122,7 @@ const MyDocument = () => (
 );
 ```
 
-<GoToExample />
+<GoToExample name="media-queries" />
 
 <NavigationButtons
   backSrc="/components"

@@ -50,7 +50,12 @@ class PDFViewer extends React.Component {
   }
 
   onDocumentLoad = ({ numPages }) => {
-    this.setState({ numPages });
+    const { currentPage } = this.state;
+
+    this.setState({
+      numPages,
+      currentPage: Math.min(currentPage, numPages),
+    });
   };
 
   onPreviousPage = () => {

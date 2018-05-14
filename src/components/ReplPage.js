@@ -79,17 +79,18 @@ const ReplPage = ({
   </Main>
 );
 
-LeftNav.propTypes = {
-  onBackClick: PropTypes.func.isRequired,
-};
-
 ReplPage.propTypes = {
-  code: PropTypes.string.isRequired,
+  code: PropTypes.string,
+  documentUrl: PropTypes.string,
   shareUrl: PropTypes.string.isRequired,
-  documentUrl: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   onUrlChange: PropTypes.func.isRequired,
   onBackClick: PropTypes.func.isRequired,
+};
+
+ReplPage.defaultProps = {
+  code: null,
+  documentUrl: null,
 };
 
 export default ReplPage;

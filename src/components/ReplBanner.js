@@ -71,9 +71,14 @@ const ReplBanner = ({ documentUrl, shareUrl, code }) => (
 );
 
 ReplBanner.propTypes = {
-  code: PropTypes.string.isRequired,
+  code: PropTypes.string,
+  documentUrl: PropTypes.string,
   shareUrl: PropTypes.string.isRequired,
-  documentUrl: PropTypes.string.isRequired,
+};
+
+ReplBanner.defaultProps = {
+  code: null,
+  documentUrl: null,
 };
 
 export default ReplBanner;

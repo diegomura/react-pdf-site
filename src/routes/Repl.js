@@ -6,6 +6,7 @@ import {
   withProps,
   lifecycle,
 } from 'recompose';
+import qs from 'query-string';
 import { browserHistory } from 'react-router';
 import Loading from '../components/Loading';
 import withTheme from '../styled/withTheme';
@@ -15,10 +16,13 @@ import { compress, decompress } from '../lib/compress';
 const examples = {
   text: import('raw-loader!../examples/text.txt'),
   knobs: import('raw-loader!../examples/knobs.txt'),
+  styles: import('raw-loader!../examples/styles.txt'),
   resume: import('raw-loader!../examples/resume.txt'),
   images: import('raw-loader!../examples/images.txt'),
   fractals: import('raw-loader!../examples/fractals.txt'),
   'page-wrap': import('raw-loader!../examples/page-wrap.txt'),
+  'mixed-styles': import('raw-loader!../examples/mixed-styles.txt'),
+  'inline-styles': import('raw-loader!../examples/inline-styles.txt'),
   'media-queries': import('raw-loader!../examples/media-queries.txt'),
 };
 
@@ -67,7 +71,7 @@ const setInitialValueFromExample = async example => {
 
 async function componentDidMount() {
   let initialValue = '';
-  const { code, example } = this.props.location.query;
+  const { code, example } = qs.parse(this.props.location.search);
 
   if (code) {
     initialValue = setInitialValueFromCode(code);

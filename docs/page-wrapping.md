@@ -18,7 +18,7 @@ const doc = () => (
 
 And *voilà*. Now every time an element gets outside the page, it's wrapped to fill the remaining space (if any) and the remaining part is added into a new page. *Pretty handy right?*
 
-<GoToExample />
+<GoToExample name="page-wrap" />
 
 #### Breakable vs. unbreakable components
 
