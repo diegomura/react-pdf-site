@@ -43,9 +43,10 @@ const Fixed = styled.div`
 `;
 
 const CornerGraphicsImage = styled.img`
-  position: absolute;
   top: 0;
   right: 0;
+  width: 15%;
+  position: absolute;
 `;
 
 const Docs = () => (

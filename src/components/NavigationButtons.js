@@ -7,6 +7,7 @@ import Button from './Button';
 const Wrapper = styled.div`
   display: flex;
   margin-top: 60px;
+  padding: 0px 2px 2px 2px;
 `;
 
 const Cell = styled.div`
