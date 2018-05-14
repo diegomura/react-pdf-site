@@ -73,4 +73,9 @@ const DebugSample = () => (
   </Wrapper>
 );
 
+Item.propTypes = {
+  color: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
+
 export default DebugSample;

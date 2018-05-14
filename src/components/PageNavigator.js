@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { branch, renderNothing } from 'recompose';
 import Icon from './Icon';
@@ -41,6 +42,13 @@ const PageNavigator = ({
     />
   </Wrapper>
 );
+
+PageNavigator.propTypes = {
+  currentPage: PropTypes.number.isRequired,
+  numPages: PropTypes.number.isRequired,
+  onPreviousPage: PropTypes.func.isRequired,
+  onNextPage: PropTypes.func.isRequired,
+};
 
 export default branch(props => props.numPages <= 1, renderNothing)(
   PageNavigator,

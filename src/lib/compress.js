@@ -5,7 +5,7 @@ const decimalToHex = d => {
   const padding = 2;
 
   while (hex.length < padding) {
-    hex = '0' + hex;
+    hex = `0${hex}`;
   }
 
   return hex;

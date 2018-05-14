@@ -1,4 +1,3 @@
-import React from 'react';
 import Loadable from 'react-loadable';
 import {
   compose,
@@ -11,7 +10,7 @@ import { browserHistory } from 'react-router';
 import Loading from '../components/Loading';
 import withTheme from '../styled/withTheme';
 import trackAnalytics from '../lib/analytics';
-import { compress, decompress } from '../utils/compress';
+import { compress, decompress } from '../lib/compress';
 
 const examples = {
   text: import('raw-loader!../examples/text.txt'),
@@ -28,7 +27,7 @@ const LoadableComponent = Loadable({
   loading: Loading,
 });
 
-const onBackClick = props => () => {
+const onBackClick = () => () => {
   browserHistory.push('/');
 };
 

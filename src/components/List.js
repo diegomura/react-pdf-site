@@ -22,7 +22,7 @@ const List = ({ ordered, children, ...props }) => {
 
 List.propTypes = {
   ordered: PropTypes.bool.isRequired,
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
 };
 
 export default List;

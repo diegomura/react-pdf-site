@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { branch, renderNothing } from 'recompose';
 import Icon from './Icon';
@@ -29,6 +30,16 @@ const ErrorMessage = ({ className, children, onClose }) => (
     <Close onClick={onClose} />
   </Wrapper>
 );
+
+ErrorMessage.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
+
+ErrorMessage.defaultProps = {
+  className: null,
+};
 
 export default branch(
   props => !props.children || !props.children.length === 0,

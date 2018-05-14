@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Icon from './Icon';
 
@@ -37,5 +38,15 @@ const Button = ({ icon, children, ...props }) => (
     {icon && <ButtonIcon type={icon} />}
   </Wrapper>
 );
+
+Button.propTypes = {
+  icon: PropTypes.string,
+  children: PropTypes.node,
+};
+
+Button.defaultProps = {
+  icon: null,
+  children: '',
+};
 
 export default Button;

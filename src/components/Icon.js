@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const Icon = ({ type, size, className, style = {}, ...props }) => (
+const Icon = ({ type, size, className, style, ...props }) => (
   <i
     className={classNames(`fa fa-${type}`, className)}
     style={{ fontSize: size, ...style }}
@@ -15,6 +15,12 @@ Icon.propTypes = {
   size: PropTypes.number,
   className: PropTypes.string,
   style: PropTypes.object,
+};
+
+Icon.defaultProps = {
+  size: 14,
+  className: null,
+  style: {},
 };
 
 export default Icon;

@@ -14,5 +14,3 @@ yarn add @react-pdf/node
 yarn add @react-pdf/dom
 yarn add @react-pdf/mobile
 ```
-
----

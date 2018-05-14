@@ -16,4 +16,8 @@ const GoToExample = ({ name }) => (
   </Wrapper>
 );
 
+GoToExample.propTypes = {
+  name: PropTypes.string.isRequired,
+};
+
 export default GoToExample;

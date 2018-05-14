@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withProps } from 'recompose';
 import styled, { css } from 'styled-components';
-import toLowerCase from '../utils/toLowerCase';
-import { mapHeadingRegistry } from '../lib/headings';
+import toLowerCase from '../lib/toLowerCase';
 
 const BaseHeading = css`
   font-family: 'Taviraj';
@@ -60,41 +59,24 @@ const Heading6 = styled.h6`
 
 const Headings = [Heading1, Heading2, Heading3, Heading4, Heading5, Heading6];
 
-class Heading extends React.Component {
-  componentDidMount() {
-    this.props.registerHeading({
-      level: this.props.level,
-      name: this.props.children,
-      element: this.node,
-    });
-  }
+const Heading = ({ level, children, ...props }) => {
+  const HeadingComponent = Headings[level - 1];
 
-  render() {
-    const { level, children, ...props } = this.props;
-    const HeadingComponent = Headings[level - 1];
+  return (
+    <HeadingComponent id={toLowerCase(children)} {...props}>
+      {children}
+    </HeadingComponent>
+  );
+};
 
-    return (
-      <HeadingComponent
-        innerRef={n => (this.node = n)}
-        id={toLowerCase(children)}
-        {...props}
-      >
-        {children}
-      </HeadingComponent>
-    );
-  }
-}
-
-const EnhacedHeading = mapHeadingRegistry(Heading);
-
-export const H1 = withProps({ level: 1 })(EnhacedHeading);
-export const H2 = withProps({ level: 2 })(EnhacedHeading);
-export const H3 = withProps({ level: 3 })(EnhacedHeading);
-export const H4 = withProps({ level: 4 })(EnhacedHeading);
-export const H5 = withProps({ level: 5 })(EnhacedHeading);
-export const H6 = withProps({ level: 6 })(EnhacedHeading);
+export const H1 = withProps({ level: 1 })(Heading);
+export const H2 = withProps({ level: 2 })(Heading);
+export const H3 = withProps({ level: 3 })(Heading);
+export const H4 = withProps({ level: 4 })(Heading);
+export const H5 = withProps({ level: 5 })(Heading);
+export const H6 = withProps({ level: 6 })(Heading);
 
 Heading.propTypes = {
-  level: PropTypes.number,
-  children: PropTypes.node,
+  level: PropTypes.number.isRequired,
+  children: PropTypes.node.isRequired,
 };

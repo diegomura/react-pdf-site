@@ -22,4 +22,8 @@ SearchInput.propTypes = {
   onChange: PropTypes.func,
 };
 
+SearchInput.defaultProps = {
+  onChange: () => null,
+};
+
 export default SearchInput;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Icon from './Icon';
 
@@ -100,5 +101,11 @@ const OverviewTimeline = () => (
     </TimelineItem>
   </List>
 );
+
+TimelineItem.propTypes = {
+  icon: PropTypes.string.isRequired,
+  position: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
+};
 
 export default OverviewTimeline;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Document, Page } from 'react-pdf/build/entry.webpack';
 import { PDFRenderer, createElement, pdf } from '@react-pdf/core';
@@ -18,7 +19,7 @@ const DocumentWrapper = styled.div`
   justify-content: center;
 `;
 
-export default class extends React.Component {
+class PDFViewer extends React.Component {
   state = { document: null, numPages: null, currentPage: 1 };
 
   componentWillReceiveProps(newProps) {
@@ -90,3 +91,10 @@ export default class extends React.Component {
     );
   }
 }
+
+PDFViewer.propTypes = {
+  document: PropTypes.object.isRequired,
+  onUrlChange: PropTypes.func.isRequired,
+};
+
+export default PDFViewer;

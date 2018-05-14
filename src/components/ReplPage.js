@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import Nav from './Nav';
 import Icon from './Icon';
 import Logo from './Logo';
-import Menu from './Menu';
 import Repl from './Repl';
 import ReplBanner from './ReplBanner';
 import GitHubIcon from './GitHubIcon';
@@ -27,7 +27,7 @@ const NavWrapper = Nav.extend`
   flex-direction: column;
 `;
 
-const BackButton = styled.button`
+const BackButton = styled(NavLink)`
   border: 0px;
   width: 100%;
   height: 64px;
@@ -36,6 +36,7 @@ const BackButton = styled.button`
   outline: none;
   cursor: pointer;
   align-items: center;
+  text-decoration: none;
   justify-content: center;
   background: ${({ theme }) => theme.red};
 `;
@@ -49,13 +50,11 @@ const SmallLogo = styled(Logo)`
   margin-top: 64px;
 `;
 
-const LeftNav = ({ onBackClick }) => (
+const LeftNav = () => (
   <NavWrapper width="64px">
-    {process.env.NODE_ENV !== 'production' && (
-      <BackButton onClick={onBackClick}>
-        <Icon type="arrow-left" size={18} />
-      </BackButton>
-    )}
+    <BackButton to="/">
+      <Icon type="arrow-left" size={18} />
+    </BackButton>
     <NavBody>
       <SmallLogo size="32px" />
     </NavBody>
@@ -63,11 +62,10 @@ const LeftNav = ({ onBackClick }) => (
   </NavWrapper>
 );
 
-export default ({
+const ReplPage = ({
   code,
   shareUrl,
   documentUrl,
-  children,
   onChange,
   onUrlChange,
   onBackClick,
@@ -80,3 +78,18 @@ export default ({
     </Section>
   </Main>
 );
+
+LeftNav.propTypes = {
+  onBackClick: PropTypes.func.isRequired,
+};
+
+ReplPage.propTypes = {
+  code: PropTypes.string.isRequired,
+  shareUrl: PropTypes.string.isRequired,
+  documentUrl: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onUrlChange: PropTypes.func.isRequired,
+  onBackClick: PropTypes.func.isRequired,
+};
+
+export default ReplPage;

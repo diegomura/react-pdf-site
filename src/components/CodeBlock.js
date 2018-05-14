@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -46,7 +47,12 @@ const CodeBlock = props => (
 );
 
 CodeBlock.propTypes = {
+  isPlayable: PropTypes.bool,
   children: PropTypes.string.isRequired,
+};
+
+CodeBlock.defaultProps = {
+  isPlayable: false,
 };
 
 export default CodeBlock;

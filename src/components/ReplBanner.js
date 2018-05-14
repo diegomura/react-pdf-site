@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Button from './Button';
 import Clipboard from './Clipboard';
@@ -68,5 +69,11 @@ const ReplBanner = ({ documentUrl, shareUrl, code }) => (
     </Clipboard>
   </Wrapper>
 );
+
+ReplBanner.propTypes = {
+  code: PropTypes.string.isRequired,
+  shareUrl: PropTypes.string.isRequired,
+  documentUrl: PropTypes.string.isRequired,
+};
 
 export default ReplBanner;

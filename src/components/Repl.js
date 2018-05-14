@@ -1,22 +1,20 @@
+import 'codemirror/mode/jsx/jsx';
+import 'codemirror/keymap/sublime';
+import 'codemirror/addon/edit/closetag';
+import 'codemirror/addon/comment/comment';
+import 'codemirror/addon/edit/matchbrackets';
+import 'codemirror/addon/edit/closebrackets';
+import 'codemirror/addon/display/placeholder';
+import 'codemirror/addon/selection/active-line';
+
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import debounce from 'lodash.debounce';
 import CodeMirror from 'codemirror';
-import Paragraph from './Paragraph';
 import PDFViewer from './PDFViewer';
 import ErrorMessage from './ErrorMessage';
-import Button from '../components/Button';
-import transpile from '../utils/transpile';
-
-// codemirror setup
-import 'codemirror/mode/jsx/jsx';
-import 'codemirror/keymap/sublime';
-import 'codemirror/addon/comment/comment';
-import 'codemirror/addon/edit/closetag.js';
-import 'codemirror/addon/edit/matchbrackets';
-import 'codemirror/addon/edit/closebrackets';
-import 'codemirror/addon/selection/active-line';
-import 'codemirror/addon/display/placeholder.js';
+import transpile from '../lib/transpile';
 
 const debounceTranspile = debounce(transpile, 1000);
 
@@ -101,7 +99,6 @@ class Repl extends React.PureComponent {
 
     this.transpile(code);
   }
-
   onErrorClose = () => {
     this.setState({ error: null });
   };
@@ -119,10 +116,12 @@ class Repl extends React.PureComponent {
       <Wrapper>
         <CodePanel>
           <textarea
+            autoFocus
             autoComplete="off"
-            autoFocus={true}
             defaultValue={this.props.value}
-            ref={node => (this.textarea = node)}
+            ref={node => {
+              this.textarea = node;
+            }}
             placeholder="Write code here..."
           />
           <CodeError onClose={this.onErrorClose}>{this.state.error}</CodeError>
@@ -137,5 +136,11 @@ class Repl extends React.PureComponent {
     );
   }
 }
+
+Repl.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onUrlChange: PropTypes.func.isRequired,
+};
 
 export default Repl;

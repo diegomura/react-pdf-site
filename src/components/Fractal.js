@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Text, View, StyleSheet } from '@react-pdf/core';
 
 const palette = [
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
 const toggle = direction => (direction === 'column' ? 'row' : 'column');
 
 // Creates Fractal Component that renders it's step with a background color
-const Fractal = ({ steps, direction = 'column' }) => {
+const Fractal = ({ steps, direction }) => {
   if (steps === 0) {
     return null;
   }
@@ -62,6 +63,16 @@ const Fractal = ({ steps, direction = 'column' }) => {
       </View>
     </View>
   );
+};
+
+Fractal.propTypes = {
+  steps: PropTypes.number,
+  direction: PropTypes.string,
+};
+
+Fractal.defaultProps = {
+  steps: 15,
+  direction: 'column',
 };
 
 export default Fractal;

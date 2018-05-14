@@ -1,7 +1,7 @@
 import GoToExample from '../src/components/GoToExample'
 
 ## Quick start guide
-> *If you know React, you already know how to use react-pdf*
+> *If you know React, you already know react-pdf*
 
 React-pdf is what it's called a *React renderer*. This basically means that enables you to use React capabilities that you already know and love, but to produce something else than web or mobile apps. In this case: **PDF documents**
 
@@ -86,5 +86,3 @@ ReactDOM.render(<App />, document.getElementById('root'));
 ### 4. Have fun!
 
 Maybe the most important step: make use of all react-pdf capabilities to create beautiful and awesome documents!
-
----
