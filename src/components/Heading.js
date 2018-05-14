@@ -24,6 +24,8 @@ const Heading2 = styled.h2`
   font-weight: 500;
   letter-spacing: 1px;
   line-height: 40px;
+  margin-top: 32px;
+  margin-bottom: 24px;
 `;
 
 const Heading3 = styled.h3`
@@ -32,6 +34,8 @@ const Heading3 = styled.h3`
   font-weight: 500;
   letter-spacing: 1px;
   line-height: 32px;
+  margin-top: 48px;
+  margin-bottom: 24px;
 `;
 
 const Heading4 = styled.h4`

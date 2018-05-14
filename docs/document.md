@@ -11,3 +11,5 @@ This component represent the PDF document itself. It *must* be the root of your 
 | keywords               | Sets keywords associated info on the document's metadata  | *String* | _undefined_ |
 | creator                |  Sets creator info on the document's metadata             | *String* | _react-pdf_ |
 | producer               | Sets producer info on the document's metadata             | *String* | _react-pdf_ |
+
+---

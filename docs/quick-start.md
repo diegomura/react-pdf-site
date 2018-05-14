@@ -1,5 +1,8 @@
+import EditButton from '../src/components/EditButton'
 import GoToExample from '../src/components/GoToExample'
 import NavigationButtons from '../src/components/NavigationButtons'
+
+<EditButton to="https://github.com/react-pdf/site/blob/master/docs/quick-start.md" />
 
 ## Quick start guide
 > *If you know React, you already know react-pdf*

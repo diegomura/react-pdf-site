@@ -1,13 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { H1 } from '../components/Heading';
-import CornerGraphics from '../static/images/corner-graphics.png';
-
-const CornerGraphicsImage = styled.img`
-  position: absolute;
-  top: 0;
-  right: 0;
-`;
 
 const Section = styled.section`
   flex: 1;
@@ -36,7 +29,6 @@ const Title = styled(H1)`
 
 const NotFound = () => (
   <Section>
-    <CornerGraphicsImage src={CornerGraphics} />
     <Title level={1}>404: Oops! This page does not exist</Title>
   </Section>
 );

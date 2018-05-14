@@ -1,5 +1,8 @@
+import EditButton from '../src/components/EditButton'
 import GoToExample from '../src/components/GoToExample'
 import NavigationButtons from '../src/components/NavigationButtons'
+
+<EditButton to="https://github.com/react-pdf/site/blob/master/docs/styling.md" />
 
 ## Styling
 
@@ -81,6 +84,8 @@ const MyDocument = () => (
 > **Protip:** This can be useful when you want to apply both predefined styles, and styles based on props
 
 <GoToExample />
+
+---
 
 ### Media queries
 

@@ -9,3 +9,5 @@ The most fundamental component for building a UI and is designed to be nested in
 | wrap         | Enable/disable page wrapping for element [See more](#page-wrapping)  | *Boolean*         | _false_     |
 | style        | Defines view styles. [See more](#styling)                            | *Object*, *Array* | _undefined_ |
 | debug        | Enables debug mode on view bounding box. [See more](#debugging)      | *Boolean*         | _false_     |
+
+---

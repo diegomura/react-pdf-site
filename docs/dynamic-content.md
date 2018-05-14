@@ -27,3 +27,5 @@ const doc = () => (
 
 
 > **Protip:** Use this API in conjunction to fixed elements to render page number indicators
+
+---

@@ -1,3 +1,4 @@
+import EditButton from '../src/components/EditButton'
 import NavigationButtons from '../src/components/NavigationButtons'
 import PageWrapping from './page-wrapping.md'
 import OrphanWidowProtection from './orphan-widow-protection.md'
@@ -5,6 +6,8 @@ import EmojiRendering from './emoji-rendering.md'
 import DynamicContent from './dynamic-content.md'
 import Hyphenation from './hyphenation.md'
 import Debugging from './debugging.md'
+
+<EditButton to="https://github.com/react-pdf/site/blob/master/docs/advanced.md" />
 
 ## Advanced
 <PageWrapping components={components} />

@@ -5,7 +5,6 @@ import Button from './Button';
 import { injectComponents } from '../lib/markdown';
 
 // assets
-import CornerGraphics from '../static/images/corner-graphics.png';
 import DocumentGraphic from '../static/images/document-graphic.png';
 import Content from '../../docs/installation.md';
 
@@ -32,7 +31,7 @@ const HeroWrapper = styled.div`
 const Hero = () => (
   <HeroWrapper>
     <DocumentGraphicImage />
-    <Button>Try it out!</Button>
+    <Button primary>Try it out!</Button>
   </HeroWrapper>
 );
 
@@ -41,7 +40,6 @@ const Home = () => (
     <Title />
     <Hero />
     <EnhancedContent />
-    <CornerGraphicsImage src={CornerGraphics} />
   </div>
 );
 

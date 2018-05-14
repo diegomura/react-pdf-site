@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 
 const GoToExample = ({ name }) => (
   <Wrapper>
-    <Button>See it in action →</Button>
+    <Button primary>See it in action →</Button>
   </Wrapper>
 );
 

@@ -8,3 +8,5 @@ React-pdf ships a built-in debugging system you can use whenever you have doubts
 <DebugSample />
 
 <GoToExample />
+
+---

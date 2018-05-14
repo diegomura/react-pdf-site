@@ -19,14 +19,14 @@ const NavigationButtons = ({ backSrc, backText, nextSrc, nextText }) => (
     <Cell align="left">
       {backSrc && (
         <NavLink to={backSrc}>
-          <Button>{`← ${backText}`}</Button>
+          <Button primary>{`← ${backText}`}</Button>
         </NavLink>
       )}
     </Cell>
     <Cell align="right">
       {nextSrc && (
         <NavLink to={nextSrc}>
-          <Button>{`${nextText} →`}</Button>
+          <Button primary>{`${nextText} →`}</Button>
         </NavLink>
       )}
     </Cell>

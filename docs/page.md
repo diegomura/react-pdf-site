@@ -10,3 +10,5 @@ Represents single page inside the PDF document, or a subset of them if using the
 | wrap            | Enable page wrapping for this page. [See more](#page-wrapping)          | *Boolean* | _false_ |
 | style           | Defines page styles. [See more](#styling)               | *Object*, *Array* | _undefined_ |
 | debug           | Enables debug mode on page bounding box. [See more](#debugging)         | *Boolean* | _false_ |
+
+---
