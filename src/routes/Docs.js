@@ -47,6 +47,7 @@ const CornerGraphicsImage = styled.img`
   right: 0;
   width: 15%;
   position: absolute;
+  pointer-events: none;
 `;
 
 const Docs = () => (
