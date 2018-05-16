@@ -6,11 +6,11 @@ import {
   withProps,
   lifecycle,
 } from 'recompose';
-import qs from 'query-string';
 import { browserHistory } from 'react-router';
 import Loading from '../components/Loading';
 import withTheme from '../styled/withTheme';
 import trackAnalytics from '../lib/analytics';
+import { getUrlParams } from '../lib/query';
 import { compress, decompress } from '../lib/compress';
 
 const examples = {
@@ -71,7 +71,7 @@ const setInitialValueFromExample = async example => {
 
 async function componentDidMount() {
   let initialValue = '';
-  const { code, example } = qs.parse(this.props.location.search);
+  const { code, example } = getUrlParams(this.props.location.search);
 
   if (code) {
     initialValue = setInitialValueFromCode(code);
