@@ -20,7 +20,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /(pdfkit|linebreak|fontkit|unicode|brotli|png-js).*\.js$/,
+        test: /(pdfkit|linebreak|fontkit|unicode|png-js).*\.js$/,
         loader: 'transform-loader?brfs',
       },
       {
