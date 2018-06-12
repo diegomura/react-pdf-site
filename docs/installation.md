@@ -9,7 +9,7 @@ First, install the _core_ package:
 yarn add @react-pdf/core
 ```
 
-Afterwards, you will need to install the correct bindings to target the desired platform. These came in three different flavours:
+Afterwards, you will need to install the correct bindings to target the desired platform. These come in three different flavours:
 
 ```
 yarn add @react-pdf/node
