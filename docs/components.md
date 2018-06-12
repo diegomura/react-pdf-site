@@ -10,7 +10,7 @@ import Link from './link.md'
 <EditButton to="https://github.com/react-pdf/site/blob/master/docs/components.md" />
 
 ## Components
-React-pdf follows the [React primitives](https://github.com/lelandrichardson/react-primitives) specification, making the learing process very straightforward if you came from another React environment (such as react-native). Additionally, it implements some custom Components types that represent PDF document particular structure.
+React-pdf follows the [React primitives](https://github.com/lelandrichardson/react-primitives) specification, making the learning process very straightforward if you come from another React environment (such as react-native). Additionally, it implements custom Component types that allows you to structure your PDF document.
 
 <Document components={components} />
 <Page components={components} />

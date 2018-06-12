@@ -1,6 +1,6 @@
 ### Link
 
-A React component for displaying an hyperlink. Link supports to be nested inside a Text component, or being rendered on inside any other valid primitive.
+A React component for displaying an hyperlink. Link’s can be nested inside a Text component, or being inside any other valid primitive.
 
 #### Valid props
 
