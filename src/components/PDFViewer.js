@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Document, Page } from 'react-pdf/build/entry.webpack';
-import { PDFRenderer, createElement, pdf } from '@react-pdf/core';
+import { PDFRenderer, createElement, pdf } from '@react-pdf/react-pdf';
 import PageNavigator from './PageNavigator';
 
 const Wrapper = styled.div`
@@ -30,6 +30,8 @@ class PDFViewer extends React.Component {
       this.setState({ document: null });
       return;
     }
+
+    console.log(newProps.document)
 
     const container = createElement('ROOT');
     const mountNode = PDFRenderer.createContainer(container);

@@ -8,7 +8,7 @@ import {
   View,
   Image,
   StyleSheet,
-} from '@react-pdf/core';
+} from '@react-pdf/react-pdf';
 
 const primitives = { Document, Page, Text, Link, View, Image, StyleSheet };
 

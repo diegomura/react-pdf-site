@@ -21,7 +21,7 @@ Let's make the code speak from itself:
 
 ```
 import React from 'react';
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/core';
+import { Page, Text, View, Document, StyleSheet } from '@react-pdf/react-pdf';
 
 // Create styles
 const styles = StyleSheet.create({

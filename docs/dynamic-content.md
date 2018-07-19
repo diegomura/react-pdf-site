@@ -5,7 +5,7 @@ With react-pdf is now possible to render dynamic text content based on the conte
 All you have to do is passing by a function to the `render` prop of the `<Text />` component. The result will be rendered inside the text block as children.
 
 ```
-import { Document, Page } from '@react-pdf/core'
+import { Document, Page } from '@react-pdf/react-pdf'
 
 const doc = () => (
   <Document>
