@@ -94,6 +94,7 @@ const config = {
     ),
     new CopyWebpackPlugin([
       { from: './static/images/examples/*.jpg', to: './', flatten: true },
+      { from: './static/images/examples/*.png', to: './', flatten: true },
     ]),
   ],
 };

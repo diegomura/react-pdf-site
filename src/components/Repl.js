@@ -15,7 +15,6 @@ import CodeMirror from 'codemirror';
 import PDFViewer from './PDFViewer';
 import ErrorMessage from './ErrorMessage';
 import transpile from '../lib/transpile';
-import { Document, Page, Text } from '@react-pdf/react-pdf';
 
 const debounceTranspile = debounce(transpile, 1000);
 
@@ -128,11 +127,6 @@ class Repl extends React.PureComponent {
           <CodeError onClose={this.onErrorClose}>{this.state.error}</CodeError>
         </CodePanel>
         <PDFPanel>
-          {/* <Document>
-            <Page>
-              <Text>Hola</Text>
-            </Page>
-          </Document> */}
           <PDFViewer
             document={this.state.element}
             onUrlChange={this.props.onUrlChange}

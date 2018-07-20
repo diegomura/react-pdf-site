@@ -136,19 +136,24 @@
     tiny-inflate "^1.0.2"
     unicode-trie "^0.3.0"
 
-"@react-pdf/pdfkit@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf/pdfkit/-/pdfkit-1.0.0.tgz#752408c11f77466e7c85054b40de636b4e5b0d0d"
+"@react-pdf/pdfkit@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@react-pdf/pdfkit/-/pdfkit-1.1.0.tgz#6e059aca96d44c5ae4503147628700a222ddbb21"
   dependencies:
     "@react-pdf/fontkit" "^1.11.0"
-    png-js ">=0.1.0"
+    "@react-pdf/png-js" "^1.0.0"
 
-"@react-pdf/react-pdf@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@react-pdf/react-pdf/-/react-pdf-0.0.3.tgz#65a900d8dab1ca82bac66a3c0b972cf5c82a1d69"
+"@react-pdf/png-js@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@react-pdf/png-js/-/png-js-1.0.0.tgz#00fcb969dca4ce82a0a7673413ade039e47b361e"
+
+"@react-pdf/react-pdf@1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@react-pdf/react-pdf/-/react-pdf-1.0.0-alpha.1.tgz#8b12df479ef59a5cd2c184e616603a882f883665"
   dependencies:
     "@react-pdf/fontkit" "^1.11.0"
-    "@react-pdf/pdfkit" "^1.0.0"
+    "@react-pdf/pdfkit" "^1.1.0"
+    "@react-pdf/png-js" "^1.0.0"
     "@react-pdf/script-itemizer" "^0.1.8"
     "@react-pdf/textkit-core" "0.1.14"
     "@textkit/justification-engine" "^0.1.6"
@@ -173,7 +178,6 @@
     lodash.topairsin "^4.3.0"
     lodash.upperfirst "^4.3.1"
     media-engine "^1.0.3"
-    png-js "0.1.1"
     react "^16.4.1"
     react-reconciler "^0.7.0"
     yoga-layout "1.9.3"
@@ -6497,10 +6501,6 @@ pn@^1.0.0, pn@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
 
-png-js@0.1.1, png-js@>=0.1.0:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/png-js/-/png-js-0.1.1.tgz#1cc7c212303acabe74263ec3ac78009580242d93"
-
 pngjs@^3.0.0, pngjs@^3.2.0:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-3.3.2.tgz#097c3c2a75feb223eadddea6bc9f0050cf830bc3"
@@ -8752,12 +8752,6 @@ tr46@^1.0.0:
   resolved "https://registry.yarnpkg.com/tr46/-/tr46-1.0.1.tgz#a8b13fd6bfd2489519674ccde55ba3693b706d09"
   dependencies:
     punycode "^2.1.0"
-
-transform-loader@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/transform-loader/-/transform-loader-0.2.4.tgz#e5c87877ba96d51d3f225368587b46e226d1cec9"
-  dependencies:
-    loader-utils "^1.0.2"
 
 trim-lines@^1.0.0:
   version "1.1.1"

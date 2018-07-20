@@ -31,8 +31,6 @@ class PDFViewer extends React.Component {
       return;
     }
 
-    console.log(newProps.document)
-
     const container = createElement('ROOT');
     const mountNode = PDFRenderer.createContainer(container);
 
@@ -100,8 +98,12 @@ class PDFViewer extends React.Component {
 }
 
 PDFViewer.propTypes = {
-  document: PropTypes.object.isRequired,
+  document: PropTypes.object,
   onUrlChange: PropTypes.func.isRequired,
+};
+
+PDFViewer.defaultProps = {
+  document: null,
 };
 
 export default PDFViewer;

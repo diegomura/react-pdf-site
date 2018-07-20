@@ -13,7 +13,7 @@
     "prebuild": "rimraf ./dist"
   },
   "dependencies": {
-    "@react-pdf/react-pdf": "^0.0.3",
+    "@react-pdf/react-pdf": "1.0.0-alpha.1",
     "babel-eslint": "^8.2.3",
     "buble": "^0.19.3",
     "classnames": "^2.2.5",

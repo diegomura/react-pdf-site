@@ -1,7 +1,6 @@
 import React from 'react';
 import { transform } from 'buble';
 import {
-  Document,
   Page,
   Text,
   Link,
@@ -9,6 +8,8 @@ import {
   Image,
   StyleSheet,
 } from '@react-pdf/react-pdf';
+
+const Document = 'DOCUMENT';
 
 const primitives = { Document, Page, Text, Link, View, Image, StyleSheet };
 
