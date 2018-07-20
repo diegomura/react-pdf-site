@@ -20,10 +20,6 @@ const config = {
   module: {
     rules: [
       {
-        test: /(pdfkit|linebreak|fontkit|unicode|png-js).*\.js$/,
-        loader: 'transform-loader?brfs',
-      },
-      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [
@@ -74,7 +70,7 @@ const config = {
       },
       {
         test: /\.md$/,
-        use: ['babel-loader', '@mdx-js/loader']
+        use: ['babel-loader', '@mdx-js/loader'],
       },
     ],
   },
@@ -94,17 +90,13 @@ const config = {
       inject: 'body',
     }),
     new FaviconsWebpackPlugin(
-      path.join(__dirname, 'src/static/images/logo.png')
+      path.join(__dirname, 'src/static/images/logo.png'),
     ),
     new CopyWebpackPlugin([
-      { from: './static/images/examples/*.jpg', to: './', flatten: true }
-    ])
+      { from: './static/images/examples/*.jpg', to: './', flatten: true },
+      { from: './static/images/examples/*.png', to: './', flatten: true },
+    ]),
   ],
-  node: {
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty',
-  },
 };
 
 module.exports = config;

@@ -5,7 +5,7 @@ import GoToExample from '../src/components/GoToExample'
 By default each `<Page />` component represents a single page in the rendered document no matter how big their children are. However, there are scenarios in which you would expect to have page breaks whenever the page contents exceeds their limits, specially when handling big chunks of text. React-pdf has a build-in wrapping engine that enables you to do just that very easily:
 
 ```
-import { Document, Page } from '@react-pdf/core'
+import { Document, Page } from '@react-pdf/react-pdf'
 
 const doc = () => (
   <Document>
@@ -34,7 +34,7 @@ We can identify two different types of components based on how they wrap:
 React-pdf also enables you to transform *breakable* elements into their opposite, forcing them to always render in a new page. This can be done by simply setting the prop `wrap={false}` to any valid component:
 
 ```
-import { Document, Page, View } from '@react-pdf/core'
+import { Document, Page, View } from '@react-pdf/react-pdf'
 
 const doc = () => (
   <Document>
@@ -56,7 +56,7 @@ Now, if the `<View />` components happens to be at the bottom of the page withou
 There is still another scenario we didn't talk about yet: what if I want to wrap pages but also be able to render a component on *all* pages? This is where the `fixed` prop comes into play.
 
 ```
-import { Document, Page, View } from '@react-pdf/core'
+import { Document, Page, View } from '@react-pdf/react-pdf'
 
 const doc = () => (
   <Document>

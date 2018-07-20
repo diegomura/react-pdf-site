@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Document, Page } from 'react-pdf/build/entry.webpack';
-import { PDFRenderer, createElement, pdf } from '@react-pdf/core';
+import { PDFRenderer, createElement, pdf } from '@react-pdf/react-pdf';
 import PageNavigator from './PageNavigator';
 
 const Wrapper = styled.div`
@@ -98,8 +98,12 @@ class PDFViewer extends React.Component {
 }
 
 PDFViewer.propTypes = {
-  document: PropTypes.object.isRequired,
+  document: PropTypes.object,
   onUrlChange: PropTypes.func.isRequired,
+};
+
+PDFViewer.defaultProps = {
+  document: null,
 };
 
 export default PDFViewer;

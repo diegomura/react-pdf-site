@@ -18,7 +18,7 @@ Create a stylesheet. This method expects a valid JS object as only argument (con
 
 ```
 import React from 'react';
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/core';
+import { Page, Text, View, Document, StyleSheet } from '@react-pdf/react-pdf';
 
 const styles = StyleSheet.create({
   page: { backgroundColor: 'blue' },
@@ -46,7 +46,7 @@ There's no need to call `StyleSheet.create` in order to style components. You ca
 
 ```
 import React from 'react';
-import { Page, Text, View, Document } from '@react-pdf/core';
+import { Page, Text, View, Document } from '@react-pdf/react-pdf';
 
 const MyDocument = () => (
   <Document>
@@ -67,7 +67,7 @@ The `style` prop also accepts an Array as value, containing any possible combina
 
 ```
 import React from 'react';
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/core';
+import { Page, Text, View, Document, StyleSheet } from '@react-pdf/react-pdf';
 
 const styles = StyleSheet.create({
   page: { backgroundColor: 'blue' },
@@ -97,7 +97,7 @@ There may be times in which you'll need to apply different styles based on the d
 
 ```
 import React from 'react';
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/core';
+import { Page, Text, View, Document, StyleSheet } from '@react-pdf/react-pdf';
 
 const styles = StyleSheet.create({
   section: {
