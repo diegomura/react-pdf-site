@@ -24,6 +24,7 @@ const examples = {
   'mixed-styles': import('raw-loader!../examples/mixed-styles.txt'),
   'inline-styles': import('raw-loader!../examples/inline-styles.txt'),
   'media-queries': import('raw-loader!../examples/media-queries.txt'),
+  'styled-components': import('raw-loader!../examples/styled-components.txt'),
 };
 
 const LoadableComponent = Loadable({

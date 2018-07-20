@@ -188,6 +188,12 @@
   dependencies:
     "@react-pdf/unicode-properties" "^2.2.0"
 
+"@react-pdf/styled-components@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@react-pdf/styled-components/-/styled-components-1.0.0.tgz#ede3cfaa570ac75bfe9e6a30e917afba46562413"
+  dependencies:
+    styled-components "^3.3.3"
+
 "@react-pdf/textkit-core@0.1.15":
   version "0.1.15"
   resolved "https://registry.yarnpkg.com/@react-pdf/textkit-core/-/textkit-core-0.1.15.tgz#ed21c13e321a91f56b865cba31c0e1ebcca30563"
@@ -4121,6 +4127,10 @@ hoist-non-react-statics@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.3.1.tgz#343db84c6018c650778898240135a1420ee22ce0"
 
+hoist-non-react-statics@^2.5.0:
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
+
 home-or-tmp@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/home-or-tmp/-/home-or-tmp-2.0.0.tgz#e36c3f2d2cae7d746a857e38d18d5f32a7882db8"
@@ -7296,6 +7306,10 @@ react-ga@^2.4.1:
     prop-types "^15.6.0"
     react "^15.6.2 || ^16.0"
 
+react-is@^16.3.1:
+  version "16.4.1"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.1.tgz#d624c4650d2c65dbd52c72622bbf389435d9776e"
+
 react-loadable@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/react-loadable/-/react-loadable-5.3.1.tgz#9699e9a08fed49bacd69caaa282034b62a76bcdd"
@@ -8497,9 +8511,32 @@ styled-components@^2.2.1:
     stylis "^3.2.1"
     supports-color "^3.2.3"
 
+styled-components@^3.3.3:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-3.3.3.tgz#09e702055ab11f7a8eab8229b1c0d0b855095686"
+  dependencies:
+    buffer "^5.0.3"
+    css-to-react-native "^2.0.3"
+    fbjs "^0.8.16"
+    hoist-non-react-statics "^2.5.0"
+    is-plain-object "^2.0.1"
+    prop-types "^15.5.4"
+    react-is "^16.3.1"
+    stylis "^3.5.0"
+    stylis-rule-sheet "^0.0.10"
+    supports-color "^3.2.3"
+
+stylis-rule-sheet@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/stylis-rule-sheet/-/stylis-rule-sheet-0.0.10.tgz#44e64a2b076643f4b52e5ff71efc04d8c3c4a430"
+
 stylis@^3.2.1:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/stylis/-/stylis-3.3.0.tgz#57cb083dd67c46d6139565bab1d675647a3534f5"
+
+stylis@^3.5.0:
+  version "3.5.3"
+  resolved "https://registry.yarnpkg.com/stylis/-/stylis-3.5.3.tgz#99fdc46afba6af4deff570825994181a5e6ce546"
 
 supports-color@^2.0.0:
   version "2.0.0"

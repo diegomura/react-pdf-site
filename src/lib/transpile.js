@@ -9,10 +9,11 @@ import {
   Image,
   StyleSheet,
 } from '@react-pdf/react-pdf';
+import styled from '@react-pdf/styled-components';
 
 const Document = 'DOCUMENT';
 
-const primitives = { Document, Page, Text, Link, Font, View, Image, StyleSheet };
+const primitives = { Document, Page, Text, Link, Font, View, Image, StyleSheet, styled };
 
 const transpile = (code, callback, onError) => {
   const result = transform(code, {
