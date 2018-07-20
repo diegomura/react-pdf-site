@@ -8,12 +8,13 @@
   "author": "Diego Muracciole <diegomuracciole@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --content-base src --open --historyApiFallback",
+    "start": "node ./src/server.js",
+    "dev": "webpack-dev-server --content-base src --open --historyApiFallback",
     "build": "webpack -p",
     "prebuild": "rimraf ./dist"
   },
   "dependencies": {
-    "@react-pdf/react-pdf": "1.0.0-alpha.1",
+    "@react-pdf/react-pdf": "1.0.0-alpha.6",
     "babel-eslint": "^8.2.3",
     "buble": "^0.19.3",
     "classnames": "^2.2.5",

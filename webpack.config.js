@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable comma-dangle */
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');

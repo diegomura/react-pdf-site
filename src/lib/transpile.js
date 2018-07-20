@@ -4,6 +4,7 @@ import {
   Page,
   Text,
   Link,
+  Font,
   View,
   Image,
   StyleSheet,
@@ -11,7 +12,7 @@ import {
 
 const Document = 'DOCUMENT';
 
-const primitives = { Document, Page, Text, Link, View, Image, StyleSheet };
+const primitives = { Document, Page, Text, Link, Font, View, Image, StyleSheet };
 
 const transpile = (code, callback, onError) => {
   const result = transform(code, {
