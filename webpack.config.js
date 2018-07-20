@@ -10,12 +10,12 @@ require('dotenv').config();
 const config = {
   context: path.join(__dirname, 'src'),
   entry: {
-    app: ['./index.js'],
+    app: ['./index.js']
   },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].bundle.js',
-    publicPath: '/',
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -71,32 +71,32 @@ const config = {
       {
         test: /\.md$/,
         use: ['babel-loader', '@mdx-js/loader'],
-      },
-    ],
+      }
+    ]
   },
   devtool: 'source-map',
   plugins: [
     new webpack.DefinePlugin({
-      GA_TOKEN: JSON.stringify(process.env.GA_TOKEN),
+      GA_TOKEN: JSON.stringify(process.env.GA_TOKEN)
     }),
     new HtmlWebpackPlugin({
       template: 'index.html',
-      inject: 'body',
+      inject: 'body'
     }),
     // Surge needs 200.html to make SPA routing work
     new HtmlWebpackPlugin({
       filename: '200.html',
       template: 'index.html',
-      inject: 'body',
+      inject: 'body'
     }),
     new FaviconsWebpackPlugin(
-      path.join(__dirname, 'src/static/images/logo.png'),
+      path.join(__dirname, 'src/static/images/logo.png')
     ),
     new CopyWebpackPlugin([
       { from: './static/images/examples/*.jpg', to: './', flatten: true },
-      { from: './static/images/examples/*.png', to: './', flatten: true },
-    ]),
-  ],
+      { from: './static/images/examples/*.png', to: './', flatten: true }
+    ])
+  ]
 };
 
 module.exports = config;
