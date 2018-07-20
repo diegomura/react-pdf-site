@@ -95,6 +95,7 @@ const Menu = () => (
     <Item to="/styling" title="Styling">
       <Item to="/styling#stylesheet-api" title="StyleSheet API" />
       <Item to="/styling#media-queries" title="Media queries" />
+      <Item to="/styling#styled-components" title="Styled-components" />
     </Item>
     <Item to="/advanced" title="Advanced">
       <Item to="/advanced#page-wrapping" title="Page wrapping" />

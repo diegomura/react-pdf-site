@@ -124,6 +124,50 @@ const MyDocument = () => (
 
 <GoToExample name="media-queries" />
 
+---
+
+### Styled-components
+
+_Looking for a more neat way of styling your document?_ Now you can take advantage of the entire [styled-components](https://www.styled-components.com/) API inside your PDF documents!
+
+#### Install
+
+First, you should install styled-components bindings:
+
+```sh
+yarn add @react-pdf/styled-components
+```
+
+#### How to use
+This bindings follows exactly the same styled-components API, so after installing it you can start creating styled primitives by importing `styled` object from it:
+
+```
+import styled from '@react-pdf/styled-components';
+
+const Heading = styled.Text`
+  margin: 10px;
+  font-size: 22px;
+  font-family: 'Helvetica';
+`;
+
+const MyDocument = () => (
+  <Document>
+    <Page>
+      <Heading>
+        D'oh!
+      </Heading>
+    </Page>
+  </Document>
+);
+```
+
+<GoToExample name="styled-components" />
+
+> **Note:** `@react-pdf/styled-components` it's a separate new `styled-components` build, so you shouldn't install the latter package in your project
+
+For more information about the API, please refer to the [styled-components documentation](https://www.styled-components.com/docs).
+
+
 <NavigationButtons
   backSrc="/components"
   backText="Components"

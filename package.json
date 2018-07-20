@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@react-pdf/react-pdf": "1.0.0-alpha.6",
-    "@react-pdf/styled-components": "^1.0.0",
+    "@react-pdf/styled-components": "^1.1.0",
     "babel-eslint": "^8.2.3",
     "buble": "^0.19.3",
     "classnames": "^2.2.5",
@@ -38,8 +38,7 @@
     "react-router-hash-link": "^1.2.0",
     "react-tippy": "^1.2.2",
     "recompose": "^0.26.0",
-    "regenerator-runtime": "^0.11.1",
-    "styled-components": "^2.2.1"
+    "regenerator-runtime": "^0.11.1"
   },
   "devDependencies": {
     "@mdx-js/loader": "^0.9.0",

@@ -51,6 +51,28 @@ Now, if the `<View />` components happens to be at the bottom of the page withou
 
 <GoToExample />
 
+#### Page breaks
+
+Page breaks are useful for separating concerns inside the document, or ensuring that a certain element will always show up on the top of the page.
+
+Adding page breaks in react-pdf is very simple: all you have to do is add the `break` prop to any primitive. This will force the wrapping algorithm to start a new page when rendering that element.
+
+```
+import { Document, Page, Text } from '@react-pdf/react-pdf'
+
+const doc = () => (
+  <Document>
+    <Page wrap>
+      <Text break>
+        // fancy things here
+      </Text>
+    </Page>
+  </Document>
+);
+```
+
+<GoToExample />
+
 #### Fixed components
 
 There is still another scenario we didn't talk about yet: what if I want to wrap pages but also be able to render a component on *all* pages? This is where the `fixed` prop comes into play.
