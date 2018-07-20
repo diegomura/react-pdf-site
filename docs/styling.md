@@ -42,7 +42,7 @@ ReactPDF.render(doc);
 
 #### Inline styling
 
-There's no need to call `StyleSheet.create` in order to style components. You can just pass a plain JS object to the `style` prop that react-pdf will do the job done as well.
+There's no need to call `StyleSheet.create` in order to style components. You can also just pass a plain JS object to the `style` prop and react-pdf will get the job done.
 
 ```
 import React from 'react';
@@ -63,7 +63,7 @@ const MyDocument = () => (
 
 #### Mixing both solutions
 
-The `style` prop also accepts an Array as valid value, containing any possible combination of the last two alternatives
+The `style` prop also accepts an Array as value, containing any possible combination of the last two alternatives
 
 ```
 import React from 'react';
