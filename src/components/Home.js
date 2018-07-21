@@ -10,12 +10,6 @@ import Content from '../../docs/installation.md';
 
 const EnhancedContent = injectComponents(Content);
 
-const CornerGraphicsImage = styled.img`
-  position: absolute;
-  top: 0;
-  right: 0;
-`;
-
 const DocumentGraphicImage = styled.img.attrs({
   src: DocumentGraphic,
 })`

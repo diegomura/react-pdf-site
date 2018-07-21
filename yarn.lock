@@ -136,23 +136,24 @@
     tiny-inflate "^1.0.2"
     unicode-trie "^0.3.0"
 
-"@react-pdf/pdfkit@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@react-pdf/pdfkit/-/pdfkit-1.1.1.tgz#07a35d193b145809359dfc5657827fe62390d292"
+"@react-pdf/pdfkit@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@react-pdf/pdfkit/-/pdfkit-1.2.0.tgz#f5fe288578567536e58de1998a3e13ee2e4ac930"
   dependencies:
     "@react-pdf/fontkit" "^1.11.0"
     "@react-pdf/png-js" "^1.0.0"
+    lz-string "^1.4.4"
 
 "@react-pdf/png-js@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@react-pdf/png-js/-/png-js-1.0.0.tgz#00fcb969dca4ce82a0a7673413ade039e47b361e"
 
-"@react-pdf/react-pdf@1.0.0-alpha.6":
-  version "1.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/@react-pdf/react-pdf/-/react-pdf-1.0.0-alpha.6.tgz#c8d514dcb0fc59f5f25b3f6890005b557d3e44ab"
+"@react-pdf/react-pdf@1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@react-pdf/react-pdf/-/react-pdf-1.0.0-alpha.7.tgz#04b7461a8048ba8bc4e80e50eec77ea95d457e03"
   dependencies:
     "@react-pdf/fontkit" "^1.11.0"
-    "@react-pdf/pdfkit" "^1.1.1"
+    "@react-pdf/pdfkit" "^1.2.0"
     "@react-pdf/png-js" "^1.0.0"
     "@react-pdf/script-itemizer" "^0.1.9"
     "@react-pdf/textkit-core" "0.1.15"
