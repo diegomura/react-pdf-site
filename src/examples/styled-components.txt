@@ -1,3 +1,5 @@
+// import styled from '@react-pdf/styled-components'
+
 const Body = styled.Page`
   padding-top: 35px;
   padding-bottom: 65px;
