@@ -56,7 +56,7 @@ Font.register(
   { family: 'Oswald' },
 );
 
-const doc = (
+const Quixote = () => (
   <Document>
     <Body wrap>
       <Header fixed>
@@ -230,4 +230,4 @@ const doc = (
   </Document>
 );
 
-ReactPDF.render(doc);
+ReactPDF.render(<Quixote />);
