@@ -15,20 +15,24 @@ const Cell = styled.div`
   text-align: ${props => props.align};
 `;
 
+const Link = styled(NavLink)`
+  text-decoration: none;
+`;
+
 const NavigationButtons = ({ backSrc, backText, nextSrc, nextText }) => (
   <Wrapper>
     <Cell align="left">
       {backSrc && (
-        <NavLink to={backSrc}>
+        <Link to={backSrc}>
           <Button primary>{`← ${backText}`}</Button>
-        </NavLink>
+        </Link>
       )}
     </Cell>
     <Cell align="right">
       {nextSrc && (
-        <NavLink to={nextSrc}>
+        <Link to={nextSrc}>
           <Button primary>{`${nextText} →`}</Button>
-        </NavLink>
+        </Link>
       )}
     </Cell>
   </Wrapper>

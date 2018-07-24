@@ -1,8 +1,6 @@
 import { withProps } from 'recompose';
 import Link from '../components/Link';
 import List from '../components/List';
-import Title from '../components/Title';
-import Button from '../components/Button';
 import ListItem from '../components/ListItem';
 import Paragraph from '../components/Paragraph';
 import CodeBlock from '../components/CodeBlock';
