@@ -148,9 +148,9 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@react-pdf/png-js/-/png-js-1.0.0.tgz#00fcb969dca4ce82a0a7673413ade039e47b361e"
 
-"@react-pdf/react-pdf@1.0.0-alpha.7":
-  version "1.0.0-alpha.7"
-  resolved "https://registry.yarnpkg.com/@react-pdf/react-pdf/-/react-pdf-1.0.0-alpha.7.tgz#04b7461a8048ba8bc4e80e50eec77ea95d457e03"
+"@react-pdf/react-pdf@1.0.0-alpha.8":
+  version "1.0.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/@react-pdf/react-pdf/-/react-pdf-1.0.0-alpha.8.tgz#3c4811b0688beb9012e3a0000fd818e2b3d75af9"
   dependencies:
     "@react-pdf/fontkit" "^1.11.0"
     "@react-pdf/pdfkit" "^1.2.0"
@@ -174,7 +174,6 @@
     lodash.isfunction "^3.0.8"
     lodash.isnil "^4.0.0"
     lodash.merge "^4.6.1"
-    lodash.omit "^4.5.0"
     lodash.pick "^4.4.0"
     lodash.topairsin "^4.3.0"
     lodash.upperfirst "^4.3.1"
@@ -5313,10 +5312,6 @@ lodash.memoize@^4.1.2:
 lodash.merge@^4.6.1:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.1.tgz#adc25d9cb99b9391c59624f379fbba60d7111d54"
-
-lodash.omit@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
 
 lodash.once@^4.1.1:
   version "4.1.1"
