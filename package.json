@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node ./src/server.js",
     "dev": "webpack-dev-server --content-base src --open --historyApiFallback",
-    "build": "webpack -p",
+    "build": "webpack -p --progress",
     "prebuild": "rimraf ./dist"
   },
   "dependencies": {
