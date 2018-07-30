@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { withRouter } from 'next/router';
 import media from '../styled/media';
@@ -31,13 +32,15 @@ const Header = ({ router, onMenuClick }) => (
   <Wrapper>
     <HeaderIcon type="menu" size={25} onClick={() => { onMenuClick() }} />
     {router.pathname !== '/' && (
-      <HeaderLogo
-        withText
-        size="28px"
-        fontSize="18px"
-        separation="10px"
-        rotate={false}
-      />
+      <Link href="/">
+        <HeaderLogo
+          withText
+          size="28px"
+          fontSize="18px"
+          separation="10px"
+          rotate={false}
+        />
+      </Link>
     )}
     <HeaderIcon type="github" size={25} />
   </Wrapper>

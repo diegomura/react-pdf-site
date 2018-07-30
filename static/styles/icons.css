@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('/static/fonts/icomoon.eot?mcjwe');
-  src:  url('/static/fonts/icomoon.eot?mcjwe#iefix') format('embedded-opentype'),
-    url('/static/fonts/icomoon.ttf?mcjwe') format('truetype'),
-    url('/static/fonts/icomoon.woff?mcjwe') format('woff'),
-    url('/static/fonts/icomoon.svg?mcjwe#icomoon') format('svg');
+  src:  url('/static/fonts/icomoon.eot?qy1q5u');
+  src:  url('/static/fonts/icomoon.eot?qy1q5u#iefix') format('embedded-opentype'),
+    url('/static/fonts/icomoon.ttf?qy1q5u') format('truetype'),
+    url('/static/fonts/icomoon.woff?qy1q5u') format('woff'),
+    url('/static/fonts/icomoon.svg?qy1q5u#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -29,6 +29,15 @@
 }
 .icon-download:before {
   content: "\f019";
+}
+.icon-chevron-left:before {
+  content: "\f053";
+}
+.icon-chevron-right:before {
+  content: "\f054";
+}
+.icon-arrow-left:before {
+  content: "\f060";
 }
 .icon-eye:before {
   content: "\f06e";
@@ -56,6 +65,9 @@
 }
 .icon-file:before {
   content: "\f15b";
+}
+.icon-share-alt:before {
+  content: "\f1e0";
 }
 .icon-paint-brush:before {
   content: "\f1fc";

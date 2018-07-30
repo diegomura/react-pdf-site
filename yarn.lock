@@ -647,20 +647,21 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@react-pdf/png-js/-/png-js-1.0.0.tgz#00fcb969dca4ce82a0a7673413ade039e47b361e"
 
-"@react-pdf/react-pdf@^1.0.0-alpha.8":
-  version "1.0.0-alpha.8"
-  resolved "https://registry.yarnpkg.com/@react-pdf/react-pdf/-/react-pdf-1.0.0-alpha.8.tgz#3c4811b0688beb9012e3a0000fd818e2b3d75af9"
+"@react-pdf/renderer@^1.0.0-alpha.12":
+  version "1.0.0-alpha.12"
+  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-1.0.0-alpha.12.tgz#74ad72915316b0ef399132c513e6c19857213302"
   dependencies:
     "@react-pdf/fontkit" "^1.11.0"
     "@react-pdf/pdfkit" "^1.2.0"
     "@react-pdf/png-js" "^1.0.0"
-    "@react-pdf/script-itemizer" "^0.1.9"
-    "@react-pdf/textkit-core" "0.1.15"
-    "@textkit/justification-engine" "^0.1.7"
-    "@textkit/line-fragment-generator" "^0.1.7"
-    "@textkit/linebreaker" "^0.1.7"
-    "@textkit/pdf-renderer" "^0.1.9"
-    "@textkit/text-decoration-engine" "^0.1.8"
+    "@react-pdf/script-itemizer" "^0.1.11"
+    "@react-pdf/textkit-core" "^0.1.18"
+    "@textkit/justification-engine" "^0.1.9"
+    "@textkit/line-fragment-generator" "^0.1.9"
+    "@textkit/linebreaker" "^0.1.9"
+    "@textkit/pdf-renderer" "^0.1.11"
+    "@textkit/text-decoration-engine" "^0.1.10"
+    babel-runtime "^6.26.0"
     blob-stream "^0.1.3"
     buffer "^5.1.0"
     emoji-regex "^6.5.1"
@@ -681,21 +682,21 @@
     react-reconciler "^0.7.0"
     yoga-layout "1.9.3"
 
-"@react-pdf/script-itemizer@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@react-pdf/script-itemizer/-/script-itemizer-0.1.9.tgz#51a5959eb283663a543f54cbcf648d4dcde75f9f"
+"@react-pdf/script-itemizer@^0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@react-pdf/script-itemizer/-/script-itemizer-0.1.11.tgz#f850ec3b735ae71d26ccc7adfa94e922cc01ebc7"
   dependencies:
     "@react-pdf/unicode-properties" "^2.2.0"
 
-"@react-pdf/styled-components@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf/styled-components/-/styled-components-1.1.0.tgz#f99f346821804b34a466336a80639221e71fe774"
+"@react-pdf/styled-components@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@react-pdf/styled-components/-/styled-components-1.2.0.tgz#488f514e51583616499b9c45cf5ecfa7636ffa06"
   dependencies:
     styled-components "^3.3.3"
 
-"@react-pdf/textkit-core@0.1.15":
-  version "0.1.15"
-  resolved "https://registry.yarnpkg.com/@react-pdf/textkit-core/-/textkit-core-0.1.15.tgz#ed21c13e321a91f56b865cba31c0e1ebcca30563"
+"@react-pdf/textkit-core@^0.1.18":
+  version "0.1.18"
+  resolved "https://registry.yarnpkg.com/@react-pdf/textkit-core/-/textkit-core-0.1.18.tgz#a697b83e030c349ccef75a9384ef6021b02f51b6"
   dependencies:
     "@react-pdf/unicode-properties" "^2.2.0"
     cubic2quad "^1.1.0"
@@ -706,32 +707,32 @@
   dependencies:
     unicode-trie "^0.3.0"
 
-"@textkit/justification-engine@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@textkit/justification-engine/-/justification-engine-0.1.7.tgz#e296b404f09901684ccd6f0fe3713e39000dfd82"
+"@textkit/justification-engine@^0.1.9":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@textkit/justification-engine/-/justification-engine-0.1.9.tgz#4a964ddccd48b6f20eacf1ae17a011e3e2cf9093"
   dependencies:
     lodash.clone "^4.5.0"
     lodash.merge "^4.6.1"
 
-"@textkit/line-fragment-generator@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@textkit/line-fragment-generator/-/line-fragment-generator-0.1.7.tgz#fdd117c01aadc95216e5d17aeaaa7bbc23d9a65b"
+"@textkit/line-fragment-generator@^0.1.9":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@textkit/line-fragment-generator/-/line-fragment-generator-0.1.9.tgz#756fc7df9e6cf7519d6a6fb60c91dce3c3310ef4"
 
-"@textkit/linebreaker@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@textkit/linebreaker/-/linebreaker-0.1.7.tgz#dd976a3e8b1d4c48a67e52d379900fc886f0d3ae"
+"@textkit/linebreaker@^0.1.9":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@textkit/linebreaker/-/linebreaker-0.1.9.tgz#9ac8cb15ec7cf2e53b61bb3ef87ee4eb6cb8d929"
   dependencies:
     hyphenation.en-us "^0.2.1"
     hypher "^0.2.4"
     linebreak "^0.1.2"
 
-"@textkit/pdf-renderer@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@textkit/pdf-renderer/-/pdf-renderer-0.1.9.tgz#a136975a2aff1055e31c3606c42066d00ea3dcf1"
+"@textkit/pdf-renderer@^0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@textkit/pdf-renderer/-/pdf-renderer-0.1.11.tgz#2743441f39d486879e4de9a530a2610c0965b49f"
 
-"@textkit/text-decoration-engine@^0.1.8":
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@textkit/text-decoration-engine/-/text-decoration-engine-0.1.8.tgz#8695fdea4a7731b53d82192dce7100120233e6d7"
+"@textkit/text-decoration-engine@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@textkit/text-decoration-engine/-/text-decoration-engine-0.1.10.tgz#b97b725b62e707ddd08c8b3a2d914659ef3df613"
 
 "@zeit/next-css@^0.2.0":
   version "0.2.0"
@@ -1029,6 +1030,10 @@ babel-loader@8.0.0-beta.3:
     mkdirp "^0.5.1"
     util.promisify "^1.0.0"
 
+babel-plugin-prismjs@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-prismjs/-/babel-plugin-prismjs-1.0.2.tgz#837bf6b32168b3ba624c054fc755946deb1b63fa"
+
 babel-plugin-react-require@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-react-require/-/babel-plugin-react-require-3.0.0.tgz#2e4e7b4496b93a654a1c80042276de4e4eeb20e3"
@@ -1288,8 +1293,8 @@ buffer-equal@0.0.1:
   resolved "https://registry.yarnpkg.com/buffer-equal/-/buffer-equal-0.0.1.tgz#91bc74b11ea405bc916bc6aa908faafa5b4aac4b"
 
 buffer-from@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.0.tgz#87fcaa3a298358e0ade6e442cfce840740d1ad04"
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"
 
 buffer-xor@^1.0.3:
   version "1.0.3"
@@ -2014,8 +2019,8 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
 electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.47:
-  version "1.3.52"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.52.tgz#d2d9f1270ba4a3b967b831c40ef71fb4d9ab5ce0"
+  version "1.3.54"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.54.tgz#2121a34b5cd2ba994ad89f8778ea9ae5ebc40cab"
 
 elliptic@^6.0.0:
   version "6.4.0"
@@ -3428,6 +3433,10 @@ make-dir@^1.0.0:
   dependencies:
     pify "^3.0.0"
 
+make-event-props@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/make-event-props/-/make-event-props-1.0.0.tgz#c6f7c409fdd51bc58edb262124b343faf028a62a"
+
 map-cache@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/map-cache/-/map-cache-0.2.2.tgz#c32abd0bd6525d9b051645bb4f26ac5dc98a0dbf"
@@ -3719,6 +3728,12 @@ neo-async@^2.5.0:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.5.1.tgz#acb909e327b1e87ec9ef15f41b8a269512ad41ee"
 
+next-nprogress@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/next-nprogress/-/next-nprogress-1.0.2.tgz#23b1ac1cb62f1fb015b88301b7b551fd9923b827"
+  dependencies:
+    nprogress "^0.2.0"
+
 next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
@@ -3924,6 +3939,10 @@ npm-run-path@^2.0.0:
     console-control-strings "~1.1.0"
     gauge "~2.7.3"
     set-blocking "~2.0.0"
+
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
 
 num2fraction@^1.2.2:
   version "1.2.2"
@@ -4170,12 +4189,12 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-pdfjs-dist@2.0.305:
-  version "2.0.305"
-  resolved "https://registry.yarnpkg.com/pdfjs-dist/-/pdfjs-dist-2.0.305.tgz#53b0f9805ae101d7ef742d020d03578ee9781b06"
+pdfjs-dist@^2.0.474:
+  version "2.0.489"
+  resolved "https://registry.yarnpkg.com/pdfjs-dist/-/pdfjs-dist-2.0.489.tgz#63e54b292a86790a454697eb44d4347b8fbfad27"
   dependencies:
     node-ensure "^0.0.0"
-    worker-loader "^1.1.0"
+    worker-loader "^1.1.1"
 
 performance-now@^0.2.0:
   version "0.2.0"
@@ -4502,7 +4521,7 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prismjs@^1.14.0:
+prismjs@^1.15.0:
   version "1.15.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.15.0.tgz#8801d332e472091ba8def94976c8877ad60398d9"
   optionalDependencies:
@@ -4653,6 +4672,10 @@ range-parser@^1.0.3, range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
 
+raw-loader@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
+
 rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.8.tgz#cd924bf5200a075b83c188cd6b9e211b7fc0d3ed"
@@ -4670,8 +4693,8 @@ react-copy-to-clipboard@^5.0.1:
     prop-types "^15.5.8"
 
 react-dom@^16.4.1:
-  version "16.4.1"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.1.tgz#7f8b0223b3a5fbe205116c56deb85de32685dad6"
+  version "16.4.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.2.tgz#4afed569689f2c561d2b8da0b819669c38a0bda4"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -4686,21 +4709,22 @@ react-ga@^2.5.3:
     react "^15.6.2 || ^16.0"
 
 react-is@^16.3.1:
-  version "16.4.1"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.1.tgz#d624c4650d2c65dbd52c72622bbf389435d9776e"
+  version "16.4.2"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.2.tgz#84891b56c2b6d9efdee577cc83501dfc5ecead88"
 
 react-lifecycles-compat@3.0.4, react-lifecycles-compat@^3.0.2:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
-react-pdf@^3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/react-pdf/-/react-pdf-3.0.5.tgz#989406cae67e8194328f4653d376dfcb5e77fe9d"
+react-pdf@4.0.0-beta.2:
+  version "4.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/react-pdf/-/react-pdf-4.0.0-beta.2.tgz#d8c6fffb11088cb84cdd1df06eeee27cdcebaafd"
   dependencies:
     babel-runtime "^6.26.0"
     lodash.once "^4.1.1"
+    make-event-props "^1.0.0"
     merge-class-names "^1.1.1"
-    pdfjs-dist "2.0.305"
+    pdfjs-dist "^2.0.474"
     prop-types "^15.6.1"
 
 react-prism@^4.3.2:
@@ -4722,18 +4746,9 @@ react-tippy@^1.2.2:
   dependencies:
     popper.js "^1.11.1"
 
-"react@^15.6.2 || ^16.0":
+"react@^15.6.2 || ^16.0", react@^16.4.1:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react/-/react-16.4.2.tgz#2cd90154e3a9d9dd8da2991149fdca3c260e129f"
-  dependencies:
-    fbjs "^0.8.16"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.0"
-
-react@^16.4.1:
-  version "16.4.1"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.4.1.tgz#de51ba5764b5dbcd1f9079037b862bd26b82fe32"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -5353,8 +5368,8 @@ stream-browserify@^2.0.1:
     readable-stream "^2.0.2"
 
 stream-each@^1.1.0:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/stream-each/-/stream-each-1.2.2.tgz#8e8c463f91da8991778765873fe4d960d8f616bd"
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/stream-each/-/stream-each-1.2.3.tgz#ebe27a0c389b04fbcc233642952e10731afa9bae"
   dependencies:
     end-of-stream "^1.1.0"
     stream-shift "^1.0.0"
@@ -5553,8 +5568,8 @@ through@~2.3.4:
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 
 time-stamp@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/time-stamp/-/time-stamp-2.0.0.tgz#95c6a44530e15ba8d6f4a3ecb8c3a3fac46da357"
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/time-stamp/-/time-stamp-2.0.1.tgz#708a89359c1fc50bd5e7b1c8aa750d08c9172232"
 
 timers-browserify@^2.0.4:
   version "2.0.10"
@@ -6071,7 +6086,7 @@ worker-farm@^1.5.2:
   dependencies:
     errno "~0.1.7"
 
-worker-loader@^1.1.0:
+worker-loader@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/worker-loader/-/worker-loader-1.1.1.tgz#920d74ddac6816fc635392653ed8b4af1929fd92"
   dependencies:

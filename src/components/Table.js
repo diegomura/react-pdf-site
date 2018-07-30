@@ -57,6 +57,16 @@ export const TableCell = styled.td`
     border-right: 1px solid rgba(166, 166, 166, 0.2);
   }
 
+  code {
+    font-size: 10px;
+    padding: 2px 4px;
+    white-space: nowrap;
+  }
+
+  em {
+    white-space: nowrap;
+  }
+
   ${media.phone`
     font-size: 14px;
     padding: 5px 8px;

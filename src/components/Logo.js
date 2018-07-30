@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 
 const LogoImage = styled.img.attrs({ src: '/static/images/logo.png' })`
   width: ${props => props.size || '54px'};
-  animation: ${props => props.rotate && `${rotate360} 4s linear infinite`};
+  animation: ${props => props.rotateImg && `${rotate360} 4s linear infinite`};
 `;
 
 const Title = styled(H1)`
@@ -26,9 +26,9 @@ const Title = styled(H1)`
   margin-left: ${props => props.separation || '15px'};
 `;
 
-export default ({ withText, className, ...props }) => (
+export default ({ withText, className, rotate, ...props }) => (
   <Wrapper className={className}>
-    <LogoImage {...props} />
+    <LogoImage rotateImg={rotate} {...props} />
     {withText && <Title {...props}>React-pdf</Title>}
   </Wrapper>
 );

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 const Icon = ({ type, size, className, style, onClick }) => (
   <span

@@ -5,6 +5,7 @@ import Prism from 'prismjs';
 import { PrismCode } from 'react-prism';
 import media from '../styled/media';
 import Icon from './Icon';
+import Clipboard from './Clipboard';
 
 const Wrapper = styled.div`
   position: relative;
@@ -36,35 +37,38 @@ const Handler = styled(Icon)`
   }
 `;
 
-const Code = styled(PrismCode).attrs({
-  className: 'language-js',
-})`
-  color: #d8dee9;
+const Code = styled(PrismCode)`
+  color: #E7E7E7;
   font-size: 16px;
   line-height: 24px;
   ${media.phone`
+    font-size: 15px;
     line-height: 20px;
   `}
 `;
 
-const CodeBlock = props => (
+const CodeBlock = ({ language, isPlayable, children }) => (
   <Wrapper>
     <Handlers>
-      {props.isPlayable && <Handler type="eye" />}
-      <Handler type="files-o" />
+      {isPlayable && <Handler type="eye" />}
+      <Clipboard text={children.props.children}>
+        <Handler type="files-o" />
+      </Clipboard>
     </Handlers>
     <pre>
-      <Code>{props.children}</Code>
+      <Code className={`language-${language}`}>{children}</Code>
     </pre>
   </Wrapper>
 );
 
 CodeBlock.propTypes = {
+  language: PropTypes.string,
   isPlayable: PropTypes.bool,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 CodeBlock.defaultProps = {
+  language: 'jsx',
   isPlayable: false,
 };
 

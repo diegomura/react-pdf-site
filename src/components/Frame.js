@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import Router from 'next/router'
 import { compose, withState, lifecycle } from 'recompose';
 import Menu from './Menu';
 import Header from './Header';
@@ -11,7 +10,7 @@ const Section = styled.section`
   width: 100%;
   margin: 0 auto;
   padding: 110px;
-  max-width: 1000px;
+  max-width: 1100px;
   overflow-y: ${props => props.menuOpened && 'hidden'};
   ${media.tablet`
     padding: 4em;
@@ -48,7 +47,7 @@ const Frame = ({ menuOpened, setMenuOpen, children }) => (
   <Fragment>
     <Header onMenuClick={() => setMenuOpen(!menuOpened)} />
     <Main>
-      <Menu opened={menuOpened} />
+      <Menu opened={menuOpened} onItemClick={() => setMenuOpen(false)} />
       <Section menuOpened={menuOpened} onClick={() => setMenuOpen(false)}>
         <Content>
           {children}
@@ -60,13 +59,6 @@ const Frame = ({ menuOpened, setMenuOpen, children }) => (
   </Fragment>
 );
 
-function componentDidMount () {
-  Router.onRouteChangeComplete = () => {
-    this.props.setMenuOpen(false);
-  }
-}
-
 export default compose(
-  withState('menuOpened', 'setMenuOpen', false),
-  lifecycle({ componentDidMount }),
+  withState('menuOpened', 'setMenuOpen', false)
 )(Frame);
