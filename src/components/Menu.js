@@ -1,11 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+<<<<<<< HEAD
 import { compose, withState, componentFromProp, defaultProps } from 'recompose';
 
 const activeClassName = 'nav-item-active';
 
 const MenuLink = styled.div`
+=======
+import { withRouter } from 'react-router-dom';
+import { NavHashLink as NavLink } from 'react-router-hash-link';
+import { compose, withState } from 'recompose';
+
+const activeClassName = 'nav-item-active';
+
+const MenuLink = styled(NavLink)`
+>>>>>>> a6d5372c5b03aece27da8b03c59637dee69d60d8
   font-size: 16px;
   line-height: 24px;
   padding: 4px 10px;
@@ -43,9 +53,13 @@ const SubItems = styled.div`
   height: ${props => (props.active ? 'inherit' : '0px')};
 `;
 
+<<<<<<< HEAD
 const enhance = defaultProps({ component: 'li' })
 
 const ItemWrapper = styled(enhance(componentFromProp('component')))`
+=======
+const ItemWrapper = styled.li`
+>>>>>>> a6d5372c5b03aece27da8b03c59637dee69d60d8
   display: flex;
   flex-direction: column;
   margin: 4px 0px;
@@ -65,7 +79,11 @@ const scroll = el => {
   });
 };
 
+<<<<<<< HEAD
 const Item = ({ to, title, children, ...props }) => (
+=======
+const Item = withRouter(({ to, title, location, children, ...props }) => (
+>>>>>>> a6d5372c5b03aece27da8b03c59637dee69d60d8
   <ItemWrapper>
     <MenuLink
       to={to}
@@ -75,6 +93,7 @@ const Item = ({ to, title, children, ...props }) => (
     >
       {title}
     </MenuLink>
+<<<<<<< HEAD
     { children && <SubItems active={false}>{children}</SubItems> }
   </ItemWrapper>
 );
@@ -82,6 +101,47 @@ const Item = ({ to, title, children, ...props }) => (
 const Menu = () => (
   <List>
   
+=======
+    <SubItems active={location.pathname === to}>{children}</SubItems>
+  </ItemWrapper>
+));
+
+const Menu = () => (
+  <List>
+    <Item exact to="/" title="Installation" />
+    <Item to="/quick-start-guide" title="Quick start guide" />
+    <Item to="/rendering-process" title="Rendering process" />
+    <Item to="/components" title="Components">
+      <Item to="/components#document" title="Document" />
+      <Item to="/components#page" title="Page" />
+      <Item to="/components#view" title="View" />
+      <Item to="/components#image" title="Image" />
+      <Item to="/components#text" title="Text" />
+      <Item to="/components#link" title="Link" />
+    </Item>
+    <Item to="/styling" title="Styling">
+      <Item to="/styling#stylesheet-api" title="StyleSheet API" />
+      <Item to="/styling#media-queries" title="Media queries" />
+      <Item to="/styling#styled-components" title="Styled-components" />
+    </Item>
+    <Item to="/advanced" title="Advanced">
+      <Item to="/advanced#page-wrapping" title="Page wrapping" />
+      <Item
+        to="/advanced#orphan-&-widow-protection"
+        title="Orphan and widow protection"
+      />
+      <Item to="/advanced#emoji-rendering" title="Emoji rendering" />
+      <Item to="/advanced#dynamic-content" title="Dynamic content" />
+      <Item to="/advanced#debugging" title="Debugging" />
+      <Item to="/advanced#hyphenation" title="Hyphenation" />
+    </Item>
+    <Item to="/repl" title="Playground / REPL" />
+    <Item
+      to="https://opencollective.com/react-pdf"
+      target="_blank"
+      title="Donate"
+    />
+>>>>>>> a6d5372c5b03aece27da8b03c59637dee69d60d8
   </List>
 );
 

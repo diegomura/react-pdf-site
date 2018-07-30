@@ -5,4 +5,7 @@ dist
 *.snap
 .vscode
 *.log
+<<<<<<< HEAD
 .next
+=======
+>>>>>>> a6d5372c5b03aece27da8b03c59637dee69d60d8
