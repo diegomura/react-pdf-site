@@ -1,7 +1,6 @@
 {
   "name": "@react-pdf/site",
   "version": "1.0.0",
-<<<<<<< HEAD
   "main": "index.js",
   "license": "MIT",
   "private": true,
@@ -11,94 +10,20 @@
     "start": "next start"
   },
   "dependencies": {
+    "@zeit/next-css": "^0.2.0",
     "next": "^6.1.1",
+    "prismjs": "^1.14.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-media": "^1.8.0",
+    "react-prism": "^4.3.2",
+    "react-tippy": "^1.2.2",
     "recompose": "^0.28.0",
     "styled-components": "^3.3.3"
-=======
-  "description": "react-pdf public page",
-  "private": true,
-  "main": "index.js",
-  "repository": "git@github.com:react-pdf/site.git",
-  "author": "Diego Muracciole <diegomuracciole@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "start": "node ./src/server.js",
-    "dev": "webpack-dev-server --content-base src --open --historyApiFallback",
-    "build": "webpack -p --progress",
-    "prebuild": "rimraf ./dist"
-  },
-  "dependencies": {
-    "@react-pdf/react-pdf": "1.0.0-alpha.8",
-    "@react-pdf/styled-components": "^1.1.0",
-    "babel-eslint": "^8.2.3",
-    "buble": "^0.19.3",
-    "classnames": "^2.2.5",
-    "codemirror": "^5.30.0",
-    "font-awesome": "^4.7.0",
-    "lodash.debounce": "^4.0.8",
-    "lz-string": "^1.4.4",
-    "normalize.css": "^8.0.0",
-    "prismjs": "^1.14.0",
-    "prop-types": "^15.6.0",
-    "react": "^16.0.0",
-    "react-copy-to-clipboard": "^5.0.1",
-    "react-dom": "^16.0.0",
-    "react-ga": "^2.4.1",
-    "react-loadable": "^5.3.1",
-    "react-markdown": "^3.0.0",
-    "react-pdf": "^2.5.3",
-    "react-prism": "^4.3.2",
-    "react-router-dom": "^4.2.2",
-    "react-router-hash-link": "^1.2.0",
-    "react-tippy": "^1.2.2",
-    "recompose": "^0.26.0",
-    "regenerator-runtime": "^0.11.1"
   },
   "devDependencies": {
     "@mdx-js/loader": "^0.9.0",
-    "@mdx-js/mdx": "^0.9.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.1",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "copy-webpack-plugin": "^4.5.0",
-    "css-loader": "^0.28.4",
-    "dotenv": "^5.0.1",
-    "eslint": "^4.10.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-prettier": "^2.7.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jest": "^21.3.2",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.4.0",
-    "favicons-webpack-plugin": "^0.0.7",
-    "file-loader": "^0.11.2",
-    "html-webpack-plugin": "^2.29.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.0.0",
-    "postcss-cssnext": "^3.0.2",
-    "postcss-import": "^10.0.0",
-    "postcss-loader": "^2.0.6",
-    "prettier": "^1.11.1",
-    "raw-loader": "^0.5.1",
-    "rimraf": "^2.6.2",
-    "style-loader": "^0.18.2",
-    "surge": "^0.20.1",
-    "url-loader": "^0.5.9",
-    "webpack": "^3.3.0",
-    "webpack-dev-server": "^2.6.1"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ]
->>>>>>> a6d5372c5b03aece27da8b03c59637dee69d60d8
+    "@mdx-js/mdx": "^0.9.0"
   }
 }

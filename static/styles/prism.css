@@ -15,9 +15,6 @@ code[class*="language-"] {
 
   display: block;
   background-color: initial;
-  padding: 24px 20px;
-  margin: 0px 4px;
-  border-radius: 4px;
 
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
@@ -51,8 +48,6 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 /* Code blocks */
 pre[class*="language-"] {
 	overflow: auto;
-	font-size: 16px;
-  line-height: 24px;
 }
 
 :not(pre) > code[class*="language-"],

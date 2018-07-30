@@ -15,11 +15,7 @@ const Input = styled.input`
 `;
 
 const SearchInput = ({ onChange }) => (
-<<<<<<< HEAD
   <Input type="text" onChange={onChange} disabled />
-=======
-  <Input type="text" placeholder="Search" onChange={onChange} />
->>>>>>> a6d5372c5b03aece27da8b03c59637dee69d60d8
 );
 
 SearchInput.propTypes = {

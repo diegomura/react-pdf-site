@@ -1,13 +1,15 @@
 import React from 'react';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 import Button from './Button';
+import media from '../styled/media';
 
 const Wrapper = styled.div`
   display: flex;
   margin-top: 60px;
   padding: 0px 2px 2px 2px;
+  ${media.phone`margin-top: 45px;`}
 `;
 
 const Cell = styled.div`
@@ -15,22 +17,18 @@ const Cell = styled.div`
   text-align: ${props => props.align};
 `;
 
-const Link = styled(NavLink)`
-  text-decoration: none;
-`;
-
 const NavigationButtons = ({ backSrc, backText, nextSrc, nextText }) => (
   <Wrapper>
     <Cell align="left">
       {backSrc && (
-        <Link to={backSrc}>
+        <Link href={backSrc} prefetch>
           <Button primary>{`← ${backText}`}</Button>
         </Link>
       )}
     </Cell>
     <Cell align="right">
       {nextSrc && (
-        <Link to={nextSrc}>
+        <Link href={nextSrc} prefetch>
           <Button primary>{`${nextText} →`}</Button>
         </Link>
       )}

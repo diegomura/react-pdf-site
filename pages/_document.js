@@ -1,5 +1,10 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import '../static/styles/index.css';
+import '../static/styles/icons.css';
+import '../static/styles/fonts.css';
+import '../static/styles/prism.css';
+import '../static/styles/shame.css';
 
 export default class MyDocument extends Document {
   static async getInitialProps({ renderPage }) {
@@ -14,17 +19,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           {this.props.styleTags}
-          <style>{`
-            * {
-              margin: 0px;
-              padding: 0px;
-            }
-
-            *::selection {
-              color: #3E3E3E;
-              background: #FCD3CC;
-            }
-          `}</style>
+          <link rel="stylesheet" href="/_next/static/style.css" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <body>

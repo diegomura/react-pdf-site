@@ -1,12 +1,7 @@
-@import 'react-tippy/dist/tippy.css';
-@import 'normalize.css';
-@import "./fonts";
-@import './prism';
-@import "./shame";
-
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 *::selection {

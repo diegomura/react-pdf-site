@@ -1,22 +1,33 @@
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
-<<<<<<< HEAD
-=======
-import Logo from '../static/images/logo.png';
->>>>>>> a6d5372c5b03aece27da8b03c59637dee69d60d8
+import { H1 } from './Heading';
 
 const rotate360 = keyframes`
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 `;
 
-<<<<<<< HEAD
-const LogoImage = styled.img.attrs({ src: '/static/images/logo.png' })`
-=======
-const LogoImage = styled.img.attrs({ src: Logo })`
->>>>>>> a6d5372c5b03aece27da8b03c59637dee69d60d8
+const Wrapper = styled.div`
   padding: 56px;
-  width: ${props => props.size || '54px'};
-  animation: ${rotate360} 4s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
-export default LogoImage;
+const LogoImage = styled.img.attrs({ src: '/static/images/logo.png' })`
+  width: ${props => props.size || '54px'};
+  animation: ${props => props.rotate ? `${rotate360} 4s linear infinite` : null};
+`;
+
+const Title = styled(H1)`
+  margin: 0;
+  font-size: 22px;
+  margin-left: 10px;
+`;
+
+export default ({ withText, className, ...props }) => (
+  <Wrapper className={className}>
+    <LogoImage {...props} />
+    {withText && <Title>React-pdf</Title>}
+  </Wrapper>
+);
