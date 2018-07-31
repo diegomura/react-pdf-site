@@ -1,11 +1,8 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import Nav from '../components/Nav';
-import Logo from '../components/Logo';
-import Menu from '../components/Menu';
-import Header from '../components/Header';
-import GitHubIcon from '../components/GitHubIcon';
-import SearchInput from '../components/SearchInput';
+import { withState } from 'recompose';
+import Menu from './Menu';
+import Header from './Header';
 import media from '../styled/media';
 
 const Section = styled.section`
@@ -22,19 +19,12 @@ const Section = styled.section`
 const Main = styled.main`
   display: flex;
   min-height: 100%;
+  margin-left: 240px;
+  ${media.phone`margin: 0px`}
 `;
 
 const Content = styled.div`
   position: relative;
-`;
-
-const Fixed = styled.div`
-  width: inherit;
-  height: 100%;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 `;
 
 const CornerGraphicsImage = styled.img`
@@ -48,20 +38,12 @@ const CornerGraphicsImage = styled.img`
   `}
 `;
 
-const Frame = ({ children }) => (
+const Frame = ({ menuOpened, onMenuClick, children }) => (
   <Fragment>
-    <Header />
+    <Header onMenuClick={() => onMenuClick(!menuOpened)} />
     <Main>
-      {/* <Nav>
-        <Fixed>
-          <SearchInput />
-          <Logo />
-          <Menu />
-          <GitHubIcon />
-        </Fixed>
-      </Nav> */}
-
-      <Section>
+      <Menu opened={menuOpened} />
+      <Section onClick={() => onMenuClick(false)}>
         <Content>
           {children}
         </Content>
@@ -72,4 +54,4 @@ const Frame = ({ children }) => (
   </Fragment>
 );
 
-export default Frame;
+export default withState('menuOpened', 'onMenuClick', false)(Frame);

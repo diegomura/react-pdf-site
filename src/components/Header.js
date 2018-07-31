@@ -19,9 +19,9 @@ const HeaderIcon = styled(Icon)`
   color: ${({ theme }) => theme.gray1};
 `;
 
-const Header = () => (
+const Header = ({ onMenuClick }) => (
   <Wrapper>
-    <HeaderIcon type="menu" size={25} />
+    <HeaderIcon type="menu" size={25} onClick={onMenuClick} />
     <HeaderIcon type="github" size={25} />
   </Wrapper>
 );

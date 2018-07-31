@@ -13,8 +13,9 @@ const GitHubIcon = styled(({ size, className }) => (
   </a>
 ))`
   color: black;
-  margin-bottom: 36px;
   opacity: 0.3;
+  margin-bottom: 36px;
+  text-decoration: none;
 `;
 
 export default GitHubIcon;

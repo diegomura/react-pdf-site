@@ -16,13 +16,13 @@ const Wrapper = styled.div`
 
 const LogoImage = styled.img.attrs({ src: '/static/images/logo.png' })`
   width: ${props => props.size || '54px'};
-  animation: ${props => props.rotate ? `${rotate360} 4s linear infinite` : null};
+  animation: ${rotate360} 4s linear infinite;
 `;
 
 const Title = styled(H1)`
   margin: 0;
   font-size: 22px;
-  margin-left: 10px;
+  margin-left: 15px;
 `;
 
 export default ({ withText, className, ...props }) => (
