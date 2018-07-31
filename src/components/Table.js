@@ -1,16 +1,22 @@
 import styled from 'styled-components';
+import media from '../styled/media';
+
+const Wrapper = styled.div`
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin-bottom: 48px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: 0 25px 50px 0 rgba(62, 62, 62, 0.15);
+`;
 
 const Table = styled.table.attrs({
   cellSpacing: 0,
 })`
-  width: 100%;
-  margin-bottom: 48px;
   font-size: 16px;
-  line-height: 24px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  box-shadow: 0 25px 50px 0 rgba(62, 62, 62, 0.15);
   overflow: hidden;
+  line-height: 24px;
 `;
 
 export const TableHeading = styled.th`
@@ -30,6 +36,11 @@ export const TableHeading = styled.th`
     border-top-right-radius: 6px;
     border-right: 1px solid rgba(141, 22, 2, 0.2);
   }
+
+  ${media.phone`
+    font-size: 14px;
+    padding: 5px 8px;
+  `}
 `;
 
 export const TableCell = styled.td`
@@ -44,6 +55,11 @@ export const TableCell = styled.td`
   &:last-child {
     border-right: 1px solid rgba(166, 166, 166, 0.2);
   }
+
+  ${media.phone`
+    font-size: 14px;
+    padding: 5px 8px;
+  `}
 `;
 
 export const TableRow = styled.tr`
@@ -56,4 +72,10 @@ export const TableRow = styled.tr`
   }
 `;
 
-export default Table;
+export default ({ children }) => (
+  <Wrapper>
+    <Table>
+      {children}
+    </Table>
+  </Wrapper>
+);

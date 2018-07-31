@@ -1,9 +1,12 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import { withState } from 'recompose';
+import Router from 'next/router'
+import { compose, withState, lifecycle } from 'recompose';
 import Menu from './Menu';
 import Header from './Header';
 import media from '../styled/media';
+
+console.log(Router);
 
 const Section = styled.section`
   flex: 1;
@@ -11,6 +14,7 @@ const Section = styled.section`
   margin: 0 auto;
   padding: 110px;
   max-width: 1000px;
+  overflow-y: ${props => props.menuOpened && 'hidden'};
   ${media.tablet`
     padding: 4em;
   `}
@@ -42,12 +46,12 @@ const CornerGraphicsImage = styled.img`
   `}
 `;
 
-const Frame = ({ menuOpened, onMenuClick, children }) => (
+const Frame = ({ menuOpened, setMenuOpen, children }) => (
   <Fragment>
-    <Header onMenuClick={() => onMenuClick(!menuOpened)} />
+    <Header onMenuClick={() => setMenuOpen(!menuOpened)} />
     <Main>
       <Menu opened={menuOpened} />
-      <Section onClick={() => onMenuClick(false)}>
+      <Section menuOpened={menuOpened} onClick={() => setMenuOpen(false)}>
         <Content>
           {children}
         </Content>
@@ -58,4 +62,13 @@ const Frame = ({ menuOpened, onMenuClick, children }) => (
   </Fragment>
 );
 
-export default withState('menuOpened', 'onMenuClick', false)(Frame);
+function componentDidMount () {
+  Router.onRouteChangeComplete = () => {
+    this.props.setMenuOpen(false);
+  }
+}
+
+export default compose(
+  withState('menuOpened', 'setMenuOpen', false),
+  lifecycle({ componentDidMount }),
+)(Frame);

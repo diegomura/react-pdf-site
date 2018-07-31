@@ -21,11 +21,17 @@ const HeaderIcon = styled(Icon)`
   color: ${({ theme }) => theme.gray1};
 `;
 
+const HeaderLogo = styled(Logo)`
+  padding: 0px;
+  display: none;
+  ${media.tablet`display: inherit;`};
+`;
+
 const Header = ({ router, onMenuClick }) => (
   <Wrapper>
-    <HeaderIcon type="menu" size={25} onClick={onMenuClick} />
+    <HeaderIcon type="menu" size={25} onClick={() => { onMenuClick() }} />
     {router.pathname !== '/' && (
-      <Logo
+      <HeaderLogo
         withText
         size="28px"
         fontSize="18px"
