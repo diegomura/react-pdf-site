@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import media from '../styled/media';
 
 const CONTENT_COLOR = '#d1e3f3';
 const PADDING_COLOR = '#e2efdd';
@@ -11,6 +12,10 @@ const Wrapper = styled.div`
   margin: 56px 0px;
   align-items: center;
   justify-content: center;
+
+  ${media.phone`
+    flex-direction: column;
+  `}
 `;
 
 const Margin = styled.div`
@@ -25,6 +30,10 @@ const Margin = styled.div`
     font-size: 10px;
     display: block;
   }
+
+  ${media.phone`
+    width: 100%;
+  `}
 `;
 
 const Padding = styled.div`
@@ -33,11 +42,25 @@ const Padding = styled.div`
   background: ${CONTENT_COLOR};
   border-top: 30px solid ${PADDING_COLOR};
   border-bottom: 30px solid ${PADDING_COLOR};
+
+  ${media.phone`
+    width: 100%;
+    height: 200px;
+  `}
 `;
 
 const Glossary = styled.div`
+  display: flex;
   width: 200px;
   margin-left: 40px;
+  flex-direction: column;
+
+  ${media.phone`
+    width: auto;
+    margin-top: 40px;
+    margin-left: 0px;
+    flex-direction: row;
+  `}
 `;
 
 const ColoredBox = styled.div`
@@ -51,6 +74,10 @@ const ItemWrapper = styled.div`
   display: flex;
   margin-bottom: 8px;
   align-items: center;
+
+  ${media.phone`
+    margin-left: 8px;
+  `}
 `;
 
 const Item = ({ color, children }) => (
