@@ -6,7 +6,7 @@ import { PrismCode } from 'react-prism';
 import media from '../styled/media';
 import Icon from './Icon';
 
-const Wrapper = styled.pre`
+const Wrapper = styled.div`
   position: relative;
   border-radius: 8px;
   margin-bottom: 40px;
@@ -53,7 +53,9 @@ const CodeBlock = props => (
       {props.isPlayable && <Handler type="eye" />}
       <Handler type="files-o" />
     </Handlers>
-    <Code>{props.children}</Code>
+    <pre>
+      <Code>{props.children}</Code>
+    </pre>
   </Wrapper>
 );
 

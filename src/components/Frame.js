@@ -7,6 +7,7 @@ import media from '../styled/media';
 
 const Section = styled.section`
   flex: 1;
+  width: 100%;
   margin: 0 auto;
   padding: 110px;
   max-width: 1000px;

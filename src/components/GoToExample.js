@@ -1,10 +1,10 @@
 import React from 'react';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from './Button';
 
-const Wrapper = styled(NavLink)`
+const Wrapper = styled.div`
   flex: 1;
   display: flex;
   margin: 32px 0px;
@@ -13,9 +13,11 @@ const Wrapper = styled(NavLink)`
 `;
 
 const GoToExample = ({ name }) => (
-  <Wrapper to={`/repl?example=${name}`} target="_blank">
-    <Button primary>See it in action →</Button>
-  </Wrapper>
+  <Link href={`/repl?example=${name}`}>
+    <Wrapper>
+      <Button primary>See it in action →</Button>
+    </Wrapper>
+  </Link>
 );
 
 GoToExample.propTypes = {

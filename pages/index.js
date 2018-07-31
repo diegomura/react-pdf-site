@@ -1,6 +1,5 @@
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import Frame from '../src/components/Frame';
-import withTheme from '../src/styled/withTheme';
 import Logo from '../src/components/Logo';
 import Title from '../src/components/Title';
 import Button from '../src/components/Button';
@@ -40,12 +39,12 @@ const LogoBanner = styled(Logo)`
 `;
 
 const Home = () => (
-  <Frame>
+  <Fragment>
     <LogoBanner size="37px" withText/>
     <Title />
     <Hero />
     <EnhancedContent />
-  </Frame>
+  </Fragment>
 );
 
-export default withTheme(Home);
+export default Home;

@@ -24,7 +24,7 @@ const components = {
   tr: TableRow,
   li: ListItem,
   td: TableCell,
-  code: CodeBlock,
+  pre: CodeBlock,
   th: TableHeading,
   hr: ThematicBreak,
   inlineCode: InlineCode,
