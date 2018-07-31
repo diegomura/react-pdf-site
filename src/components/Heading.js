@@ -17,7 +17,7 @@ const Heading1 = styled.h1`
   font-weight: 200;
   letter-spacing: 2px;
   line-height: 56px;
-  ${media.phone`
+  ${media.tablet`
     font-size: 30px;
     font-weight: 400;
   `}

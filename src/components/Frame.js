@@ -6,8 +6,6 @@ import Menu from './Menu';
 import Header from './Header';
 import media from '../styled/media';
 
-console.log(Router);
-
 const Section = styled.section`
   flex: 1;
   width: 100%;

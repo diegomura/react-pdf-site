@@ -14,6 +14,7 @@ const Wrapper = styled.div`
 const Table = styled.table.attrs({
   cellSpacing: 0,
 })`
+  width: 100%;
   font-size: 16px;
   overflow: hidden;
   line-height: 24px;
