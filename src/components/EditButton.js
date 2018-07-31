@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Button from './Button';
 import media from '../styled/media';
 
-const Wrapper = styled.a`
+const Wrapper = styled.div`
   display: flex;
   position: initial;
   margin-bottom: 1em;
@@ -16,8 +16,8 @@ const Wrapper = styled.a`
 `;
 
 const EditButton = ({ to }) => (
-  <Wrapper href={to} target="_blank">
-    <Button terciary>Edit</Button>
+  <Wrapper>
+    <Button href={to} target="_blank" terciary>Edit</Button>
   </Wrapper>
 );
 
