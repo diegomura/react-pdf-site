@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('/static/fonts/icomoon.eot?bhoi3y');
-  src:  url('/static/fonts/icomoon.eot?bhoi3y#iefix') format('embedded-opentype'),
-    url('/static/fonts/icomoon.ttf?bhoi3y') format('truetype'),
-    url('/static/fonts/icomoon.woff?bhoi3y') format('woff'),
-    url('/static/fonts/icomoon.svg?bhoi3y#icomoon') format('svg');
+  src:  url('/static/fonts/icomoon.eot?mcjwe');
+  src:  url('/static/fonts/icomoon.eot?mcjwe#iefix') format('embedded-opentype'),
+    url('/static/fonts/icomoon.ttf?mcjwe') format('truetype'),
+    url('/static/fonts/icomoon.woff?mcjwe') format('woff'),
+    url('/static/fonts/icomoon.svg?mcjwe#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -27,8 +27,17 @@
 .icon-menu:before {
   content: "\e9bd";
 }
+.icon-download:before {
+  content: "\f019";
+}
 .icon-eye:before {
   content: "\f06e";
+}
+.icon-cogs:before {
+  content: "\f085";
+}
+.icon-gears:before {
+  content: "\f085";
 }
 .icon-github:before {
   content: "\f09b";
@@ -38,4 +47,16 @@
 }
 .icon-files-o:before {
   content: "\f0c5";
+}
+.icon-floppy-o:before {
+  content: "\f0c7";
+}
+.icon-save:before {
+  content: "\f0c7";
+}
+.icon-file:before {
+  content: "\f15b";
+}
+.icon-paint-brush:before {
+  content: "\f1fc";
 }

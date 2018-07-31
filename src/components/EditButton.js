@@ -2,11 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Button from './Button';
+import media from '../styled/media';
 
 const Wrapper = styled.a`
-  top: 0;
-  right: 0;
-  position: absolute;
+  display: flex;
+  position: initial;
+  margin-bottom: 1em;
+  text-decoration: none;
+  justify-content: flex-end;
+  ${media.phone`
+    display: none;
+  `}
 `;
 
 const EditButton = ({ to }) => (

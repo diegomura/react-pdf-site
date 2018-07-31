@@ -40,7 +40,7 @@ const LogoBanner = styled(Logo)`
 
 const Home = () => (
   <Fragment>
-    <LogoBanner size="37px" withText/>
+    <LogoBanner size="37px" rotate withText/>
     <Title />
     <Hero />
     <EnhancedContent />

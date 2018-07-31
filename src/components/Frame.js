@@ -11,6 +11,9 @@ const Section = styled.section`
   margin: 0 auto;
   padding: 110px;
   max-width: 1000px;
+  ${media.tablet`
+    padding: 4em;
+  `}
   ${media.phone`
     padding: 1.5em;
     padding-bottom: 3em;
@@ -21,7 +24,7 @@ const Main = styled.main`
   display: flex;
   min-height: 100%;
   margin-left: 240px;
-  ${media.phone`margin: 0px`}
+  ${media.tablet`margin: 0px`}
 `;
 
 const Content = styled.div`

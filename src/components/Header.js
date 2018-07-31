@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { withRouter } from 'next/router';
 import media from '../styled/media';
+import Logo from './Logo';
 import Icon from './Icon';
 
 const Wrapper = styled.header`
@@ -12,18 +14,27 @@ const Wrapper = styled.header`
   padding: 0 1em;
   align-items: center;
   justify-content: space-between;
-  ${media.phone`display: flex;`};
+  ${media.tablet`display: flex;`};
 `;
 
 const HeaderIcon = styled(Icon)`
   color: ${({ theme }) => theme.gray1};
 `;
 
-const Header = ({ onMenuClick }) => (
+const Header = ({ router, onMenuClick }) => (
   <Wrapper>
     <HeaderIcon type="menu" size={25} onClick={onMenuClick} />
+    {router.pathname !== '/' && (
+      <Logo
+        withText
+        size="28px"
+        fontSize="18px"
+        separation="10px"
+        rotate={false}
+      />
+    )}
     <HeaderIcon type="github" size={25} />
   </Wrapper>
 );
 
-export default Header;
+export default withRouter(Header);
