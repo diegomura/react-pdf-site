@@ -1,32 +1,39 @@
-import 'codemirror/mode/jsx/jsx';
-import 'codemirror/keymap/sublime';
-import 'codemirror/addon/edit/closetag';
-import 'codemirror/addon/comment/comment';
-import 'codemirror/addon/edit/matchbrackets';
-import 'codemirror/addon/edit/closebrackets';
-import 'codemirror/addon/display/placeholder';
-import 'codemirror/addon/selection/active-line';
-
 import React from 'react';
+import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import debounce from 'lodash.debounce';
-import CodeMirror from 'codemirror';
-import PDFViewer from './PDFViewer';
 import ErrorMessage from './ErrorMessage';
 import transpile from '../lib/transpile';
+import media from '../styled/media';
 
-const debounceTranspile = debounce(transpile, 1000);
+const PDFViewerWithNoSSR = dynamic(import('./PDFViewer'), { ssr: false });
+
+const debounceTranspile = debounce(transpile, 250);
 
 const Wrapper = styled.div`
   flex: 1;
   display: flex;
+  position: relative;
+  max-height: calc(100vh - 54px);
+
+  ${media.desktop`
+    display: initial;
+    max-height: calc(100vh - 45px);
+  `}
 `;
 
 const CodePanel = styled.div`
   flex: 1;
   overflow: hidden;
   position: relative;
+
+  ${media.desktop`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: ${props => props.active ? 500 : 250};
+  `}
 `;
 
 const PDFPanel = styled.div`
@@ -34,7 +41,15 @@ const PDFPanel = styled.div`
   display: flex;
   overflow: scroll;
   align-items: center;
+  background-color: #FFF;
   justify-content: center;
+
+  ${media.desktop`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: ${props => props.active ? 500 : 250};
+  `}
 `;
 
 const CodeError = styled(ErrorMessage)`
@@ -46,6 +61,7 @@ const CodeError = styled(ErrorMessage)`
 
 const DEFAULT_CODE_MIRROR_OPTIONS = {
   autoCloseBrackets: true,
+  styleSelectedText: true,
   keyMap: 'sublime',
   lineNumbers: true,
   matchBrackets: true,
@@ -56,6 +72,8 @@ const DEFAULT_CODE_MIRROR_OPTIONS = {
   autoCloseTags: true,
 };
 
+let CodeMirror;
+
 class Repl extends React.PureComponent {
   state = {
     element: null,
@@ -63,6 +81,17 @@ class Repl extends React.PureComponent {
   };
 
   componentDidMount() {
+    require('codemirror/mode/jsx/jsx');
+    require('codemirror/keymap/sublime');
+    require('codemirror/addon/edit/closetag');
+    require('codemirror/addon/comment/comment');
+    require('codemirror/addon/edit/matchbrackets');
+    require('codemirror/addon/edit/closebrackets');
+    require('codemirror/addon/display/placeholder');
+    require('codemirror/addon/selection/active-line');
+    require('codemirror/addon/selection/mark-selection');
+    CodeMirror = require('codemirror');
+
     this.codeMirror = CodeMirror.fromTextArea(
       this.textarea,
       DEFAULT_CODE_MIRROR_OPTIONS,
@@ -77,7 +106,7 @@ class Repl extends React.PureComponent {
     }
   }
 
-  componentWillReceiveNewProps(newProps) {
+  UNSAFE_componentWillReceiveProps(newProps) {
     if (this.props.value !== newProps.value) {
       this.codeMirror.setValue(newProps.value);
     }
@@ -99,6 +128,7 @@ class Repl extends React.PureComponent {
 
     this.transpile(code);
   }
+
   onErrorClose = () => {
     this.setState({ error: null });
   };
@@ -112,24 +142,25 @@ class Repl extends React.PureComponent {
   }
 
   render() {
+    const { element, error } = this.state;
+    const { activeTab, value, onUrlChange } = this.props;
+
     return (
       <Wrapper>
-        <CodePanel>
+        <CodePanel active={activeTab === 'code'}>
           <textarea
             autoFocus
             autoComplete="off"
-            defaultValue={this.props.value}
-            ref={node => {
-              this.textarea = node;
-            }}
+            defaultValue={value}
+            ref={node => { this.textarea = node; }}
             placeholder="Write code here..."
           />
-          <CodeError onClose={this.onErrorClose}>{this.state.error}</CodeError>
+          <CodeError onClose={this.onErrorClose}>{error}</CodeError>
         </CodePanel>
-        <PDFPanel>
-          <PDFViewer
-            document={this.state.element}
-            onUrlChange={this.props.onUrlChange}
+        <PDFPanel active={activeTab === 'pdf'}>
+          <PDFViewerWithNoSSR
+            document={element}
+            onUrlChange={onUrlChange}
           />
         </PDFPanel>
       </Wrapper>

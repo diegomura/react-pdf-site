@@ -1,7 +1,9 @@
 import React from 'react';
+import { compose } from 'recompose';
 import App, { Container } from 'next/app'
 import Frame from '../src/components/Frame';
 import withTheme from '../src/styled/withTheme';
+import trackAnalytics from '../src/lib/analytics';
 
 class MyApp extends App {
   static async getInitialProps ({ Component, router, ctx }) {
@@ -11,20 +13,23 @@ class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx)
     }
 
-    return { pageProps }
+    return { pageProps, router }
   }
 
   render () {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, router } = this.props;
+    const AppFrame = router.pathname === '/repl' ? 'div' : Frame;
 
     return (
       <Container>
-        <Frame>
+        <AppFrame>
           <Component {...pageProps} />
-        </Frame>
+        </AppFrame>
       </Container>
     );
   }
 }
 
-export default withTheme(MyApp);
+export default compose(
+  withTheme, trackAnalytics
+)(MyApp);

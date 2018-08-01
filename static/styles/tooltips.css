@@ -1,0 +1,13 @@
+.tippy-popper {
+  top: -3px !important;
+  left: -6px !important;
+}
+
+.tippy-tooltip {
+  color: #8D1602;
+  background-color: #FCD3CC;
+}
+
+.arrow-regular {
+  border-top-color: #FCD3CC !important;
+}

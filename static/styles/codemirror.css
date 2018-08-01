@@ -1,8 +1,6 @@
-/* CodeMirror overrides */
-
 .CodeMirror {
   font-size: 16px;
-  height: calc(100vh - 72px);
+  height: 100%;
   background-color: #3E3E3E;
 }
 
@@ -14,6 +12,12 @@
   line-height: 24px;
   background-color: #2E2E2E;
   font-family: "monospace" !important;
+}
+
+.CodeMirror-placeholder {
+  opacity: 0.6;
+  margin-left: 12px !important;
+  position: absolute !important;
 }
 
 .CodeMirror-code {
@@ -103,20 +107,4 @@
 .cm-error {
   background: #8D1602 !important;
   color: #F8F8F8 !important;
-}
-
-/* Tooltip overrides */
-
-.tippy-popper {
-  top: -3px !important;
-  left: -6px !important;
-}
-
-.tippy-tooltip {
-  color: #8D1602;
-  background-color: #FCD3CC;
-}
-
-.arrow-regular {
-  border-top-color: #FCD3CC !important;
 }

@@ -1,40 +1,79 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Document, Page } from 'react-pdf/build/entry.webpack';
-import { PDFRenderer, createElement, pdf } from '@react-pdf/react-pdf';
+import { PDFRenderer, createElement, pdf } from '@react-pdf/renderer';
+import PdfjsWorker from 'pdfjs-dist/build/pdf.worker.js';
+import pdfjs from 'pdfjs-dist';
+import Document from 'react-pdf/dist/Document';
+import Page from 'react-pdf/dist/Page';
 import PageNavigator from './PageNavigator';
+
+pdfjs.GlobalWorkerOptions.workerPort = new PdfjsWorker();
 
 const Wrapper = styled.div`
   flex: 1;
   height: 100%;
   display: flex;
+  position: relative;
   flex-direction: column;
 `;
 
 const DocumentWrapper = styled.div`
   flex: 1;
+  padding: 1em;
   display: flex;
+  z-index: 500;
   align-items: center;
   justify-content: center;
 `;
 
+const Message = styled.div`
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 1000;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFF;
+  transition: all 1s;
+  opacity: ${props => props.active ? 1 : 0};
+  pointer-events: ${props => props.active ? 'all' : 'none'};
+`;
+
 class PDFViewer extends React.Component {
-  state = { document: null, numPages: null, currentPage: 1 };
+  state = {
+    loading: true,
+    document: null,
+    numPages: null,
+    currentPage: 1,
+  };
+
+  componentDidMount() {
+    this.renderDocument(this.props.document)
+  }
 
   componentWillReceiveProps(newProps) {
     // Don't update if document didn't change
     if (this.props.document === newProps.document) return;
 
-    if (!newProps.document) {
+    this.renderDocument(newProps.document)
+  }
+
+  renderDocument = doc => {
+    if (!doc) {
       this.setState({ document: null });
       return;
     }
 
+    this.setState({ loading: true });
+
     const container = createElement('ROOT');
     const mountNode = PDFRenderer.createContainer(container);
 
-    PDFRenderer.updateContainer(newProps.document, mountNode, this);
+    PDFRenderer.updateContainer(doc, mountNode, this);
 
     pdf(container)
       .toBlob()
@@ -45,7 +84,7 @@ class PDFViewer extends React.Component {
           this.props.onUrlChange(url);
         }
 
-        this.setState({ document: url });
+        this.setState({ document: url, loading: false });
       });
   }
 
@@ -71,19 +110,22 @@ class PDFViewer extends React.Component {
   };
 
   render() {
-    if (!this.state.document) {
-      return null;
-    }
-
     return (
       <Wrapper>
+        <Message active={this.state.loading}>Rendering PDF...</Message>
+        <Message active={!this.state.loading && !this.props.document}>
+          You are not rendering a valid document
+        </Message>
         <DocumentWrapper>
           <Document
             file={this.state.document}
             onLoadSuccess={this.onDocumentLoad}
             {...this.props}
           >
-            <Page pageNumber={this.state.currentPage} />
+            <Page
+              renderMode="svg"
+              pageNumber={this.state.currentPage}
+            />
           </Document>
         </DocumentWrapper>
         <PageNavigator
