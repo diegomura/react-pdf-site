@@ -68,7 +68,6 @@ ReactPDF.render(<MyDocument />, `${__dirname}/example.pdf`);
 #### Render in DOM
 
 ```
-import 'regenerator-runtime/runtime';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
