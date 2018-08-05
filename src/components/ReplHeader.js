@@ -57,7 +57,7 @@ const ReplHeader = ({ activeTab, onTabClick }) => (
   <Wrapper>
     <Link href="/">
       <BackButton>
-        <Icon type="github" size={18} />
+        <Icon type="arrow-left" size={18} />
       </BackButton>
     </Link>
     <Tabs>

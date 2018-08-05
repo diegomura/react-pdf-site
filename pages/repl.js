@@ -1,29 +1,35 @@
 import React from 'react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+import { withRouter } from 'next/router';
 import styled from 'styled-components';
 import { compose, withState, withHandlers, withProps, lifecycle } from 'recompose';
 import Icon from '../src/components/Icon';
 import Logo from '../src/components/Logo';
-import Repl from '../src/components/Repl';
+import Loading from '../src/components/Loading';
 import ReplHeader from '../src/components/ReplHeader';
 import ReplFooter from '../src/components/ReplFooter';
 import GitHubIcon from '../src/components/GitHubIcon';
-import { getUrlParams } from '../src/lib/query';
 import { compress, decompress } from '../src/lib/compress';
 import media from '../src/styled/media';
 
+const Repl = dynamic(import('../src/components/Repl'), {
+  ssr: false,
+  loading: Loading
+});
+
 const examples = {
-  // text: import('raw-loader!../examples/text.txt'),
-  // knobs: import('raw-loader!../examples/knobs.txt'),
-  // styles: import('raw-loader!../examples/styles.txt'),
-  // resume: import('raw-loader!../examples/resume.txt'),
-  // images: import('raw-loader!../examples/images.txt'),
-  // fractals: import('raw-loader!../examples/fractals.txt'),
-  // 'page-wrap': import('raw-loader!../examples/page-wrap.txt'),
-  // 'mixed-styles': import('raw-loader!../examples/mixed-styles.txt'),
-  // 'inline-styles': import('raw-loader!../examples/inline-styles.txt'),
-  // 'media-queries': import('raw-loader!../examples/media-queries.txt'),
-  // 'styled-components': import('raw-loader!../examples/styled-components.txt'),
+  text: require('raw-loader!../examples/text.txt'),
+  knobs: require('raw-loader!../examples/knobs.txt'),
+  styles: require('raw-loader!../examples/styles.txt'),
+  resume: require('raw-loader!../examples/resume.txt'),
+  images: require('raw-loader!../examples/images.txt'),
+  fractals: require('raw-loader!../examples/fractals.txt'),
+  'page-wrap': require('raw-loader!../examples/page-wrap.txt'),
+  'mixed-styles': require('raw-loader!../examples/mixed-styles.txt'),
+  'inline-styles': require('raw-loader!../examples/inline-styles.txt'),
+  'media-queries': require('raw-loader!../examples/media-queries.txt'),
+  'styled-components': require('raw-loader!../examples/styled-components.txt'),
 };
 
 const Section = styled.section`
@@ -85,11 +91,11 @@ const ReplPage = ({
     <Nav width="64px">
       <Link href="/">
         <BackButton>
-          <Icon type="github" size={18} />
+          <Icon type="arrow-left" size={18} />
         </BackButton>
       </Link>
       <NavBody>
-        <SmallLogo size="32px" rotate />
+        <SmallLogo size="32px" />
       </NavBody>
       <GitHubIcon />
     </Nav>
@@ -149,7 +155,7 @@ const setInitialValueFromExample = async example => {
 
 async function componentDidMount() {
   let initialValue = '';
-  const { code, example } = getUrlParams(this.props.location.search);
+  const { code, example } = this.props.router.query;
 
   if (code) {
     initialValue = setInitialValueFromCode(code);
@@ -169,10 +175,11 @@ ReplPage.defaultProps = {
 };
 
 export default compose(
+  withRouter,
   withState('code', 'setCode', ''),
   withState('activeTab', 'setActiveTab', 'pdf'),
   withState('documentUrl', 'setDocumentUrl', null),
   lifecycle({ componentDidMount }),
   withProps(setShareUrl),
-  withHandlers({ onChange, onUrlChange }),
+  withHandlers({ onChange, onUrlChange })
 )(ReplPage);

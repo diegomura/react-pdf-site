@@ -8,7 +8,7 @@ import {
   View,
   Image,
   StyleSheet,
-} from '@react-pdf/react-pdf';
+} from '@react-pdf/renderer';
 import styled from '@react-pdf/styled-components';
 
 const Document = 'DOCUMENT';
@@ -23,6 +23,7 @@ const transpile = (code, callback, onError) => {
       dangerousTaggedTemplateString: true,
     },
   });
+
   const res = new Function(
     'React',
     'ReactPDF',

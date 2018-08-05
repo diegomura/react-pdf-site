@@ -5,7 +5,7 @@ import NavigationButtons from '../src/components/NavigationButtons'
 Starting with react-pdf is extremely simple.
 
 ```
-yarn add @react-pdf/react-pdf
+yarn add @react-pdf/renderer
 ```
 
 <NavigationButtons

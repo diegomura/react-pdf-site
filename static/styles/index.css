@@ -19,6 +19,6 @@ body {
   font-size: 18px;
 }
 
-canvas {
+.react-pdf__Page {
   box-shadow: 0 25px 50px 0 rgba(62, 62, 62, 0.15);
 }

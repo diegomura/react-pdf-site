@@ -7,7 +7,7 @@ PDF documents do not support color emoji fonts. This is a bummer for the ones ou
 React-pdf makes this task simple by enabling you to use a CDN from where to download emoji images. All you have to do is setup a valid URL (we recommend using [Twemoji](https://github.com/twitter/twemoji) for this task), and react-pdf will take care of the rest:
 
 ```
-import { Font } from '@react-pdf/react-pdf'
+import { Font } from '@react-pdf/renderer'
 
 Font.registerEmojiSource({
   format: 'png',

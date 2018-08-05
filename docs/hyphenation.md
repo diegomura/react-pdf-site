@@ -9,7 +9,7 @@ React-pdf internally implements the [Knuth and Plass line breaking algorithm](ht
 If you need more fine-grained control over how words break, you can pass your own callback and handle all that logic for yourself:
 
 ```
-import { Font } from '@react-pdf/react-pdf'
+import { Font } from '@react-pdf/renderer'
 
 const hyphenationCallback = (words) => {
   // Iterate through words
