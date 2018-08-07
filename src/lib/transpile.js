@@ -16,22 +16,22 @@ const Document = 'DOCUMENT';
 const primitives = { Document, Page, Text, Link, Font, View, Image, StyleSheet, styled };
 
 const transpile = (code, callback, onError) => {
-  const result = transform(code, {
-    objectAssign: 'Object.assign',
-    transforms: {
-      dangerousForOf: true,
-      dangerousTaggedTemplateString: true,
-    },
-  });
-
-  const res = new Function(
-    'React',
-    'ReactPDF',
-    ...Object.keys(primitives),
-    result.code,
-  );
-
   try {
+    const result = transform(code, {
+      objectAssign: 'Object.assign',
+      transforms: {
+        dangerousForOf: true,
+        dangerousTaggedTemplateString: true,
+      },
+    });
+
+    const res = new Function(
+      'React',
+      'ReactPDF',
+      ...Object.keys(primitives),
+      result.code,
+    );
+  
     res(React, { render: doc => callback(doc) }, ...Object.values(primitives));
   } catch (e) {
     if (onError) {

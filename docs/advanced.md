@@ -6,6 +6,7 @@ import EmojiRendering from './emoji-rendering.md'
 import DynamicContent from './dynamic-content.md'
 import Hyphenation from './hyphenation.md'
 import Debugging from './debugging.md'
+import Ruler from './ruler.md'
 
 <EditButton to="https://github.com/react-pdf/site/blob/master/docs/advanced.md" />
 
@@ -15,9 +16,12 @@ import Debugging from './debugging.md'
 <EmojiRendering components={components} />
 <DynamicContent components={components} />
 <Debugging components={components} />
+<Ruler components={components} />
 <Hyphenation components={components} />
 
 <NavigationButtons
   backSrc="/styling"
   backText="Styling"
+  nextSrc="/repl"
+  nextText="REPL"
 />

@@ -1,0 +1,26 @@
+const styles = StyleSheet.create({
+  container: {
+    height: 700,
+    marginVertical: 70,
+    marginHorizontal: "10%"
+  }
+});
+
+Font.registerEmojiSource({
+  format: 'png',
+  url: 'https://twemoji.maxcdn.com/2/72x72/',
+});
+
+const MyDocument = () => (
+  <Document>
+    <Page>
+      <View style={styles.container}>
+        <Text>
+          😀💩👻🙈
+        </Text>
+      </View>
+    </Page>
+  </Document>
+);
+
+ReactPDF.render(<MyDocument />);

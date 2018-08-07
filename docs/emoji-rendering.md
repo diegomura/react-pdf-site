@@ -17,6 +17,6 @@ Font.registerEmojiSource({
 
 > **Protip:** react-pdf will need a internet connection to download emoji's images at render time, so bare that in mind when choosing to use this API
 
-<GoToExample />
+<GoToExample name="emoji" />
 
 ---

@@ -1,12 +1,12 @@
 import React from 'react';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import { withRouter } from 'next/router';
+import Router, { withRouter } from 'next/router';
 import styled from 'styled-components';
 import { compose, withState, withHandlers, withProps, lifecycle } from 'recompose';
 import Icon from '../src/components/Icon';
 import Logo from '../src/components/Logo';
 import Loading from '../src/components/Loading';
+import BackButton from '../src/components/BackButton';
 import ReplHeader from '../src/components/ReplHeader';
 import ReplFooter from '../src/components/ReplFooter';
 import GitHubIcon from '../src/components/GitHubIcon';
@@ -20,12 +20,15 @@ const Repl = dynamic(import('../src/components/Repl'), {
 
 const examples = {
   text: require('raw-loader!../examples/text.txt'),
+  emoji: require('raw-loader!../examples/emoji.txt'),
+  ruler: require('raw-loader!../examples/ruler.txt'),
   knobs: require('raw-loader!../examples/knobs.txt'),
   styles: require('raw-loader!../examples/styles.txt'),
   resume: require('raw-loader!../examples/resume.txt'),
   images: require('raw-loader!../examples/images.txt'),
   fractals: require('raw-loader!../examples/fractals.txt'),
   'page-wrap': require('raw-loader!../examples/page-wrap.txt'),
+  'quick-start': require('raw-loader!../examples/quick-start.txt'),
   'mixed-styles': require('raw-loader!../examples/mixed-styles.txt'),
   'inline-styles': require('raw-loader!../examples/inline-styles.txt'),
   'media-queries': require('raw-loader!../examples/media-queries.txt'),
@@ -55,7 +58,7 @@ const Nav = styled.nav`
   `}
 `;
 
-const BackButton = styled.button`
+const Back = styled(BackButton)`
   border: 0px;
   width: 100%;
   height: 64px;
@@ -80,6 +83,7 @@ const SmallLogo = styled(Logo)`
 
 const ReplPage = ({
   code,
+  initialCode,
   shareUrl,
   activeTab,
   documentUrl,
@@ -89,11 +93,9 @@ const ReplPage = ({
 }) => (
   <Main>
     <Nav width="64px">
-      <Link href="/">
-        <BackButton>
-          <Icon type="arrow-left" size={18} />
-        </BackButton>
-      </Link>
+      <Back>
+        <Icon type="arrow-left" size={18} />
+      </Back>
       <NavBody>
         <SmallLogo size="32px" />
       </NavBody>
@@ -105,7 +107,7 @@ const ReplPage = ({
         onTabClick={setActiveTab}
       />
       <Repl
-        value={code}
+        value={initialCode}
         activeTab={activeTab}
         onChange={onChange}
         onUrlChange={onUrlChange}
@@ -165,7 +167,7 @@ async function componentDidMount() {
     initialValue = await setInitialValueFromExample('page-wrap');
   }
 
-  this.props.setCode(initialValue);
+  this.props.setInitialCode(initialValue);
 }
 
 
@@ -177,6 +179,7 @@ ReplPage.defaultProps = {
 export default compose(
   withRouter,
   withState('code', 'setCode', ''),
+  withState('initialCode', 'setInitialCode', ''),
   withState('activeTab', 'setActiveTab', 'pdf'),
   withState('documentUrl', 'setDocumentUrl', null),
   lifecycle({ componentDidMount }),

@@ -1,8 +1,9 @@
 import React from 'react';
-import Link from 'next/link';
+import Router from 'next/router';
 import styled from 'styled-components';
 import Icon from './Icon';
 import Button from './Button';
+import BackButton from './BackButton';
 import media from '../styled/media';
 
 const Wrapper = styled.div`
@@ -20,7 +21,7 @@ const Wrapper = styled.div`
   `}
 `;
 
-const BackButton = styled.button`
+const Back = styled(BackButton)`
   border: 0px;
   width: 56px;
   color: white;
@@ -55,11 +56,9 @@ const Tab = styled.button`
 
 const ReplHeader = ({ activeTab, onTabClick }) => (
   <Wrapper>
-    <Link href="/">
-      <BackButton>
-        <Icon type="arrow-left" size={18} />
-      </BackButton>
-    </Link>
+    <Back>
+      <Icon type="arrow-left" size={18} />
+    </Back>
     <Tabs>
       <Tab active={activeTab === 'code'} onClick={() => onTabClick('code')}>Code</Tab>
       <Tab active={activeTab === 'pdf'} onClick={() => onTabClick('pdf')}>PDF</Tab>

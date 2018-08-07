@@ -84,7 +84,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 *Working on it...*
 
-<GoToExample />
+<GoToExample name="quick-start" />
 
 ### 4. Have fun!
 
