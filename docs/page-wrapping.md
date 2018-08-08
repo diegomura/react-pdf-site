@@ -27,7 +27,7 @@ We can identify two different types of components based on how they wrap:
 - `Breakable components` tries to fill up the remaining space before jumping into a new page. By default, this group is composed by *View*, *Text* and *Link* components
 - `Unbreakable components` are indivisible, therefore if there isn't enough space for them they just get rendered in the following page. In this group by default we only find *Image*.
 
-<GoToExample />
+<GoToExample name="breakable-unbreakable" />
 
 #### Disabling component wrapping
 
@@ -49,7 +49,7 @@ const doc = () => (
 
 Now, if the `<View />` components happens to be at the bottom of the page without enough space, it will be rendered in a new page as he would be *unbreakable*.
 
-<GoToExample />
+<GoToExample name="disable-wrapping" />
 
 #### Page breaks
 
@@ -71,7 +71,7 @@ const doc = () => (
 );
 ```
 
-<GoToExample />
+<GoToExample name="page-breaks" />
 
 #### Fixed components
 

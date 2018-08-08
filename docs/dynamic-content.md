@@ -1,3 +1,5 @@
+import GoToExample from '../src/components/GoToExample'
+
 ### Dynamic content
 
 With react-pdf it is now possible to render dynamic text based on the context in which a certain element is being rendered. All you have to do is to pass a function to the `render` prop of the `<Text />` component. The result will be rendered inside the text block as children.
@@ -25,5 +27,7 @@ const doc = () => (
 
 
 > **Protip:** Use this API in conjunction with fixed elements to render page number indicators
+
+<GoToExample name="page-numbers" />
 
 ---

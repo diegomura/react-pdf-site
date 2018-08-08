@@ -1,5 +1,5 @@
 const styles = StyleSheet.create({
-  page: { backgroundColor: 'blue' },
+  page: { backgroundColor: 'tomato' },
   section: { color: 'white', textAlign: 'center', margin: 30 }
 });
 

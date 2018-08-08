@@ -28,11 +28,15 @@ const examples = {
   images: require('raw-loader!../examples/images.txt'),
   fractals: require('raw-loader!../examples/fractals.txt'),
   'page-wrap': require('raw-loader!../examples/page-wrap.txt'),
+  'page-breaks': require('raw-loader!../examples/page-breaks.txt'),
   'quick-start': require('raw-loader!../examples/quick-start.txt'),
+  'page-numbers': require('raw-loader!../examples/page-numbers.txt'),
   'mixed-styles': require('raw-loader!../examples/mixed-styles.txt'),
   'inline-styles': require('raw-loader!../examples/inline-styles.txt'),
   'media-queries': require('raw-loader!../examples/media-queries.txt'),
+  'disable-wrapping': require('raw-loader!../examples/disable-wrapping.txt'),
   'styled-components': require('raw-loader!../examples/styled-components.txt'),
+  'breakable-unbreakable': require('raw-loader!../examples/breakable-unbreakable.txt'),
 };
 
 const Section = styled.section`
