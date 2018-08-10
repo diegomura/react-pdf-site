@@ -51,12 +51,12 @@ const ReplFooter = ({ documentUrl, shareUrl, code }) => (
       </BannerButton>
     )}
     <Clipboard text={shareUrl} tooltip="URL copied to clipboard!">
-      <BannerButton icon="share-alt" secondary>
+      <BannerButton icon="share-alt" component="button" secondary>
         Share
       </BannerButton>
     </Clipboard>
     <Clipboard text={code}>
-      <BannerButton icon="copy" secondary>
+      <BannerButton icon="copy" component="button" secondary>
         Copy
       </BannerButton>
     </Clipboard>

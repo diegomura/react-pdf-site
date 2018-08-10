@@ -134,7 +134,8 @@ const onUrlChange = props => url => {
 };
 
 const setShareUrl = ({ code }) => ({
-  shareUrl: process.browser && `${window.location.host}/repl?code=${compress(code)}`,
+  shareUrl: process.browser &&
+    `${window.location.protocol}//${window.location.host}/repl?code=${compress(code)}`,
 });
 
 const setInitialValueFromCode = code => {
