@@ -1,6 +1,6 @@
 ### Image
 
-A React component for displaying network or local JPG or PNG images.
+A React component for displaying network or local (Node only) JPG or PNG images, as well as base64 encoded image strings.
 
 #### Valid props
 
