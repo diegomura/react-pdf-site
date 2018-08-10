@@ -10,6 +10,7 @@ const Wrapper = styled.a`
   font-size: 16px;
   padding: 4px 16px;
   line-height: 24px;
+  white-space: nowrap;
   text-decoration: none;
   font-family: 'Source Sans Pro';
   transition: color 0.2s, background 0.2s;
