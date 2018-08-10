@@ -43,7 +43,6 @@ const Section = styled.section`
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: calc(100% - 64px);
 `;
 
 const Main = styled.main`
@@ -52,7 +51,8 @@ const Main = styled.main`
 `;
 
 const Nav = styled.nav`
-  width: 64px;
+  min-width: 64px;
+  max-width: 64px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -96,7 +96,7 @@ const ReplPage = ({
   setActiveTab,
 }) => (
   <Main>
-    <Nav width="64px">
+    <Nav>
       <Back>
         <Icon type="arrow-left" size={18} />
       </Back>
