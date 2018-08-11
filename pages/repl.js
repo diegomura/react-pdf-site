@@ -56,6 +56,7 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: #f8f8f8;
 
   ${media.desktop`
     display: none;

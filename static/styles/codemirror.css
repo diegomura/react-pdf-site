@@ -1,7 +1,7 @@
 .CodeMirror {
   font-size: 16px;
   height: 100%;
-  background-color: #3E3E3E;
+  background-color: #2C2C2C;
 }
 
  @media (max-width: 36em) {
@@ -16,7 +16,7 @@
   color: #A6A6A6;
   font-size: 12px;
   line-height: 24px;
-  background-color: #2E2E2E;
+  background-color: #3E3E3E;
   font-family: "monospace" !important;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .CodeMirror-line span[role="presentation"] {
-  color: #F1F1F1;
+  color: #E7E7E7;
 }
 
 .CodeMirror-scroll {
@@ -65,33 +65,33 @@
 }
 
 .cm-atom {
-  color: #F1F1F1 !important;
+  color: #E7E7E7 !important;
 }
 
 .cm-number {
-  color: #F1F1F1 !important;
+  color: #E7E7E7 !important;
 }
 
 .cm-property {
-  color: #F1F1F1 !important;
+  color: #E7E7E7 !important;
 }
 
 .cm-keyword,
 .cm-attribute {
-  color: #C594C5 !important;
+  color: #FF6666 !important;
 }
 
 .cm-string,
 .cm-string-2 {
-  color: #99C794 !important;
+  color: #7AECD9 !important;
 }
 
 .cm-variable {
-  color: #F1F1F1 !important;
+  color: #E7E7E7 !important;
 }
 
 .cm-variable-2 {
-  color: #F1F1F1 !important;
+  color: #E7E7E7 !important;
 }
 
 .cm-def {

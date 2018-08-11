@@ -3,13 +3,19 @@ This component represent the PDF document itself. It *must* be the root of your 
 
 #### Valid props
 
-| Prop name              | Description                                               |  Type    | Default     |
-| ---------------------- |:---------------------------------------------------------:| --------:| -----------:|
-| title                  | Sets title info on the document's metadata                | *String* | _undefined_ |
-| author                 | Sets author info on the document's metadata               | *String* | _undefined_ |
-| subject                | Sets subject info on the document's metadata              | *String* | _undefined_ |
-| keywords               | Sets keywords associated info on the document's metadata  | *String* | _undefined_ |
-| creator                | Sets creator info on the document's metadata              | *String* | _react-pdf_ |
-| producer               | Sets producer info on the document's metadata             | *String* | _react-pdf_ |
+| Prop name              | Description                                                             |  Type              | Default       |
+| ---------------------- |:-----------------------------------------------------------------------:| ------------------:| -------------:|
+| title                  | Sets title info on the document's metadata                              | *String*           | _undefined_   |
+| author                 | Sets author info on the document's metadata                             | *String*           | _undefined_   |
+| subject                | Sets subject info on the document's metadata                            | *String*           | _undefined_   |
+| keywords               | Sets keywords associated info on the document's metadata                | *String*           | _undefined_   |
+| creator                | Sets creator info on the document's metadata                            | *String*           | _"react-pdf"_ |
+| producer               | Sets producer info on the document's metadata                           | *String*           | _"react-pdf"_ |
+| onRender               | Callback after document renders. Receives document blob argument in web | *Function*         | _undefined_   |
+| shallow `(Web only)`   | Enable shallow document rendering. [See more]()                         | *Boolean*          | _false_       |
+| width `(Web only)`     | Width of embedded PDF iframe                                            | *String*, *Number* | _undefined_   |
+| height `(Web only)`    | Height of embedded PDF iframe                                           | *String*, *Number* | _undefined_   |
+| style `(Web only)`     | Style of embedded PDF iframe                                            | *Object*           | _undefined_   |
+| className `(Web only)` | Class name of embedded PDF iframe                                       | *String*           | _undefined_   |
 
 ---
