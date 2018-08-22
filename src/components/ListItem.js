@@ -8,6 +8,7 @@ const ListItem = styled.li`
   font-family: 'Source Sans Pro';
   ${media.phone`
     font-size: 16px;
+    line-height: 16px;
     margin-bottom: 1.3em;
   `}
 `;

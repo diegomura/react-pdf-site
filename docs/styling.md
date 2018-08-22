@@ -1,3 +1,4 @@
+import List from '../src/components/List'
 import EditButton from '../src/components/EditButton'
 import GoToExample from '../src/components/GoToExample'
 import NavigationButtons from '../src/components/NavigationButtons'
@@ -167,6 +168,99 @@ const MyDocument = () => (
 
 For more information about the API, please refer to the [styled-components documentation](https://www.styled-components.com/docs).
 
+---
+
+### Valid CSS properties
+
+#### Flexbox
+
+- alignContent
+- alignItems
+- alignSelf
+- flex
+- flexDirection
+- flexWrap
+- flexFlow
+- flexGrow
+- flexShrink
+- flexBasis
+- justifyContent
+- order
+
+#### Layout
+
+- bottom
+- display
+- left
+- position
+- right
+- top
+
+#### Dimension
+
+- height
+- maxHeight
+- maxWidth
+- minHeight
+- minWidth
+- width
+
+#### Background
+
+- backgroundColor
+
+#### Text
+
+- color
+- fontSize
+- fontFamily
+- lineHeight
+- textAlign
+- textDecoration
+- textDecorationColor
+- textDecorationStyle
+- textTransform
+
+#### Margin/padding
+
+- margin
+- marginHorizontal
+- marginVertical
+- marginTop
+- marginRight
+- marginBottom
+- marginLeft
+- padding
+- paddingHorizontal
+- paddingVertical
+- paddingTop
+- paddingRight
+- paddingBottom
+- paddingLeft
+
+#### Borders
+
+- border
+- borderTop
+- borderTopColor
+- borderTopStyle
+- borderTopWidth
+- borderRight
+- borderRightColor
+- borderRightStyle
+- borderRightWidth
+- borderBottom
+- borderBottomColor
+- borderBottomStyle
+- borderBottomWidth
+- borderLeft
+- borderLeftColor
+- borderLeftStyle
+- borderLeftWidth
+- borderTopLeftRadius
+- borderTopRightRadius
+- borderBottomRightRadius
+- borderBottomLeftRadius
 
 <NavigationButtons
   backSrc="/components"

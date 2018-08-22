@@ -119,6 +119,7 @@ const Menu = ({ opened, onItemClick, ...props }) => (
         <Item to="/styling#stylesheet-api" title="StyleSheet API" onClick={onItemClick} />
         <Item to="/styling#media-queries" title="Media queries" onClick={onItemClick} />
         <Item to="/styling#styled-components" title="Styled-components" onClick={onItemClick} />
+        <Item to="/styling#valid-css-properties" title="Valid CSS properties" onClick={onItemClick} />
       </Item>
       <Item to="/advanced" title="Advanced">
         <Item to="/advanced#page-wrapping" title="Page wrapping" onClick={onItemClick} />
