@@ -60,7 +60,7 @@ React-pdf enables you to render the document in three different environments: **
 #### Save in a file
 
 ```
-import ReactPDF from '@react-pdf/node';
+import ReactPDF from '@react-pdf/renderer';
 
 ReactPDF.render(<MyDocument />, `${__dirname}/example.pdf`);
 ```
