@@ -28,7 +28,7 @@ const HeroWrapper = styled.div`
 const Hero = () => (
   <HeroWrapper>
     <DocumentGraphicImage />
-    <Button primary>Try it out!</Button>
+    <Button href="/repl" primary>Try it out!</Button>
   </HeroWrapper>
 );
 
