@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Link from 'next/link';
 import { withRouter } from 'next/router';
 import styled from 'styled-components';
@@ -81,12 +81,19 @@ const ItemWrapper = styled.li`
 `;
 
 const Item = withRouter(({ router, to, title, children, onClick, ...props }) => {
+  const isAbsoluteUrl = /https?/.test(to);
   const active = router && router.pathname === to;
+  const LinkComponent = isAbsoluteUrl ? 'div' : Link;
 
   return (
     <ItemWrapper>
       <Link href={to} {...props}>
-        <MenuLink active={active} onClick={onClick}>
+        <MenuLink
+          href={to}
+          active={active}
+          onClick={onClick}
+          target={isAbsoluteUrl ? '_blank' : null}
+        >
           {title}
         </MenuLink>
       </Link>
