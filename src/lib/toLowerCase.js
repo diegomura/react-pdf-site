@@ -1,1 +1,1 @@
-export default string => string.toLowerCase().replace(/ /g, '-');
+export default string => string.trim().toLowerCase().replace(/ /g, '-');

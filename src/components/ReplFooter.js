@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import ReactPDF from '@react-pdf/renderer';
 import Button from './Button';
 import Clipboard from './Clipboard';
 import media from '../styled/media';
@@ -20,13 +21,23 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  flex: 1;
   margin-left: 25px;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
   display: inline-block;
   font-family: 'Taviraj';
+  ${media.phone`
+    display: none;
+  `}
+`;
+
+const Version = styled.p`
+  flex: 1;
+  margin-left: 25px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
   ${media.phone`
     display: none;
   `}
@@ -39,6 +50,7 @@ const BannerButton = styled(Button)`
 const ReplFooter = ({ documentUrl, shareUrl, code }) => (
   <Wrapper>
     <Title>React-PDF Repl</Title>
+    <Version>{ReactPDF.version}</Version>
     {documentUrl && (
       <BannerButton
         icon="download"

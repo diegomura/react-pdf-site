@@ -1,6 +1,7 @@
 import EditButton from '../src/components/EditButton'
 import NavigationButtons from '../src/components/NavigationButtons'
 import PageWrapping from './page-wrapping.md'
+import OnTheFly from './on-the-fly.md'
 import OrphanWidowProtection from './orphan-widow-protection.md'
 import EmojiRendering from './emoji-rendering.md'
 import DynamicContent from './dynamic-content.md'
@@ -12,6 +13,7 @@ import Ruler from './ruler.md'
 
 ## Advanced
 <PageWrapping components={components} />
+<OnTheFly components={components} />
 <OrphanWidowProtection components={components} />
 <EmojiRendering components={components} />
 <DynamicContent components={components} />

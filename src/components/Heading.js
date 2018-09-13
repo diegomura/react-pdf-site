@@ -81,7 +81,10 @@ const Heading = ({ level, children, ...props }) => {
   const HeadingComponent = Headings[level - 1];
 
   return (
-    <HeadingComponent id={toLowerCase(children)} {...props}>
+    <HeadingComponent
+      id={toLowerCase(Array.isArray(children) ? children[0] : children)}
+      {...props}
+    >
       {children}
     </HeadingComponent>
   );

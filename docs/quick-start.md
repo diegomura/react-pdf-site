@@ -2,16 +2,15 @@ import EditButton from '../src/components/EditButton'
 import GoToExample from '../src/components/GoToExample'
 import NavigationButtons from '../src/components/NavigationButtons'
 
-<EditButton to="https://github.com/react-pdf/site/blob/master/docs/quick-start.md" />
-
-## Quick start guide
-> *If you know React, you already know react-pdf*
-
-React-pdf is what is called a *React renderer*. This  means that you can use React, that you already know and love, to render **PDF documents**. How awesome is this!
-
 ### 1. Install React and react-pdf
 
-Since a renderer simply implements *how elements render into something*, you still need to have React to make it work. You can find instructions on how to do that [here](https://reactjs.org/docs/add-react-to-an-existing-app.html). React-pdf instructions are above.
+Starting with react-pdf is extremely simple.
+
+```
+yarn add @react-pdf/renderer
+```
+
+Since a renderer simply implements *how elements render into something*, you still need to have React to make it work (and react-dom for client-side document generation). You can find instructions on how to do that [here](https://reactjs.org/docs/add-react-to-an-existing-app.html).
 
 ### 2. Create your PDF document
 
@@ -70,11 +69,12 @@ ReactPDF.render(<MyDocument />, `${__dirname}/example.pdf`);
 ```
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { PDFViewer } from '@react-pdf/renderer';
 
 const App = () => (
-  <div>
+  <PDFViewer>
     <MyDocument />
-  </div>
+  </PDFViewer>
 );
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -82,9 +82,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 #### Render in mobile
 
-*Working on it...*
-
-<GoToExample name="quick-start" />
+*In progress...*
 
 ### 4. Have fun!
 

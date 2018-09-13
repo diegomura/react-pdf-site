@@ -2,10 +2,11 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import Logo from '../src/components/Logo';
 import Title from '../src/components/Title';
+import EditButton from '../src/components/EditButton';
 import Button from '../src/components/Button';
 import media from '../src/styled/media';
 import { injectComponents } from '../src/lib/markdown';
-import Content from '../docs/installation.md';
+import Content from '../docs/quick-start.md';
 
 const EnhancedContent = injectComponents(Content);
 
@@ -40,6 +41,7 @@ const LogoBanner = styled(Logo)`
 
 const Home = () => (
   <Fragment>
+    <EditButton to="https://github.com/react-pdf/site/blob/master/docs/quick-start.md" />
     <LogoBanner size="37px" rotate withText/>
     <Title />
     <Hero />

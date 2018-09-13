@@ -6,6 +6,9 @@ import View from './view.md'
 import Image from './image.md'
 import Text from './text.md'
 import Link from './link.md'
+import PDFViewer from './pdf-viewer.md'
+import PDFDownloadLink from './pdfdownloadlink.md'
+import BlobProvider from './blobprovider.md'
 
 <EditButton to="https://github.com/react-pdf/site/blob/master/docs/components.md" />
 
@@ -18,6 +21,9 @@ React-pdf follows the [React primitives](https://github.com/lelandrichardson/rea
 <Image components={components} />
 <Text components={components} />
 <Link components={components} />
+<PDFViewer components={components} />
+<PDFDownloadLink components={components} />
+<BlobProvider components={components} />
 
 <NavigationButtons
   backSrc="/rendering-process"

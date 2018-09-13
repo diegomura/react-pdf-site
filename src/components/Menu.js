@@ -111,8 +111,7 @@ const Menu = ({ opened, onItemClick, ...props }) => (
     <Input />
     <MenuLogo rotate />
     <List>
-      <Item to="/" title="Installation" onClick={onItemClick} />
-      <Item to="/quick-start-guide" title="Quick start guide" onClick={onItemClick} />
+      <Item to="/" title="Quick start guide" onClick={onItemClick} />
       <Item to="/rendering-process" title="Rendering process" onClick={onItemClick}/>
       <Item to="/components" title="Components">
         <Item to="/components#document" title="Document" onClick={onItemClick} />
@@ -121,6 +120,9 @@ const Menu = ({ opened, onItemClick, ...props }) => (
         <Item to="/components#image" title="Image" onClick={onItemClick} />
         <Item to="/components#text" title="Text" onClick={onItemClick} />
         <Item to="/components#link" title="Link" onClick={onItemClick} />
+        <Item to="/components#pdfviewer" title="PDFViewer" onClick={onItemClick} />
+        <Item to="/components#pdfdownloadlink" title="PDFDownloadLink" onClick={onItemClick} />
+        <Item to="/components#blobprovider" title="BlobProvider" onClick={onItemClick} />
       </Item>
       <Item to="/styling" title="Styling">
         <Item to="/styling#stylesheet-api" title="StyleSheet API" onClick={onItemClick} />
@@ -130,6 +132,7 @@ const Menu = ({ opened, onItemClick, ...props }) => (
       </Item>
       <Item to="/advanced" title="Advanced">
         <Item to="/advanced#page-wrapping" title="Page wrapping" onClick={onItemClick} />
+        <Item to="/advanced#on-the-fly-rendering" title="On the fly rendering" onClick={onItemClick} />
         <Item
           to="/advanced#orphan-&-widow-protection"
           title="Orphan and widow protection"
