@@ -647,15 +647,15 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@react-pdf/png-js/-/png-js-1.0.0.tgz#00fcb969dca4ce82a0a7673413ade039e47b361e"
 
-"@react-pdf/renderer@^1.0.0-alpha.12":
-  version "1.0.0-alpha.12"
-  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-1.0.0-alpha.12.tgz#74ad72915316b0ef399132c513e6c19857213302"
+"@react-pdf/renderer@^1.0.0-alpha.17":
+  version "1.0.0-alpha.17"
+  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-1.0.0-alpha.17.tgz#0ac465bf2218e4fd336e4bcef25eb04ee9dd2225"
   dependencies:
     "@react-pdf/fontkit" "^1.11.0"
     "@react-pdf/pdfkit" "^1.2.0"
     "@react-pdf/png-js" "^1.0.0"
     "@react-pdf/script-itemizer" "^0.1.11"
-    "@react-pdf/textkit-core" "^0.1.18"
+    "@react-pdf/textkit-core" "^0.1.20"
     "@textkit/justification-engine" "^0.1.9"
     "@textkit/line-fragment-generator" "^0.1.9"
     "@textkit/linebreaker" "^0.1.9"
@@ -678,8 +678,9 @@
     lodash.topairsin "^4.3.0"
     lodash.upperfirst "^4.3.1"
     media-engine "^1.0.3"
+    page-wrapping "^1.0.2"
     react "^16.4.1"
-    react-reconciler "^0.7.0"
+    react-reconciler "^0.12.0"
     yoga-layout "1.9.3"
 
 "@react-pdf/script-itemizer@^0.1.11":
@@ -694,9 +695,9 @@
   dependencies:
     styled-components "^3.3.3"
 
-"@react-pdf/textkit-core@^0.1.18":
-  version "0.1.18"
-  resolved "https://registry.yarnpkg.com/@react-pdf/textkit-core/-/textkit-core-0.1.18.tgz#a697b83e030c349ccef75a9384ef6021b02f51b6"
+"@react-pdf/textkit-core@^0.1.20":
+  version "0.1.20"
+  resolved "https://registry.yarnpkg.com/@react-pdf/textkit-core/-/textkit-core-0.1.20.tgz#c7ce4fb784715a38b306cce7e218a03dfad0ba9e"
   dependencies:
     "@react-pdf/unicode-properties" "^2.2.0"
     cubic2quad "^1.1.0"
@@ -4085,6 +4086,10 @@ p-try@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-1.0.0.tgz#cbc79cdbaf8fd4228e13f621f2b1a237c1b207b3"
 
+page-wrapping@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/page-wrapping/-/page-wrapping-1.0.2.tgz#7d7dd7166f64cf241078af4a885aaf1fae776321"
+
 pako@^0.2.5:
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/pako/-/pako-0.2.9.tgz#f3f7522f4ef782348da8161bad9ecfd51bf83a75"
@@ -4731,9 +4736,9 @@ react-prism@^4.3.2:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/react-prism/-/react-prism-4.3.2.tgz#5c07609539b3ba6f45eb33e7d6a3588df3270c21"
 
-react-reconciler@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/react-reconciler/-/react-reconciler-0.7.0.tgz#9614894103e5f138deeeb5eabaf3ee80eb1d026d"
+react-reconciler@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/react-reconciler/-/react-reconciler-0.12.0.tgz#dd3ecd98f64a2d8449298dadab041910cafd2849"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"

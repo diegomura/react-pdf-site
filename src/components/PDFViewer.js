@@ -70,12 +70,11 @@ class PDFViewer extends React.Component {
 
     this.setState({ loading: true });
 
-    const container = createElement('ROOT');
-    const mountNode = PDFRenderer.createContainer(container);
+    // const container = createElement('ROOT');
+    // const mountNode = PDFRenderer.createContainer(container);
+    // PDFRenderer.updateContainer(doc, mountNode, this);
 
-    PDFRenderer.updateContainer(doc, mountNode, this);
-
-    pdf(container)
+    pdf(doc)
       .toBlob()
       .then(blob => {
         const url = URL.createObjectURL(blob);

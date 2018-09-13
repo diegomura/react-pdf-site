@@ -9,7 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@react-pdf/renderer": "^1.0.0-alpha.12",
+    "@react-pdf/renderer": "^1.0.0-alpha.17",
     "@react-pdf/styled-components": "^1.2.0",
     "@zeit/next-css": "^0.2.0",
     "buble": "^0.19.3",
