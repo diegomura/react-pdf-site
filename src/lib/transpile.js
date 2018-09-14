@@ -6,6 +6,7 @@ import {
   Link,
   Font,
   View,
+  Note,
   Image,
   StyleSheet,
 } from '@react-pdf/renderer';
@@ -13,7 +14,7 @@ import styled from '@react-pdf/styled-components';
 
 const Document = 'DOCUMENT';
 
-const primitives = { Document, Page, Text, Link, Font, View, Image, StyleSheet, styled };
+const primitives = { Document, Page, Text, Link, Font, View, Note, Image, StyleSheet, styled };
 
 const transpile = (code, callback, onError) => {
   try {
@@ -31,7 +32,7 @@ const transpile = (code, callback, onError) => {
       ...Object.keys(primitives),
       result.code,
     );
-  
+
     res(React, { render: doc => callback(doc) }, ...Object.values(primitives));
   } catch (e) {
     if (onError) {

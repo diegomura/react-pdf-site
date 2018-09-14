@@ -120,6 +120,7 @@ const Menu = ({ opened, onItemClick, ...props }) => (
         <Item to="/components#image" title="Image" onClick={onItemClick} />
         <Item to="/components#text" title="Text" onClick={onItemClick} />
         <Item to="/components#link" title="Link" onClick={onItemClick} />
+        <Item to="/components#note" title="Note" onClick={onItemClick} />
         <Item to="/components#pdfviewer" title="PDFViewer" onClick={onItemClick} />
         <Item to="/components#pdfdownloadlink" title="PDFDownloadLink" onClick={onItemClick} />
         <Item to="/components#blobprovider" title="BlobProvider" onClick={onItemClick} />
