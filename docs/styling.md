@@ -238,6 +238,17 @@ For more information about the API, please refer to the [styled-components docum
 - paddingBottom
 - paddingLeft
 
+#### Transformations
+
+- transform:rotate
+- transform:scale
+- transform:scaleX
+- transform:scaleY
+- transform:translate
+- transform:translateX
+- transform:translateY
+- transform:matrix
+
 #### Borders
 
 - border
