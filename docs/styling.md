@@ -214,6 +214,7 @@ For more information about the API, please refer to the [styled-components docum
 - color
 - fontSize
 - fontFamily
+- letterSpacing
 - lineHeight
 - textAlign
 - textDecoration
