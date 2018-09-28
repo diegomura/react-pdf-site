@@ -1,15 +1,15 @@
-import React from 'react';
-import dynamic from 'next/dynamic';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import debounce from 'lodash.debounce';
-import ErrorMessage from './ErrorMessage';
-import transpile from '../lib/transpile';
-import media from '../styled/media';
+import React from 'react'
+import dynamic from 'next/dynamic'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import debounce from 'lodash.debounce'
+import ErrorMessage from './ErrorMessage'
+import transpile from '../lib/transpile'
+import media from '../styled/media'
 
-const PDFViewerWithNoSSR = dynamic(import('./PDFViewer'), { ssr: false });
+const PDFViewerWithNoSSR = dynamic(import('./PDFViewer'), { ssr: false })
 
-const debounceTranspile = debounce(transpile, 250);
+const debounceTranspile = debounce(transpile, 250)
 
 const Wrapper = styled.div`
   flex: 1;
@@ -20,8 +20,8 @@ const Wrapper = styled.div`
   ${media.desktop`
     display: initial;
     max-height: calc(100vh - 45px);
-  `}
-`;
+  `};
+`
 
 const CodePanel = styled.div`
   flex: 1;
@@ -32,32 +32,32 @@ const CodePanel = styled.div`
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: ${props => props.active ? 500 : 250};
-  `}
-`;
+    z-index: ${props => (props.active ? 500 : 250)};
+  `};
+`
 
 const PDFPanel = styled.div`
   flex: 1;
   display: flex;
   overflow: scroll;
   align-items: center;
-  background-color: #FFF;
+  background-color: #fff;
   justify-content: center;
 
   ${media.desktop`
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: ${props => props.active ? 500 : 250};
-  `}
-`;
+    z-index: ${props => (props.active ? 500 : 250)};
+  `};
+`
 
 const CodeError = styled(ErrorMessage)`
   bottom: 0;
   width: 100%;
   z-index: 1000;
   position: absolute;
-`;
+`
 
 const DEFAULT_CODE_MIRROR_OPTIONS = {
   autoCloseBrackets: true,
@@ -69,81 +69,78 @@ const DEFAULT_CODE_MIRROR_OPTIONS = {
   showCursorWhenSelecting: true,
   styleActiveLine: true,
   tabWidth: 2,
-  autoCloseTags: true,
-};
+  autoCloseTags: true
+}
 
-let CodeMirror;
+let CodeMirror
 
 class Repl extends React.PureComponent {
   state = {
     element: null,
-    error: null,
-  };
+    error: null
+  }
 
   componentDidMount() {
-    require('codemirror/mode/jsx/jsx');
-    require('codemirror/keymap/sublime');
-    require('codemirror/addon/edit/closetag');
-    require('codemirror/addon/comment/comment');
-    require('codemirror/addon/edit/matchbrackets');
-    require('codemirror/addon/edit/closebrackets');
-    require('codemirror/addon/display/placeholder');
-    require('codemirror/addon/selection/active-line');
-    require('codemirror/addon/selection/mark-selection');
-    CodeMirror = require('codemirror');
+    require('codemirror/mode/jsx/jsx')
+    require('codemirror/keymap/sublime')
+    require('codemirror/addon/edit/closetag')
+    require('codemirror/addon/comment/comment')
+    require('codemirror/addon/edit/matchbrackets')
+    require('codemirror/addon/edit/closebrackets')
+    require('codemirror/addon/display/placeholder')
+    require('codemirror/addon/selection/active-line')
+    require('codemirror/addon/selection/mark-selection')
+    CodeMirror = require('codemirror')
 
-    this.codeMirror = CodeMirror.fromTextArea(
-      this.textarea,
-      DEFAULT_CODE_MIRROR_OPTIONS,
-    );
-    this.codeMirror.on('change', this.onChange.bind(this));
-    this.codeMirror.setValue(this.props.value);
+    this.codeMirror = CodeMirror.fromTextArea(this.textarea, DEFAULT_CODE_MIRROR_OPTIONS)
+    this.codeMirror.on('change', this.onChange.bind(this))
+    this.codeMirror.setValue(this.props.value)
   }
 
   componentWillUnmount() {
     if (this.codeMirror) {
-      this.codeMirror.toTextArea();
+      this.codeMirror.toTextArea()
     }
   }
 
   UNSAFE_componentWillReceiveProps(newProps) {
     if (this.props.value !== newProps.value) {
-      this.codeMirror.setValue(newProps.value);
+      this.codeMirror.setValue(newProps.value)
     }
   }
 
   onChange({ doc }) {
-    const code = doc.getValue();
+    const code = doc.getValue()
 
     if (this.props.onChange) {
-      this.props.onChange(code);
+      this.props.onChange(code)
     }
 
     if (code.length === 0) {
       this.setState({
         error: null,
-        element: null,
-      });
+        element: null
+      })
     }
 
-    this.transpile(code);
+    this.transpile(code)
   }
 
   onErrorClose = () => {
-    this.setState({ error: null });
-  };
+    this.setState({ error: null })
+  }
 
   transpile(code) {
     debounceTranspile(
       code,
       element => this.setState({ element, error: null }),
-      error => this.setState({ error: error.message }),
-    );
+      error => this.setState({ error: error.message })
+    )
   }
 
   render() {
-    const { element, error } = this.state;
-    const { activeTab, value, onUrlChange } = this.props;
+    const { element, error } = this.state
+    const { activeTab, value, onUrlChange } = this.props
 
     return (
       <Wrapper>
@@ -152,7 +149,9 @@ class Repl extends React.PureComponent {
             autoFocus
             autoComplete="off"
             defaultValue={value}
-            ref={node => { this.textarea = node; }}
+            ref={node => {
+              this.textarea = node
+            }}
             placeholder="Write code here..."
           />
           <CodeError onClose={this.onErrorClose}>{error}</CodeError>
@@ -161,17 +160,18 @@ class Repl extends React.PureComponent {
           <PDFViewerWithNoSSR
             document={element}
             onUrlChange={onUrlChange}
+            onRenderError={error => this.setState({ error })}
           />
         </PDFPanel>
       </Wrapper>
-    );
+    )
   }
 }
 
 Repl.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  onUrlChange: PropTypes.func.isRequired,
-};
+  onUrlChange: PropTypes.func.isRequired
+}
 
-export default Repl;
+export default Repl
