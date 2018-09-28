@@ -3,7 +3,6 @@ import NavigationButtons from '../src/components/NavigationButtons'
 import PageWrapping from './page-wrapping.md'
 import OnTheFly from './on-the-fly.md'
 import OrphanWidowProtection from './orphan-widow-protection.md'
-import EmojiRendering from './emoji-rendering.md'
 import DynamicContent from './dynamic-content.md'
 import Hyphenation from './hyphenation.md'
 import Debugging from './debugging.md'
@@ -15,7 +14,6 @@ import Ruler from './ruler.md'
 <PageWrapping components={components} />
 <OnTheFly components={components} />
 <OrphanWidowProtection components={components} />
-<EmojiRendering components={components} />
 <DynamicContent components={components} />
 <Debugging components={components} />
 <Ruler components={components} />
