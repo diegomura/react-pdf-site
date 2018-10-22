@@ -180,6 +180,8 @@ For more information about the API, please refer to the [styled-components docum
 
 `cm` centimeters
 
+`%` percentage
+
 ---
 
 ### Valid CSS properties
