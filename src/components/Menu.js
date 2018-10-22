@@ -17,10 +17,10 @@ const Nav = styled.nav`
   transition: all 0.5s;
   flex-direction: column;
   width: ${props => props.width || '285px'};
-  min-width: ${props => props.width || '240px'};
+  min-width: ${props => props.width || '285px'};
   background-color: ${({ theme }) => theme.gray3};
   ${media.tablet`
-    left: ${props => (props.opened ? '0px' : '-240px')};
+    left: ${props => (props.opened ? '0px' : '-285px')};
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   `};
 `
@@ -81,9 +81,8 @@ const ItemWrapper = styled.li`
 `
 
 const Item = withRouter(({ router, to, title, children, onClick, ...props }) => {
-  const isAbsoluteUrl = /https?/.test(to)
-  const active = router && router.pathname === to
-  const LinkComponent = isAbsoluteUrl ? 'div' : Link
+  const isAbsoluteUrl = /https?/.test(to);
+  const active = router && router.pathname === to;
 
   return (
     <ItemWrapper>

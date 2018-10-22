@@ -7,6 +7,7 @@ Represents single page inside the PDF document, or a subset of them if using the
 | -------------------- |:---------------------------------------------------------:| --------:| -----------:|
 | size                 | Defines page size. See [available page sizes](https://github.com/diegomura/react-pdf/blob/master/src/utils/pageSizes.js) | *String*, *Object*, *Array*    | _"A4"_ |
 | orientation          | Defines page orientation. _Valid values: "portrait" or "landscape"_     | *String* | _"portrait"_ |
+| dpi                  | Defines page DPI | *Integer* | _72_ |
 | wrap                 | Enable page wrapping for this page. [See more](/advanced#page-wrapping)          | *Boolean* | _false_ |
 | style                | Defines page styles. [See more](/styling)               | *Object*, *Array* | _undefined_ |
 | debug                | Enables debug mode on page bounding box. [See more](/advanced#debugging)         | *Boolean* | _false_ |
