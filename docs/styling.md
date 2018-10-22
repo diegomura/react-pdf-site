@@ -170,6 +170,20 @@ For more information about the API, please refer to the [styled-components docum
 
 ---
 
+### Valid units
+
+`pt` _(default. Based on the standard 72 dpi PDF document)_
+
+`in` inches
+
+`mm` millimeters
+
+`cm` centimeters
+
+`%` percentage
+
+---
+
 ### Valid CSS properties
 
 #### Flexbox
