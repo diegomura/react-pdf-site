@@ -1,6 +1,6 @@
 const Quixote = () => (
   <Document>
-    <Page style={styles.body} wrap>
+    <Page style={styles.body}>
       <Text style={styles.header} fixed>
         ~ Created with react-pdf ~
       </Text>

@@ -2,21 +2,19 @@ import GoToExample from '../src/components/GoToExample'
 
 ### Page wrapping
 
-By default each `<Page />` component represents a single page in the rendered document no matter how big their children are. However, there are scenarios in which you would expect to have page breaks whenever the page contents exceeds their limits, specially when handling big chunks of text. React-pdf has a build-in wrapping engine that enables you to do just that very easily:
+Semantically, the `<Page />` component represents a single page in the rendered document. However, there are scenarios in which you would expect to have page breaks whenever the page contents exceeds their limits, specially when handling big chunks of text. After all, PDFs are paged documents. React-pdf has a build-in wrapping engine that is enabled by default, so you can start creating paged documents right out of the box. If that's not what you need, you can disable this very easily by doing:
 
 ```
 import { Document, Page } from '@react-pdf/renderer'
 
 const doc = () => (
   <Document>
-    <Page wrap>
+    <Page wrap={false}>
       // something pretty here
     </Page>
   </Document>
 );
 ```
-
-And *voilà*. Now every time an element gets outside the page, it's wrapped to fill the remaining space (if any) and the remaining part is added into a new page. *Pretty handy right?*
 
 <GoToExample name="page-wrap" />
 
