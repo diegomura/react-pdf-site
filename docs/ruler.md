@@ -7,14 +7,14 @@ If you need fine-grained control on proportions and where elements are rendered,
 
 <RulerPlayground />
 
-| Prop name            | Description                                               |  Type    |   Default   |
-| -------------------- |:---------------------------------------------------------:| --------:| -----------:|
-| ruler                | Enables vertical and horizontal rulers on page.         | *Boolean* | _false_ |
-| rulerSteps           | Grid separation for horizontal and vertical rulers         | *Integer* *Float* *String* | 50 |
-| verticalRuler        | Enables vertical ruler on page.         | *Boolean* | _false_ |
-| verticalRulerSteps   | Grid separation for vertical ruler         | *Integer* *Float* *String*  | 50 |
-| horizontalRuler      | Enables horizontal ruler on page.         | *Boolean* | _false_ |
-| horizontalRulerSteps | Grid separation for horizontal rulers         | *Integer* *Float* *String*  | 50 |  
+| Prop name            |                    Description                     |                       Type | Default |
+| -------------------- | :------------------------------------------------: | -------------------------: | ------: |
+| ruler                |  Enables vertical and horizontal rulers on page.   |                  _Boolean_ | _false_ |
+| rulerSteps           | Grid separation for horizontal and vertical rulers | _Integer_ _Float_ _String_ |      50 |
+| verticalRuler        |          Enables vertical ruler on page.           |                  _Boolean_ | _false_ |
+| verticalRulerSteps   |         Grid separation for vertical ruler         | _Integer_ _Float_ _String_ |      50 |
+| horizontalRuler      |         Enables horizontal ruler on page.          |                  _Boolean_ | _false_ |
+| horizontalRulerSteps |       Grid separation for horizontal rulers        | _Integer_ _Float_ _String_ |      50 |
 
 <GoToExample name="ruler" />
 

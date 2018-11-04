@@ -12,7 +12,7 @@ At a high level, the document creation process is composed by 6 concrete steps.
 
 ### 1. Internal structures creation
 
-The first step involves transforming the *React element tree* into the appropriate internal instances for each component type. This involves saving the relationship between these (parent-child), parsing styles and processing props.
+The first step involves transforming the _React element tree_ into the appropriate internal instances for each component type. This involves saving the relationship between these (parent-child), parsing styles and processing props.
 
 Besides **Document**, all nodes will represent a block inside a document, with a height, width, paddings and margins (yet to be discovered). This instances also define how each element wraps in the page, how their dimensions are calculated, and finally, how they get rendered in the document.
 
@@ -28,7 +28,7 @@ This step also involves adding any defined metadata to the final document.
 
 ### 3. Fetching assets
 
-Time to ask for all needed resources! We traverse the internal element's tree fetching any required *font*, *image* or *emoji*.
+Time to ask for all needed resources! We traverse the internal element's tree fetching any required _font_, _image_ or _emoji_.
 
 We run all these requests asynchronously, but we won't move forward until all requests are finished (with success or failure).
 
@@ -40,7 +40,7 @@ This is the most time-consuming step, since it involves not just calculating whe
 
 ### 5. Rendering
 
-At this point we have every element’s dimensions, and in on wich page they are. All we have to do now is performing the actual rendering on the document created in step 2, by calling the *render* method in each instance recursively.
+At this point we have every element’s dimensions, and in on wich page they are. All we have to do now is performing the actual rendering on the document created in step 2, by calling the _render_ method in each instance recursively.
 
 ### 6. Finish document
 

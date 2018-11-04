@@ -140,6 +140,7 @@ yarn add @react-pdf/styled-components
 ```
 
 #### How to use
+
 This bindings follows exactly the same styled-components API, so after installing it you can start creating styled primitives by importing `styled` object from it:
 
 ```
