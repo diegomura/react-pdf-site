@@ -11,6 +11,7 @@ import Ruler from './ruler.md'
 <EditButton to="https://github.com/react-pdf/site/blob/master/docs/advanced.md" />
 
 ## Advanced
+
 <PageWrapping components={components} />
 <OnTheFly components={components} />
 <OrphanWidowProtection components={components} />

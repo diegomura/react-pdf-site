@@ -10,7 +10,7 @@ Starting with react-pdf is extremely simple.
 yarn add @react-pdf/renderer
 ```
 
-Since a renderer simply implements *how elements render into something*, you still need to have React to make it work (and react-dom for client-side document generation). You can find instructions on how to do that [here](https://reactjs.org/docs/add-react-to-an-existing-app.html).
+Since a renderer simply implements _how elements render into something_, you still need to have React to make it work (and react-dom for client-side document generation). You can find instructions on how to do that [here](https://reactjs.org/docs/add-react-to-an-existing-app.html).
 
 ### 2. Create your PDF document
 
@@ -54,7 +54,7 @@ This will produce a PDF document with a single page. Inside, two different block
 
 ### 3. Choose where to render the document
 
-React-pdf enables you to render the document in three different environments: **web**, **server** and **mobile** *(under development)*. The process is essentially the same, but catered to needs of each environment.
+React-pdf enables you to render the document in three different environments: **web**, **server** and **mobile** _(under development)_. The process is essentially the same, but catered to needs of each environment.
 
 #### Save in a file
 
@@ -82,7 +82,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 #### Render in mobile
 
-*In progress...*
+_In progress..._
 
 ### 4. Have fun!
 

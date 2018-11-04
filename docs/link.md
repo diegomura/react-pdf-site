@@ -4,12 +4,12 @@ A React component for displaying an hyperlink. Link’s can be nested inside a T
 
 #### Valid props
 
-| Prop name   | Description                                                                |  Type             |   Default   |
-| ------------|:--------------------------------------------------------------------------:| -----------------:| -----------:|
-| src         | Valid URL                                                                  | *String*          | _undefined_ |
-| wrap        | Enable/disable page wrapping for element [See more](#page-wrapping)        | *Boolean*         | _true_      |
-| style       | Defines view styles. [See more](#styling)                                  | *Object*, *Array* | _undefined_ |
-| debug       | Enables debug mode on view bounding box. [See more](#debugging)            | *Boolean*         | _false_     |
-| fixed       | Render component in all wrapped pages. [See more](/advanced#page-wrapping) | *Boolean*         | _false_     |
+| Prop name |                                Description                                 |              Type |     Default |
+| --------- | :------------------------------------------------------------------------: | ----------------: | ----------: |
+| src       |                                 Valid URL                                  |          _String_ | _undefined_ |
+| wrap      |    Enable/disable page wrapping for element [See more](#page-wrapping)     |         _Boolean_ |      _true_ |
+| style     |                 Defines view styles. [See more](#styling)                  | _Object_, _Array_ | _undefined_ |
+| debug     |      Enables debug mode on view bounding box. [See more](#debugging)       |         _Boolean_ |     _false_ |
+| fixed     | Render component in all wrapped pages. [See more](/advanced#page-wrapping) |         _Boolean_ |     _false_ |
 
 ---

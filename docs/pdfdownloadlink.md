@@ -5,12 +5,12 @@ Refer to [on the fly rendering](/advanced#on-the-fly-rendering) for more informa
 
 #### Valid props
 
-| Prop name            | Description                                               |    Type                 |   Default   |
-| -------------------- |:---------------------------------------------------------:| -----------------------:| -----------:|
-| document             | PDF document implementation                               | *Document*              | _undefined_ |
-| fileName             | Download PDF file name                                    | *String*                | _undefined_ |
-| style                | Defines anchor tag styles                                 | *Object*, *Array*       | _undefined_ |
-| className            | Defines anchor tag class name                             | *String*                | _undefined_ |
-| children             | Anchor tag content                                        | *DOM node*, *Function*  | _undefined_ |
+| Prop name |          Description          |                   Type |     Default |
+| --------- | :---------------------------: | ---------------------: | ----------: |
+| document  |  PDF document implementation  |             _Document_ | _undefined_ |
+| fileName  |    Download PDF file name     |               _String_ | _undefined_ |
+| style     |   Defines anchor tag styles   |      _Object_, _Array_ | _undefined_ |
+| className | Defines anchor tag class name |               _String_ | _undefined_ |
+| children  |      Anchor tag content       | _DOM node_, _Function_ | _undefined_ |
 
 ---

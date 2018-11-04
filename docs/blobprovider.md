@@ -5,9 +5,9 @@ Refer to [on the fly rendering](/advanced#on-the-fly-rendering) for more informa
 
 #### Valid props
 
-| Prop name            | Description                                                      |    Type                 |   Default   |
-| -------------------- |:----------------------------------------------------------------:| -----------------------:| -----------:|
-| document             | PDF document implementation                                      | *Document*              | _undefined_ |
-| children             | Render prop with blob, url, error and loading state as arguments | *Function*  | _undefined_ |
+| Prop name |                           Description                            |       Type |     Default |
+| --------- | :--------------------------------------------------------------: | ---------: | ----------: |
+| document  |                   PDF document implementation                    | _Document_ | _undefined_ |
+| children  | Render prop with blob, url, error and loading state as arguments | _Function_ | _undefined_ |
 
 ---

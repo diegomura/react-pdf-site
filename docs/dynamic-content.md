@@ -28,10 +28,10 @@ const doc = () => (
 
 #### Available arguments
 
-| Name        | Description                                                            |  Type             |
-| ----------- |:----------------------------------------------------------------------:| -----------------:|
-| pageNumber  | Current page number                                                    | *Integer*         |
-| totalPages `Text only`  | Total amount of pages in the final document                            | *Integer*         |
+| Name                   |                 Description                 |      Type |
+| ---------------------- | :-----------------------------------------: | --------: |
+| pageNumber             |             Current page number             | _Integer_ |
+| totalPages `Text only` | Total amount of pages in the final document | _Integer_ |
 
 Bare in mind that the `render` function is called twice for `<Text />` elements: once for layout on the page wrapping process, and another one after it's know how many pages the document will have.
 

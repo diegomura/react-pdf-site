@@ -4,12 +4,12 @@ The most fundamental component for building a UI and is designed to be nested in
 
 #### Valid props
 
-| Prop name    | Description                                                                     |  Type             |   Default   |
-| ------------ |:-------------------------------------------------------------------------------:| -----------------:| -----------:|
-| wrap         | Enable/disable page wrapping for element [See more](#page-wrapping)             | *Boolean*         | _false_     |
-| style        | Defines view styles. [See more](#styling)                                       | *Object*, *Array* | _undefined_ |
-| render       | Render dynamic content based on context [See more](#rendering-dynamic-content)  | *Function*        | _undefined_ |
-| debug        | Enables debug mode on view bounding box. [See more](#debugging)                 | *Boolean*         | _false_     |
-| fixed        | Render component in all wrapped pages. [See more](/advanced#page-wrapping)      | *Boolean*         | _false_     |
+| Prop name |                                  Description                                   |              Type |     Default |
+| --------- | :----------------------------------------------------------------------------: | ----------------: | ----------: |
+| wrap      |      Enable/disable page wrapping for element [See more](#page-wrapping)       |         _Boolean_ |     _false_ |
+| style     |                   Defines view styles. [See more](#styling)                    | _Object_, _Array_ | _undefined_ |
+| render    | Render dynamic content based on context [See more](#rendering-dynamic-content) |        _Function_ | _undefined_ |
+| debug     |        Enables debug mode on view bounding box. [See more](#debugging)         |         _Boolean_ |     _false_ |
+| fixed     |   Render component in all wrapped pages. [See more](/advanced#page-wrapping)   |         _Boolean_ |     _false_ |
 
 ---
