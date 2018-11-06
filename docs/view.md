@@ -6,7 +6,7 @@ The most fundamental component for building a UI and is designed to be nested in
 
 | Prop name |                                  Description                                   |              Type |     Default |
 | --------- | :----------------------------------------------------------------------------: | ----------------: | ----------: |
-| wrap      |      Enable/disable page wrapping for element [See more](#page-wrapping)       |         _Boolean_ |     _false_ |
+| wrap      |      Enable/disable page wrapping for element [See more](#page-wrapping)       |         _Boolean_ |     _true_ |
 | style     |                   Defines view styles. [See more](#styling)                    | _Object_, _Array_ | _undefined_ |
 | render    | Render dynamic content based on context [See more](#rendering-dynamic-content) |        _Function_ | _undefined_ |
 | debug     |        Enables debug mode on view bounding box. [See more](#debugging)         |         _Boolean_ |     _false_ |
