@@ -10,4 +10,6 @@ Iframe PDF viewer for client-side generated documents.
 | className |  Defines iframe class name  |         _String _ | _undefined_ |
 | children  | PDF document implementation |        _Document_ | _undefined_ |
 
+Other props are passed through to the iframe.
+
 ---
