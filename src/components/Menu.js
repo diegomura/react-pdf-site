@@ -81,8 +81,8 @@ const ItemWrapper = styled.li`
 `
 
 const Item = withRouter(({ router, to, title, children, onClick, ...props }) => {
-  const isAbsoluteUrl = /https?/.test(to);
-  const active = router && router.pathname === to;
+  const isAbsoluteUrl = /https?/.test(to)
+  const active = router && router.pathname === to
 
   return (
     <ItemWrapper>
@@ -140,7 +140,7 @@ const Menu = ({ opened, onItemClick, ...props }) => (
         <Item to="/advanced#ruler" title="Ruler" onClick={onItemClick} />
         <Item to="/advanced#hyphenation" title="Hyphenation" onClick={onItemClick} />
       </Item>
-      <Item to="/repl" title="Playground / REPL" onClick={onItemClick} prefetch />
+      <Item to="/repl" title="Playground / REPL" onClick={onItemClick} />
       <Item to="https://opencollective.com/react-pdf" title="Donate" onClick={onItemClick} />
     </List>
     <GitHubIcon />
