@@ -44,10 +44,10 @@ const MyDoc = (
 const App = () => (
   <div>
     <BlobProvider document={MyDoc}>
-      {({ blob, url, loading, error }) => (
+      {({ blob, url, loading, error }) => {
         // Do whatever you need with blob here
         return <div>There's something going on on the fly</div>
-      )}
+      }}
     </BlobProvider>
   </div>
 );
