@@ -11,8 +11,8 @@ If you need more fine-grained control over how words break, you can pass your ow
 ```
 import { Font } from '@react-pdf/renderer'
 
-const hyphenationCallback = (words) => {
-  // Iterate through words
+const hyphenationCallback = (word) => {
+  // Return word syllables in an array
 }
 
 Font.registerHyphenationCallback(hyphenationCallback);
