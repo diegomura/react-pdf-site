@@ -17,7 +17,7 @@ const MyDoc = (
 
 const App = () => (
   <div>
-    <PDFDownloadLink document={MyDoc} fileName="somename.pdf">
+    <PDFDownloadLink document={<MyDoc/>} fileName="somename.pdf">
       {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download now!')}
     </PDFDownloadLink>
   </div>
@@ -43,7 +43,7 @@ const MyDoc = (
 
 const App = () => (
   <div>
-    <BlobProvider document={MyDoc}>
+    <BlobProvider document={<MyDoc/>}>
       {({ blob, url, loading, error }) => {
         // Do whatever you need with blob here
         return <div>There's something going on on the fly</div>
