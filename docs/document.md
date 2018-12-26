@@ -13,10 +13,5 @@ This component represent the PDF document itself. It _must_ be the root of your 
 | creator                |              Sets creator info on the document's metadata               |           _String_ | _"react-pdf"_ |
 | producer               |              Sets producer info on the document's metadata              |           _String_ | _"react-pdf"_ |
 | onRender               | Callback after document renders. Receives document blob argument in web |         _Function_ |   _undefined_ |
-| shallow `(Web only)`   |             Enable shallow document rendering. [See more]()             |          _Boolean_ |       _false_ |
-| width `(Web only)`     |                      Width of embedded PDF iframe                       | _String_, _Number_ |   _undefined_ |
-| height `(Web only)`    |                      Height of embedded PDF iframe                      | _String_, _Number_ |   _undefined_ |
-| style `(Web only)`     |                      Style of embedded PDF iframe                       |           _Object_ |   _undefined_ |
-| className `(Web only)` |                    Class name of embedded PDF iframe                    |           _String_ |   _undefined_ |
 
 ---
