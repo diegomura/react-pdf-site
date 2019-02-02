@@ -3948,10 +3948,10 @@ neo-async@^2.5.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
   integrity sha512-MFh0d/Wa7vkKO3Y3LlacqAEeHK0mckVqzDieUKTT+KGxi+zIpeVsFxymkIiRpbpDziHc290Xr9A1O4Om7otoRA==
 
-next-nprogress@^1.0.2:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/next-nprogress/-/next-nprogress-1.4.0.tgz#508058dc15fd2aee406da3cc6ffc8cdf3ebabb75"
-  integrity sha512-b0QCax2iQeIN4pJaTHA6ofDXYoQLfc2m2b/QIJV9/QIUd3RqaFMAcT0f0CnS8J3TF8a5eO4a8oEgMrd/IqKFfA==
+next-nprogress@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/next-nprogress/-/next-nprogress-1.0.2.tgz#23b1ac1cb62f1fb015b88301b7b551fd9923b827"
+  integrity sha512-clb+gDRx8RN/RQQkNQNoUli1kXzHi+DeLbkFaM5grN1iGP9CUMgQaO575Gtf0Xm9W1JmQAAFNVl8aFmCc4mMjw==
   dependencies:
     nprogress "^0.2.0"
 
