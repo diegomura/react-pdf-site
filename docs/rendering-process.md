@@ -40,7 +40,7 @@ This is the most time-consuming step, since it involves not just calculating whe
 
 ### 5. Rendering
 
-At this point we have every element’s dimensions, and in on wich page they are. All we have to do now is performing the actual rendering on the document created in step 2, by calling the _render_ method in each instance recursively.
+At this point we have every element’s dimensions, and in on which page they are. All we have to do now is performing the actual rendering on the document created in step 2, by calling the _render_ method in each instance recursively.
 
 ### 6. Finish document
 
