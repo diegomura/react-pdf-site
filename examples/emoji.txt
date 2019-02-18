@@ -3,6 +3,10 @@ const styles = StyleSheet.create({
     height: 700,
     marginVertical: 70,
     marginHorizontal: "10%"
+  },
+  text: {
+    fontSize: 100,
+    textAlign: 'center'
   }
 });
 
@@ -15,7 +19,7 @@ const MyDocument = () => (
   <Document>
     <Page>
       <View style={styles.container}>
-        <Text>
+        <Text style={styles.text}>
           😀💩👻🙈
         </Text>
       </View>

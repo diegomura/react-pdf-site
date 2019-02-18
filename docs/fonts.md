@@ -1,3 +1,5 @@
+import GoToExample from '../src/components/GoToExample'
+
 ## Fonts
 
 React-pdf is shipped with a `Font` module that enables to load fonts from different sources, handle how words are wrapped and define an emoji source to embed these glyphs on your document.
@@ -13,6 +15,8 @@ import { Font } from '@react-pdf/renderer'
 
 Font.register(source, { family: 'FamilyName' });
 ```
+
+<GoToExample name="font-register" />
 
 #### source
 
@@ -45,12 +49,14 @@ Enables you to have fine-grained control over how words break, passing your own 
 ```
 import { Font } from '@react-pdf/renderer'
 
-const hyphenationCallback = (words) => {
-  // Iterate through words
+const hyphenationCallback = (word) => {
+  // Return word parts in an array
 }
 
 Font.registerHyphenationCallback(hyphenationCallback);
 ```
+
+<GoToExample name="hyphenation-callback" />
 
 #### Disabling hyphenation
 
@@ -61,6 +67,8 @@ Font.registerHyphenationCallback(words => (
   words.map(word => [word])
 ));
 ```
+
+<GoToExample name="disable-hyphenation" />
 
 ---
 
@@ -80,3 +88,5 @@ Font.registerEmojiSource({
 ```
 
 > **Protip:** react-pdf will need a internet connection to download emoji's images at render time, so bare that in mind when choosing to use this API
+
+<GoToExample name="emoji" />

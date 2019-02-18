@@ -21,8 +21,6 @@ const transpile = (code, callback, onError) => {
 
     res(React, { render: doc => callback(doc) }, ...Object.values(primitives))
   } catch (e) {
-    console.log('>>>>>>>>>>>>>>>')
-
     if (onError) {
       onError(e)
     }

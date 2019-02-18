@@ -31,9 +31,12 @@ const examples = {
   'page-numbers': require('raw-loader!../examples/page-numbers.txt'),
   'mixed-styles': require('raw-loader!../examples/mixed-styles.txt'),
   'inline-styles': require('raw-loader!../examples/inline-styles.txt'),
+  'font-register': require('raw-loader!../examples/font-register.txt'),
   'media-queries': require('raw-loader!../examples/media-queries.txt'),
   'disable-wrapping': require('raw-loader!../examples/disable-wrapping.txt'),
   'styled-components': require('raw-loader!../examples/styled-components.txt'),
+  'disable-hyphenation': require('raw-loader!../examples/disable-hyphenation.txt'),
+  'hyphenation-callback': require('raw-loader!../examples/hyphenation-callback.txt'),
   'breakable-unbreakable': require('raw-loader!../examples/breakable-unbreakable.txt')
 }
 
