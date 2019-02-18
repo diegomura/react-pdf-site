@@ -89,8 +89,6 @@ _In progress..._
 Maybe the most important step — make use of all react-pdf capabilities to create beautiful and awesome documents!
 
 <NavigationButtons
-  backSrc="/"
-  backText="Installation"
   nextSrc="/rendering-process"
   nextText="Rendering process"
 />

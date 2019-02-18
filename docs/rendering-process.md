@@ -47,7 +47,7 @@ At this point we have every element’s dimensions, and in on wich page they are
 Once in this stage, we have a valid PDF document instance with a bunch of stuff in it. All it remains is deciding what we want to do with this data. This will vary depending on the binding you are using, but basically it means either displaying or saving it.
 
 <NavigationButtons
-  backSrc="/quick-start-guide"
+  backSrc="/"
   backText="Quick start guide"
   nextSrc="/components"
   nextText="Components"
