@@ -22,4 +22,4 @@ You can use the [default hyphenation callback](https://github.com/diegomura/reac
 
 > **Protip:** If you don't want to hyphenate words at all, just provide a callback that returns the same words it receives. More information [here](/fonts#registerHyphenationCallback)
 
-<GoToExample />
+<GoToExample name="hyphenation-callback" />
