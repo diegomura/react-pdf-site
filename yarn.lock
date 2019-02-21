@@ -725,18 +725,18 @@
   resolved "https://registry.yarnpkg.com/@react-pdf/png-js/-/png-js-1.0.0.tgz#00fcb969dca4ce82a0a7673413ade039e47b361e"
   integrity sha1-APy5adykzoKgp2c0E63gOeR7Nh4=
 
-"@react-pdf/renderer@^1.3.3":
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-1.3.3.tgz#4b5b5ab6f56ffcdb37398b56d3ef8711fd644b7e"
-  integrity sha512-zzfKIAE1SkUJ40JS07uJFrjiCItd8w+ksVS8RdlRAm4l4aclM15KJcRADhpvv3or4ZoIiUtviLumBL6593sxTg==
+"@react-pdf/renderer@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-1.4.0.tgz#75da0901e3ceca437ff95cfa65c55b0c9a320e79"
+  integrity sha512-cfojfOz5GaEaLT93BpCRSTgnelvMGgzXwlDjrvR/Mk8Na51c0d4Cd3hy7Sp5zQ55GWkjUeXzUozFLyC2nbkH+Q==
   dependencies:
     "@react-pdf/fontkit" "^1.13.0"
     "@react-pdf/pdfkit" "^1.2.0"
     "@react-pdf/png-js" "^1.0.0"
     "@react-pdf/script-itemizer" "^0.2.1"
-    "@react-pdf/textkit-core" "0.2.3"
+    "@react-pdf/textkit-core" "0.2.5"
     "@textkit/justification-engine" "^0.1.9"
-    "@textkit/pdf-renderer" "^0.1.12"
+    "@textkit/pdf-renderer" "^0.1.13"
     "@textkit/text-decoration-engine" "^0.1.10"
     babel-runtime "^6.26.0"
     blob-stream "^0.1.3"
@@ -770,10 +770,10 @@
   dependencies:
     styled-components "^3.3.3"
 
-"@react-pdf/textkit-core@0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@react-pdf/textkit-core/-/textkit-core-0.2.3.tgz#a2012cae16031f7763a5f591e530b7c2c81a354a"
-  integrity sha512-6DTvTn2lCdYvXc8G2K0ZedAkzQZAO5Mh9nVXEKg4RmvIn3N2QkD8gcqGOmPfvDfM70ZA5N4eodWowbOvKtxN3g==
+"@react-pdf/textkit-core@0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@react-pdf/textkit-core/-/textkit-core-0.2.5.tgz#c0d4ebc6b5a6addbf74371db4c5bf9fe6df8279f"
+  integrity sha512-8OhToPefEPfLpHno+vxgyCazEPa5GFpMaL5T+dtmjjxXneZwUCVj+QL9iz8x6HM3G7F58CHogZllWN9d+zvDIg==
   dependencies:
     "@react-pdf/unicode-properties" "^2.2.0"
     cubic2quad "^1.1.0"
@@ -793,10 +793,10 @@
     lodash.clone "^4.5.0"
     lodash.merge "^4.6.1"
 
-"@textkit/pdf-renderer@^0.1.12":
-  version "0.1.12"
-  resolved "https://registry.yarnpkg.com/@textkit/pdf-renderer/-/pdf-renderer-0.1.12.tgz#ee444ecd0b3bb17ae8a5a9912218e9b2c0a648b0"
-  integrity sha512-q/YD03lZ4zNaq9w5h76mhAA5HbgyWyJ0RjWvAeQR16M/d21PehDzMKe3rQDyYXMjv6sJG5K7tiwvN70ALFgoBA==
+"@textkit/pdf-renderer@^0.1.13":
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/@textkit/pdf-renderer/-/pdf-renderer-0.1.13.tgz#05b10ee1e5a75152ffff4cde7c13c192c2d223c4"
+  integrity sha512-SWJW94wo4oWXS7VuGsZmJEZveM1UlGALMdIB/EDj+0qGRnf/X4yULIb2cIa8uJZ9juj7zRutLSLofAjHVq4lXw==
 
 "@textkit/text-decoration-engine@^0.1.10":
   version "0.1.10"
