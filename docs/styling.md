@@ -220,13 +220,14 @@ For more information about the API, please refer to the [styled-components docum
 - minWidth
 - width
 
-#### Background
+#### Color
 
 - backgroundColor
+- color
+- opacity
 
 #### Text
 
-- color
 - fontSize
 - fontFamily
 - letterSpacing
