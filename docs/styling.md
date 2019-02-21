@@ -269,6 +269,7 @@ For more information about the API, please refer to the [styled-components docum
 - transform:translateX
 - transform:translateY
 - transform:matrix
+- transformOrigin
 
 #### Borders
 
