@@ -4,6 +4,23 @@ import GoToExample from '../src/components/GoToExample'
 
 React-pdf is shipped with a `Font` module that enables to load fonts from different sources, handle how words are wrapped and define an emoji source to embed these glyphs on your document.
 
+You can define multiple sources for the same font family, each with a different `fontStyle` or `fontWeight`. React-pdf will pick the appropiate font for each `<Text />` based on it's style and the registered fonts.
+
+
+```
+import { StyleSheet, Font } from '@react-pdf/renderer'
+
+// Register font
+Font.register({ family: 'Roboto', src: source });
+
+// Reference font
+const styles = StyleSheet.create({
+  title: {
+    fontFamily: 'Roboto'
+  }
+})
+```
+
 ---
 
 ### `register`
@@ -13,10 +30,8 @@ Fonts really make the difference when it comes on styling a document. For obviou
 ```
 import { Font } from '@react-pdf/renderer'
 
-Font.register(source, { family: 'FamilyName' });
+Font.register({ family: 'FamilyName', src: source, fontStyle: 'normal', fontWeight: 'normal', fonts?: [] });
 ```
-
-<GoToExample name="font-register" />
 
 #### source
 
@@ -26,18 +41,48 @@ Specifies the source of the font. This can either be a valid URL, or an absolute
 
 Name to which the font will be referenced on styles definition. Can be any unique valid string
 
+#### fontStyle
+
+Specifies to which font style the registered font refers to.
+
+| Value   |              Description               |  
+| ------  | :--------------------------------------|
+| normal  | Selects a font that is classified as normal _Default_ |
+| italic  | Selects a font that is classified as italic. If no italic version of the font is registered, react-pdf will fail when a style of this type is present |
+| oblique | Selects a font that is classified as oblique. If no oblique version of the font is registered, react-pdf will fail when a style of this type is present |
+
+
+#### fontWeight
+
+Specifies the registered font weight.
+
+| Value   |              Description               |  
+| ------  | :--------------------------------------|
+| thin  | Equals to value 100 |
+| ultralight  | Equals to value 200 |
+| light  | Equals to value 300 |
+| normal  | Equals to value 400 _Default_ |
+| medium  | Equals to value 500 |
+| semibold  | Equals to value 600 |
+| bold  | Equals to value 700 |
+| ultrabold  | Equals to value 800 |
+| heavy  | Equals to value 900 |
+| _number_  | Any integer value between 0 and 1000 |
+
+When the exact font weight is not registered for a given text, react-pdf will fallback to the nearest registered weight in the same way browsers do. More information [here](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Fallback_weights)
+
+<GoToExample name="font-register" />
+
+#### fonts
+
+In many cases you will end up registering multiple sources for the same font family (each with different font-style and font-weight for instance). As an alternative of calling `Font.register` for each of this, you can use the `fonts` attribute to register them all at once:
+
 ```
-import { StyleSheet, Font } from '@react-pdf/renderer'
-
-// Register font
-Font.register(source, { family: 'Roboto' });
-
-// Reference font
-const styles = StyleSheet.create({
-  title: {
-    fontFamily: 'Roboto'
-  }
-})
+Font.register({ family: 'Roboto', fonts: [
+ { src: source1 }, // font-style: normal, font-weight: normal
+ { src: source2, fontStyle: 'italic' },
+ { src: source3, fontStyle: 'italic', fontWeight: 700 },
+]});
 ```
 
 ---
