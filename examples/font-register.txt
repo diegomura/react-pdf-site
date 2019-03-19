@@ -1,21 +1,41 @@
-Font.register(
-  'https://fonts.gstatic.com/s/oswald/v13/Y_TKV6o8WovbUd3m_X9aAA.ttf',
-  { family: 'Oswald' },
-);
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 50
-  },
-  text: {
-    fontFamily: 'Oswald'
-  }
-});
+Font.register({
+  family: 'Roboto',
+  fonts: [
+    {
+      src: `/Roboto-Regular.ttf`
+    },
+    {
+      src: `/Roboto-Bold.ttf`,
+      fontWeight: 'bold'
+    },
+    {
+      src: `/Roboto-Italic.ttf`,
+      fontWeight: 'normal',
+      fontStyle: 'italic'
+    },
+    {
+      src: `/Roboto-BoldItalic.ttf`,
+      fontWeight: 'bold',
+      fontStyle: 'italic'
+    }
+  ]
+})
 
 const MyDocument = () => (
   <Document>
-    <Page style={styles.container}>
-      <Text style={styles.text}>I'm in Oswald, being loaded from an external url</Text>
+    <Page>
+      <Text style={{ fontFamily: 'Roboto' }}>
+        Velit sit cillum adipisicing aliqua id sint cillum occaecat fugiat adipisicing non elit.
+      </Text>
+      <Text style={{ fontFamily: 'Roboto', fontWeight: 'bold' }}>
+        Velit sit cillum adipisicing aliqua id sint cillum occaecat fugiat adipisicing non elit.
+      </Text>
+      <Text style={{ fontFamily: 'Roboto', fontStyle: 'italic' }}>
+        Velit sit cillum adipisicing aliqua id sint cillum occaecat fugiat adipisicing non elit.
+      </Text>
+      <Text style={{ fontFamily: 'Roboto', fontStyle: 'italic', fontWeight: 700 }}>
+        Velit sit cillum adipisicing aliqua id sint cillum occaecat fugiat adipisicing non elit.
+      </Text>
     </Page>
   </Document>
 );
