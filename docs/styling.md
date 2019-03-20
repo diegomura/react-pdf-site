@@ -230,6 +230,8 @@ For more information about the API, please refer to the [styled-components docum
 
 - fontSize
 - fontFamily
+- fontStyle
+- fontWeight
 - letterSpacing
 - lineHeight
 - textAlign
