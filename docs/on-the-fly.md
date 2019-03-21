@@ -9,7 +9,7 @@ Is it possible that what you need is just a "Download" button. If that's the cas
 ```jsx
 import { PDFDownloadLink, Document, Page } from '@react-pdf/renderer'
 
-const MyDoc = (
+const MyDoc = () => (
   <Document>
     <Page>
       // My document data
@@ -19,7 +19,7 @@ const MyDoc = (
 
 const App = () => (
   <div>
-    <PDFDownloadLink document={MyDoc} fileName="somename.pdf">
+    <PDFDownloadLink document={<MyDoc />} fileName="somename.pdf">
       {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download now!')}
     </PDFDownloadLink>
   </div>
