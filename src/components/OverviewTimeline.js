@@ -93,33 +93,33 @@ const ItemDescription = styled.p`
   `}
 `;
 
-const TimelineItem = ({ icon, position, children }) => (
+const TimelineItem = ({ icon, iconLabel, position, children }) => (
   <ItemWrapper position={position}>
     <ItemDescription position={position}>{children}</ItemDescription>
     <ItemIcon>
-      <Icon type={icon} />
+      <Icon type={icon} label={iconLabel} />
     </ItemIcon>
   </ItemWrapper>
 );
 
 const OverviewTimeline = () => (
   <List>
-    <TimelineItem position="top" icon="cogs">
+    <TimelineItem position="top" icon="cogs" iconLabel="">
       Internal structures creation
     </TimelineItem>
-    <TimelineItem position="bottom" icon="file">
+    <TimelineItem position="bottom" icon="file" iconLabel="">
       PDF document creation & metadata
     </TimelineItem>
-    <TimelineItem position="top" icon="download">
+    <TimelineItem position="top" icon="download" iconLabel="">
       Fetching assets
     </TimelineItem>
-    <TimelineItem position="bottom" icon="copy">
+    <TimelineItem position="bottom" icon="copy" iconLabel="">
       Wrapping pages
     </TimelineItem>
-    <TimelineItem position="top" icon="paint-brush">
+    <TimelineItem position="top" icon="paint-brush" iconLabel="">
       Rendering
     </TimelineItem>
-    <TimelineItem position="bottom" icon="save">
+    <TimelineItem position="bottom" icon="save" iconLabel="">
       Finish document
     </TimelineItem>
   </List>

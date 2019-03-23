@@ -9,7 +9,7 @@ const GitHubIcon = styled(({ size, className }) => (
     href="https://github.com/diegomura/react-pdf"
     className={className}
   >
-    <Icon type="github" size={size || 30} />
+    <Icon type="github" label="GitHub Repo" size={size || 30} />
   </a>
 ))`
   color: black;

@@ -50,18 +50,23 @@ const Tab = styled.button`
   text-decoration: none;
   font-family: 'Source Sans Pro';
   transition: color 0.2s, background 0.2s;
-  opacity: ${({ active }) => active ? 0.8 : 1};
-  background: ${({ active, theme }) => active ? theme.darkRed : 'transparent' };
+  opacity: ${({ active }) => (active ? 0.8 : 1)};
+  background: ${({ active, theme }) =>
+    active ? theme.darkRed : 'transparent'};
 `;
 
 const ReplHeader = ({ activeTab, onTabClick }) => (
   <Wrapper>
     <Back>
-      <Icon type="arrow-left" size={18} />
+      <Icon type="arrow-left" label="Back" size={18} />
     </Back>
     <Tabs>
-      <Tab active={activeTab === 'code'} onClick={() => onTabClick('code')}>Code</Tab>
-      <Tab active={activeTab === 'pdf'} onClick={() => onTabClick('pdf')}>PDF</Tab>
+      <Tab active={activeTab === 'code'} onClick={() => onTabClick('code')}>
+        Code
+      </Tab>
+      <Tab active={activeTab === 'pdf'} onClick={() => onTabClick('pdf')}>
+        PDF
+      </Tab>
     </Tabs>
   </Wrapper>
 );

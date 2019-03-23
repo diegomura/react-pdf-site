@@ -30,7 +30,14 @@ const HeaderLogo = styled(Logo)`
 
 const Header = ({ router, onMenuClick }) => (
   <Wrapper>
-    <HeaderIcon type="menu" size={25} onClick={() => { onMenuClick() }} />
+    <HeaderIcon
+      type="menu"
+      label="Menu"
+      size={25}
+      onClick={() => {
+        onMenuClick();
+      }}
+    />
     {router.pathname !== '/' && (
       <Link href="/">
         <HeaderLogo
@@ -42,7 +49,7 @@ const Header = ({ router, onMenuClick }) => (
         />
       </Link>
     )}
-    <HeaderIcon type="github" size={25} />
+    <HeaderIcon type="github" label="GitHub Repo" size={25} />
   </Wrapper>
 );
 
