@@ -129,7 +129,7 @@ const MyDocument = () => (
 
 ### Styled-components
 
-_Looking for a more neat way of styling your document?_ Now you can take advantage of the entire [styled-components](https://www.styled-components.com/) API inside your PDF documents!
+_Looking for a more neat way of styling your document?_ Now you can take advantage of the entire [styled-components](https://www.styled-components.com) API inside your PDF documents!
 
 #### Install
 
