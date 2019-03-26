@@ -1,20 +1,26 @@
-import React from 'react'
-import dynamic from 'next/dynamic'
-import { withRouter } from 'next/router'
-import styled from 'styled-components'
-import { compose, withState, withHandlers, withProps, lifecycle } from 'recompose'
-import Icon from '../src/components/Icon'
-import Logo from '../src/components/Logo'
-import Loading from '../src/components/Loading'
-import BackButton from '../src/components/BackButton'
+import React from 'react';
+import dynamic from 'next/dynamic';
+import { withRouter } from 'next/router';
+import styled from 'styled-components';
+import {
+  compose,
+  withState,
+  withHandlers,
+  withProps,
+  lifecycle,
+} from 'recompose';
+import Icon from '../src/components/Icon';
+import Logo from '../src/components/Logo';
+import Loading from '../src/components/Loading';
+import BackButton from '../src/components/BackButton';
 // import Repl from '../src/components/Repl'
-import ReplHeader from '../src/components/ReplHeader'
-import ReplFooter from '../src/components/ReplFooter'
-import GitHubIcon from '../src/components/GitHubIcon'
-import { compress, decompress } from '../src/lib/compress'
-import media from '../src/styled/media'
+import ReplHeader from '../src/components/ReplHeader';
+import ReplFooter from '../src/components/ReplFooter';
+import GitHubIcon from '../src/components/GitHubIcon';
+import { compress, decompress } from '../src/lib/compress';
+import media from '../src/styled/media';
 
-const Repl = dynamic(import('../src/components/Repl'), { loading: Loading })
+const Repl = dynamic(import('../src/components/Repl'), { loading: Loading });
 
 const examples = {
   text: require('raw-loader!../examples/text.txt'),
@@ -37,19 +43,19 @@ const examples = {
   'styled-components': require('raw-loader!../examples/styled-components.txt'),
   'disable-hyphenation': require('raw-loader!../examples/disable-hyphenation.txt'),
   'hyphenation-callback': require('raw-loader!../examples/hyphenation-callback.txt'),
-  'breakable-unbreakable': require('raw-loader!../examples/breakable-unbreakable.txt')
-}
+  'breakable-unbreakable': require('raw-loader!../examples/breakable-unbreakable.txt'),
+};
 
 const Section = styled.section`
   flex: 1;
   display: flex;
   flex-direction: column;
-`
+`;
 
 const Main = styled.main`
   display: flex;
   height: 100vh;
-`
+`;
 
 const Nav = styled.nav`
   min-width: 64px;
@@ -62,7 +68,7 @@ const Nav = styled.nav`
   ${media.desktop`
     display: none;
   `};
-`
+`;
 
 const Back = styled(BackButton)`
   border: 0px;
@@ -76,22 +82,31 @@ const Back = styled(BackButton)`
   text-decoration: none;
   justify-content: center;
   background: ${({ theme }) => theme.red};
-`
+`;
 
 const NavBody = styled.div`
   flex: 1;
-`
+`;
 
 const SmallLogo = styled(Logo)`
   padding: 0px;
   margin-top: 64px;
-`
+`;
 
-const ReplPage = ({ code, initialCode, shareUrl, activeTab, documentUrl, onChange, onUrlChange, setActiveTab }) => (
+const ReplPage = ({
+  code,
+  initialCode,
+  shareUrl,
+  activeTab,
+  documentUrl,
+  onChange,
+  onUrlChange,
+  setActiveTab,
+}) => (
   <Main>
     <Nav>
       <Back>
-        <Icon type="arrow-left" size={18} />
+        <Icon type="arrow-left" label="Back" size={18} />
       </Back>
       <NavBody>
         <SmallLogo size="32px" />
@@ -100,65 +115,74 @@ const ReplPage = ({ code, initialCode, shareUrl, activeTab, documentUrl, onChang
     </Nav>
     <Section>
       <ReplHeader activeTab={activeTab} onTabClick={setActiveTab} />
-      <Repl value={initialCode} activeTab={activeTab} onChange={onChange} onUrlChange={onUrlChange} />
+      <Repl
+        value={initialCode}
+        activeTab={activeTab}
+        onChange={onChange}
+        onUrlChange={onUrlChange}
+      />
       <ReplFooter code={code} shareUrl={shareUrl} documentUrl={documentUrl} />
     </Section>
   </Main>
-)
+);
 
 const onChange = props => code => {
-  props.setCode(code)
-}
+  props.setCode(code);
+};
 
 const onUrlChange = props => url => {
-  props.setDocumentUrl(url)
-}
+  props.setDocumentUrl(url);
+};
 
 const setShareUrl = ({ code }) => ({
-  shareUrl: process.browser && `${window.location.protocol}//${window.location.host}/repl?code=${compress(code)}`
-})
+  shareUrl:
+    process.browser &&
+    `${window.location.protocol}//${window.location.host}/repl?code=${compress(
+      code,
+    )}`,
+});
 
 const setInitialValueFromCode = code => {
-  let initialValue = ''
+  let initialValue = '';
 
   try {
-    initialValue = decompress(code)
+    initialValue = decompress(code);
   } catch (e) {
     // noob
   }
 
-  return initialValue
-}
+  return initialValue;
+};
 
 const setInitialValueFromExample = async example => {
-  let initialValue = ''
+  let initialValue = '';
 
   if (examples[example]) {
-    initialValue = await examples[example]
+    initialValue = await examples[example];
   }
 
-  return initialValue
-}
+  return initialValue;
+};
 
 async function componentDidMount() {
-  let initialValue = ''
-  const { code, example } = this.props.router.query
+  let initialValue = '';
+  const { code, example } = this.props.router.query;
 
   if (code) {
-    initialValue = setInitialValueFromCode(code)
+    initialValue = setInitialValueFromCode(code);
   } else if (example) {
-    initialValue = await setInitialValueFromExample(example)
+    initialValue = await setInitialValueFromExample(example);
   } else {
-    initialValue = await setInitialValueFromExample('page-wrap')
+    initialValue = await setInitialValueFromExample('page-wrap');
   }
 
-  this.props.setInitialCode(initialValue)
+  this.props.setInitialCode(initialValue);
 }
 
 ReplPage.defaultProps = {
   code: null,
-  documentUrl: null
-}
+  documentUrl: null,
+};
 
 export default compose(
   withRouter,
@@ -168,5 +192,5 @@ export default compose(
   withState('documentUrl', 'setDocumentUrl', null),
   lifecycle({ componentDidMount }),
   withProps(setShareUrl),
-  withHandlers({ onChange, onUrlChange })
-)(ReplPage)
+  withHandlers({ onChange, onUrlChange }),
+)(ReplPage);
