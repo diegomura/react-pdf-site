@@ -7,6 +7,7 @@ import Image from './image.md'
 import Text from './text.md'
 import Link from './link.md'
 import Note from './note.md'
+import Canvas from './canvas.md'
 import PDFViewer from './pdf-viewer.md'
 import PDFDownloadLink from './pdfdownloadlink.md'
 import BlobProvider from './blobprovider.md'
@@ -24,6 +25,7 @@ React-pdf follows the [React primitives](https://github.com/lelandrichardson/rea
 <Text components={components} />
 <Link components={components} />
 <Note components={components} />
+<Canvas components={components} />
 <PDFViewer components={components} />
 <PDFDownloadLink components={components} />
 <BlobProvider components={components} />
