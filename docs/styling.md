@@ -234,11 +234,13 @@ For more information about the API, please refer to the [styled-components docum
 - fontWeight
 - letterSpacing
 - lineHeight
+- maxLines
 - textAlign
 - textDecoration
 - textDecorationColor
 - textDecorationStyle
 - textIndent
+- textOverflow
 - textTransform
 
 #### Sizing/positioning
