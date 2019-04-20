@@ -13,7 +13,6 @@ import Icon from '../src/components/Icon';
 import Logo from '../src/components/Logo';
 import Loading from '../src/components/Loading';
 import BackButton from '../src/components/BackButton';
-// import Repl from '../src/components/Repl'
 import ReplHeader from '../src/components/ReplHeader';
 import ReplFooter from '../src/components/ReplFooter';
 import GitHubIcon from '../src/components/GitHubIcon';
@@ -46,10 +45,12 @@ const examples = {
   'breakable-unbreakable': require('raw-loader!../examples/breakable-unbreakable.txt'),
 };
 
+const NAV_WIDTH = 64;
+
 const Section = styled.section`
-  flex: 1;
   display: flex;
   flex-direction: column;
+  width: calc(100vw - ${NAV_WIDTH}px);
 `;
 
 const Main = styled.main`
@@ -58,10 +59,9 @@ const Main = styled.main`
 `;
 
 const Nav = styled.nav`
-  min-width: 64px;
-  max-width: 64px;
   display: flex;
   align-items: center;
+  width: ${NAV_WIDTH}px;
   flex-direction: column;
   background-color: #f8f8f8;
 
