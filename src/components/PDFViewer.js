@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { PDFRenderer, createElement, pdf } from '@react-pdf/renderer'
+import { pdf } from '@react-pdf/renderer'
 import PdfjsWorker from 'pdfjs-dist/build/pdf.worker.js'
 import pdfjs from 'pdfjs-dist'
 import Document from 'react-pdf/dist/Document'

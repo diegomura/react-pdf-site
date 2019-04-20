@@ -39,11 +39,8 @@ const CodePanel = styled.div`
 
 const PDFPanel = styled.div`
   flex: 1;
-  display: flex;
   overflow: scroll;
-  align-items: center;
   background-color: #fff;
-  justify-content: center;
 
   ${media.desktop`
     width: 100%;

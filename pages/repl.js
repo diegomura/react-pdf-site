@@ -51,6 +51,10 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   width: calc(100vw - ${NAV_WIDTH}px);
+
+  ${media.desktop`
+    width: 100vw;
+  `};
 `;
 
 const Main = styled.main`
