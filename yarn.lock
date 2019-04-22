@@ -732,10 +732,10 @@
   resolved "https://registry.yarnpkg.com/@react-pdf/png-js/-/png-js-1.0.0.tgz#00fcb969dca4ce82a0a7673413ade039e47b361e"
   integrity sha1-APy5adykzoKgp2c0E63gOeR7Nh4=
 
-"@react-pdf/renderer@^1.5.3":
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-1.5.3.tgz#85905a949cb547da35588f432abb5379fb030f7b"
-  integrity sha512-CK/OYyhyff+js+tGh4nurL3oaIclsMExMUX/FAW9MorHx8gnndQZ++eRQT28wB7JLABLxp8PdxC6bKcu6jMKOQ==
+"@react-pdf/renderer@^1.5.4":
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-1.5.4.tgz#b6accd1b693ecacb9c39c080b44894989f0de679"
+  integrity sha512-qljS8Mn7noyNK//VIypPTUl9CbP8GjJO/68dF/ohPNhxjSv6Dvsp0cZVLuZIkQm0JefL9OeiNTAlBAKzP00WvA==
   dependencies:
     "@babel/runtime" "^7.3.1"
     "@react-pdf/fontkit" "^1.13.0"

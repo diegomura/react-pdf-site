@@ -10,7 +10,7 @@
     "deploy": "now --public"
   },
   "dependencies": {
-    "@react-pdf/renderer": "^1.5.3",
+    "@react-pdf/renderer": "^1.5.4",
     "@react-pdf/styled-components": "^1.4.0",
     "@zeit/next-css": "^0.2.0",
     "buble": "^0.19.3",
