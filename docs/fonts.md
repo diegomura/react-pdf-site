@@ -105,12 +105,10 @@ Font.registerHyphenationCallback(hyphenationCallback);
 
 #### Disabling hyphenation
 
-You can easily disable word hyphenation by just returning all words as they are passed to hte hyphenation callback
+You can easily disable word hyphenation by just returning all words as they are passed to the hyphenation callback
 
 ```
-Font.registerHyphenationCallback(words => (
-  words.map(word => [word])
-));
+Font.registerHyphenationCallback(word => [word]);
 ```
 
 <GoToExample name="disable-hyphenation" />
