@@ -732,16 +732,16 @@
   resolved "https://registry.yarnpkg.com/@react-pdf/png-js/-/png-js-1.0.0.tgz#00fcb969dca4ce82a0a7673413ade039e47b361e"
   integrity sha1-APy5adykzoKgp2c0E63gOeR7Nh4=
 
-"@react-pdf/renderer@^1.5.4":
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-1.5.4.tgz#b6accd1b693ecacb9c39c080b44894989f0de679"
-  integrity sha512-qljS8Mn7noyNK//VIypPTUl9CbP8GjJO/68dF/ohPNhxjSv6Dvsp0cZVLuZIkQm0JefL9OeiNTAlBAKzP00WvA==
+"@react-pdf/renderer@^1.5.5":
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-1.5.5.tgz#7c95df588f906c2fbf63545bb0c5f4393c2c690d"
+  integrity sha512-vmtmK+PmBQyLkKU1Ie/jo4w18tK4934Aop1qvNPPxx0rIZ/v038kGUNKG8MUirIsMwq6+vwupy024TvpdFc39w==
   dependencies:
     "@babel/runtime" "^7.3.1"
     "@react-pdf/fontkit" "^1.13.0"
     "@react-pdf/pdfkit" "^1.2.0"
     "@react-pdf/png-js" "^1.0.0"
-    "@react-pdf/textkit" "^0.3.6"
+    "@react-pdf/textkit" "^0.3.7"
     blob-stream "^0.1.3"
     cross-fetch "^3.0.2"
     emoji-regex "^8.0.0"
@@ -760,10 +760,10 @@
   dependencies:
     styled-components "^3.4.10"
 
-"@react-pdf/textkit@^0.3.6":
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/@react-pdf/textkit/-/textkit-0.3.6.tgz#6619b960e8c5c61800c0e55bb5a0ccb85da2e5ed"
-  integrity sha512-r3YqtxsbwmzpovN/SYD1X2AigPwtF6/2EQ0y5BFpri7boDOgX6gPp1rwCbzfxWT/n1BNHXHQNfuAm0IGxG4iqw==
+"@react-pdf/textkit@^0.3.7":
+  version "0.3.7"
+  resolved "https://registry.yarnpkg.com/@react-pdf/textkit/-/textkit-0.3.7.tgz#67bcc4d952ad1cd738b3cb38c8396219450f536b"
+  integrity sha512-JyK06VofTG4/6Mxv9ugqGyKS/nnbg7MXXHmzeYLP+wwxZsgiatjybVBSXI+DW+++UeyUKLrCYQh2RaxliRm+NQ==
   dependencies:
     "@babel/runtime" "^7.4.3"
     "@react-pdf/unicode-properties" "^2.2.0"
