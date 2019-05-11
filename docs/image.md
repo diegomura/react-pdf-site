@@ -23,6 +23,6 @@ Defines the source of an image. Can be in any of these three valid froms:
 | ----------- | :--------------------------------------------------------------------------------------------------------------------------------: | ---------------------------------------------------------- |
 | String      |                                           Valid image URL or filesystem path (Node only)                                           | `www.react-pdf.org/test.jpg`                               |
 | URL object  |                                       Enable to pass extra parameters on how to fetch images                                       | `{ uri: valid-url, method: 'GET', headers: {}, body: '' }` |
-| Data buffer | Render buffer image via the _data_ key. It's also recommended to provide the image _format_ so the engine knows how to proccess it | `{ data: Buffer; format: 'png' \| 'jpg' }`                 |
+| Data buffer | Render buffer image via the _data_ key. It's also recommended to provide the image _format_ so the engine knows how to proccess it | `{ data: Buffer, format: 'png' \| 'jpg' }`                 |
 
 ---
