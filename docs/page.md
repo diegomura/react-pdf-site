@@ -6,7 +6,7 @@ Represents single page inside the PDF document, or a subset of them if using the
 
 | Prop name            |                                                       Description                                                        |                        Type |      Default |
 | -------------------- | :----------------------------------------------------------------------------------------------------------------------: | --------------------------: | -----------: |
-| size                 | Defines page size. See [available page sizes](https://github.com/diegomura/react-pdf/blob/master/src/utils/pageSizes.js) | _String_, _Object_, _Array_ |       _"A4"_ |
+| size                 | Defines page size. If _String_, must be one of the [available page sizes](https://github.com/diegomura/react-pdf/blob/master/src/utils/pageSizes.js). Height is optional, if ommited it will behave as "auto". | _String_, _Array_, _Number_, _Object_ |       _"A4"_ |
 | orientation          |                           Defines page orientation. _Valid values: "portrait" or "landscape"_                            |                    _String_ | _"portrait"_ |
 | wrap                 |                         Enable page wrapping for this page. [See more](/advanced#page-wrapping)                          |                   _Boolean_ |       _true_ |
 | style                |                                        Defines page styles. [See more](/styling)                                         |           _Object_, _Array_ |  _undefined_ |
