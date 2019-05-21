@@ -5,7 +5,7 @@ import styled from '@react-pdf/styled-components'
 
 const Document = 'DOCUMENT'
 
-const primitives = { Document, Page, Text, Link, Font, View, Note, Image, StyleSheet, styled }
+const primitives = { Document, Page, Text, Link, Font, View, Note, Image, Canvas, StyleSheet, styled }
 
 const transpile = (code, callback, onError) => {
   try {
