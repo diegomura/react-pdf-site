@@ -183,6 +183,10 @@ For more information about the API, please refer to the [styled-components docum
 
 `%` percentage
 
+`vw` viewport/page width
+
+`vh` viewport/page height
+
 ---
 
 ### Valid CSS properties
