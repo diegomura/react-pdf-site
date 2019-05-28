@@ -1,6 +1,6 @@
 import React from 'react'
 import { transform } from 'buble'
-import { Page, Text, Link, Font, View, Note, Image, StyleSheet } from '@react-pdf/renderer'
+import { Page, Text, Link, Font, View, Canvas, Note, Image, StyleSheet } from '@react-pdf/renderer'
 import styled from '@react-pdf/styled-components'
 
 const Document = 'DOCUMENT'
