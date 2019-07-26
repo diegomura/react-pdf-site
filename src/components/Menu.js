@@ -140,6 +140,7 @@ const Menu = ({ opened, onItemClick, ...props }) => (
         <Item to="/advanced#debugging" title="Debugging" onClick={onItemClick} />
         <Item to="/advanced#ruler" title="Ruler" onClick={onItemClick} />
         <Item to="/advanced#hyphenation" title="Hyphenation" onClick={onItemClick} />
+        <Item to="/advanced#webpack-config" title="Webpack config" onClick={onItemClick} />
       </Item>
       <Item to="/repl" title="Playground / REPL" onClick={onItemClick} />
       <Item to="https://opencollective.com/react-pdf" title="Donate" onClick={onItemClick} />
