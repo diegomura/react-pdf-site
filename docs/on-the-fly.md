@@ -55,4 +55,20 @@ const App = () => (
 );
 ```
 
+You can also obtain the blob data imperatively, which may be useful if you are using react-pdf on a non-React frontend.
+
+```jsx
+import { pdf, Document, Page } from '@react-pdf/renderer';
+
+const MyDoc = (
+  <Document>
+    <Page>
+      // My document data
+    </Page>
+  </Document>
+);
+
+const blob = pdf(MyDoc).toBlob();
+```
+
 ---
