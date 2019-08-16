@@ -11,7 +11,7 @@ But react-pdf does not reserve this protection just for text. You can adjust thi
 | Prop name             |                                                     Description                                                      |      Type | Default |
 | --------------------- | :------------------------------------------------------------------------------------------------------------------: | --------: | ------: |
 | minPresenceAhead      |     Hint that no page wrapping should occur between all sibling elements following the element within _n_ points     | _Integer_ |       0 |
-| orhpans _(text only)_ | Specifies the minimum number of lines in a text element that must be shown at the bottom of a page or its container. | _Integer_ |       2 |
+| orphans _(text only)_ | Specifies the minimum number of lines in a text element that must be shown at the bottom of a page or its container. | _Integer_ |       2 |
 | widows _(text only)_  |  Specifies the minimum number of lines in a text element that must be shown at the top of a page or its container.   | _Integer_ |       2 |
 
 > **Protip:** You can use this API to ensure that headings do not get rendered at the bottom of a page
