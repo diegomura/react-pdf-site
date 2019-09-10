@@ -284,6 +284,9 @@ For more information about the API, please refer to the [styled-components docum
 #### Borders
 
 - border
+- borderColor
+- borderStyle
+- borderWidth
 - borderTop
 - borderTopColor
 - borderTopStyle
