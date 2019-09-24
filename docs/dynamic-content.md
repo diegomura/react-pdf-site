@@ -2,7 +2,7 @@ import GoToExample from '../src/components/GoToExample'
 
 ### Dynamic content
 
-With react-pdf it is now possible to render dynamic text based on the context in which a certain element is being rendered. All you have to do is to pass a function to the `render` prop of the `<Text />` or `<View />` component. The result will be rendered inside the text block as children.
+With react-pdf, now it is possible to render dynamic text based on the context in which a certain element is being rendered. All you have to do is to pass a function to the `render` prop of the `<Text />` or `<View />` component. The result will be rendered inside the text block as a child.
 
 ```
 import { Document, Page } from '@react-pdf/renderer'

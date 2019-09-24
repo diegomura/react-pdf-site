@@ -2,9 +2,9 @@ import GoToExample from '../src/components/GoToExample'
 
 ## Fonts
 
-React-pdf is shipped with a `Font` module that enables to load fonts from different sources, handle how words are wrapped and define an emoji source to embed these glyphs on your document.
+React-pdf is shipped with a `Font` module that enables to load fonts from different sources, handle how words are wrapped and defined an emoji source to embed these glyphs on your document.
 
-You can define multiple sources for the same font family, each with a different `fontStyle` or `fontWeight`. React-pdf will pick the appropiate font for each `<Text />` based on it's style and the registered fonts.
+You can define multiple sources for the same font family, each with a different `fontStyle` or `fontWeight`. React-pdf will pick the appropiate font for each `<Text />` based on its style and the registered fonts.
 
 
 ```
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 
 ### `register`
 
-Fonts really make the difference when it comes on styling a document. For obvious reasons, react-pdf cannot ship a wide amount of them. That why we provide an easy way to load your custom fonts from many different sources via the `register` method vey easily.
+Fonts really make the difference when it comes on styling a document. For obvious reasons, react-pdf cannot ship a wide amount of them. That's why we provide an easy way to load your custom fonts from many different sources via the `register` method very easily.
 
 ```
 import { Font } from '@react-pdf/renderer'

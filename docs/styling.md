@@ -133,7 +133,7 @@ _Looking for a more neat way of styling your document?_ Now you can take advanta
 
 #### Install
 
-First, you should install styled-components bindings:
+First, you should install styled-components binding:
 
 ```sh
 yarn add @react-pdf/styled-components
@@ -141,7 +141,7 @@ yarn add @react-pdf/styled-components
 
 #### How to use
 
-This bindings follows exactly the same styled-components API, so after installing it you can start creating styled primitives by importing `styled` object from it:
+This binding follows exactly the same styled-components API, so after installing it you can start creating styled primitives by importing `styled` object from it:
 
 ```
 import styled from '@react-pdf/styled-components';

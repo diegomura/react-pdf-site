@@ -16,7 +16,7 @@ import BlobProvider from './blobprovider.md'
 
 ## Components
 
-React-pdf follows the [React primitives](https://github.com/lelandrichardson/react-primitives) specification, making the learning process very straightforward if you come from another React environment (such as react-native). Additionally, it implements custom Component types that allows you to structure your PDF document.
+React-pdf follows the [React primitives](https://github.com/lelandrichardson/react-primitives) specification, making the learning process very straightforward if you come from another React environment (such as react-native). Additionally, it implements custom Component types that allow you to structure your PDF document.
 
 <Document components={components} />
 <Page components={components} />
