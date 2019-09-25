@@ -14,7 +14,7 @@ At a high level, the document creation process is composed by 6 concrete steps.
 
 The first step involves transforming the _React element tree_ into the appropriate internal instances for each component type. This involves saving the relationship between these (parent-child), parsing styles and processing props.
 
-Besides **Document**, all nodes will represent a block inside a document, with a height, width, paddings and margins (yet to be discovered). This instances also define how each element wraps in the page, how their dimensions are calculated, and finally, how they get rendered in the document.
+Besides **Document**, all nodes will represent a block inside a document, with a height, width, paddings and margins (yet to be discovered). These instances also define how each element wraps in the page, how their dimensions are calculated, and finally, how they get rendered in the document.
 
 From now on, react-pdf works over this data structure to start inferring where each block goes inside the final document.
 

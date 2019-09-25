@@ -1,6 +1,6 @@
 ### Document
 
-This component represent the PDF document itself. It _must_ be the root of your tree element structure, and under no circumstances should it be used as children of another react-pdf component. In addition, it should only have childs of type `<Page />`.
+This component represents the PDF document itself. It _must_ be the root of your tree element structure, and under no circumstances should it be used as child of another react-pdf component. In addition, it should only have children of type `<Page />`.
 
 #### Valid props
 

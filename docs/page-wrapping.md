@@ -2,7 +2,7 @@ import GoToExample from '../src/components/GoToExample'
 
 ### Page wrapping
 
-Semantically, the `<Page />` component represents a single page in the rendered document. However, there are scenarios in which you would expect to have page breaks whenever the page contents exceeds their limits, specially when handling big chunks of text. After all, PDFs are paged documents. React-pdf has a build-in wrapping engine that is enabled by default, so you can start creating paged documents right out of the box. If that's not what you need, you can disable this very easily by doing:
+Semantically, the `<Page />` component represents a single page in the rendered document. However, there are scenarios in which you would expect to have page breaks whenever the page contents exceed their limits, specially when handling big chunks of text. After all, PDFs are paged documents. React-pdf has a build-in wrapping engine that is enabled by default, so you can start creating paged documents right out of the box. If that's not what you need, you can disable this very easily by doing:
 
 ```
 import { Document, Page } from '@react-pdf/renderer'
@@ -22,7 +22,7 @@ const doc = () => (
 
 We can identify two different types of components based on how they wrap:
 
-- `Breakable components` tries to fill up the remaining space before jumping into a new page. By default, this group is composed by _View_, _Text_ and _Link_ components
+- `Breakable components` try to fill up the remaining space before jumping into a new page. By default, this group is composed by _View_, _Text_ and _Link_ components
 - `Unbreakable components` are indivisible, therefore if there isn't enough space for them they just get rendered in the following page. In this group by default we only find _Image_.
 
 <GoToExample name="breakable-unbreakable" />
@@ -45,7 +45,7 @@ const doc = () => (
 );
 ```
 
-Now, if the `<View />` components happens to be at the bottom of the page without enough space, it will be rendered in a new page as he would be _unbreakable_.
+Now, if the `<View />` component happens to be at the bottom of the page without enough space, it will be rendered in a new page as it would be _unbreakable_.
 
 <GoToExample name="disable-wrapping" />
 
@@ -73,7 +73,7 @@ const doc = () => (
 
 #### Fixed components
 
-There is still another scenario we didn't talk about yet: what if I want to wrap pages but also be able to render a component on _all_ pages? This is where the `fixed` prop comes into play.
+There is still another scenario we didn't talk about yet: what if you want to wrap pages but also be able to render a component on _all_ pages? This is where the `fixed` prop comes into play.
 
 ```
 import { Document, Page, View } from '@react-pdf/renderer'
