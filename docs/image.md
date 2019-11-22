@@ -17,12 +17,13 @@ A React component for displaying network or local (Node only) JPG or PNG images,
 
 ##### Source object
 
-Defines the source of an image. Can be in any of these three valid froms:
+Defines the source of an image. Can be in any of these four valid froms:
 
 | Form type   |                                                            Description                                                             | Example                                                    |
 | ----------- | :--------------------------------------------------------------------------------------------------------------------------------: | ---------------------------------------------------------- |
 | String      |                                           Valid image URL or filesystem path (Node only)                                           | `www.react-pdf.org/test.jpg`                               |
 | URL object  |                                       Enables to pass extra parameters on how to fetch images                                       | `{ uri: valid-url, method: 'GET', headers: {}, body: '' }` |
 | Data buffer | Renders buffer image via the _data_ key. It's also recommended to provide the image _format_ so the engine knows how to proccess it | `{ data: Buffer, format: 'png' \| 'jpg' }`                 |
+| Function | A function that returns (can also return a promise that resolves to) any of the above formats |  `() => String \| Promise<String>`              |
 
 ---
