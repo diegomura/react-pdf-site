@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ReactPDF from '@react-pdf/renderer';
+
 import Button from './Button';
 import Clipboard from './Clipboard';
 import media from '../styled/media';
@@ -74,12 +74,6 @@ const ReplFooter = ({ documentUrl, shareUrl, code }) => (
     </Clipboard>
   </Wrapper>
 );
-
-ReplFooter.propTypes = {
-  code: PropTypes.string,
-  documentUrl: PropTypes.string,
-  shareUrl: PropTypes.string.isRequired,
-};
 
 ReplFooter.defaultProps = {
   code: null,

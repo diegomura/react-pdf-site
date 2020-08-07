@@ -1,11 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import pdfjs from 'pdfjs-dist'
 import styled from 'styled-components'
+import Page from 'react-pdf/dist/Page'
 import { pdf } from '@react-pdf/renderer'
 import PdfjsWorker from 'pdfjs-dist/build/pdf.worker.js'
-import pdfjs from 'pdfjs-dist'
 import Document from 'react-pdf/dist/Document'
-import Page from 'react-pdf/dist/Page'
+
 import PageNavigator from './PageNavigator'
 
 pdfjs.GlobalWorkerOptions.workerPort = new PdfjsWorker()
@@ -127,11 +127,6 @@ class PDFViewer extends React.Component {
       </Wrapper>
     )
   }
-}
-
-PDFViewer.propTypes = {
-  document: PropTypes.object,
-  onUrlChange: PropTypes.func.isRequired
 }
 
 PDFViewer.defaultProps = {

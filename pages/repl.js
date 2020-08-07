@@ -9,6 +9,8 @@ import {
   withProps,
   lifecycle,
 } from 'recompose';
+
+import media from '../src/styled/media';
 import Icon from '../src/components/Icon';
 import Logo from '../src/components/Logo';
 import Loading from '../src/components/Loading';
@@ -17,7 +19,6 @@ import ReplHeader from '../src/components/ReplHeader';
 import ReplFooter from '../src/components/ReplFooter';
 import GitHubIcon from '../src/components/GitHubIcon';
 import { compress, decompress } from '../src/lib/compress';
-import media from '../src/styled/media';
 
 const Repl = dynamic(import('../src/components/Repl'), { loading: Loading });
 
@@ -130,11 +131,11 @@ const ReplPage = ({
   </Main>
 );
 
-const onChange = props => code => {
+const onChange = (props) => (code) => {
   props.setCode(code);
 };
 
-const onUrlChange = props => url => {
+const onUrlChange = (props) => (url) => {
   props.setDocumentUrl(url);
 };
 
@@ -146,7 +147,7 @@ const setShareUrl = ({ code }) => ({
     )}`,
 });
 
-const setInitialValueFromCode = code => {
+const setInitialValueFromCode = (code) => {
   let initialValue = '';
 
   try {
@@ -158,7 +159,7 @@ const setInitialValueFromCode = code => {
   return initialValue;
 };
 
-const setInitialValueFromExample = async example => {
+const setInitialValueFromExample = async (example) => {
   let initialValue = '';
 
   if (examples[example]) {

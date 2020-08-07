@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { compose, withState, lifecycle } from 'recompose';
+
 import Menu from './Menu';
 import Header from './Header';
 import media from '../styled/media';
@@ -11,7 +12,7 @@ const Section = styled.section`
   margin: 0 auto;
   padding: 110px;
   max-width: 1100px;
-  overflow-y: ${props => props.menuOpened && 'hidden'};
+  overflow-y: ${(props) => props.menuOpened && 'hidden'};
   ${media.tablet`
     padding: 4em;
   `}
@@ -49,16 +50,12 @@ const Frame = ({ menuOpened, setMenuOpen, children }) => (
     <Main>
       <Menu opened={menuOpened} onItemClick={() => setMenuOpen(false)} />
       <Section menuOpened={menuOpened} onClick={() => setMenuOpen(false)}>
-        <Content>
-          {children}
-        </Content>
+        <Content>{children}</Content>
       </Section>
 
-      <CornerGraphicsImage src="/static/images/corner-graphics.png" />
+      <CornerGraphicsImage src="/images/corner-graphics.png" />
     </Main>
   </Fragment>
 );
 
-export default compose(
-  withState('menuOpened', 'setMenuOpen', false)
-)(Frame);
+export default compose(withState('menuOpened', 'setMenuOpen', false))(Frame);

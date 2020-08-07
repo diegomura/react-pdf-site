@@ -1,4 +1,5 @@
 import { withProps } from 'recompose';
+
 import Link from '../components/Link';
 import List from '../components/List';
 import ListItem from '../components/ListItem';
@@ -31,4 +32,4 @@ const components = {
   blockquote: Blockquote,
 };
 
-export const injectComponents = withProps({ components });
+export default components;

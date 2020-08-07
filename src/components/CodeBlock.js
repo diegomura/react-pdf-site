@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import Prism from 'prismjs';
+import styled from 'styled-components';
 import { PrismCode } from 'react-prism';
-import media from '../styled/media';
+
 import Icon from './Icon';
 import Clipboard from './Clipboard';
+import media from '../styled/media';
 
 const Wrapper = styled.div`
   position: relative;
@@ -38,7 +38,7 @@ const Handler = styled(Icon)`
 `;
 
 const Code = styled(PrismCode)`
-  color: #E7E7E7;
+  color: #e7e7e7;
   font-size: 16px;
   line-height: 24px;
   ${media.phone`
@@ -60,12 +60,6 @@ const CodeBlock = ({ language, isPlayable, children }) => (
     </pre>
   </Wrapper>
 );
-
-CodeBlock.propTypes = {
-  language: PropTypes.string,
-  isPlayable: PropTypes.bool,
-  children: PropTypes.node.isRequired,
-};
 
 CodeBlock.defaultProps = {
   language: 'jsx',

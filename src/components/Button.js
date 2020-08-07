@@ -1,10 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
-import { defaultProps, componentFromProp } from 'recompose'
-import Icon from './Icon'
+import React from 'react';
+import styled, { css } from 'styled-components';
+import { defaultProps, componentFromProp } from 'recompose';
 
-const PropComponent = defaultProps({ component: 'a' })(componentFromProp('component'))
+import Icon from './Icon';
+
+const PropComponent = defaultProps({ component: 'a' })(
+  componentFromProp('component'),
+);
 
 const Wrapper = styled(PropComponent)`
   border: 0px;
@@ -22,7 +24,7 @@ const Wrapper = styled(PropComponent)`
     outline-width: 2px;
   }
 
-  ${props =>
+  ${(props) =>
     props.primary &&
     css`
       color: ${props.theme.red};
@@ -35,7 +37,7 @@ const Wrapper = styled(PropComponent)`
       }
     `}
 
-  ${props =>
+  ${(props) =>
     props.secondary &&
     css`
       color: white;
@@ -48,7 +50,7 @@ const Wrapper = styled(PropComponent)`
       }
     `}
 
-  ${props =>
+  ${(props) =>
     props.terciary &&
     css`
       color: ${props.theme.gray1};
@@ -60,27 +62,22 @@ const Wrapper = styled(PropComponent)`
         background: ${props.theme.gray1};
       }
     `}
-`
+`;
 
 const ButtonIcon = styled(Icon)`
   margin-left: 10px;
-`
+`;
 
 const Button = ({ icon, children, ...props }) => (
   <Wrapper {...props}>
     <span>{children}</span>
     {icon && <ButtonIcon type={icon} />}
   </Wrapper>
-)
-
-Button.propTypes = {
-  icon: PropTypes.string,
-  children: PropTypes.node
-}
+);
 
 Button.defaultProps = {
   icon: null,
-  children: ''
-}
+  children: '',
+};
 
-export default Button
+export default Button;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import Button from './Button';
 import media from '../styled/media';
 
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 
 const Cell = styled.div`
   flex: 1;
-  text-align: ${props => props.align};
+  text-align: ${(props) => props.align};
 `;
 
 const NavigationButtons = ({ backSrc, backText, nextSrc, nextText }) => (
@@ -35,13 +35,6 @@ const NavigationButtons = ({ backSrc, backText, nextSrc, nextText }) => (
     </Cell>
   </Wrapper>
 );
-
-NavigationButtons.propTypes = {
-  backSrc: PropTypes.string,
-  backText: PropTypes.string,
-  nextSrc: PropTypes.string,
-  nextText: PropTypes.string,
-};
 
 NavigationButtons.defaultProps = {
   backSrc: null,

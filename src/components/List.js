@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
+
 import media from '../styled/media';
 
 const OL = styled.ol`
@@ -42,11 +42,6 @@ const List = ({ ordered, children, ...props }) => {
   const amountOfItems = children.filter(i => typeof i !== 'string').length
 
   return <Component collapse={amountOfItems > 3} {...props}>{children}</Component>;
-};
-
-List.propTypes = {
-  ordered: PropTypes.bool.isRequired,
-  children: PropTypes.node.isRequired,
 };
 
 export default List;

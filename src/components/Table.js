@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import media from '../styled/media';
 
 const Wrapper = styled.div`
@@ -85,8 +86,6 @@ export const TableRow = styled.tr`
 
 export default ({ children }) => (
   <Wrapper>
-    <Table>
-      {children}
-    </Table>
+    <Table>{children}</Table>
   </Wrapper>
 );

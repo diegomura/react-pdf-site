@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import Button from './Button';
 
 const Wrapper = styled.div`
@@ -19,9 +19,5 @@ const GoToExample = ({ name }) => (
     </Wrapper>
   </Link>
 );
-
-GoToExample.propTypes = {
-  name: PropTypes.string.isRequired,
-};
 
 export default GoToExample;

@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import Button from './Button';
 import media from '../styled/media';
 
@@ -17,12 +17,10 @@ const Wrapper = styled.div`
 
 const EditButton = ({ to }) => (
   <Wrapper>
-    <Button href={to} target="_blank" terciary>Edit</Button>
+    <Button href={to} target="_blank" terciary>
+      Edit
+    </Button>
   </Wrapper>
 );
-
-EditButton.propTypes = {
-  to: PropTypes.string.isRequired,
-};
 
 export default EditButton;

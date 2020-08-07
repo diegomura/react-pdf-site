@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import { H1, H4 } from './Heading';
 import Paragraph from './Paragraph';
 import media from '../styled/media';

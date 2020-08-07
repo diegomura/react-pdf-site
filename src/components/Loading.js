@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import Logo from './Logo';
 
 const Wrapper = styled.div`
@@ -10,7 +11,7 @@ const Wrapper = styled.div`
   display: flex;
   position: absolute;
   align-items: center;
-  background-color: #FFF;
+  background-color: #fff;
   justify-content: center;
 `;
 

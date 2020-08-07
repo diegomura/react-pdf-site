@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import styled from 'styled-components';
 import media from '../styled/media';
 
@@ -67,7 +67,7 @@ const ColoredBox = styled.div`
   width: 20px;
   height: 20px;
   margin-right: 8px;
-  background: ${props => props.color};
+  background: ${(props) => props.color};
 `;
 
 const ItemWrapper = styled.div`
@@ -99,10 +99,5 @@ const DebugSample = () => (
     </Glossary>
   </Wrapper>
 );
-
-Item.propTypes = {
-  color: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-};
 
 export default DebugSample;

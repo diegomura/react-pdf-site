@@ -12,7 +12,7 @@ const doc = (
       <Text style={styles.title}>This is a <Text style={styles.emphasis}>breakable</Text> component. You can see how it wraps to the next page:</Text>
       <View style={styles.breakable} />
       <Text style={styles.title}>This is an <Text style={styles.emphasis}>unbreakable</Text> component. Instead of wrapping, it jumps to the next page:</Text>
-      <Image src="/static/images/quijote1.jpg" />
+      <Image src="/images/quijote1.jpg" />
     </Page>
   </Document>
 );

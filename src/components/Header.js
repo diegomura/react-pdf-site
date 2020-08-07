@@ -2,9 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { withRouter } from 'next/router';
-import media from '../styled/media';
+
 import Logo from './Logo';
 import Icon from './Icon';
+import media from '../styled/media';
 
 const Wrapper = styled.header`
   top: 0;

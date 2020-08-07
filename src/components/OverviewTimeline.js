@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import Icon from './Icon';
 import media from '../styled/media';
 
@@ -46,8 +46,8 @@ const ItemWrapper = styled.li`
     display: block;
     position: absolute;
     border: ${({ theme }) => `1px dashed ${theme.black}`};
-    top: ${props => (props.position === 'bottom' ? '20px' : null)};
-    bottom: ${props => (props.position === 'top' ? '20px' : null)};
+    top: ${(props) => (props.position === 'bottom' ? '20px' : null)};
+    bottom: ${(props) => (props.position === 'top' ? '20px' : null)};
 
     ${media.phone`
       height: 50px;
@@ -79,8 +79,8 @@ const ItemDescription = styled.p`
   border-radius: 6px;
   color: white;
   background: ${({ theme }) => theme.black};
-  top: ${props => (props.position === 'bottom' ? '60px' : null)};
-  bottom: ${props => (props.position === 'top' ? '60px' : null)};
+  top: ${(props) => (props.position === 'bottom' ? '60px' : null)};
+  bottom: ${(props) => (props.position === 'top' ? '60px' : null)};
   ${media.tablet`
     width: 150%;
     font-size: 15px;
@@ -88,8 +88,8 @@ const ItemDescription = styled.p`
   ${media.phone`
     width: 175%;
     font-size: 12px;
-    top: ${props => (props.position === 'bottom' ? '50px' : null)};
-    bottom: ${props => (props.position === 'top' ? '50px' : null)};
+    top: ${(props) => (props.position === 'bottom' ? '50px' : null)};
+    bottom: ${(props) => (props.position === 'top' ? '50px' : null)};
   `}
 `;
 
@@ -124,11 +124,5 @@ const OverviewTimeline = () => (
     </TimelineItem>
   </List>
 );
-
-TimelineItem.propTypes = {
-  icon: PropTypes.string.isRequired,
-  position: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
-};
 
 export default OverviewTimeline;

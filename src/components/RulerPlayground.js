@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { compose, withState } from 'recompose';
+
 import Logo from './Logo';
 import media from '../styled/media';
 
@@ -32,9 +33,9 @@ const Page = styled.div`
   font-size: 3px;
   overflow: hidden;
   text-align: justify;
-  background-color: #FFF;
+  background-color: #fff;
   color: rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0px 50px 20px rgba(62,62,62,0.15);
+  box-shadow: 0px 0px 50px 20px rgba(62, 62, 62, 0.15);
 
   ${media.phone`
     width: 250px;
@@ -71,17 +72,20 @@ const Checkbox = styled.input.attrs({ type: 'checkbox' })`
   -webkit-appearance: none;
   background-color: #fafafa;
   border: 1px solid #cacece;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
 
   &:checked {
-  	color: #99a1a7;
+    color: #99a1a7;
     background-color: #e9ecee;
     border: 1px solid #adb8c0;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+      inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),
+      inset 15px 10px -12px rgba(255, 255, 255, 0.1);
   }
 
   &:checked:after {
-    content: "✔";
+    content: '✔';
     font-size: 14px;
     position: absolute;
     top: 0px;
@@ -105,13 +109,19 @@ const RulerPlayground = ({
   verticalRuler,
   horizontalRuler,
   setVerticalRuler,
-  setHorizontalRuler
+  setHorizontalRuler,
 }) => (
   <Wrapper>
     <Playground>
       <Page>
         <PageLogo size="50px" />
-        <PageText>If you need fine-grained control on proportions and where elements are rendered, you can use the Ruler props on Page to ease your work. This API enables you to define a fully customizable vertical and/or horizontal grid to visualize how elements arrange inside the page. For grid separation, you can specify both fixed or proportional values.</PageText>
+        <PageText>
+          If you need fine-grained control on proportions and where elements are
+          rendered, you can use the Ruler props on Page to ease your work. This
+          API enables you to define a fully customizable vertical and/or
+          horizontal grid to visualize how elements arrange inside the page. For
+          grid separation, you can specify both fixed or proportional values.
+        </PageText>
       </Page>
       <Ruler orientation="vertical" visible={verticalRuler} />
       <Ruler orientation="horizontal" visible={horizontalRuler} />
@@ -145,37 +155,44 @@ const RulerPlayground = ({
   </Wrapper>
 );
 
-const RulerContainer= styled.div`
+const RulerContainer = styled.div`
   right: 0px;
   bottom: 0px;
   overflow: hidden;
   position: absolute;
   transition: all 0.5s;
-  opacity: ${props => props.visible ? 1 : 0 };
-  top: ${props => props.orientation === 'vertical' ? '-20px' : 0};
-  left: ${props => props.orientation === 'horizontal' ? '-20px' : 0};
+  opacity: ${(props) => (props.visible ? 1 : 0)};
+  top: ${(props) => (props.orientation === 'vertical' ? '-20px' : 0)};
+  left: ${(props) => (props.orientation === 'horizontal' ? '-20px' : 0)};
 `;
 
 const RulerBody = styled.div`
   background: white;
 
-  ${props => props.orientation === 'vertical' && css`
-    height: 20px;
-    border-bottom: 1px solid gray;
-  `}
+  ${(props) =>
+    props.orientation === 'vertical' &&
+    css`
+      height: 20px;
+      border-bottom: 1px solid gray;
+    `}
 
-  ${props => props.orientation === 'horizontal' && css`
-    width: 20px;
-    height: 100%;
-    border-right: 1px solid gray;
-  `}
+  ${(props) =>
+    props.orientation === 'horizontal' &&
+    css`
+      width: 20px;
+      height: 100%;
+      border-right: 1px solid gray;
+    `}
 `;
 
 const RulerLine = styled.div`
   position: absolute;
-  background-color: ${props => props.step !== 0 ? '#ababab' : 'transparent'};
+  background-color: ${(props) =>
+    props.step !== 0 ? '#ababab' : 'transparent'};
 
-  ${({ orientation, step }) => orientation === 'vertical' && css`
+  ${({ orientation, step }) =>
+    orientation === 'vertical' &&
+    css`
     top: 0px;
     width: 1px;
     bottom: 0px;
@@ -191,7 +208,9 @@ const RulerLine = styled.div`
     }
   `}
 
-  ${({ orientation, step }) => orientation === 'horizontal' && css`
+  ${({ orientation, step }) =>
+    orientation === 'horizontal' &&
+    css`
     left: 0px;
     right: 0px;
     height: 1px;
@@ -213,7 +232,7 @@ const steps = [0, 50, 100, 150, 200, 250, 300, 350, 400, 450];
 const Ruler = ({ orientation, visible }) => (
   <RulerContainer orientation={orientation} visible={visible}>
     <RulerBody orientation={orientation} />
-    {steps.map(step => (
+    {steps.map((step) => (
       <RulerLine orientation={orientation} step={step} />
     ))}
   </RulerContainer>

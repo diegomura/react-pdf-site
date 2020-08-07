@@ -1,15 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { withProps } from 'recompose'
-import styled, { css } from 'styled-components'
-import toLowerCase from '../lib/toLowerCase'
-import media from '../styled/media'
+import React from 'react';
+import { withProps } from 'recompose';
+import styled, { css } from 'styled-components';
+
+import media from '../styled/media';
+import toLowerCase from '../lib/toLowerCase';
 
 const BaseHeading = css`
   font-family: 'Taviraj';
   margin-bottom: 16px;
   color: ${({ theme }) => theme.black};
-`
+`;
 
 const Heading1 = styled.h1`
   ${BaseHeading};
@@ -21,7 +21,7 @@ const Heading1 = styled.h1`
     font-size: 30px;
     font-weight: 400;
   `};
-`
+`;
 
 const Heading2 = styled.h2`
   ${BaseHeading};
@@ -35,7 +35,7 @@ const Heading2 = styled.h2`
     line-height: 28px;
     margin-bottom: 17px;
   `};
-`
+`;
 
 const Heading3 = styled.h3`
   ${BaseHeading};
@@ -49,7 +49,7 @@ const Heading3 = styled.h3`
     line-height: 28px;
     margin-bottom: 21px;
   `};
-`
+`;
 
 const Heading4 = styled.h4`
   ${BaseHeading};
@@ -57,7 +57,7 @@ const Heading4 = styled.h4`
   font-weight: 500;
   line-height: 24px;
   ${media.phone`font-size: 16px;`};
-`
+`;
 
 const Heading5 = styled.h5`
   ${BaseHeading};
@@ -65,7 +65,7 @@ const Heading5 = styled.h5`
   font-weight: 500;
   line-height: 24px;
   color: ${({ theme }) => theme.darkRed};
-`
+`;
 
 const Heading6 = styled.h6`
   ${BaseHeading};
@@ -73,34 +73,29 @@ const Heading6 = styled.h6`
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
-`
+`;
 
-const Headings = [Heading1, Heading2, Heading3, Heading4, Heading5, Heading6]
+const Headings = [Heading1, Heading2, Heading3, Heading4, Heading5, Heading6];
 
-const getId = children => {
-  const child = Array.isArray(children) ? children[0] : children
-  const text = React.isValidElement(child) ? child.props.children : child
-  return toLowerCase(text)
-}
+const getId = (children) => {
+  const child = Array.isArray(children) ? children[0] : children;
+  const text = React.isValidElement(child) ? child.props.children : child;
+  return toLowerCase(text);
+};
 
 const Heading = ({ level, children, ...props }) => {
-  const HeadingComponent = Headings[level - 1]
+  const HeadingComponent = Headings[level - 1];
 
   return (
     <HeadingComponent id={getId(children)} {...props}>
       {children}
     </HeadingComponent>
-  )
-}
+  );
+};
 
-export const H1 = withProps({ level: 1 })(Heading)
-export const H2 = withProps({ level: 2 })(Heading)
-export const H3 = withProps({ level: 3 })(Heading)
-export const H4 = withProps({ level: 4 })(Heading)
-export const H5 = withProps({ level: 5 })(Heading)
-export const H6 = withProps({ level: 6 })(Heading)
-
-Heading.propTypes = {
-  level: PropTypes.number.isRequired,
-  children: PropTypes.node.isRequired
-}
+export const H1 = withProps({ level: 1 })(Heading);
+export const H2 = withProps({ level: 2 })(Heading);
+export const H3 = withProps({ level: 3 })(Heading);
+export const H4 = withProps({ level: 4 })(Heading);
+export const H5 = withProps({ level: 5 })(Heading);
+export const H6 = withProps({ level: 6 })(Heading);
