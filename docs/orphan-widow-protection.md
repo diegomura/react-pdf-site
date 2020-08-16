@@ -2,8 +2,6 @@ import GoToExample from '../src/components/GoToExample'
 
 ### Orphan & widow protection
 
-> _"An orphan has no past; a widow has no future"_
-
 When you layout text, orphans and widows can make the difference between a _good_ document and a _great_ one. That's why react-pdf has a built-in orphan and widow protection that you can use right out of the box.
 
 But react-pdf does not reserve this protection just for text. You can adjust this protection to your convenience by just setting some props to **any react-pdf primitive**:
