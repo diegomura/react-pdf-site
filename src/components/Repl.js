@@ -38,7 +38,7 @@ const CodePanel = styled.div`
 
 const PDFPanel = styled.div`
   flex: 1;
-  overflow: scroll;
+  overflow: auto;
   background-color: #fff;
 
   ${media.desktop} {
