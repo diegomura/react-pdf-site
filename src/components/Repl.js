@@ -1,6 +1,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import debounce from 'lodash.debounce';
 
 import media from '../styled/media';
@@ -17,10 +17,10 @@ const Wrapper = styled.div`
   position: relative;
   max-height: calc(100vh - 54px);
 
-  ${media.desktop`
+  ${media.desktop} {
     display: initial;
     max-height: calc(100vh - 45px);
-  `};
+  }
 `;
 
 const CodePanel = styled.div`
@@ -28,12 +28,12 @@ const CodePanel = styled.div`
   overflow: hidden;
   position: relative;
 
-  ${media.desktop`
+  ${media.desktop} {
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: ${(props) => (props.active ? 500 : 250)};
-  `};
+  }
 `;
 
 const PDFPanel = styled.div`
@@ -41,12 +41,12 @@ const PDFPanel = styled.div`
   overflow: scroll;
   background-color: #fff;
 
-  ${media.desktop`
+  ${media.desktop} {
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: ${(props) => (props.active ? 500 : 250)};
-  `};
+  }
 `;
 
 const CodeError = styled(ErrorMessage)`

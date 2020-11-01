@@ -1,6 +1,6 @@
 import React from 'react';
+import styled from '@emotion/styled';
 
-import styled from 'styled-components';
 import media from '../styled/media';
 
 const CONTENT_COLOR = '#d1e3f3';
@@ -13,9 +13,9 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  ${media.phone`
+  ${media.phone} {
     flex-direction: column;
-  `}
+  }
 `;
 
 const Margin = styled.div`
@@ -31,9 +31,9 @@ const Margin = styled.div`
     display: block;
   }
 
-  ${media.phone`
+  ${media.phone} {
     width: 100%;
-  `}
+  }
 `;
 
 const Padding = styled.div`
@@ -43,10 +43,10 @@ const Padding = styled.div`
   border-top: 30px solid ${PADDING_COLOR};
   border-bottom: 30px solid ${PADDING_COLOR};
 
-  ${media.phone`
+  ${media.phone} {
     width: 100%;
     height: 200px;
-  `}
+  }
 `;
 
 const Glossary = styled.div`
@@ -55,12 +55,12 @@ const Glossary = styled.div`
   margin-left: 40px;
   flex-direction: column;
 
-  ${media.phone`
+  ${media.phone} {
     width: auto;
     margin-top: 40px;
     margin-left: 0px;
     flex-direction: row;
-  `}
+  }
 `;
 
 const ColoredBox = styled.div`
@@ -75,9 +75,9 @@ const ItemWrapper = styled.div`
   margin-bottom: 8px;
   align-items: center;
 
-  ${media.phone`
+  ${media.phone} {
     margin-left: 8px;
-  `}
+  }
 `;
 
 const Item = ({ color, children }) => (

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 const Blockquote = styled.blockquote`
   padding: 8px 30px;

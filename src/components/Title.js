@@ -1,15 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 import { H1, H4 } from './Heading';
-import Paragraph from './Paragraph';
 import media from '../styled/media';
 
 const Wrapper = styled.div`
   padding-left: 32px;
   position: relative;
   border-left: ${({ theme }) => `2px solid ${theme.red}`};
-  ${media.phone`padding-left: 25px;`}
+
+  ${media.phone} {
+    padding-left: 25px;
+  }
 
   &::after {
     top: calc(50% - 8px);
@@ -26,7 +28,10 @@ const Wrapper = styled.div`
 
 const Title = styled(H1)`
   margin: 0;
-  ${media.phone`display: none;`}
+
+  ${media.phone} {
+    display: none;
+  }
 `;
 
 const SubHeading = styled(H4)`

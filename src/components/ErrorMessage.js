@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-import { branch, renderNothing } from 'recompose';
+import styled from '@emotion/styled';
 
 import Icon from './Icon';
 
@@ -18,24 +17,19 @@ const Message = styled.p`
   margin: 0;
 `;
 
-const Close = styled(Icon).attrs({
-  type: 'times',
-})`
+const Close = styled(Icon)`
   cursor: pointer;
 `;
 
-const ErrorMessage = ({ className, children, onClose }) => (
-  <Wrapper className={className}>
-    <Message>{`Error: ${children}`}</Message>
-    <Close onClick={onClose} />
-  </Wrapper>
-);
+const ErrorMessage = ({ className, children, onClose }) => {
+  if (!children || !children.length === 0) return null;
 
-ErrorMessage.defaultProps = {
-  className: null,
+  return (
+    <Wrapper className={className}>
+      <Message>{`Error: ${children}`}</Message>
+      <Close type="times" onClick={onClose} />
+    </Wrapper>
+  );
 };
 
-export default branch(
-  (props) => !props.children || !props.children.length === 0,
-  renderNothing,
-)(ErrorMessage);
+export default ErrorMessage;

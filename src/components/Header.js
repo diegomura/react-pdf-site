@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { withRouter } from 'next/router';
 
 import Logo from './Logo';
@@ -16,7 +16,10 @@ const Wrapper = styled.header`
   padding: 0 1em;
   align-items: center;
   justify-content: space-between;
-  ${media.tablet`display: flex;`};
+
+  ${media.tablet} {
+    display: flex;
+  }
 `;
 
 const HeaderIcon = styled(Icon)`
@@ -26,7 +29,10 @@ const HeaderIcon = styled(Icon)`
 const HeaderLogo = styled(Logo)`
   padding: 0px;
   display: none;
-  ${media.tablet`display: inherit;`};
+
+  ${media.tablet} {
+    display: inherit;
+  }
 `;
 
 const Header = ({ router, onMenuClick }) => (

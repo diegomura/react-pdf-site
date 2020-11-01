@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 import media from '../styled/media';
 
@@ -7,11 +7,12 @@ const ListItem = styled.li`
   font-size: 20px;
   line-height: 36px;
   font-family: 'Source Sans Pro';
-  ${media.phone`
+
+  ${media.phone} {
     font-size: 16px;
     line-height: 16px;
     margin-bottom: 1.3em;
-  `}
+  }
 `;
 
 export default ListItem;

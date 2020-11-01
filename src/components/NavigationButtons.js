@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 import Button from './Button';
 import media from '../styled/media';
@@ -9,7 +9,10 @@ const Wrapper = styled.div`
   display: flex;
   margin-top: 60px;
   padding: 0px 2px 2px 2px;
-  ${media.phone`margin-top: 45px;`}
+
+  ${media.phone} {
+    margin-top: 45px;
+  }
 `;
 
 const Cell = styled.div`

@@ -1,6 +1,5 @@
-import React, { Fragment } from 'react';
-import styled from 'styled-components';
-import { compose, withState, lifecycle } from 'recompose';
+import React, { useState } from 'react';
+import styled from '@emotion/styled';
 
 import Menu from './Menu';
 import Header from './Header';
@@ -13,20 +12,25 @@ const Section = styled.section`
   padding: 110px;
   max-width: 1100px;
   overflow-y: ${(props) => props.menuOpened && 'hidden'};
-  ${media.tablet`
+
+  ${media.tablet} {
     padding: 4em;
-  `}
-  ${media.phone`
+  }
+
+  ${media.phone} {
     padding: 1.5em;
     padding-bottom: 3em;
-  `}
+  }
 `;
 
 const Main = styled.main`
   display: flex;
   min-height: 100%;
   margin-left: 240px;
-  ${media.tablet`margin: 0px`}
+
+  ${media.tablet} {
+    margin: 0px;
+  }
 `;
 
 const Content = styled.div`
@@ -39,23 +43,28 @@ const CornerGraphicsImage = styled.img`
   width: 15%;
   position: absolute;
   pointer-events: none;
-  ${media.phone`
+
+  ${media.phone} {
     display: none;
-  `}
+  }
 `;
 
-const Frame = ({ menuOpened, setMenuOpen, children }) => (
-  <Fragment>
-    <Header onMenuClick={() => setMenuOpen(!menuOpened)} />
-    <Main>
-      <Menu opened={menuOpened} onItemClick={() => setMenuOpen(false)} />
-      <Section menuOpened={menuOpened} onClick={() => setMenuOpen(false)}>
-        <Content>{children}</Content>
-      </Section>
+const Frame = ({ children }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-      <CornerGraphicsImage src="/images/corner-graphics.png" />
-    </Main>
-  </Fragment>
-);
+  return (
+    <>
+      <Header onMenuClick={() => setMenuOpen(!menuOpen)} />
+      <Main>
+        <Menu opened={menuOpen} onItemClick={() => setMenuOpen(false)} />
+        <Section menuOpened={menuOpen} onClick={() => setMenuOpen(false)}>
+          <Content>{children}</Content>
+        </Section>
 
-export default compose(withState('menuOpened', 'setMenuOpen', false))(Frame);
+        <CornerGraphicsImage src="/images/corner-graphics.png" />
+      </Main>
+    </>
+  );
+};
+
+export default Frame;

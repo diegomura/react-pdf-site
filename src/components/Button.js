@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import { css } from '@emotion/core';
+import styled from '@emotion/styled';
 import { defaultProps, componentFromProp } from 'recompose';
 
 import Icon from './Icon';

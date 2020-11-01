@@ -1,6 +1,7 @@
 import React from 'react';
 import { withProps } from 'recompose';
-import styled, { css } from 'styled-components';
+import { css } from '@emotion/core';
+import styled from '@emotion/styled';
 
 import media from '../styled/media';
 import toLowerCase from '../lib/toLowerCase';
@@ -15,12 +16,13 @@ const Heading1 = styled.h1`
   ${BaseHeading};
   font-size: 48px;
   font-weight: 200;
-  letter-spacing: 2px;
   line-height: 56px;
-  ${media.tablet`
+  letter-spacing: 2px;
+
+  ${media.tablet} {
     font-size: 30px;
     font-weight: 400;
-  `};
+  }
 `;
 
 const Heading2 = styled.h2`
@@ -30,11 +32,12 @@ const Heading2 = styled.h2`
   letter-spacing: 1px;
   line-height: 40px;
   margin-bottom: 24px;
-  ${media.phone`
+
+  ${media.phone} {
     font-size: 22px;
     line-height: 28px;
     margin-bottom: 17px;
-  `};
+  }
 `;
 
 const Heading3 = styled.h3`
@@ -44,11 +47,12 @@ const Heading3 = styled.h3`
   letter-spacing: 1px;
   line-height: 32px;
   margin-bottom: 24px;
-  ${media.phone`
+
+  ${media.phone} {
     font-size: 21px;
     line-height: 28px;
     margin-bottom: 21px;
-  `};
+  }
 `;
 
 const Heading4 = styled.h4`
@@ -56,7 +60,10 @@ const Heading4 = styled.h4`
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
-  ${media.phone`font-size: 16px;`};
+
+  ${media.phone} {
+    font-size: 16px;
+  }
 `;
 
 const Heading5 = styled.h5`

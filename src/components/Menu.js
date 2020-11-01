@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import styled from '@emotion/styled';
 import { withRouter } from 'next/router';
-import styled from 'styled-components';
 
 import Logo from './Logo';
 import media from '../styled/media';
@@ -20,10 +20,11 @@ const Nav = styled.nav`
   width: ${(props) => props.width || '285px'};
   min-width: ${(props) => props.width || '285px'};
   background-color: ${({ theme }) => theme.gray3};
-  ${media.tablet`
+
+  ${media.tablet} {
     left: ${(props) => (props.opened ? '0px' : '-285px')};
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  `};
+  }
 `;
 
 const Input = styled.div`
@@ -63,9 +64,12 @@ const List = styled.ul`
   flex: 1;
   margin: 0px;
   width: 100%;
+  overflow: auto;
   list-style: none;
-  overflow: scroll;
-  ${media.phone`margin: 35px 0px;`};
+
+  ${media.phone} {
+    margin: 35px 0px;
+  };
 `;
 
 const SubItems = styled.ul`
@@ -76,9 +80,9 @@ const SubItems = styled.ul`
 
 const ItemWrapper = styled.li`
   display: flex;
-  flex-direction: column;
   margin: 4px 0px;
   padding: 0px 18px;
+  flex-direction: column;
 
   a {
     text-decoration: none;
@@ -110,7 +114,9 @@ const Item = withRouter(
 );
 
 const MenuLogo = styled(Logo)`
-  ${media.phone`display: none;`};
+  ${media.phone} {
+    display: none;
+  }
 `;
 
 const Menu = ({ opened, onItemClick, ...props }) => (
@@ -165,11 +171,6 @@ const Menu = ({ opened, onItemClick, ...props }) => (
           onClick={onItemClick}
         />
         <Item
-          to="/styling#styled-components"
-          title="Styled-components"
-          onClick={onItemClick}
-        />
-        <Item
           to="/styling#valid-units"
           title="Valid units"
           onClick={onItemClick}
@@ -219,7 +220,6 @@ const Menu = ({ opened, onItemClick, ...props }) => (
           title="Debugging"
           onClick={onItemClick}
         />
-        <Item to="/advanced#ruler" title="Ruler" onClick={onItemClick} />
         <Item
           to="/advanced#hyphenation"
           title="Hyphenation"

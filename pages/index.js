@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 import media from '../src/styled/media';
 import Logo from '../src/components/Logo';
@@ -12,10 +12,11 @@ import EditButton from '../src/components/EditButton';
 const DocumentGraphicImage = styled.img`
   margin: 50px;
   width: 210px;
-  ${media.phone`
+
+  ${media.phone} {
     width: 130px;
     margin: 50px 30px;
-  `};
+  }
 `;
 
 const HeroWrapper = styled.div`
@@ -33,9 +34,12 @@ const Hero = () => (
 );
 
 const LogoBanner = styled(Logo)`
-  padding: 0 0 3em 0;
   display: none;
-  ${media.phone`display: flex;`};
+  padding: 0 0 3em 0;
+
+  ${media.phone} {
+    display: flex;
+  }
 `;
 
 const Home = () => (

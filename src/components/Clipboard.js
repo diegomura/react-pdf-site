@@ -1,31 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Tooltip } from 'react-tippy';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { compose, withHandlers, withState, defaultProps } from 'recompose';
 
-const Clipboard = ({ copied, tooltip, onCopy, children, ...props }) => (
-  <Tooltip open={copied} title={tooltip} position="top" arrow>
-    <CopyToClipboard onCopy={onCopy} {...props}>
-      {children}
-    </CopyToClipboard>
-  </Tooltip>
-);
+const Clipboard = ({ tooltip, children, ...props }) => {
+  const [copied, setCopied] = useState(false);
 
-const onCopy = (props) => () => {
-  props.setCopied(true);
+  const onCopy = () => {
+    setCopied(true);
 
-  setTimeout(() => {
-    props.setCopied(false);
-  }, 2000);
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
+  };
+
+  return (
+    <Tooltip open={copied} title={tooltip} position="top" arrow>
+      <CopyToClipboard onCopy={onCopy} {...props}>
+        {children}
+      </CopyToClipboard>
+    </Tooltip>
+  );
 };
 
-Clipboard.defaultProps = {
-  copied: false,
-  tooltip: '',
-};
-
-export default compose(
-  defaultProps({ tooltip: 'Copied to clipboard!' }),
-  withState('copied', 'setCopied', false),
-  withHandlers({ onCopy }),
-)(Clipboard);
+export default Clipboard;

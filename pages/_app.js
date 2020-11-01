@@ -1,5 +1,6 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
+import { ThemeProvider } from 'emotion-theming';
 
 import theme from '../src/styled/theme';
 import Frame from '../src/components/Frame';
@@ -16,7 +17,7 @@ require('../public/styles/tooltips.css');
 require('../public/styles/codemirror.css');
 
 import App from 'next/app';
-import { ThemeProvider } from 'styled-components';
+
 
 class MyApp extends App {
   render() {

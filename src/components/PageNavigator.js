@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-import { branch, renderNothing } from 'recompose';
+import styled from '@emotion/styled';
 
 import Icon from './Icon';
 
@@ -29,21 +28,26 @@ const PageNavigator = ({
   numPages,
   onPreviousPage,
   onNextPage,
-}) => (
-  <Wrapper>
-    <Arrow type="chevron-left" visible={currentPage !== 1} onClick={onPreviousPage} />
+}) => {
+  if (numPages <= 1) return null;
 
-    <PageIndicator>{`Page ${currentPage} / ${numPages}`}</PageIndicator>
+  return (
+    <Wrapper>
+      <Arrow
+        type="chevron-left"
+        visible={currentPage !== 1}
+        onClick={onPreviousPage}
+      />
 
-    <Arrow
-      type="chevron-right"
-      visible={currentPage !== numPages}
-      onClick={onNextPage}
-    />
-  </Wrapper>
-);
+      <PageIndicator>{`Page ${currentPage} / ${numPages}`}</PageIndicator>
 
-export default branch(
-  (props) => props.numPages <= 1,
-  renderNothing,
-)(PageNavigator);
+      <Arrow
+        type="chevron-right"
+        visible={currentPage !== numPages}
+        onClick={onNextPage}
+      />
+    </Wrapper>
+  );
+};
+
+export default PageNavigator;

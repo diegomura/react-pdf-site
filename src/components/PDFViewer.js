@@ -1,6 +1,6 @@
 import React from 'react'
 import pdfjs from 'pdfjs-dist'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import Page from 'react-pdf/dist/Page'
 import { pdf } from '@react-pdf/renderer'
 import PdfjsWorker from 'pdfjs-dist/build/pdf.worker.js'

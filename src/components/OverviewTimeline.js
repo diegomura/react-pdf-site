@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 import Icon from './Icon';
 import media from '../styled/media';
@@ -26,9 +26,9 @@ const List = styled.ol`
     display: block;
   }
 
-  ${media.tablet`
+  ${media.tablet} {
     padding: 0px 20px;
-  `}
+  }
 `;
 
 const ItemWrapper = styled.li`
@@ -49,9 +49,9 @@ const ItemWrapper = styled.li`
     top: ${(props) => (props.position === 'bottom' ? '20px' : null)};
     bottom: ${(props) => (props.position === 'top' ? '20px' : null)};
 
-    ${media.phone`
+    ${media.phone}{
       height: 50px;
-    `}
+    }
   }
 `;
 
@@ -65,10 +65,11 @@ const ItemIcon = styled.div`
   align-items: center;
   justify-content: center;
   background: ${({ theme }) => theme.red};
-  ${media.phone`
+
+  ${media.phone} {
     width: 32px;
     height: 32px;
-  `}
+  }
 `;
 
 const ItemDescription = styled.p`
@@ -81,16 +82,18 @@ const ItemDescription = styled.p`
   background: ${({ theme }) => theme.black};
   top: ${(props) => (props.position === 'bottom' ? '60px' : null)};
   bottom: ${(props) => (props.position === 'top' ? '60px' : null)};
-  ${media.tablet`
+
+  ${media.tablet} {
     width: 150%;
     font-size: 15px;
-  `}
-  ${media.phone`
+  }
+
+  ${media.phone} {
     width: 175%;
     font-size: 12px;
     top: ${(props) => (props.position === 'bottom' ? '50px' : null)};
     bottom: ${(props) => (props.position === 'top' ? '50px' : null)};
-  `}
+  }
 `;
 
 const TimelineItem = ({ icon, iconLabel, position, children }) => (

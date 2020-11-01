@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from '@emotion/styled';
+import { keyframes } from '@emotion/core';
 
 import { H1 } from './Heading';
 
@@ -15,7 +16,7 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
-const LogoImage = styled.img.attrs({ src: '/images/logo.png' })`
+const LogoImage = styled.img`
   width: ${(props) => props.size || '54px'};
   animation: 4s ${rotate360} linear infinite;
 `;
@@ -29,7 +30,7 @@ const Title = styled(H1)`
 
 const Logo = ({ withText, className, rotate, ...props }) => (
   <Wrapper className={className}>
-    <LogoImage rotateImg={rotate} {...props} />
+    <LogoImage src="/images/logo.png" rotateImg={rotate} {...props} />
     {withText && <Title {...props}>React-pdf</Title>}
   </Wrapper>
 );

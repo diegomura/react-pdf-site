@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 import media from '../styled/media';
 
 const Wrapper = styled.div`
   width: 100%;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   margin-bottom: 48px;
   border-bottom-left-radius: 12px;
@@ -12,9 +12,7 @@ const Wrapper = styled.div`
   box-shadow: 0 25px 50px 0 rgba(62, 62, 62, 0.15);
 `;
 
-const Table = styled.table.attrs({
-  cellSpacing: 0,
-})`
+const Table = styled.table`
   width: 100%;
   font-size: 16px;
   overflow: hidden;
@@ -39,10 +37,10 @@ export const TableHeading = styled.th`
     border-right: 1px solid rgba(141, 22, 2, 0.2);
   }
 
-  ${media.phone`
+  ${media.phone} {
     font-size: 14px;
     padding: 5px 8px;
-  `}
+  }
 `;
 
 export const TableCell = styled.td`
@@ -68,10 +66,10 @@ export const TableCell = styled.td`
     white-space: nowrap;
   }
 
-  ${media.phone`
+  ${media.phone} {
     font-size: 14px;
     padding: 5px 8px;
-  `}
+  }
 `;
 
 export const TableRow = styled.tr`
@@ -86,6 +84,6 @@ export const TableRow = styled.tr`
 
 export default ({ children }) => (
   <Wrapper>
-    <Table>{children}</Table>
+    <Table cellSpacing={0}>{children}</Table>
   </Wrapper>
 );

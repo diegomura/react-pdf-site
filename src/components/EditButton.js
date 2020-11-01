@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 import Button from './Button';
 import media from '../styled/media';
@@ -10,9 +10,10 @@ const Wrapper = styled.div`
   margin-bottom: 1em;
   text-decoration: none;
   justify-content: flex-end;
-  ${media.phone`
+
+  ${media.phone} {
     display: none;
-  `}
+  }
 `;
 
 const EditButton = ({ to }) => (

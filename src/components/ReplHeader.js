@@ -1,6 +1,6 @@
 import React from 'react';
 import Router from 'next/router';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 import Icon from './Icon';
 import Button from './Button';
@@ -14,12 +14,14 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   background: ${({ theme }) => theme.red};
-  ${media.desktop`
+
+  ${media.desktop} {
     display: flex;
-  `}
-  ${media.phone`
+  }
+
+  ${media.phone} {
     height: 45px;
-  `}
+  }
 `;
 
 const Back = styled(BackButton)`

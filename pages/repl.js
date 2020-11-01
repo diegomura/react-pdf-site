@@ -1,14 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
+import styled from '@emotion/styled';
+import { useAsync } from 'react-use';
 import { withRouter } from 'next/router';
-import styled from 'styled-components';
-import {
-  compose,
-  withState,
-  withHandlers,
-  withProps,
-  lifecycle,
-} from 'recompose';
 
 import media from '../src/styled/media';
 import Icon from '../src/components/Icon';
@@ -18,14 +12,13 @@ import BackButton from '../src/components/BackButton';
 import ReplHeader from '../src/components/ReplHeader';
 import ReplFooter from '../src/components/ReplFooter';
 import GitHubIcon from '../src/components/GitHubIcon';
-import { compress, decompress } from '../src/lib/compress';
+import { decompress } from '../src/lib/compress';
 
 const Repl = dynamic(import('../src/components/Repl'), { loading: Loading });
 
 const examples = {
   text: require('raw-loader!../examples/text.txt'),
   emoji: require('raw-loader!../examples/emoji.txt'),
-  ruler: require('raw-loader!../examples/ruler.txt'),
   knobs: require('raw-loader!../examples/knobs.txt'),
   styles: require('raw-loader!../examples/styles.txt'),
   resume: require('raw-loader!../examples/resume.txt'),
@@ -40,7 +33,6 @@ const examples = {
   'font-register': require('raw-loader!../examples/font-register.txt'),
   'media-queries': require('raw-loader!../examples/media-queries.txt'),
   'disable-wrapping': require('raw-loader!../examples/disable-wrapping.txt'),
-  'styled-components': require('raw-loader!../examples/styled-components.txt'),
   'disable-hyphenation': require('raw-loader!../examples/disable-hyphenation.txt'),
   'hyphenation-callback': require('raw-loader!../examples/hyphenation-callback.txt'),
   'breakable-unbreakable': require('raw-loader!../examples/breakable-unbreakable.txt'),
@@ -53,9 +45,9 @@ const Section = styled.section`
   flex-direction: column;
   width: calc(100vw - ${NAV_WIDTH}px);
 
-  ${media.desktop`
+  ${media.desktop} {
     width: 100vw;
-  `};
+  }
 `;
 
 const Main = styled.main`
@@ -70,9 +62,9 @@ const Nav = styled.nav`
   flex-direction: column;
   background-color: #f8f8f8;
 
-  ${media.desktop`
+  ${media.desktop} {
     display: none;
-  `};
+  }
 `;
 
 const Back = styled(BackButton)`
@@ -98,54 +90,54 @@ const SmallLogo = styled(Logo)`
   margin-top: 64px;
 `;
 
-const ReplPage = ({
-  code,
-  initialCode,
-  shareUrl,
-  activeTab,
-  documentUrl,
-  onChange,
-  onUrlChange,
-  setActiveTab,
-}) => (
-  <Main>
-    <Nav>
-      <Back>
-        <Icon type="arrow-left" label="Back" size={18} />
-      </Back>
-      <NavBody>
-        <SmallLogo size="32px" />
-      </NavBody>
-      <GitHubIcon />
-    </Nav>
-    <Section>
-      <ReplHeader activeTab={activeTab} onTabClick={setActiveTab} />
-      <Repl
-        value={initialCode}
-        activeTab={activeTab}
-        onChange={onChange}
-        onUrlChange={onUrlChange}
-      />
-      <ReplFooter code={code} shareUrl={shareUrl} documentUrl={documentUrl} />
-    </Section>
-  </Main>
-);
+const ReplPage = ({ router, shareUrl }) => {
+  const [code, setCode] = useState('');
 
-const onChange = (props) => (code) => {
-  props.setCode(code);
+  const [initialCode, setInitialCode] = useState('');
+
+  const [activeTab, setActiveTab] = useState('pdf');
+
+  const [documentUrl, setDocumentUrl] = useState(null);
+
+  useAsync(async () => {
+    let initialValue = '';
+    const { code, example } = router.query;
+
+    if (code) {
+      initialValue = setInitialValueFromCode(code);
+    } else if (example) {
+      initialValue = await setInitialValueFromExample(example);
+    } else {
+      initialValue = await setInitialValueFromExample('page-wrap');
+    }
+
+    setInitialCode(initialValue);
+  }, []);
+
+  return (
+    <Main>
+      <Nav>
+        <Back>
+          <Icon type="arrow-left" label="Back" size={18} />
+        </Back>
+        <NavBody>
+          <SmallLogo size="32px" />
+        </NavBody>
+        <GitHubIcon />
+      </Nav>
+      <Section>
+        <ReplHeader activeTab={activeTab} onTabClick={setActiveTab} />
+        <Repl
+          value={initialCode}
+          activeTab={activeTab}
+          onChange={setCode}
+          onUrlChange={setDocumentUrl}
+        />
+        <ReplFooter code={code} shareUrl={shareUrl} documentUrl={documentUrl} />
+      </Section>
+    </Main>
+  );
 };
-
-const onUrlChange = (props) => (url) => {
-  props.setDocumentUrl(url);
-};
-
-const setShareUrl = ({ code }) => ({
-  shareUrl:
-    process.browser &&
-    `${window.location.protocol}//${window.location.host}/repl?code=${compress(
-      code,
-    )}`,
-});
 
 const setInitialValueFromCode = (code) => {
   let initialValue = '';
@@ -169,33 +161,4 @@ const setInitialValueFromExample = async (example) => {
   return initialValue;
 };
 
-async function componentDidMount() {
-  let initialValue = '';
-  const { code, example } = this.props.router.query;
-
-  if (code) {
-    initialValue = setInitialValueFromCode(code);
-  } else if (example) {
-    initialValue = await setInitialValueFromExample(example);
-  } else {
-    initialValue = await setInitialValueFromExample('page-wrap');
-  }
-
-  this.props.setInitialCode(initialValue);
-}
-
-ReplPage.defaultProps = {
-  code: null,
-  documentUrl: null,
-};
-
-export default compose(
-  withRouter,
-  withState('code', 'setCode', ''),
-  withState('initialCode', 'setInitialCode', ''),
-  withState('activeTab', 'setActiveTab', 'pdf'),
-  withState('documentUrl', 'setDocumentUrl', null),
-  lifecycle({ componentDidMount }),
-  withProps(setShareUrl),
-  withHandlers({ onChange, onUrlChange }),
-)(ReplPage);
+export default withRouter(ReplPage);
