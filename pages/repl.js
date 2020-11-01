@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import styled from '@emotion/styled';
 import { useAsync } from 'react-use';
 import { withRouter } from 'next/router';
+import React, { useState, useMemo } from 'react';
 
 import media from '../src/styled/media';
 import Icon from '../src/components/Icon';
@@ -12,7 +12,7 @@ import BackButton from '../src/components/BackButton';
 import ReplHeader from '../src/components/ReplHeader';
 import ReplFooter from '../src/components/ReplFooter';
 import GitHubIcon from '../src/components/GitHubIcon';
-import { decompress } from '../src/lib/compress';
+import { compress, decompress } from '../src/lib/compress';
 
 const Repl = dynamic(import('../src/components/Repl'), { loading: Loading });
 
@@ -90,7 +90,7 @@ const SmallLogo = styled(Logo)`
   margin-top: 64px;
 `;
 
-const ReplPage = ({ router, shareUrl }) => {
+const ReplPage = ({ router }) => {
   const [code, setCode] = useState('');
 
   const [initialCode, setInitialCode] = useState('');
@@ -113,6 +113,15 @@ const ReplPage = ({ router, shareUrl }) => {
 
     setInitialCode(initialValue);
   }, []);
+
+  const shareUrl = useMemo(() => {
+    return (
+      process.browser &&
+      `${window.location.protocol}//${
+        window.location.host
+      }/repl?code=${compress(code)}`
+    );
+  }, [code]);
 
   return (
     <Main>

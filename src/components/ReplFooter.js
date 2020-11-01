@@ -78,9 +78,4 @@ const ReplFooter = ({ documentUrl, shareUrl, code }) => (
   </Wrapper>
 );
 
-ReplFooter.defaultProps = {
-  code: null,
-  documentUrl: null,
-};
-
 export default ReplFooter;
