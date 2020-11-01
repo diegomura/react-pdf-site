@@ -1,11 +1,10 @@
 import React from 'react'
 import { transform } from 'buble'
 import { Page, Text, Link, Font, View, Canvas, Note, Image, StyleSheet } from '@react-pdf/renderer'
-import styled from '@react-pdf/styled-components'
 
 const Document = 'DOCUMENT'
 
-const primitives = { Document, Page, Text, Link, Font, View, Note, Image, Canvas, StyleSheet, styled }
+const primitives = { Document, Page, Text, Link, Font, View, Note, Image, Canvas, StyleSheet }
 
 const transpile = (code, callback, onError) => {
   try {
