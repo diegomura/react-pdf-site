@@ -17,7 +17,7 @@ A React component for displaying network or local (Node only) JPG or PNG images,
 
 ##### Source object
 
-Defines the source of an image. Can be in any of these four valid froms:
+Defines the source of an image. Can be in any of these four valid forms:
 
 | Form type   |                                                            Description                                                             | Example                                                    |
 | ----------- | :--------------------------------------------------------------------------------------------------------------------------------: | ---------------------------------------------------------- |
