@@ -1,10 +1,11 @@
-import React from 'react';
 import pdfjs from 'pdfjs-dist';
+import { useAsync } from 'react-use';
 import styled from '@emotion/styled';
 import Page from 'react-pdf/dist/Page';
+import React, { useState } from 'react';
 import { pdf } from '@react-pdf/renderer';
-import PdfjsWorker from 'pdfjs-dist/build/pdf.worker.js';
 import Document from 'react-pdf/dist/Document';
+import PdfjsWorker from 'pdfjs-dist/build/pdf.worker.js';
 
 import PageNavigator from './PageNavigator';
 
@@ -43,100 +44,63 @@ const Message = styled.div`
   pointer-events: ${(props) => (props.active ? 'all' : 'none')};
 `;
 
-class PDFViewer extends React.Component {
-  state = {
-    loading: true,
-    document: null,
-    numPages: null,
-    currentPage: 1,
+const PDFViewer = ({ value, onUrlChange, onRenderError }) => {
+  const [numPages, setNumPages] = useState(null);
+
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const onPreviousPage = () => {
+    setCurrentPage((prev) => prev - 1);
   };
 
-  componentDidMount() {
-    this.renderDocument(this.props.document);
-  }
+  const onNextPage = () => {
+    setCurrentPage((prev) => prev + 1);
+  };
 
-  componentWillReceiveProps(newProps) {
-    // Don't update if document didn't change
-    if (this.props.document === newProps.document) return;
+  const onDocumentLoad = (d) => {
+    setNumPages(d.numPages);
+    setCurrentPage((prev) => Math.min(prev, d.numPages));
+  };
 
-    this.renderDocument(newProps.document);
-  }
-
-  renderDocument = (doc) => {
-    if (!doc) {
-      this.setState({ document: null });
-      return;
-    }
-
-    this.setState({ loading: true });
+  const render = useAsync(async () => {
+    if (!value) return null;
 
     try {
-      pdf({ initialValue: doc })
-        .toBlob()
-        .then((blob) => {
-          const url = URL.createObjectURL(blob);
+      const blob = await pdf({ initialValue: value }).toBlob();
+      const url = URL.createObjectURL(blob);
 
-          if (this.props.onUrlChange) {
-            this.props.onUrlChange(url);
-          }
+      onUrlChange?.(url);
 
-          this.setState({ document: url, loading: false });
-        });
+      return url;
     } catch (error) {
-      this.props.onRenderError && this.props.onRenderError(error.message);
+      onRenderError?.(error.message);
     }
-  };
 
-  onDocumentLoad = ({ numPages }) => {
-    const { currentPage } = this.state;
+    return null;
+  }, [value]);
 
-    this.setState({
-      numPages,
-      currentPage: Math.min(currentPage, numPages),
-    });
-  };
+  return (
+    <Wrapper>
+      <Message active={render.loading}>Rendering PDF...</Message>
 
-  onPreviousPage = () => {
-    this.setState((state) => ({
-      currentPage: state.currentPage - 1,
-    }));
-  };
+      <Message active={!render.loading && !value}>
+        You are not rendering a valid document
+      </Message>
 
-  onNextPage = () => {
-    this.setState((state) => ({
-      currentPage: state.currentPage + 1,
-    }));
-  };
+      <DocumentWrapper>
+        <Document file={render.value} onLoadSuccess={onDocumentLoad}>
+          <Page renderMode="svg" pageNumber={currentPage} />
+        </Document>
+      </DocumentWrapper>
 
-  render() {
-    return (
-      <Wrapper>
-        <Message active={this.state.loading}>Rendering PDF...</Message>
-        <Message active={!this.state.loading && !this.props.document}>
-          You are not rendering a valid document
-        </Message>
-        <DocumentWrapper>
-          <Document
-            file={this.state.document}
-            onLoadSuccess={this.onDocumentLoad}
-            {...this.props}
-          >
-            <Page renderMode="svg" pageNumber={this.state.currentPage} />
-          </Document>
-        </DocumentWrapper>
-        <PageNavigator
-          currentPage={this.state.currentPage}
-          numPages={this.state.numPages}
-          onNextPage={this.onNextPage}
-          onPreviousPage={this.onPreviousPage}
-        />
-      </Wrapper>
-    );
-  }
-}
-
-PDFViewer.defaultProps = {
-  document: null,
+      <PageNavigator
+        currentPage={currentPage}
+        numPages={numPages}
+        onNextPage={onNextPage}
+        onPreviousPage={onPreviousPage}
+      />
+    </Wrapper>
+  );
 };
 
 export default PDFViewer;

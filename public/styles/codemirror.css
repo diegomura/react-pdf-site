@@ -1,23 +1,23 @@
 .CodeMirror {
   font-size: 16px;
   height: 100%;
-  background-color: #2C2C2C;
+  background-color: #2c2c2c;
 }
 
- @media (max-width: 36em) {
-   .CodeMirror {
-     font-size: 12px;
-   }
+@media (max-width: 36em) {
+  .CodeMirror {
+    font-size: 12px;
+  }
 }
 
 .CodeMirror-gutters {
-	width: 40px;
+  width: 40px;
   border: 0px;
-  color: #A6A6A6;
+  color: #a6a6a6;
   font-size: 12px;
   line-height: 24px;
-  background-color: #3E3E3E;
-  font-family: "monospace" !important;
+  background-color: #3e3e3e;
+  font-family: 'monospace' !important;
 }
 
 .CodeMirror-placeholder {
@@ -34,8 +34,8 @@
   padding-left: 15px !important;
 }
 
-.CodeMirror-line span[role="presentation"] {
-  color: #E7E7E7;
+.CodeMirror-line span[role='presentation'] {
+  color: #e7e7e7;
 }
 
 .CodeMirror-scroll {
@@ -43,7 +43,7 @@
 }
 
 .CodeMirror-cursor {
-  border-color: #A6A6A6;
+  border-color: #a6a6a6;
   padding-left: 15px !important;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .CodeMirror-matchingbracket {
-  color: #EB606B !important;
+  color: #eb606b !important;
 }
 
 .CodeMirror-linenumber {
@@ -65,37 +65,37 @@
 }
 
 .cm-atom {
-  color: #E7E7E7 !important;
+  color: #e7e7e7 !important;
 }
 
 .cm-number {
-  color: #E7E7E7 !important;
+  color: #e7e7e7 !important;
 }
 
 .cm-property {
-  color: #E7E7E7 !important;
+  color: #e7e7e7 !important;
 }
 
 .cm-keyword,
 .cm-attribute {
-  color: #FF6666 !important;
+  color: #ff6666 !important;
 }
 
 .cm-string,
 .cm-string-2 {
-  color: #7AECD9 !important;
+  color: #7aecd9 !important;
 }
 
 .cm-variable {
-  color: #E7E7E7 !important;
+  color: #e7e7e7 !important;
 }
 
 .cm-variable-2 {
-  color: #E7E7E7 !important;
+  color: #e7e7e7 !important;
 }
 
 .cm-def {
-  color: #F8F8F8 !important;
+  color: #f8f8f8 !important;
 }
 
 .cm-bracket {
@@ -103,14 +103,59 @@
 }
 
 .cm-tag {
-  color: #FAC863 !important;
+  color: #fac863 !important;
 }
 
 .cm-link {
-  color: #FCD3CC !important;
+  color: #fcd3cc !important;
 }
 
 .cm-error {
-  background: #8D1602 !important;
-  color: #F8F8F8 !important;
+  background: #8d1602 !important;
+  color: #f8f8f8 !important;
+}
+
+.CodeMirror-selected {
+  background: #3e3e3e !important;
+}
+
+.CodeMirror-simplescroll-horizontal div,
+.CodeMirror-simplescroll-vertical div {
+  cursor: pointer;
+  position: absolute;
+  border-radius: 2px;
+  background: #3e3e3e;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.CodeMirror-simplescroll-horizontal,
+.CodeMirror-simplescroll-vertical {
+  position: absolute;
+  z-index: 6;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.CodeMirror-simplescroll-horizontal {
+  bottom: 0;
+  left: 0;
+  height: 12px;
+}
+.CodeMirror-simplescroll-horizontal div {
+  bottom: 0;
+  height: 100%;
+}
+
+.CodeMirror-simplescroll-vertical {
+  right: 0;
+  top: 0;
+  width: 12px;
+}
+.CodeMirror-simplescroll-vertical div {
+  right: 0;
+  width: 100%;
+}
+
+.CodeMirror-scrollbar-filler {
+  background-color: #737373;
 }

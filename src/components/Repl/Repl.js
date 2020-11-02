@@ -1,7 +1,9 @@
-import React from 'react';
 import dynamic from 'next/dynamic';
 import styled from '@emotion/styled';
 import debounce from 'lodash.debounce';
+import useEvent from 'react-use/lib/useEvent';
+import useUpdateEffect from 'react-use/lib/useUpdateEffect';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 
 import media from '../../styled/media';
 import ErrorMessage from './ErrorMessage';
@@ -59,6 +61,7 @@ const CodeError = styled(ErrorMessage)`
 const DEFAULT_CODE_MIRROR_OPTIONS = {
   autoCloseBrackets: true,
   styleSelectedText: true,
+  scrollbarStyle: 'simple',
   keyMap: 'sublime',
   lineNumbers: true,
   matchBrackets: true,
@@ -71,13 +74,16 @@ const DEFAULT_CODE_MIRROR_OPTIONS = {
 
 let CodeMirror;
 
-class Repl extends React.PureComponent {
-  state = {
-    element: null,
-    error: null,
-  };
+const Repl = ({ activeTab, value, onChange, onUrlChange }) => {
+  const textarea = useRef(null);
 
-  componentDidMount() {
+  const codeMirror = useRef(null);
+
+  const [error, setError] = useState(null);
+
+  const [element, setElement] = useState(null);
+
+  useEffect(() => {
     require('codemirror/mode/jsx/jsx');
     require('codemirror/keymap/sublime');
     require('codemirror/addon/edit/closetag');
@@ -86,86 +92,74 @@ class Repl extends React.PureComponent {
     require('codemirror/addon/edit/closebrackets');
     require('codemirror/addon/display/placeholder');
     require('codemirror/addon/selection/active-line');
+    require('codemirror/addon/scroll/simplescrollbars');
     require('codemirror/addon/selection/mark-selection');
     CodeMirror = require('codemirror');
 
-    this.codeMirror = CodeMirror.fromTextArea(
-      this.textarea,
+    const instance = CodeMirror.fromTextArea(
+      textarea.current,
       DEFAULT_CODE_MIRROR_OPTIONS,
     );
-    this.codeMirror.on('change', this.onChange.bind(this));
-    this.codeMirror.setValue(this.props.value);
-  }
 
-  componentWillUnmount() {
-    if (this.codeMirror) {
-      this.codeMirror.toTextArea();
-    }
-  }
+    instance.setValue(value);
 
-  UNSAFE_componentWillReceiveProps(newProps) {
-    if (this.props.value !== newProps.value) {
-      this.codeMirror.setValue(newProps.value);
-    }
-  }
+    codeMirror.current = instance;
 
-  onChange({ doc }) {
-    const code = doc.getValue();
+    return () => instance?.toTextArea();
+  }, []);
 
-    if (this.props.onChange) {
-      this.props.onChange(code);
-    }
-
-    if (code.length === 0) {
-      this.setState({
-        error: null,
-        element: null,
-      });
-    }
-
-    this.transpile(code);
-  }
-
-  onErrorClose = () => {
-    this.setState({ error: null });
+  const onErrorClose = () => {
+    setError(null);
   };
 
-  transpile(code) {
-    debounceTranspile(
-      code,
-      (element) => this.setState({ element, error: null }),
-      (error) => this.setState({ error: error.message }),
-    );
-  }
+  const handleChange = useCallback(
+    ({ doc }) => {
+      const code = doc.getValue();
 
-  render() {
-    const { element, error } = this.state;
-    const { activeTab, value, onUrlChange } = this.props;
+      onChange?.(code);
 
-    return (
-      <Wrapper>
-        <CodePanel active={activeTab === 'code'}>
-          <textarea
-            autoFocus
-            autoComplete="off"
-            defaultValue={value}
-            ref={(node) => {
-              this.textarea = node;
-            }}
-            placeholder="Write code here..."
-          />
-          <CodeError onClose={this.onErrorClose}>{error}</CodeError>
-        </CodePanel>
-        <PDFPanel active={activeTab === 'pdf'}>
-          <PDFViewerWithNoSSR
-            document={element}
-            onUrlChange={onUrlChange}
-            onRenderError={(error) => this.setState({ error })}
-          />
-        </PDFPanel>
-      </Wrapper>
-    );
-  }
-}
+      if (code.length === 0) {
+        setError(null);
+        setElement(null);
+      }
+
+      debounceTranspile(code, setElement, setError);
+    },
+    [onChange],
+  );
+
+  useEvent('change', handleChange, codeMirror.current);
+
+  useEffect(() => {
+    codeMirror.current?.setValue(value);
+  }, [value]);
+
+  useUpdateEffect(() => {
+    setError(null);
+  }, [element]);
+
+  return (
+    <Wrapper>
+      <CodePanel active={activeTab === 'code'}>
+        <textarea
+          autoFocus
+          ref={textarea}
+          autoComplete="off"
+          defaultValue={value}
+          placeholder="Write code here..."
+        />
+        <CodeError onClose={onErrorClose}>{error}</CodeError>
+      </CodePanel>
+
+      <PDFPanel active={activeTab === 'pdf'}>
+        <PDFViewerWithNoSSR
+          value={element}
+          onUrlChange={onUrlChange}
+          onRenderError={setError}
+        />
+      </PDFPanel>
+    </Wrapper>
+  );
+};
 
 export default Repl;
