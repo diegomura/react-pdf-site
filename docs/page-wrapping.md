@@ -1,4 +1,4 @@
-import GoToExample from '../src/components/GoToExample'
+import GoToExample from '../src/components/Docs/GoToExample'
 
 ### Page wrapping
 

@@ -1,6 +1,6 @@
-import EditButton from '../src/components/EditButton'
-import GoToExample from '../src/components/GoToExample'
-import NavigationButtons from '../src/components/NavigationButtons'
+import EditButton from '../src/components/Docs/EditButton'
+import GoToExample from '../src/components/Docs/GoToExample'
+import NavigationButtons from '../src/components/Docs/NavigationButtons'
 
 ### 1. Install React and react-pdf
 

@@ -1,4 +1,4 @@
-import GoToExample from '../src/components/GoToExample'
+import GoToExample from '../src/components/Docs/GoToExample'
 
 ## Fonts
 
@@ -45,7 +45,7 @@ Name to which the font will be referenced on styles definition. Can be any uniqu
 
 Specifies to which font style the registered font refers to.
 
-| Value   |              Description               |  
+| Value   |              Description               |
 | ------  | :--------------------------------------|
 | normal  | Selects a font that is classified as normal _Default_ |
 | italic  | Selects a font that is classified as italic. If no italic version of the font is registered, react-pdf will fail when a style of this type is present |
@@ -56,7 +56,7 @@ Specifies to which font style the registered font refers to.
 
 Specifies the registered font weight.
 
-| Value   |              Description               |  
+| Value   |              Description               |
 | ------  | :--------------------------------------|
 | thin  | Equals to value 100 |
 | ultralight  | Equals to value 200 |

@@ -3,7 +3,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { ThemeProvider } from 'emotion-theming';
 
 import theme from '../src/styled/theme';
-import Frame from '../src/components/Frame';
+import Layout from '../src/components/Layout';
 import components from '../src/lib/markdown';
 import trackAnalytics from '../src/lib/analytics';
 
@@ -22,14 +22,14 @@ import App from 'next/app';
 class MyApp extends App {
   render() {
     const { Component, pageProps, router } = this.props;
-    const AppFrame = router.pathname === '/repl' ? 'div' : Frame;
+    const AppLayout = router.pathname === '/repl' ? 'div' : Layout;
 
     return (
       <MDXProvider components={components}>
         <ThemeProvider theme={theme}>
-          <AppFrame>
+          <AppLayout>
             <Component {...pageProps} />
-          </AppFrame>
+          </AppLayout>
         </ThemeProvider>
       </MDXProvider>
     );

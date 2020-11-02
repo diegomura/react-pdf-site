@@ -5,16 +5,16 @@ import { withRouter } from 'next/router';
 import React, { useState, useMemo } from 'react';
 
 import media from '../src/styled/media';
-import Icon from '../src/components/Icon';
-import Logo from '../src/components/Logo';
-import Loading from '../src/components/Loading';
-import BackButton from '../src/components/BackButton';
-import ReplHeader from '../src/components/ReplHeader';
-import ReplFooter from '../src/components/ReplFooter';
-import GitHubIcon from '../src/components/GitHubIcon';
+import Icon from '../src/components/UI/Icon';
+import Logo from '../src/components/UI/Logo';
+import Spinner from '../src/components/UI/Spinner';
+import BackButton from '../src/components/Repl/BackButton';
+import ReplHeader from '../src/components/Repl/ReplHeader';
+import ReplFooter from '../src/components/Repl/ReplFooter';
+import GitHubIcon from '../src/components/Layout/GitHubIcon';
 import { compress, decompress } from '../src/lib/compress';
 
-const Repl = dynamic(import('../src/components/Repl'), { loading: Loading });
+const Repl = dynamic(import('../src/components/Repl'), { loading: Spinner });
 
 const examples = {
   text: require('raw-loader!../examples/text.txt'),

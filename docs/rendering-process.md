@@ -1,6 +1,6 @@
-import EditButton from '../src/components/EditButton'
-import OverviewTimeline from '../src/components/OverviewTimeline'
-import NavigationButtons from '../src/components/NavigationButtons'
+import EditButton from '../src/components/Docs/EditButton'
+import OverviewTimeline from '../src/components/Docs/OverviewTimeline'
+import NavigationButtons from '../src/components/Docs/NavigationButtons'
 
 <EditButton to="https://github.com/react-pdf/site/blob/master/docs/rendering-process.md" />
 
