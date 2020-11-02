@@ -1,29 +1,72 @@
 import EditButton from '../src/components/Docs/EditButton'
+import GoToExample from '../src/components/Docs/GoToExample'
 import NavigationButtons from '../src/components/Docs/NavigationButtons'
 
 <EditButton to="https://github.com/react-pdf/site/blob/master/docs/svg.md" />
 
-## SVG images
-
-React-pdf follows the [React primitives](https://github.com/lelandrichardson/react-primitives) specification, making the learning process very straightforward if you come from another React environment (such as react-native). Additionally, it implements custom Component types that allow you to structure your PDF document.
+## SVG Images `Since 2.0`
 
 ### SVG
 
+<GoToExample name="svg" />
+
 ---
 
-### G
+### Line
+
+<GoToExample name="line" />
+
+---
+
+### Polyline
+
+<GoToExample name="polyline" />
+
+---
+
+### Polygon
+
+<GoToExample name="polygon" />
 
 ---
 
 ### Path
 
+<GoToExample name="path" />
+
 ---
 
 ### Rect
 
+<GoToExample name="rect" />
+
 ---
 
-### Line
+### Circle
+
+<GoToExample name="circle" />
+
+---
+
+### Ellipse
+
+<GoToExample name="ellipse" />
+
+---
+
+### Text
+
+<GoToExample name="svgtext" />
+
+---
+
+### Tspan
+
+---
+
+### G
+
+<GoToExample name="g" />
 
 ---
 
@@ -35,35 +78,21 @@ React-pdf follows the [React primitives](https://github.com/lelandrichardson/rea
 
 ---
 
-### Tspan
-
----
-
-### Circle
-
----
-
-### Ellipse
-
----
-
-### Polygon
-
----
-
-### Polyline
-
----
-
 ### ClipPath
+
+<GoToExample name="clippath" />
 
 ---
 
 ### LinearGradient
 
+<GoToExample name="lineargradient" />
+
 ---
 
 ### RadialGradient
+
+<GoToExample name="radialgradient" />
 
 ---
 

@@ -1,10 +1,61 @@
-import React from 'react'
-import { transform } from 'buble'
-import { Page, Text, Link, Font, View, Canvas, Note, Image, StyleSheet } from '@react-pdf/renderer'
+import React from 'react';
+import { transform } from 'buble';
+import {
+  Page,
+  Text,
+  Link,
+  Font,
+  View,
+  Canvas,
+  Note,
+  Image,
+  G,
+  Svg,
+  Path,
+  Rect,
+  Line,
+  Stop,
+  Defs,
+  Tspan,
+  Circle,
+  Ellipse,
+  Polygon,
+  Polyline,
+  ClipPath,
+  LinearGradient,
+  RadialGradient,
+  StyleSheet,
+} from '@react-pdf/renderer';
 
-const Document = 'DOCUMENT'
+const Document = 'DOCUMENT';
 
-const primitives = { Document, Page, Text, Link, Font, View, Note, Image, Canvas, StyleSheet }
+const primitives = {
+  Document,
+  Page,
+  Text,
+  Link,
+  Font,
+  View,
+  Note,
+  Image,
+  Canvas,
+  G,
+  Svg,
+  Path,
+  Rect,
+  Line,
+  Stop,
+  Defs,
+  Tspan,
+  Circle,
+  Ellipse,
+  Polygon,
+  Polyline,
+  ClipPath,
+  LinearGradient,
+  RadialGradient,
+  StyleSheet,
+};
 
 const transpile = (code, callback, onError) => {
   try {
@@ -12,18 +63,27 @@ const transpile = (code, callback, onError) => {
       objectAssign: 'Object.assign',
       transforms: {
         dangerousForOf: true,
-        dangerousTaggedTemplateString: true
-      }
-    })
+        dangerousTaggedTemplateString: true,
+      },
+    });
 
-    const res = new Function('React', 'ReactPDF', ...Object.keys(primitives), result.code)
+    const res = new Function(
+      'React',
+      'ReactPDF',
+      ...Object.keys(primitives),
+      result.code,
+    );
 
-    res(React, { render: doc => callback(doc) }, ...Object.values(primitives))
+    res(
+      React,
+      { render: (doc) => callback(doc) },
+      ...Object.values(primitives),
+    );
   } catch (e) {
     if (onError) {
-      onError(e)
+      onError(e);
     }
   }
-}
+};
 
-export default transpile
+export default transpile;

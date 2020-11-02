@@ -10,6 +10,10 @@ const BaseHeading = css`
   font-family: 'Taviraj';
   margin-bottom: 16px;
   color: ${({ theme }) => theme.black};
+
+  code {
+    vertical-align: middle;
+  }
 `;
 
 const Heading1 = styled.h1`

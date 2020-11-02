@@ -162,19 +162,20 @@ const Menu = ({ opened, onItemClick, ...props }) => (
         />
       </Item>
 
-      <Item to="/svg" title="SVG Image">
+      <Item to="/svg" title="SVG Images">
         <Item to="/svg#svg" title="Svg" onClick={onItemClick} />
-        <Item to="/svg#g" title="G" onClick={onItemClick} />
+        <Item to="/svg#line" title="Line" onClick={onItemClick} />
+        <Item to="/svg#polyline" title="Polyline" onClick={onItemClick} />
+        <Item to="/svg#polygon" title="Polygon" onClick={onItemClick} />
         <Item to="/svg#path" title="Path" onClick={onItemClick} />
         <Item to="/svg#rect" title="Rect" onClick={onItemClick} />
-        <Item to="/svg#line" title="Line" onClick={onItemClick} />
-        <Item to="/svg#stop" title="Stop" onClick={onItemClick} />
-        <Item to="/svg#defs" title="Defs" onClick={onItemClick} />
-        <Item to="/svg#tspan" title="Tspan" onClick={onItemClick} />
         <Item to="/svg#circle" title="Circle" onClick={onItemClick} />
         <Item to="/svg#ellipse" title="Ellipse" onClick={onItemClick} />
-        <Item to="/svg#polygon" title="Polygon" onClick={onItemClick} />
-        <Item to="/svg#polyline" title="Polyline" onClick={onItemClick} />
+        <Item to="/svg#text" title="Text" onClick={onItemClick} />
+        <Item to="/svg#tspan" title="Tspan" onClick={onItemClick} />
+        <Item to="/svg#g" title="G" onClick={onItemClick} />
+        <Item to="/svg#stop" title="Stop" onClick={onItemClick} />
+        <Item to="/svg#defs" title="Defs" onClick={onItemClick} />
         <Item to="/svg#clippath" title="ClipPath" onClick={onItemClick} />
         <Item
           to="/svg#lineargradient"
