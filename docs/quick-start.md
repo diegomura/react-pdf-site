@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
 
 // Create Document Component
 const MyDocument = () => (
-  <Document>
+  <Document onRender={() => (
     <Page size="A4" style={styles.page}>
       <View style={styles.section}>
         <Text>Section #1</Text>
@@ -55,6 +55,7 @@ const MyDocument = () => (
         <Text>Section #2</Text>
       </View>
     </Page>
+  )}>
   </Document>
 );
 ```
