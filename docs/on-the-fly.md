@@ -7,23 +7,23 @@ There are some cases in which you may need to generate a document without showin
 Is it possible that what you need is just a "Download" button. If that's the case, you can use `<PDFDownloadLink />` to easily create and download your document.
 
 ```jsx
-import { PDFDownloadLink, Document, Page } from '@react-pdf/renderer'
+import { PDFDownloadLink, Document, Page } from '@react-pdf/renderer';
 
 const MyDoc = () => (
   <Document>
-    <Page>
-      // My document data
-    </Page>
+    <Page>// My document data</Page>
   </Document>
-)
+);
 
 const App = () => (
   <div>
     <PDFDownloadLink document={<MyDoc />} fileName="somename.pdf">
-      {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download now!')}
+      {({ blob, url, loading, error }) =>
+        loading ? 'Loading document...' : 'Download now!'
+      }
     </PDFDownloadLink>
   </div>
-)
+);
 ```
 
 > **Protip:** You still have access to blob's data if you need it.
@@ -37,9 +37,7 @@ import { BlobProvider, Document, Page } from '@react-pdf/renderer';
 
 const MyDoc = (
   <Document>
-    <Page>
-      // My document data
-    </Page>
+    <Page>// My document data</Page>
   </Document>
 );
 
@@ -48,7 +46,7 @@ const App = () => (
     <BlobProvider document={MyDoc}>
       {({ blob, url, loading, error }) => {
         // Do whatever you need with blob here
-        return <div>There's something going on on the fly</div>
+        return <div>There's something going on on the fly</div>;
       }}
     </BlobProvider>
   </div>
@@ -62,9 +60,7 @@ import { pdf, Document, Page } from '@react-pdf/renderer';
 
 const MyDoc = (
   <Document>
-    <Page>
-      // My document data
-    </Page>
+    <Page>// My document data</Page>
   </Document>
 );
 
