@@ -89,29 +89,25 @@ const ItemWrapper = styled.li`
   }
 `;
 
-const Item = withRouter(
-  ({ router, to, title, children, onClick, ...props }) => {
-    const isAbsoluteUrl = /https?/.test(to);
-    const active = router && router.pathname === to;
-    const Wrapper = isAbsoluteUrl ? 'a' : Link;
+const Item = withRouter(({ router, to, title, children, ...props }) => {
+  const isAbsoluteUrl = /https?/.test(to);
+  const active = router && router.pathname === to;
 
-    return (
-      <ItemWrapper>
-        <Wrapper href={to} {...props}>
-          <MenuLink
-            href={to}
-            active={active}
-            onClick={onClick}
-            target={isAbsoluteUrl ? '_blank' : null}
-          >
-            {title}
-          </MenuLink>
-        </Wrapper>
-        {children && <SubItems active={active}>{children}</SubItems>}
-      </ItemWrapper>
-    );
-  },
-);
+  return (
+    <ItemWrapper>
+      {isAbsoluteUrl && (
+        <MenuLink href={to} target="_blank" {...props} active={active}>{title}</MenuLink>
+      )}
+
+      {!isAbsoluteUrl && (
+        <Link href={to} {...props}>
+          <MenuLink href={to} active={active}>{title}</MenuLink>
+        </Link>
+      )}
+      {children && <SubItems active={active}>{children}</SubItems>}
+    </ItemWrapper>
+  );
+});
 
 const MenuLogo = styled(Logo)`
   ${media.phone} {
@@ -119,158 +115,83 @@ const MenuLogo = styled(Logo)`
   }
 `;
 
-const Menu = ({ opened, onItemClick, ...props }) => (
+const Menu = ({ opened, ...props }) => (
   <Nav opened={opened}>
     <Input />
     <MenuLogo rotate />
     <List>
-      <Item to="/" title="Quick start guide" onClick={onItemClick} />
+      <Item to="/" title="Quick start guide" />
 
-      <Item
-        to="/rendering-process"
-        title="Rendering process"
-        onClick={onItemClick}
-      />
+      <Item to="/rendering-process" title="Rendering process" />
 
       <Item to="/components" title="Components">
-        <Item
-          to="/components#document"
-          title="Document"
-          onClick={onItemClick}
-        />
-        <Item to="/components#page" title="Page" onClick={onItemClick} />
-        <Item to="/components#view" title="View" onClick={onItemClick} />
-        <Item to="/components#image" title="Image" onClick={onItemClick} />
-        <Item to="/components#text" title="Text" onClick={onItemClick} />
-        <Item to="/components#link" title="Link" onClick={onItemClick} />
-        <Item to="/components#note" title="Note" onClick={onItemClick} />
-        <Item to="/components#canvas" title="Canvas" onClick={onItemClick} />
-        <Item
-          to="/components#pdfviewer"
-          title="PDFViewer"
-          onClick={onItemClick}
-        />
-        <Item
-          to="/components#pdfdownloadlink"
-          title="PDFDownloadLink"
-          onClick={onItemClick}
-        />
-        <Item
-          to="/components#blobprovider"
-          title="BlobProvider"
-          onClick={onItemClick}
-        />
+        <Item to="/components#document" title="Document" />
+        <Item to="/components#page" title="Page" />
+        <Item to="/components#view" title="View" />
+        <Item to="/components#image" title="Image" />
+        <Item to="/components#text" title="Text" />
+        <Item to="/components#link" title="Link" />
+        <Item to="/components#note" title="Note" />
+        <Item to="/components#canvas" title="Canvas" />
+        <Item to="/components#pdfviewer" title="PDFViewer" />
+        <Item to="/components#pdfdownloadlink" title="PDFDownloadLink" />
+        <Item to="/components#blobprovider" title="BlobProvider" />
       </Item>
 
       <Item to="/svg" title="SVG Images">
-        <Item to="/svg#svg" title="Svg" onClick={onItemClick} />
-        <Item to="/svg#line" title="Line" onClick={onItemClick} />
-        <Item to="/svg#polyline" title="Polyline" onClick={onItemClick} />
-        <Item to="/svg#polygon" title="Polygon" onClick={onItemClick} />
-        <Item to="/svg#path" title="Path" onClick={onItemClick} />
-        <Item to="/svg#rect" title="Rect" onClick={onItemClick} />
-        <Item to="/svg#circle" title="Circle" onClick={onItemClick} />
-        <Item to="/svg#ellipse" title="Ellipse" onClick={onItemClick} />
-        <Item to="/svg#text" title="Text" onClick={onItemClick} />
-        <Item to="/svg#tspan" title="Tspan" onClick={onItemClick} />
-        <Item to="/svg#g" title="G" onClick={onItemClick} />
-        <Item to="/svg#stop" title="Stop" onClick={onItemClick} />
-        <Item to="/svg#defs" title="Defs" onClick={onItemClick} />
-        <Item to="/svg#clippath" title="ClipPath" onClick={onItemClick} />
-        <Item
-          to="/svg#lineargradient"
-          title="LinearGradient"
-          onClick={onItemClick}
-        />
-        <Item
-          to="/svg#radialgradient"
-          title="RadialGradient"
-          onClick={onItemClick}
-        />
+        <Item to="/svg#svg" title="Svg" />
+        <Item to="/svg#line" title="Line" />
+        <Item to="/svg#polyline" title="Polyline" />
+        <Item to="/svg#polygon" title="Polygon" />
+        <Item to="/svg#path" title="Path" />
+        <Item to="/svg#rect" title="Rect" />
+        <Item to="/svg#circle" title="Circle" />
+        <Item to="/svg#ellipse" title="Ellipse" />
+        <Item to="/svg#text" title="Text" />
+        <Item to="/svg#tspan" title="Tspan" />
+        <Item to="/svg#g" title="G" />
+        <Item to="/svg#stop" title="Stop" />
+        <Item to="/svg#defs" title="Defs" />
+        <Item to="/svg#clippath" title="ClipPath" />
+        <Item to="/svg#lineargradient" title="LinearGradient" />
+        <Item to="/svg#radialgradient" title="RadialGradient" />
       </Item>
 
       <Item to="/styling" title="Styling">
-        <Item
-          to="/styling#stylesheet-api"
-          title="StyleSheet API"
-          onClick={onItemClick}
-        />
-        <Item
-          to="/styling#media-queries"
-          title="Media queries"
-          onClick={onItemClick}
-        />
-        <Item
-          to="/styling#valid-units"
-          title="Valid units"
-          onClick={onItemClick}
-        />
-        <Item
-          to="/styling#valid-css-properties"
-          title="Valid CSS properties"
-          onClick={onItemClick}
-        />
+        <Item to="/styling#stylesheet-api" title="StyleSheet API" />
+        <Item to="/styling#media-queries" title="Media queries" />
+        <Item to="/styling#valid-units" title="Valid units" />
+        <Item to="/styling#valid-css-properties" title="Valid CSS properties" />
       </Item>
 
       <Item to="/fonts" title="Fonts">
-        <Item to="/fonts#register" title="register" onClick={onItemClick} />
+        <Item to="/fonts#register" title="register" />
         <Item
           to="/fonts#registerhyphenationcallback"
           title="registerHyphenationCallback"
-          onClick={onItemClick}
         />
-        <Item
-          to="/fonts#registeremojisource"
-          title="registerEmojiSource"
-          onClick={onItemClick}
-        />
+        <Item to="/fonts#registeremojisource" title="registerEmojiSource" />
       </Item>
 
       <Item to="/advanced" title="Advanced">
-        <Item
-          to="/advanced#page-wrapping"
-          title="Page wrapping"
-          onClick={onItemClick}
-        />
+        <Item to="/advanced#page-wrapping" title="Page wrapping" />
         <Item
           to="/advanced#on-the-fly-rendering"
           title="On the fly rendering"
-          onClick={onItemClick}
         />
         <Item
           to="/advanced#orphan-&-widow-protection"
           title="Orphan and widow protection"
-          onClick={onItemClick}
         />
-        <Item
-          to="/advanced#dynamic-content"
-          title="Dynamic content"
-          onClick={onItemClick}
-        />
-        <Item
-          to="/advanced#debugging"
-          title="Debugging"
-          onClick={onItemClick}
-        />
-        <Item
-          to="/advanced#hyphenation"
-          title="Hyphenation"
-          onClick={onItemClick}
-        />
-        <Item
-          to="/advanced#webpack-config"
-          title="Webpack config"
-          onClick={onItemClick}
-        />
+        <Item to="/advanced#dynamic-content" title="Dynamic content" />
+        <Item to="/advanced#debugging" title="Debugging" />
+        <Item to="/advanced#hyphenation" title="Hyphenation" />
+        <Item to="/advanced#webpack-config" title="Webpack config" />
       </Item>
 
-      <Item to="/repl" title="Playground / REPL" onClick={onItemClick} />
+      <Item to="/repl" title="Playground / REPL" />
 
-      <Item
-        to="https://opencollective.com/react-pdf"
-        title="Donate"
-        onClick={onItemClick}
-      />
+      <Item to="https://opencollective.com/react-pdf" title="Donate" />
     </List>
 
     <GitHubIcon />

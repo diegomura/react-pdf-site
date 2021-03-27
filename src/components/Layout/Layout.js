@@ -56,7 +56,7 @@ const Frame = ({ children }) => {
     <>
       <Header onMenuClick={() => setMenuOpen(!menuOpen)} />
       <Main>
-        <Menu opened={menuOpen} onItemClick={() => setMenuOpen(false)} />
+        <Menu opened={menuOpen} />
         <Section menuOpened={menuOpen} onClick={() => setMenuOpen(false)}>
           <Content>{children}</Content>
         </Section>

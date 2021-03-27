@@ -69,8 +69,8 @@ const ButtonIcon = styled(Icon)`
   margin-left: 10px;
 `;
 
-const Button = ({ icon, children, ...props }) => (
-  <Wrapper {...props}>
+const Button = ({ icon, children, ...props }, ref) => (
+  <Wrapper {...props} ref={ref}>
     <span>{children}</span>
     {icon && <ButtonIcon type={icon} />}
   </Wrapper>
@@ -81,4 +81,4 @@ Button.defaultProps = {
   children: '',
 };
 
-export default Button;
+export default React.forwardRef(Button);

@@ -49,7 +49,7 @@ const ItemWrapper = styled.li`
     top: ${(props) => (props.position === 'bottom' ? '20px' : null)};
     bottom: ${(props) => (props.position === 'top' ? '20px' : null)};
 
-    ${media.phone}{
+    ${media.phone} {
       height: 50px;
     }
   }
@@ -100,7 +100,7 @@ const TimelineItem = ({ icon, iconLabel, position, children }) => (
   <ItemWrapper position={position}>
     <ItemDescription position={position}>{children}</ItemDescription>
     <ItemIcon>
-      <Icon type={icon} label={iconLabel} />
+      <Icon size={16} type={icon} label={iconLabel} />
     </ItemIcon>
   </ItemWrapper>
 );
@@ -110,20 +110,20 @@ const OverviewTimeline = () => (
     <TimelineItem position="top" icon="cogs" iconLabel="">
       Internal structures creation
     </TimelineItem>
-    <TimelineItem position="bottom" icon="file" iconLabel="">
-      PDF document creation & metadata
+    <TimelineItem position="bottom" icon="border-style" iconLabel="">
+      Resolve styles
     </TimelineItem>
     <TimelineItem position="top" icon="download" iconLabel="">
       Fetching assets
     </TimelineItem>
-    <TimelineItem position="bottom" icon="copy" iconLabel="">
+    <TimelineItem position="bottom" icon="paragraph" iconLabel="">
+      Layout text
+    </TimelineItem>
+    <TimelineItem position="top" icon="copy" iconLabel="">
       Wrapping pages
     </TimelineItem>
-    <TimelineItem position="top" icon="paint-brush" iconLabel="">
+    <TimelineItem position="bottom" icon="paint-brush" iconLabel="">
       Rendering
-    </TimelineItem>
-    <TimelineItem position="bottom" icon="save" iconLabel="">
-      Finish document
     </TimelineItem>
   </List>
 );

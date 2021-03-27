@@ -28,11 +28,11 @@ const Title = styled(H1)`
   margin-left: ${(props) => props.separation || '15px'};
 `;
 
-const Logo = ({ withText, className, rotate, ...props }) => (
-  <Wrapper className={className}>
+const Logo = ({ withText, className, rotate, ...props }, ref) => (
+  <Wrapper ref={ref} className={className}>
     <LogoImage src="/images/logo.png" rotateImg={rotate} {...props} />
     {withText && <Title {...props}>React-pdf</Title>}
   </Wrapper>
 );
 
-export default Logo;
+export default React.forwardRef(Logo);

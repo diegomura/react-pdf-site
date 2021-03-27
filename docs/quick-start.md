@@ -88,10 +88,6 @@ const App = () => (
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-#### Render in mobile
-
-_In progress..._
-
 ### 4. Have fun!
 
 Maybe the most important step — make use of all react-pdf capabilities to create beautiful and awesome documents!

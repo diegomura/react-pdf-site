@@ -10,7 +10,6 @@ import trackAnalytics from '../src/lib/analytics';
 // Global styles
 require('react-tippy/dist/tippy.css');
 require('../public/styles/index.css');
-require('../public/styles/icons.css');
 require('../public/styles/fonts.css');
 require('../public/styles/prism.css');
 require('../public/styles/tooltips.css');
