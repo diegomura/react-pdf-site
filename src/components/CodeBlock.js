@@ -54,7 +54,7 @@ const CodeBlock = ({ language, isPlayable, children }) => (
     <Handlers>
       {isPlayable && <Handler type="eye" />}
       <Clipboard text={children.props.children}>
-        <Handler type="files-o" />
+        <Handler type="file" />
       </Clipboard>
     </Handlers>
     <pre>

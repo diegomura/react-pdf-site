@@ -1,21 +1,72 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faEye,
+  faCopy,
+  faCogs,
+  faSave,
+  faFile,
+  faBars,
+  faShareAlt,
+  faDownload,
+  faParagraph,
+  faArrowLeft,
+  faPaintBrush,
+  faChevronDown,
+  faBorderStyle,
+  faChevronLeft,
+  faChevronRight,
+} from '@fortawesome/free-solid-svg-icons';
 
-const Icon = ({ type, label, size, className, style, onClick }) => (
-  <span
-    className={`icon-${type} ${className}`}
-    style={{ fontSize: size, ...style }}
-    onClick={onClick}
-    role="button"
-    aria-label={label}
-    tabIndex={0}
-  />
-);
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-Icon.defaultProps = {
-  size: 14,
-  style: {},
-  className: '',
-  onClick: null,
+export const BUNDLED_ICON_TYPES = {
+  eye: faEye,
+  cogs: faCogs,
+  copy: faCopy,
+  menu: faBars,
+  save: faSave,
+  file: faFile,
+  github: faGithub,
+  download: faDownload,
+  paragraph: faParagraph,
+  'share-alt': faShareAlt,
+  'arrow-left': faArrowLeft,
+  'paint-brush': faPaintBrush,
+  'border-style': faBorderStyle,
+  'chevron-left': faChevronLeft,
+  'chevron-down': faChevronDown,
+  'chevron-right': faChevronRight,
+};
+
+const IconWrapper = ({ onClick, children }) => {
+  if (!onClick) return children;
+
+  return (
+    <a onClick={onClick} style={{ cursor: 'pointer' }}>
+      {children}
+    </a>
+  );
+};
+
+const Icon = ({ type, opacity, size = 14, style = {}, onClick, ...props }) => {
+  if (!BUNDLED_ICON_TYPES[type]) {
+    console.warn(
+      `${type} icon type not included in bundle`,
+    );
+    return null;
+  }
+
+  return (
+    <IconWrapper onClick={onClick}>
+      <FontAwesomeIcon
+        icon={BUNDLED_ICON_TYPES[type]}
+        style={{ opacity, width: size, height: size, ...style }}
+        {...props}
+      />
+    </IconWrapper>
+  );
 };
 
 export default Icon;
