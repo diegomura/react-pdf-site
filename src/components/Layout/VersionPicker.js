@@ -69,8 +69,7 @@ const VersionPicker = ({ selected = 'v2' }) => {
   const [menuOpen, toggleMenu] = useToggle(false);
 
   const onItemClick = (v) => {
-    const host = location.hostname.split('.')
-    const hostname = host[host.length - 1];
+    const hostname = location.hostname.replace(/^(v\d\.)/, '')
     const url = `${location.protocol}//${v}.${hostname}:${location.port}${location.pathname}`;
 
     window.location.replace(url);
