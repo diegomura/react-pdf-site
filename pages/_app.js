@@ -19,6 +19,7 @@ import App from 'next/app';
 
 
 class MyApp extends App {
+  console.log('v1');
   render() {
     const { Component, pageProps, router } = this.props;
     const AppFrame = router.pathname === '/repl' ? 'div' : Frame;
