@@ -6,6 +6,7 @@ import { withRouter } from 'next/router';
 import Logo from '../UI/Logo';
 import GitHubIcon from './GitHubIcon';
 import media from '../../styled/media';
+import VersionPicker from './VersionPicker';
 
 const Nav = styled.nav`
   top: 0;
@@ -27,7 +28,7 @@ const Nav = styled.nav`
   }
 `;
 
-const Input = styled.div`
+const Bar = styled.div`
   width: 100%;
   height: 64px;
   color: white;
@@ -115,10 +116,11 @@ const MenuLogo = styled(Logo)`
   }
 `;
 
-const Menu = ({ opened, ...props }) => (
+const Menu = ({ opened }) => (
   <Nav opened={opened}>
-    <Input />
+    <Bar />
     <MenuLogo rotate />
+    <VersionPicker />
     <List>
       <Item to="/" title="Quick start guide" />
 

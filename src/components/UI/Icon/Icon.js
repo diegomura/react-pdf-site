@@ -14,6 +14,7 @@ import {
   faArrowLeft,
   faTextHeight,
   faPaintBrush,
+  faChevronDown,
   faBorderStyle,
   faChevronLeft,
   faChevronRight,
@@ -36,6 +37,7 @@ export const BUNDLED_ICON_TYPES = {
   'paint-brush': faPaintBrush,
   'border-style': faBorderStyle,
   'chevron-left': faChevronLeft,
+  'chevron-down': faChevronDown,
   'chevron-right': faChevronRight,
 };
 
