@@ -170,6 +170,7 @@ const MyDocument = () => (
 - position
 - right
 - top
+- overflow
 - zIndex
 
 #### Dimension
