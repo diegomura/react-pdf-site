@@ -6,6 +6,7 @@ import { withRouter } from 'next/router';
 import Logo from './Logo';
 import media from '../styled/media';
 import GitHubIcon from './GitHubIcon';
+import VersionPicker from './VersionPicker';
 
 const Nav = styled.nav`
   top: 0;
@@ -119,10 +120,11 @@ const MenuLogo = styled(Logo)`
   }
 `;
 
-const Menu = ({ opened, onItemClick, ...props }) => (
+const Menu = ({ opened, onItemClick }) => (
   <Nav opened={opened}>
     <Input />
     <MenuLogo rotate />
+    <VersionPicker selected="v1" />
     <List>
       <Item to="/" title="Quick start guide" onClick={onItemClick} />
       <Item

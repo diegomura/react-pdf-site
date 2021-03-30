@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { useToggle } from 'react-use';
 
-import Icon from '../UI/Icon';
+import Icon from './Icon';
 import media from '../styled/media';
 
 const Wrapper = styled.div`
