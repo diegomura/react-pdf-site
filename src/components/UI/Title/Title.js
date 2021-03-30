@@ -43,7 +43,7 @@ const Title = () => (
   <Wrapper>
     <Main>React-pdf</Main>
     <SubHeading>
-      React renderer for creating PDF files on the browser, mobile and server.
+      React renderer for creating PDF files on the browser and server.
     </SubHeading>
   </Wrapper>
 );

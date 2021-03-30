@@ -159,6 +159,8 @@ const Menu = ({ opened }) => (
         <Item to="/svg#radialgradient" title="RadialGradient" />
       </Item>
 
+      <Item to="/hooks" title="Hooks" />
+
       <Item to="/styling" title="Styling">
         <Item to="/styling#stylesheet-api" title="StyleSheet API" />
         <Item to="/styling#media-queries" title="Media queries" />
@@ -174,6 +176,8 @@ const Menu = ({ opened }) => (
         />
         <Item to="/fonts#registeremojisource" title="registerEmojiSource" />
       </Item>
+
+      <Item to="/node" title="Node API" />
 
       <Item to="/advanced" title="Advanced">
         <Item to="/advanced#page-wrapping" title="Page wrapping" />

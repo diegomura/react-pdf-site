@@ -4,7 +4,7 @@ import NavigationButtons from '../src/components/Docs/NavigationButtons'
 
 <EditButton to="https://github.com/react-pdf/site/blob/master/docs/svg.md" />
 
-## SVG Images `Since 2.0`
+## SVG Images
 
 ### SVG
 
@@ -290,6 +290,6 @@ SVG presentation attributes are CSS properties that can be used as attributes on
 <NavigationButtons
   backSrc="/components"
   backText="Components"
-  nextSrc="/styling"
-  nextText="Styling"
+  nextSrc="/hooks"
+  nextText="Hooks"
 />

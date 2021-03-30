@@ -267,8 +267,8 @@ const MyDocument = () => (
 - borderBottomLeftRadius
 
 <NavigationButtons
-  backSrc="/components"
-  backText="Components"
-  nextSrc="/advanced"
-  nextText="Advanced"
+  backSrc="/hooks"
+  backText="Hooks"
+  nextSrc="/fonts"
+  nextText="Fonts"
 />

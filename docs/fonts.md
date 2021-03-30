@@ -1,4 +1,8 @@
+import EditButton from '../src/components/Docs/EditButton'
 import GoToExample from '../src/components/Docs/GoToExample'
+import NavigationButtons from '../src/components/Docs/NavigationButtons'
+
+<EditButton to="https://github.com/react-pdf/site/blob/master/docs/fonts.md" />
 
 ## Fonts
 
@@ -103,7 +107,7 @@ Font.registerHyphenationCallback(hyphenationCallback);
 
 #### Disabling hyphenation
 
-You can easily disable word hyphenation by just returning all words as they are passed to the hyphenation callback
+You can easily disable word hyphenation by just returning the same word as it is passed to the hyphenation callback
 
 ```
 Font.registerHyphenationCallback(word => [word]);
@@ -131,3 +135,10 @@ Font.registerEmojiSource({
 > **Protip:** react-pdf will need a internet connection to download emoji's images at render time, so bare that in mind when choosing to use this API
 
 <GoToExample name="emoji" />
+
+<NavigationButtons
+  backSrc="/styling"
+  backText="Styling"
+  nextSrc="/node"
+  nextText="Node API"
+/>

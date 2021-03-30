@@ -106,26 +106,25 @@ const SmallLogo = styled(Logo)`
 const ReplPage = ({ router }) => {
   const [code, setCode] = useState('');
 
-  const [initialCode, setInitialCode] = useState('');
-
   const [activeTab, setActiveTab] = useState('pdf');
 
   const [documentUrl, setDocumentUrl] = useState(null);
 
-  useAsync(async () => {
-    let initialValue = '';
-    const { code, example } = router.query;
+  const query = router.query;
 
-    if (code) {
-      initialValue = setInitialValueFromCode(code);
-    } else if (example) {
-      initialValue = await setInitialValueFromExample(example);
+  const initialCode = useAsync(async () => {
+    let initialValue = '';
+
+    if (query.code) {
+      initialValue = setInitialValueFromCode(query.code);
+    } else if (query.example) {
+      initialValue = await setInitialValueFromExample(query.example);
     } else {
       initialValue = await setInitialValueFromExample('page-wrap');
     }
 
-    setInitialCode(initialValue);
-  }, []);
+    return initialValue || '';
+  }, [query.code, query.example]);
 
   const shareUrl = useMemo(() => {
     return (
@@ -135,6 +134,8 @@ const ReplPage = ({ router }) => {
       }/repl?code=${compress(code)}`
     );
   }, [code]);
+
+  if (initialCode.loading) return null;
 
   return (
     <Main>
@@ -150,7 +151,7 @@ const ReplPage = ({ router }) => {
       <Section>
         <ReplHeader activeTab={activeTab} onTabClick={setActiveTab} />
         <Repl
-          value={initialCode}
+          value={initialCode.value}
           activeTab={activeTab}
           onChange={setCode}
           onUrlChange={setDocumentUrl}

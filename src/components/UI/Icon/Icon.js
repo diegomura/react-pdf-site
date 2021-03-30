@@ -41,32 +41,39 @@ export const BUNDLED_ICON_TYPES = {
   'chevron-right': faChevronRight,
 };
 
-const IconWrapper = ({ onClick, children }) => {
-  if (!onClick) return children;
-
-  return (
-    <a onClick={onClick} style={{ cursor: 'pointer' }}>
-      {children}
-    </a>
-  );
-};
-
-const Icon = ({ type, opacity, size = 14, style = {}, onClick, ...props }) => {
+const Icon = ({
+  type,
+  opacity,
+  size = 14,
+  className,
+  style = {},
+  onClick,
+  ...props
+}) => {
   if (!BUNDLED_ICON_TYPES[type]) {
-    console.warn(
-      `${type} icon type not included in bundle.`,
-    );
+    console.warn(`${type} icon type not included in bundle.`);
     return null;
   }
 
+  if (onClick) {
+    return (
+      <a onClick={onClick} className={className} style={{ cursor: 'pointer' }}>
+        <FontAwesomeIcon
+          icon={BUNDLED_ICON_TYPES[type]}
+          style={{ opacity, width: size, height: size, ...style }}
+          {...props}
+        />
+      </a>
+    );
+  }
+
   return (
-    <IconWrapper onClick={onClick}>
-      <FontAwesomeIcon
-        icon={BUNDLED_ICON_TYPES[type]}
-        style={{ opacity, width: size, height: size, ...style }}
-        {...props}
-      />
-    </IconWrapper>
+    <FontAwesomeIcon
+      className={className}
+      icon={BUNDLED_ICON_TYPES[type]}
+      style={{ opacity, width: size, height: size, ...style }}
+      {...props}
+    />
   );
 };
 

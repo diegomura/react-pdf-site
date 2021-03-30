@@ -1,10 +1,9 @@
 import pdfjs from 'pdfjs-dist';
-import { useAsync } from 'react-use';
 import styled from '@emotion/styled';
 import Page from 'react-pdf/dist/Page';
-import React, { useState } from 'react';
-import { pdf } from '@react-pdf/renderer';
+import { usePDF } from '@react-pdf/renderer';
 import Document from 'react-pdf/dist/Document';
+import React, { useEffect, useState } from 'react';
 import PdfjsWorker from 'pdfjs-dist/build/pdf.worker.js';
 
 import PageNavigator from './PageNavigator';
@@ -49,6 +48,15 @@ const PDFViewer = ({ value, onUrlChange, onRenderError }) => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
+  const [instance, updateInstance] = usePDF({ document: value });
+
+  useEffect(updateInstance, [value]);
+
+  useEffect(() => {
+    onUrlChange(instance.url);
+    onRenderError(instance.error);
+  }, [instance]);
+
   const onPreviousPage = () => {
     setCurrentPage((prev) => prev - 1);
   };
@@ -62,33 +70,16 @@ const PDFViewer = ({ value, onUrlChange, onRenderError }) => {
     setCurrentPage((prev) => Math.min(prev, d.numPages));
   };
 
-  const render = useAsync(async () => {
-    if (!value) return null;
-
-    try {
-      const blob = await pdf(value).toBlob();
-      const url = URL.createObjectURL(blob);
-
-      onUrlChange?.(url);
-
-      return url;
-    } catch (error) {
-      onRenderError?.(error.message);
-    }
-
-    return null;
-  }, [value]);
-
   return (
     <Wrapper>
-      <Message active={render.loading}>Rendering PDF...</Message>
+      <Message active={instance.loading}>Rendering PDF...</Message>
 
-      <Message active={!render.loading && !value}>
+      <Message active={!instance.loading && !value}>
         You are not rendering a valid document
       </Message>
 
       <DocumentWrapper>
-        <Document file={render.value} onLoadSuccess={onDocumentLoad}>
+        <Document file={instance.url} onLoadSuccess={onDocumentLoad}>
           <Page renderMode="svg" pageNumber={currentPage} />
         </Document>
       </DocumentWrapper>

@@ -1,13 +1,13 @@
 import dynamic from 'next/dynamic';
 import styled from '@emotion/styled';
 import debounce from 'lodash.debounce';
-import useEvent from 'react-use/lib/useEvent';
-import useUpdateEffect from 'react-use/lib/useUpdateEffect';
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import media from '../../styled/media';
+import CodeEditor from './CodeEditor';
 import ErrorMessage from './ErrorMessage';
 import transpile from '../../lib/transpile';
+import Spinner from '../UI/Spinner';
 
 const PDFViewerWithNoSSR = dynamic(import('./PDFViewer'), { ssr: false });
 
@@ -58,107 +58,57 @@ const CodeError = styled(ErrorMessage)`
   position: absolute;
 `;
 
-const DEFAULT_CODE_MIRROR_OPTIONS = {
-  autoCloseBrackets: true,
-  styleSelectedText: true,
-  scrollbarStyle: 'simple',
-  keyMap: 'sublime',
-  lineNumbers: true,
-  matchBrackets: true,
-  mode: 'text/jsx',
-  showCursorWhenSelecting: true,
-  styleActiveLine: true,
-  tabWidth: 2,
-  autoCloseTags: true,
-};
-
-let CodeMirror;
-
 const Repl = ({ activeTab, value, onChange, onUrlChange }) => {
-  const textarea = useRef(null);
-
-  const codeMirror = useRef(null);
-
   const [error, setError] = useState(null);
 
   const [element, setElement] = useState(null);
 
-  useEffect(() => {
-    require('codemirror/mode/jsx/jsx');
-    require('codemirror/keymap/sublime');
-    require('codemirror/addon/edit/closetag');
-    require('codemirror/addon/comment/comment');
-    require('codemirror/addon/edit/matchbrackets');
-    require('codemirror/addon/edit/closebrackets');
-    require('codemirror/addon/display/placeholder');
-    require('codemirror/addon/selection/active-line');
-    require('codemirror/addon/scroll/simplescrollbars');
-    require('codemirror/addon/selection/mark-selection');
-    CodeMirror = require('codemirror');
-
-    const instance = CodeMirror.fromTextArea(
-      textarea.current,
-      DEFAULT_CODE_MIRROR_OPTIONS,
-    );
-
-    instance.setValue(value);
-
-    codeMirror.current = instance;
-
-    return () => instance?.toTextArea();
-  }, []);
+  const [loading, setLoading] = useState(true);
 
   const onErrorClose = () => {
     setError(null);
   };
 
+  const handleEditorLoaded = () => {
+    setLoading(false)
+  }
+
   const handleChange = useCallback(
-    ({ doc }) => {
-      const code = doc.getValue();
-
-      onChange?.(code);
-
+    (code) => {
       if (code.length === 0) {
         setError(null);
         setElement(null);
       }
 
-      debounceTranspile(code, setElement, setError);
+      const onSuccess = (doc) => {
+        setElement(doc);
+        setError(null);
+      };
+
+      debounceTranspile(code, onSuccess, setError);
     },
     [onChange],
   );
 
-  useEvent('change', handleChange, codeMirror.current);
-
-  useEffect(() => {
-    codeMirror.current?.setValue(value);
-  }, [value]);
-
-  useUpdateEffect(() => {
-    setError(null);
-  }, [element]);
-
   return (
-    <Wrapper>
-      <CodePanel active={activeTab === 'code'}>
-        <textarea
-          autoFocus
-          ref={textarea}
-          autoComplete="off"
-          defaultValue={value}
-          placeholder="Write code here..."
-        />
-        <CodeError onClose={onErrorClose}>{error}</CodeError>
-      </CodePanel>
+    <>
+      {loading && <Spinner />}
 
-      <PDFPanel active={activeTab === 'pdf'}>
-        <PDFViewerWithNoSSR
-          value={element}
-          onUrlChange={onUrlChange}
-          onRenderError={setError}
-        />
-      </PDFPanel>
-    </Wrapper>
+      <Wrapper>
+        <CodePanel active={activeTab === 'code'}>
+          <CodeEditor value={value} onChange={handleChange} onLoad={handleEditorLoaded} />
+          <CodeError onClose={onErrorClose}>{error}</CodeError>
+        </CodePanel>
+
+        <PDFPanel active={activeTab === 'pdf'}>
+          <PDFViewerWithNoSSR
+            value={element}
+            onUrlChange={onUrlChange}
+            onRenderError={setError}
+          />
+        </PDFPanel>
+      </Wrapper>
+    </>
   );
 };
 

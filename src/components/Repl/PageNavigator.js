@@ -43,7 +43,7 @@ const PageNavigator = ({
 
       <Arrow
         type="chevron-right"
-        visible={currentPage !== numPages}
+        visible={currentPage < numPages}
         onClick={onNextPage}
       />
     </Wrapper>

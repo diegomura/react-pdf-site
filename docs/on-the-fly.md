@@ -1,6 +1,6 @@
 ### On the fly rendering `Web only`
 
-There are some cases in which you may need to generate a document without showing it on screen. For those scenarios, react-pdf provides two different solutions:
+There are some cases in which you may need to generate a document without showing it on screen. For those scenarios, react-pdf provides tree different solutions:
 
 #### Download link
 
@@ -11,7 +11,9 @@ import { PDFDownloadLink, Document, Page } from '@react-pdf/renderer';
 
 const MyDoc = () => (
   <Document>
-    <Page>// My document data</Page>
+    <Page>
+      // My document data
+    </Page>
   </Document>
 );
 
@@ -37,7 +39,9 @@ import { BlobProvider, Document, Page } from '@react-pdf/renderer';
 
 const MyDoc = (
   <Document>
-    <Page>// My document data</Page>
+    <Page>
+      // My document data
+    </Page>
   </Document>
 );
 
@@ -53,18 +57,52 @@ const App = () => (
 );
 ```
 
-You can also obtain the blob data imperatively, which may be useful if you are using react-pdf on a non-React frontend.
+You can also obtain the blob data imperatively, which may be useful if you are using react-pdf on a non-React frontend (web only).
 
 ```jsx
 import { pdf, Document, Page } from '@react-pdf/renderer';
 
 const MyDoc = (
   <Document>
-    <Page>// My document data</Page>
+    <Page>
+      // My document data
+    </Page>
   </Document>
 );
 
 const blob = pdf(MyDoc).toBlob();
 ```
+
+#### Using the usePDF hook
+
+React-pdf now ships a hook API that will give you direct access to the document data (such as blob or url state) as well as with an _update_ function to trigger document re-rendering. Since document re-computation can be an expensive operation, this hook is perfect solution for those cases in where you need a fine control over when this happens.
+
+```js
+import { usePDF, Document, Page } from '@react-pdf/renderer';
+
+const MyDoc = (
+  <Document>
+    <Page>
+      // My document data
+    </Page>
+  </Document>
+);
+
+const App = () => {
+  const [instance, updateInstance] = usePDF({ document: MyDoc });
+
+  if (instance.loading) return <div>Loading ...</div>;
+
+  if (instance.error) return <div>Something went wrong: {error}</div>;
+
+  return (
+    <a href={instance.url} download="test.pdf">
+      Download
+    </a>
+  );
+}
+```
+
+> **Protip:** You still have access to blob's data inside `instance.blob` if you need it
 
 ---
