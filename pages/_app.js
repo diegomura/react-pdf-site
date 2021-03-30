@@ -22,7 +22,6 @@ class MyApp extends App {
   render() {
     const { Component, pageProps, router } = this.props;
     const AppLayout = router.pathname === '/repl' ? 'div' : Layout;
-    console.log('v2');
 
     return (
       <MDXProvider components={components}>
