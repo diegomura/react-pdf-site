@@ -1255,13 +1255,13 @@
   resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-9.5.1.tgz#fe257fafe1a7f1c0c6e818017fa65b5ee45c5eca"
   integrity sha512-A19z/E6f08RXfBRc2STQ+5qo7iSPif7mNcww9dZAVli3Idu4umGP5dbpL71Hz1vyRs1eMUEylXTpXsY2WzY07g==
 
-"@react-pdf/font@^2.0.0-beta.16":
-  version "2.0.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@react-pdf/font/-/font-2.0.0-beta.16.tgz#d01eeacf69c336fa082af3da3105c918b2ce140f"
-  integrity sha512-2w6jY9Kr66SULKku3LHFWN/yR6wVJY1xQFzSLCkylW4GWrWFNEoe5kUUc1Q104YIV7uE2P69NPpBlvPr1iUxEg==
+"@react-pdf/font@^2.0.0-beta.18":
+  version "2.0.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@react-pdf/font/-/font-2.0.0-beta.18.tgz#279f2535be49d5965ce136c31a1dcf11e5c23124"
+  integrity sha512-IEaM2DPS9qKXKVSjL1dk1ZSHYOpFLvtYeRM09hW6UgWbtrkbzMRWlNEWY+iy6mVVQCbMrp02f4Vdwpff/lb+Lw==
   dependencies:
     "@react-pdf/fontkit" "^1.13.0"
-    "@react-pdf/types" "^2.0.0-beta.16"
+    "@react-pdf/types" "^2.0.0-beta.17"
     cross-fetch "^3.0.4"
     is-url "^1.2.4"
 
@@ -1287,23 +1287,23 @@
     "@react-pdf/png-js" "^1.0.0"
     cross-fetch "^3.0.4"
 
-"@react-pdf/layout@^2.0.0-beta.16":
-  version "2.0.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@react-pdf/layout/-/layout-2.0.0-beta.16.tgz#7a259ed1e8dfa8f9662e0bba739873c5820a81e2"
-  integrity sha512-cc6yjfuDgTdyJKIrn7Qb3EmEILPi6JytvVUkFbjHAUfgS46hu67HI4sifGlKkC1w5Ich0Y3qtybsdiqhdnQD7A==
+"@react-pdf/layout@^2.0.0-beta.18":
+  version "2.0.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@react-pdf/layout/-/layout-2.0.0-beta.18.tgz#de2e20bad518c0ae10c0e15d4549570363d64470"
+  integrity sha512-ybI6wQujVA8CmzDtFBpKaDi0fsRkYTcOvLWXWeugbafrESoVila8XmQW4YTekl1vsV3huggDQSa1sC7V3/hq7A==
   dependencies:
     "@babel/runtime" "^7.6.2"
     "@react-pdf/image" "^2.0.0-beta.16"
     "@react-pdf/pdfkit" "^1.4.2"
     "@react-pdf/primitives" "^2.0.0-beta.16"
-    "@react-pdf/stylesheet" "^2.0.0-beta.16"
-    "@react-pdf/textkit" "^0.4.0"
-    "@react-pdf/types" "^2.0.0-beta.16"
+    "@react-pdf/stylesheet" "^2.0.0-beta.17"
+    "@react-pdf/textkit" "^0.3.7"
+    "@react-pdf/types" "^2.0.0-beta.17"
     cross-fetch "^3.0.4"
     emoji-regex "^8.0.0"
     queue "^6.0.1"
     ramda "^0.26.1"
-    yoga-layout-prebuilt "^1.9.3"
+    yoga-layout-prebuilt "^1.10.0"
 
 "@react-pdf/pdfkit@^1.4.2":
   version "1.5.0"
@@ -1324,32 +1324,32 @@
   resolved "https://registry.yarnpkg.com/@react-pdf/primitives/-/primitives-2.0.0-beta.16.tgz#8dae79c4f9c5e8a1c375c8d5bee7d371a9155dad"
   integrity sha512-2lngH9+8MGDVpP4ZIm4HyERNl7LcZLdFotv0xrUj96/h6UsxjJH6deR18RqBgsgRNvUqfapf7zkX0WdeHtthMg==
 
-"@react-pdf/render@^2.0.0-beta.16":
-  version "2.0.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@react-pdf/render/-/render-2.0.0-beta.16.tgz#5d959881c9dbaa245b8ade3fb1b8f63fb3358cf0"
-  integrity sha512-r4i7U5o7pgmWrpQBL2EgDzryZdDVr/gHpKa7UIAJbRochm4B0JixkW8hOEz+k0TtaugvlpMz/2zlh2oIgARNbg==
+"@react-pdf/render@^2.0.0-beta.18":
+  version "2.0.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@react-pdf/render/-/render-2.0.0-beta.18.tgz#3ca3e3c076b2a6e043da3a8b8537c1832494ee6f"
+  integrity sha512-W61qSCOL1MJJC+y6maIcsAMUFI+QnkOkD99OPPycjZ91tcYnFZ6GQTszjyBjeXrOAj+95aX0kUws1tEEzmJbqg==
   dependencies:
     "@react-pdf/primitives" "^2.0.0-beta.16"
-    "@react-pdf/textkit" "^0.4.0"
-    "@react-pdf/types" "^2.0.0-beta.16"
+    "@react-pdf/textkit" "^0.3.7"
+    "@react-pdf/types" "^2.0.0-beta.17"
     abs-svg-path "^0.1.1"
-    normalize-svg-path "^1.0.1"
+    normalize-svg-path "^1.1.0"
     parse-svg-path "^0.1.2"
     ramda "^0.26.1"
     svg-arc-to-cubic-bezier "^3.2.0"
 
-"@react-pdf/renderer@^2.0.0-beta.16":
-  version "2.0.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-2.0.0-beta.16.tgz#4706ac262d095ecc36056d493d65bb8f0bdcf219"
-  integrity sha512-I7wGntVFMPEtlqrI/n2YhkzGc16SgtaQsv5bXqlVv8diZU1h36ZINxjIwM8crVtUBmmEPmCKMxS4pJQF/iXS9g==
+"@react-pdf/renderer@^2.0.0-beta.19":
+  version "2.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-2.0.0-beta.19.tgz#6032314123a81c36bcb088d6bf0a07496491a5e1"
+  integrity sha512-rpxSJC5Hw65WMLLg9wnT8TZAGxZuMYqzkrXs01og62j95AopxCw7c/XggjUbl1Ox2B/y4CIRzI/ekVRTjNHEhQ==
   dependencies:
     "@babel/runtime" "^7.6.2"
-    "@react-pdf/font" "^2.0.0-beta.16"
-    "@react-pdf/layout" "^2.0.0-beta.16"
+    "@react-pdf/font" "^2.0.0-beta.18"
+    "@react-pdf/layout" "^2.0.0-beta.18"
     "@react-pdf/pdfkit" "^1.4.2"
     "@react-pdf/primitives" "^2.0.0-beta.16"
-    "@react-pdf/render" "^2.0.0-beta.16"
-    "@react-pdf/types" "^2.0.0-beta.16"
+    "@react-pdf/render" "^2.0.0-beta.18"
+    "@react-pdf/types" "^2.0.0-beta.17"
     blob-stream "^0.1.3"
     queue "^6.0.1"
     ramda "^0.26.1"
@@ -1357,32 +1357,32 @@
     scheduler "^0.15.0"
     yoga-layout-prebuilt "^1.9.3"
 
-"@react-pdf/stylesheet@^2.0.0-beta.16":
-  version "2.0.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@react-pdf/stylesheet/-/stylesheet-2.0.0-beta.16.tgz#5fd581ec26a71181180040fc0e1b20cd3e1fb33b"
-  integrity sha512-yNPccmHw1Bq5fO8/z4G2pZ6ThQWQx/0db6fhS1rzW76C2tpn4wTEeZq6VpHoV5CzgQ6nKjMc3ywas4Stx38UVg==
+"@react-pdf/stylesheet@^2.0.0-beta.17":
+  version "2.0.0-beta.17"
+  resolved "https://registry.yarnpkg.com/@react-pdf/stylesheet/-/stylesheet-2.0.0-beta.17.tgz#fc801e6813df1257a2ecf83bb0f1fa3029ab24d2"
+  integrity sha512-S++U+tdeGvOfTu1Df8ahs6L0aqxxUaXzboaigtQ5elULk1mEq8zTVUgoclGqhyqjPui0eEXnd8mizIfxHIcenw==
   dependencies:
-    "@react-pdf/types" "^2.0.0-beta.16"
+    "@react-pdf/types" "^2.0.0-beta.17"
     color-string "^1.5.3"
     hsl-to-hex "^1.0.0"
     media-engine "^1.0.3"
     ramda "^0.26.1"
 
-"@react-pdf/textkit@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf/textkit/-/textkit-0.4.0.tgz#084210de4a654045147dc483d3a3110bbc9dd8ce"
-  integrity sha512-1TmKKR3oW1PfpQGbAE2YIAYAdN7KDspGoowUmkhS2chIsMeMIaQawT96sJgRef2gbBmgrNfBmyz2KgZDZvDlZA==
+"@react-pdf/textkit@^0.3.7":
+  version "0.3.7"
+  resolved "https://registry.yarnpkg.com/@react-pdf/textkit/-/textkit-0.3.7.tgz#67bcc4d952ad1cd738b3cb38c8396219450f536b"
+  integrity sha512-JyK06VofTG4/6Mxv9ugqGyKS/nnbg7MXXHmzeYLP+wwxZsgiatjybVBSXI+DW+++UeyUKLrCYQh2RaxliRm+NQ==
   dependencies:
     "@babel/runtime" "^7.4.3"
+    "@react-pdf/unicode-properties" "^2.2.0"
     babel-runtime "^6.26.0"
     hyphen "^1.1.1"
     ramda "^0.26.1"
-    unicode-properties "^1.3.1"
 
-"@react-pdf/types@^2.0.0-beta.16":
-  version "2.0.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@react-pdf/types/-/types-2.0.0-beta.16.tgz#6265f6d88afff3b983a5e31e0160caf7d1a976bd"
-  integrity sha512-j/ocGYByDpFo93FOstinNi6MwO9MiH2LVUZD/8Ub10TZNpShNHtHhQmHYszL0gJ8xsHKfHJH0Vt666JMpyzh4w==
+"@react-pdf/types@^2.0.0-beta.17":
+  version "2.0.0-beta.17"
+  resolved "https://registry.yarnpkg.com/@react-pdf/types/-/types-2.0.0-beta.17.tgz#e807b48213640151c4c7afa370fc05690dc9390b"
+  integrity sha512-FsxyPCmePYnlwzx2VSUnbtuyqgpHJHi1jbZe/yYqfmsPIGZj4nZvEZ2IMuZkHkljK1tmyLiQPse0YQ0bOhQaqg==
 
 "@react-pdf/unicode-properties@^2.2.0":
   version "2.2.0"
@@ -1943,7 +1943,7 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
-base64-js@^1.0.2, base64-js@^1.1.2, base64-js@^1.3.0:
+base64-js@^1.0.2, base64-js@^1.1.2:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.3.1.tgz#58ece8cb75dd07e71ed08c736abc5fac4dbf8df1"
   integrity sha512-mLQ4i2QO1ytvGWFWmcngKO//JXAQueZvwEKtjgQFM4jIK0kU+ytMfplL8j+n5mspOfjHwoAg+9yhb7BwAHm36g==
@@ -4999,7 +4999,7 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
 
-normalize-svg-path@^1.0.1:
+normalize-svg-path@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/normalize-svg-path/-/normalize-svg-path-1.1.0.tgz#0e614eca23c39f0cffe821d6be6cd17e569a766c"
   integrity sha512-r9KHKG2UUeB5LoTouwDzBy2VxXlHsiM6fyLQvnJa0S5hrhzqElH/CH7TUGhT1fVvIYBIKf3OpY4YJ4CK+iaqHg==
@@ -7067,14 +7067,6 @@ unicode-match-property-value-ecmascript@^1.2.0:
   resolved "https://registry.yarnpkg.com/unicode-match-property-value-ecmascript/-/unicode-match-property-value-ecmascript-1.2.0.tgz#0d91f600eeeb3096aa962b1d6fc88876e64ea531"
   integrity sha512-wjuQHGQVofmSJv1uVISKLE5zO2rNGzM/KCYZch/QQvez7C1hUhBIuZ701fYXExuufJFMPhv2SyL8CyoIfMLbIQ==
 
-unicode-properties@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/unicode-properties/-/unicode-properties-1.3.1.tgz#cc642b6314bde2c691d65dd94cece09ed84f1282"
-  integrity sha512-nIV3Tf3LcUEZttY/2g4ZJtGXhWwSkuLL+rCu0DIAMbjyVPj+8j5gNVz4T/sVbnQybIsd5SFGkPKg/756OY6jlA==
-  dependencies:
-    base64-js "^1.3.0"
-    unicode-trie "^2.0.0"
-
 unicode-property-aliases-ecmascript@^1.0.4:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/unicode-property-aliases-ecmascript/-/unicode-property-aliases-ecmascript-1.1.0.tgz#dd57a99f6207bedff4628abefb94c50db941c8f4"
@@ -7084,14 +7076,6 @@ unicode-trie@^0.3.0:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/unicode-trie/-/unicode-trie-0.3.1.tgz#d671dddd89101a08bac37b6a5161010602052085"
   integrity sha1-1nHd3YkQGgi6w3tqUWEBBgIFIIU=
-  dependencies:
-    pako "^0.2.5"
-    tiny-inflate "^1.0.0"
-
-unicode-trie@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/unicode-trie/-/unicode-trie-2.0.0.tgz#8fd8845696e2e14a8b67d78fa9e0dd2cad62fec8"
-  integrity sha512-x7bc76x0bm4prf1VLg79uhAzKw8DVboClSN5VxJuQ+LKDOVEW9CdH+VY7SP+vX7xCYQqzzgQpFqz15zeLvAtZQ==
   dependencies:
     pako "^0.2.5"
     tiny-inflate "^1.0.0"
@@ -7469,6 +7453,13 @@ yarn@^1.22.4:
   version "1.22.4"
   resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.4.tgz#01c1197ca5b27f21edc8bc472cd4c8ce0e5a470e"
   integrity sha512-oYM7hi/lIWm9bCoDMEWgffW8aiNZXCWeZ1/tGy0DWrN6vmzjCXIKu2Y21o8DYVBUtiktwKcNoxyGl/2iKLUNGA==
+
+yoga-layout-prebuilt@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/yoga-layout-prebuilt/-/yoga-layout-prebuilt-1.10.0.tgz#2936fbaf4b3628ee0b3e3b1df44936d6c146faa6"
+  integrity sha512-YnOmtSbv4MTf7RGJMK0FvZ+KD8OEe/J5BNnR0GHhD8J/XcG/Qvxgszm0Un6FTHWW4uHlTgP0IztiXQnGyIR45g==
+  dependencies:
+    "@types/yoga-layout" "1.9.2"
 
 yoga-layout-prebuilt@^1.9.3:
   version "1.9.6"

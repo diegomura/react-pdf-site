@@ -66,7 +66,7 @@ const PDFViewer = ({ value, onUrlChange, onRenderError }) => {
     if (!value) return null;
 
     try {
-      const blob = await pdf({ initialValue: value }).toBlob();
+      const blob = await pdf(value).toBlob();
       const url = URL.createObjectURL(blob);
 
       onUrlChange?.(url);

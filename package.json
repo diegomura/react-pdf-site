@@ -18,7 +18,7 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@mdx-js/loader": "^1.5.1",
     "@next/mdx": "^9.1.1",
-    "@react-pdf/renderer": "^2.0.0-beta.16",
+    "@react-pdf/renderer": "^2.0.0-beta.19",
     "@zeit/next-workers": "^1.0.0",
     "add": "^2.0.6",
     "buble": "^0.19.3",

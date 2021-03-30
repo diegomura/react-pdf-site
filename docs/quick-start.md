@@ -62,7 +62,7 @@ This will produce a PDF document with a single page. Inside, two different block
 
 ### 3. Choose where to render the document
 
-React-pdf enables you to render the document in three different environments: **web**, **server** and **mobile** _(under development)_. The process is essentially the same, but catered to needs of each environment.
+React-pdf enables you to render the document in three different environments: **web** and **server**. The process is essentially the same, but catered to needs of each environment.
 
 #### Save in a file
 
@@ -70,6 +70,14 @@ React-pdf enables you to render the document in three different environments: **
 import ReactPDF from '@react-pdf/renderer';
 
 ReactPDF.render(<MyDocument />, `${__dirname}/example.pdf`);
+```
+
+#### Render to a stream
+
+```
+import ReactPDF from '@react-pdf/renderer';
+
+ReactPDF.renderToStream(<MyDocument />);
 ```
 
 #### Render in DOM
