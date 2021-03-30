@@ -54,7 +54,7 @@ const IconWrapper = ({ onClick, children }) => {
 const Icon = ({ type, opacity, size = 14, style = {}, onClick, ...props }) => {
   if (!BUNDLED_ICON_TYPES[type]) {
     console.warn(
-      `${type} icon type not included in bundle. Please add it in @foro/react-common/components/Icon.js`,
+      `${type} icon type not included in bundle.`,
     );
     return null;
   }
