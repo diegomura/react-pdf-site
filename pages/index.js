@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 import media from '../src/styled/media';
 import Content from '../docs/quick-start.md';
 import Logo from '../src/components/UI/Logo';
+import Layout from '../src/components/Layout';
 import Title from '../src/components/UI/Title';
 import Button from '../src/components/UI/Button';
 import EditButton from '../src/components/Docs/EditButton';
@@ -43,13 +44,13 @@ const LogoBanner = styled(Logo)`
 `;
 
 const Home = () => (
-  <>
+  <Layout>
     <EditButton to="https://github.com/react-pdf/site/blob/master/docs/quick-start.md" />
     <LogoBanner size="37px" rotate withText />
     <Title />
     <Hero />
     <Content />
-  </>
+  </Layout>
 );
 
 export default Home;

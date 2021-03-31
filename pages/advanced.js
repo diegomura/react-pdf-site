@@ -1,3 +1,14 @@
-import QuickStartGuide from '../docs/advanced.md';
+import React from 'react';
 
-export default QuickStartGuide;
+import Layout from '../src/components/Layout';
+import Advanced from '../docs/advanced.md';
+
+const AdvancedPage = () => {
+  return (
+    <Layout>
+      <Advanced />
+    </Layout>
+  );
+};
+
+export default AdvancedPage;

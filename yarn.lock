@@ -1338,7 +1338,7 @@
     ramda "^0.26.1"
     svg-arc-to-cubic-bezier "^3.2.0"
 
-"@react-pdf/renderer@^2.0.0-beta.19":
+"@react-pdf/renderer@2.0.0-beta.19":
   version "2.0.0-beta.19"
   resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-2.0.0-beta.19.tgz#6032314123a81c36bcb088d6bf0a07496491a5e1"
   integrity sha512-rpxSJC5Hw65WMLLg9wnT8TZAGxZuMYqzkrXs01og62j95AopxCw7c/XggjUbl1Ox2B/y4CIRzI/ekVRTjNHEhQ==
@@ -2964,6 +2964,11 @@ data-uri-to-buffer@3.0.0:
   integrity sha512-MJ6mFTZ+nPQO+39ua/ltwNePXrfdF3Ww0wP1Od7EePySXN1cP9XNqRQOG3FxTfipp8jx898LUCgBCEP11Qw/ZQ==
   dependencies:
     buffer-from "^1.1.1"
+
+date-fns@^2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.19.0.tgz#65193348635a28d5d916c43ec7ce6fbd145059e1"
+  integrity sha512-X3bf2iTPgCAQp9wvjOQytnf5vO5rESYRXlPIVcgSbtT5OTScPcsf9eZU+B/YIkKAtYr5WeCii58BgATrNitlWg==
 
 debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
@@ -5871,6 +5876,11 @@ react-ga@^2.5.3:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.7.0.tgz#24328f157f31e8cffbf4de74a3396536679d8d7c"
   integrity sha512-AjC7UOZMvygrWTc2hKxTDvlMXEtbmA0IgJjmkhgmQQ3RkXrWR11xEagLGFGaNyaPnmg24oaIiaNPnEoftUhfXA==
+
+react-highlight-pop@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-highlight-pop/-/react-highlight-pop-1.0.2.tgz#385b5a1d3dcbf8facaef2d602218179a7292ba3d"
+  integrity sha512-CfBUWJuz5dMbscpCHTzjoKgbTBszucYnW8bf8hbGDPClks+XmP1okzXSjNO+0E0e+rNaQj1rOpoRwIwRgN3KhQ==
 
 react-is@16.13.1, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
