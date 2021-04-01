@@ -177,7 +177,11 @@ const Menu = ({ opened }) => (
         <Item to="/fonts#registeremojisource" title="registerEmojiSource" />
       </Item>
 
-      <Item to="/node" title="Node API" />
+      <Item to="/node" title="Node API">
+      <Item to="/node#rendertofile" title="renderToFile" />
+      <Item to="/node#rendertostring" title="renderToString" />
+      <Item to="/node#rendertostream" title="renderToStream" />
+      </Item>
 
       <Item to="/advanced" title="Advanced">
         <Item to="/advanced#page-wrapping" title="Page wrapping" />
