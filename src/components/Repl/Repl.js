@@ -1,13 +1,13 @@
 import dynamic from 'next/dynamic';
 import styled from '@emotion/styled';
 import debounce from 'lodash.debounce';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
+import Spinner from '../UI/Spinner';
 import media from '../../styled/media';
 import CodeEditor from './CodeEditor';
 import ErrorMessage from './ErrorMessage';
 import transpile from '../../lib/transpile';
-import Spinner from '../UI/Spinner';
 
 const PDFViewerWithNoSSR = dynamic(import('./PDFViewer'), { ssr: false });
 
@@ -70,8 +70,8 @@ const Repl = ({ activeTab, value, onChange, onUrlChange }) => {
   };
 
   const handleEditorLoaded = () => {
-    setLoading(false)
-  }
+    setLoading(false);
+  };
 
   const handleChange = useCallback(
     (code) => {
@@ -80,12 +80,7 @@ const Repl = ({ activeTab, value, onChange, onUrlChange }) => {
         setElement(null);
       }
 
-      const onSuccess = (doc) => {
-        setElement(doc);
-        setError(null);
-      };
-
-      debounceTranspile(code, onSuccess, setError);
+      debounceTranspile(code, setElement, setError);
     },
     [onChange],
   );
@@ -96,7 +91,11 @@ const Repl = ({ activeTab, value, onChange, onUrlChange }) => {
 
       <Wrapper>
         <CodePanel active={activeTab === 'code'}>
-          <CodeEditor value={value} onChange={handleChange} onLoad={handleEditorLoaded} />
+          <CodeEditor
+            value={value}
+            onChange={handleChange}
+            onLoad={handleEditorLoaded}
+          />
           <CodeError onClose={onErrorClose}>{error}</CodeError>
         </CodePanel>
 

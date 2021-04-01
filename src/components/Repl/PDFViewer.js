@@ -1,12 +1,13 @@
 import pdfjs from 'pdfjs-dist';
 import styled from '@emotion/styled';
-import Page from 'react-pdf/dist/Page';
-import { usePDF } from '@react-pdf/renderer';
-import Document from 'react-pdf/dist/Document';
 import React, { useEffect, useState } from 'react';
+import Page from 'react-pdf/dist/Page';
+import { pdf } from '@react-pdf/renderer';
+import Document from 'react-pdf/dist/Document';
 import PdfjsWorker from 'pdfjs-dist/build/pdf.worker.js';
 
 import PageNavigator from './PageNavigator';
+import { useAsync } from 'react-use';
 
 pdfjs.GlobalWorkerOptions.workerPort = new PdfjsWorker();
 
@@ -48,14 +49,18 @@ const PDFViewer = ({ value, onUrlChange, onRenderError }) => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const [instance, updateInstance] = usePDF({ document: value });
+  const render = useAsync(async () => {
+    if (!value) return null;
 
-  useEffect(updateInstance, [value]);
+    const blob = await pdf(value).toBlob();
+    const url = URL.createObjectURL(blob);
 
-  useEffect(() => {
-    onUrlChange(instance.url);
-    onRenderError(instance.error);
-  }, [instance]);
+    return url;
+  }, [value]);
+
+  useEffect(() => onUrlChange(render.value), [render.value]);
+
+  useEffect(() => onRenderError(render.error), [render.error]);
 
   const onPreviousPage = () => {
     setCurrentPage((prev) => prev - 1);
@@ -72,14 +77,14 @@ const PDFViewer = ({ value, onUrlChange, onRenderError }) => {
 
   return (
     <Wrapper>
-      <Message active={instance.loading}>Rendering PDF...</Message>
+      <Message active={render.loading}>Rendering PDF...</Message>
 
-      <Message active={!instance.loading && !value}>
+      <Message active={!render.loading && !value}>
         You are not rendering a valid document
       </Message>
 
       <DocumentWrapper>
-        <Document file={instance.url} onLoadSuccess={onDocumentLoad}>
+        <Document file={render.value} onLoadSuccess={onDocumentLoad}>
           <Page renderMode="svg" pageNumber={currentPage} />
         </Document>
       </DocumentWrapper>
