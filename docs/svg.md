@@ -6,9 +6,9 @@ import NavigationButtons from '../src/components/Docs/NavigationButtons'
 
 ## SVG Images
 
-### SVG
+### Svg
 
-The `<SVG />` element is a container that defines a new coordinate system and viewport. It is used as the outermost element of SVG documents.
+The `<Svg />` element is a container that defines a new coordinate system and viewport. It is used as the outermost element of SVG documents.
 
 #### Valid props
 
