@@ -17,7 +17,7 @@ const Main = styled.main`
   display: flex;
   min-height: 100%;
 
-  h3 {
+  h1, h2, h3, h4 {
     font-weight: 400 !important;
   }
 `;
