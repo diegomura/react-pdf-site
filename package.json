@@ -37,7 +37,6 @@
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.8.6",
     "react-ga": "^2.5.3",
-    "react-highlight-pop": "^1.0.2",
     "react-pdf": "4.0.5",
     "react-prism": "^4.3.2",
     "react-tippy": "^1.2.2",

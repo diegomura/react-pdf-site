@@ -5870,11 +5870,6 @@ react-ga@^2.5.3:
   resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.7.0.tgz#24328f157f31e8cffbf4de74a3396536679d8d7c"
   integrity sha512-AjC7UOZMvygrWTc2hKxTDvlMXEtbmA0IgJjmkhgmQQ3RkXrWR11xEagLGFGaNyaPnmg24oaIiaNPnEoftUhfXA==
 
-react-highlight-pop@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/react-highlight-pop/-/react-highlight-pop-1.0.2.tgz#385b5a1d3dcbf8facaef2d602218179a7292ba3d"
-  integrity sha512-CfBUWJuz5dMbscpCHTzjoKgbTBszucYnW8bf8hbGDPClks+XmP1okzXSjNO+0E0e+rNaQj1rOpoRwIwRgN3KhQ==
-
 react-is@16.13.1, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"

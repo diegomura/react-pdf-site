@@ -1,8 +1,7 @@
 import React from 'react';
-import Head from 'next/head'
+import Head from 'next/head';
 import styled from '@emotion/styled';
 import { parse, format } from 'date-fns';
-import HighlightPop from 'react-highlight-pop';
 
 import media from '../../src/styled/media';
 import Icon from '../../src/components/UI/Icon';
@@ -18,7 +17,10 @@ const Main = styled.main`
   display: flex;
   min-height: 100%;
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-weight: 400 !important;
   }
 
@@ -26,7 +28,8 @@ const Main = styled.main`
     margin-top: 70px;
   }
 
-  ul, li {
+  ul,
+  li {
     column-count: 1;
   }
 `;
@@ -53,7 +56,7 @@ const Back = styled(Link)`
   display: block;
   font-size: 16px;
   margin-bottom: 80px;
-  color: ${props => props.theme.gray1};
+  color: ${(props) => props.theme.gray1};
 
   span {
     margin-left: 5px;
@@ -74,27 +77,27 @@ const CornerGraphicsImage = styled.img`
 
 const Metadata = styled.div`
   margin-bottom: 60px;
-  color: ${props => props.theme.gray1};
+  color: ${(props) => props.theme.gray1};
 `;
 
 const Separator = styled.span`
   margin: 0 10px;
-  `;
+`;
 
 const Profile = styled.a`
   text-decoration: none;
   transition: 0.3s linear all;
-  color: ${props => props.theme.gray1};
+  color: ${(props) => props.theme.gray1};
 
   &:hover {
-    color: ${props => props.theme.red};
+    color: ${(props) => props.theme.red};
   }
 `;
 
 const parseDate = (value) => {
   const d = parse(value, 'MM/dd/yyyy', new Date());
   return format(d, 'MMMM do, yyyy');
-}
+};
 
 const Blog = ({ slug }) => {
   const Post = BLOG_POSTS[slug];
@@ -103,9 +106,18 @@ const Blog = ({ slug }) => {
   return (
     <Main>
       <Head>
-        <meta property="og:image" content={metadata.image?.url || "/images/og-banner.png"} />
-        <meta property="og:image:width" content={metadata.image?.width || "950"} />
-        <meta property="og:image:height" content={metadata.image?.height || "650"} />
+        <meta
+          property="og:image"
+          content={metadata.image?.url || '/images/og-banner.png'}
+        />
+        <meta
+          property="og:image:width"
+          content={metadata.image?.width || '950'}
+        />
+        <meta
+          property="og:image:height"
+          content={metadata.image?.height || '650'}
+        />
       </Head>
 
       <Section>
@@ -118,7 +130,10 @@ const Blog = ({ slug }) => {
         <Metadata>
           <span>By </span>
 
-          <Profile href={`https://github.com/${metadata.author}`} target="__blank">
+          <Profile
+            href={`https://github.com/${metadata.author}`}
+            target="__blank"
+          >
             @{metadata.author}
           </Profile>
 
@@ -127,9 +142,7 @@ const Blog = ({ slug }) => {
           <span>{parseDate(metadata.date)}</span>
         </Metadata>
 
-        <HighlightPop>
-          <Post.default />
-        </HighlightPop>
+        <Post.default />
 
         <CornerGraphicsImage src="/images/corner-graphics.png" />
       </Section>
