@@ -69,21 +69,35 @@ But this new version is not just about internal changes! It also ships a lot of 
 
 ### SVG support
 
-SVG explanation and why this is great
+React-pdf now ships with a set of new primitives to render SVG images! This has been in the loop since the beggining of this project, but postponed for several different reasons throughout the years, one being that it was very hard to add it to the previous solution.
 
-Example
+This is huge. Having SVG support opens this library to a whole new level of possibilities that were not possible before, or at the very least, were hacky to do. This does not just means being able to render your own SVG (such as your company logo or similar), but also building integrations with pre-existing libraries that outputs SVG, such as the popular chart library recharts. There's been already efforts of doing this with very possitive results. As future reference, just bare in mind that react-pdf does not take the same React SVG primitives, but their own, so you will need to transform from one to the other. Should be as simple as cloning elements.
+
+You can see this working [here](http://react-pdf.org/repl?example=svg).
 
 ### New hook API
 
-usePDF explanation
+React-pdf always tried to keep it's usage as much simple as possible, without compromising flexibility and covering as much use cases as possible. For that, it ships a `<PDFViewer />` component for those who just want to see the document in the browser, and `<BlobProvider />` and `<PDFDownloadLink />` for more complex and custom interactions. However, it felt that something was missing.
+
+Because of that, react-pdf 2.0 ships a new `usePDF` hook to fill the remaining needs. Through it you can access the blob, url and loading state of your document, and more importantly, have a fine control over _when_ the document should re-render. That's something that it wasn't possible before. I'm excited to see what interactions people build using this new API.
+
+Read more about the new `usePDF` hook [here](http://react-pdf.org/hooks).
 
 ### More styles supported
 
-- zIndex
+Last but not least, a bunch of new CSS properties are supported, and more to come. Some new features includes:
+
+- Rgb, rgba and cmyk color
 - Overflow
+- zIndex
 - Percent border radius
 - Better unit support
-- Rgb, rgba and cmyk color
+
+## Acknowledges
+
+Would like to especially thank to all the people that helped acomplishing such an important milestone for this library. There were more than 39 people that participated on the [2.0 pull request](https://github.com/diegomura/react-pdf/pull/617), discussing different approaches, helping testing and patiently waiting for this work to be finished. That was truly amazing and something I didn't expected when I started working on this. It's definitely not always easy to keep up with all the work this library demands, but other people involvement into the project makes it way more enojoyable to work on.
+
+In addition, for anyone using or excited about this project, kind reminder to consider [donating to react-pdf](https://opencollective.com/react-pdf). It really means a lot and helps this project mover forward.
 
 ## FAQ
 

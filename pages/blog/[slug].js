@@ -24,6 +24,10 @@ const Main = styled.main`
   h2 {
     margin-top: 70px;
   }
+
+  ul, li {
+    column-count: 1;
+  }
 `;
 
 const Section = styled.article`
