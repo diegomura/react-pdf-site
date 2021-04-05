@@ -54,7 +54,7 @@ const Heading3 = styled.h3`
   margin-bottom: 24px;
 
   ${media.phone} {
-    font-size: 21px;
+    font-size: 20px;
     line-height: 28px;
     margin-bottom: 21px;
   }
