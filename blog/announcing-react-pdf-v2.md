@@ -1,7 +1,12 @@
 export const metadata = {
-date: '03/31/2021',
-author: 'diegomura',
-title: 'Announcing react-pdf v2.0',
+  date: '03/31/2021',
+  author: 'diegomura',
+  title: 'Announcing react-pdf v2.0',
+  image: {
+    url: '/images/og-banner-v2.png',
+    width: '950',
+    height: '805'
+  }
 }
 
 I'm very excited to announce **react-pdf 2.0** to the world! This is the culmination of almost an entire year of work and all the lessons learned since this project started [all way back to October 2016](https://github.com/diegomura/react-pdf/commit/272212a6847ad737be8241c64dbca7ad5a95ae8e). It's crazy, I feel it was just yesterday [I was announcing 1.0 as well](https://twitter.com/diegomura/status/1070743817232494592).

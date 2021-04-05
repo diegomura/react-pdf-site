@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head'
 import styled from '@emotion/styled';
 import { parse, format } from 'date-fns';
 import HighlightPop from 'react-highlight-pop';
@@ -95,14 +96,18 @@ const parseDate = (value) => {
   return format(d, 'MMMM do, yyyy');
 }
 
-// TODO: Add pop
-// TODO: Write post
 const Blog = ({ slug }) => {
   const Post = BLOG_POSTS[slug];
   const metadata = Post.metadata;
 
   return (
     <Main>
+      <Head>
+        <meta property="og:image" content={metadata.image?.url || "/images/og-banner.png"} />
+        <meta property="og:image:width" content={metadata.image?.width || "950"} />
+        <meta property="og:image:height" content={metadata.image?.height || "650"} />
+      </Head>
+
       <Section>
         <Back href="/">
           <Icon type="arrow-left" />
