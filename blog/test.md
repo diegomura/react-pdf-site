@@ -43,13 +43,25 @@ No need to explain here the benefits of having extensive tests for an open-sourc
 
 ## How this was fixed
 
+Enough of talking about problems. Let's now talk about solutions instead.
+
 ### 1. Redefining rendering process
+
+Most of the points mentioned above were only visible after having experienced how this library evolved over time, and spending a lot of time developing it and understanding what the hurt points were. So I asked myself: knowing what I now know about this library, what would I've done differently when I started if I could? The first thing would've been rethinking the whole rendering process.
+
+As mentioned above, slpitting layout from rendering makes a lot of sense. This could be easily achieved by moving all the PDF related logic right to the end of the document creation pipeline. This also has an incredibly powerful side-effect as well: being able to produce other type of output besides PDF documents. Suddently with just this change a whole world of new possibilities opened in from my eyes.
+
+In addition, separating the text layout process from the rest of the pipeline turned out to be very helpful as well. Text layout it's an incredibly complex task by itself, since involves transforming chars into glyphs with the provided font, grouping those glyphs into lines intelligently, breaking words between lines, dealing with ligatures, orphan & widow protection, and the list goes on and on.
+
+Process shift (animation)
 
 ### 2. Functional approach
 
-It's not that I don't like classes, but I believe that functional programming paradigms can help a lot on breaking the whole rendering process in smaller and testable bits (see below). We are already using ramda on textkit, so this will come basically for free.
+It's not that I don't like classes, but I believe that functional programming paradigms can help a lot on breaking the whole rendering process in smaller and testable bits. Functions are generally easier to understand, since it's just all about inputs and ouputs. And also, immutability is generally very easy to enforce.
 
-Process shift (animation)
+We were already following this approach on textkit, the library responsible of performing text layout, and the benefits were just amazing. Rarely something bad was reported about it, and it has a test coverage that with the current way of testing would've been simply impossible to achieve.
+
+However, this meant having to rewrite (or at least re-organize, a lot of the logic is the same) the entire library. It was dounting at first, and I was afraid as well of critisism if things that worked suddently do not do it anymore. But hopefully it will pay off.
 
 ## What's new
 
