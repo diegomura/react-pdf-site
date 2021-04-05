@@ -70,7 +70,7 @@ class MyDocument extends Document {
           <meta property="og:image" content="/images/og-banner.png" />
           <meta property="og:image:width" content="950" />
           <meta property="og:image:height" content="650" />
-          <meta property="og:url" content="http://react-pdf.js.org" />
+          <meta property="og:url" content="http://react-pdf.org" />
         </Head>
         <body>
           <Main />
