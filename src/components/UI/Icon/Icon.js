@@ -12,12 +12,12 @@ import {
   faDownload,
   faParagraph,
   faArrowLeft,
-  faTextHeight,
   faPaintBrush,
   faChevronDown,
   faBorderStyle,
   faChevronLeft,
   faChevronRight,
+  faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -34,6 +34,7 @@ export const BUNDLED_ICON_TYPES = {
   paragraph: faParagraph,
   'share-alt': faShareAlt,
   'arrow-left': faArrowLeft,
+  'arrow-right': faArrowRight,
   'paint-brush': faPaintBrush,
   'border-style': faBorderStyle,
   'chevron-left': faChevronLeft,
