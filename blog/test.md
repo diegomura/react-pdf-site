@@ -20,17 +20,26 @@ The first consist on **layout**, the process of computing the coordinates of eac
 
 After layout is computed, then we can move to the **rendering** phase, which is essentially drawing the nodes in the target PDF document. This step takes all the layout data for granted, it's all about dealing with PDF specific stuff, rendeing borders, backgrounds, images, text, etc.
 
-You can see the benefits of having these two steps separate right away: easier development, testing and debugging, and even having the ability to export not just PDF but images, SVGs or any other format in the future. However, in previous react-pdf implementations there was no code separation of these concerns whatsoever. Each node was responsible of how it should layout and render, implemented in the same place. Not to mention that creating the PDF instance was the first thing we did, and not used but just until the very end of the whole process. This needed to change.
+You can see the benefits of having these two steps separate right away: easier development, testing and debugging, and even having the ability to export not just PDF but any other format in the future. However, in previous react-pdf implementations there was no code separation of these concerns whatsoever. Each node was responsible of how it should layout and render, implemented in the same place. Not to mention that creating the PDF instance was the first thing we did, and not used but just until the very end of the whole process. This needed to change.
 
 ### 2. First class immutability
 
-One of the main cause of issues right now is dealing with the mutable nature of `react-reconciler` while having an asynchronous rendering process. T
+One of the main cause of issues right now is dealing with the mutable nature of `react-reconciler` while having an asynchronous rendering process. The reconciler is React piece responsible of transforming the JSX code into calls to the underlying platform you are working on. If you think about react-dom or react-native, mutability makes sense: you create native views once, and then it's all just about changing that instance (ex. changing some styling when the JSX changes). There's a state being shared in successive reconciler calls.
 
+However, PDFs are different. When anything inside the document changes, we need to recompute the whole thing. There's no way of just "change a PDF text color" by keeping all the rest.
+
+Previous react-pdf versions dealt with this by keeping class instances in memory that knew how to clone themselves in some very complex ways, so each succesive render could be "independent" from the previous one but also sharing these instances. Working with this however has become increasily hard and the cause of many bugs that were very difficult to debug.
+
+Under this perspective, immutability is a must have. If I could find a way of making the renderer work with immutable structures I would make bugs easier to debug but also make each render truly independent from the previous or future ones.
 ### 3. Performance
 
-I believe react-pdf can be much much faster. There are some bottlenecks we can't avoid, such as assets fetching, but there are some other fields in which there's a lot of room for improvements. I already rewrote textkit to be much faster and reliable, and has proven to be so
+I believe react-pdf can be much much faster than what currently is. It is already faster than other solutions out there such as HTML-to-PDF, at least for most use cases, by my goal is to keep pushing this to the limit.
+
+There are some bottlenecks we can't avoid, such as assets fetching or Yoga layout time, but there's a lot of room for improvements. However, the old implementation made it very difficult to both measure and improve rendering times, at least without being unsure something didn't break along the way.
 
 ### 4. Better testing
+
+No need to explain here the benefits of having extensive tests for an open-source library, specially for one such as react-pdf that supports so many diffrent features and CSS properties. Even though previous versions have many features tested, it was only possible to accomplish by basically simulating an entire document from the top and see how it turned out to be. Doing that to test a simple margin it's just too much.
 
 ## How this was fixed
 
