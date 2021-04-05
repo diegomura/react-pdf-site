@@ -92,7 +92,7 @@ const Headings = [Heading1, Heading2, Heading3, Heading4, Heading5, Heading6];
 const getId = (children) => {
   const child = Array.isArray(children) ? children[0] : children;
   const text = React.isValidElement(child) ? child.props.children : child;
-  return toLowerCase(text);
+  return toLowerCase(text || '');
 };
 
 const Heading = ({ level, children, ...props }) => {

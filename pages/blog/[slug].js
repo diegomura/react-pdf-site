@@ -20,6 +20,10 @@ const Main = styled.main`
   h1, h2, h3, h4 {
     font-weight: 400 !important;
   }
+
+  h2 {
+    margin-top: 70px;
+  }
 `;
 
 const Section = styled.article`
