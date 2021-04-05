@@ -3,14 +3,14 @@ import styled from '@emotion/styled';
 import { parse, format } from 'date-fns';
 import HighlightPop from 'react-highlight-pop';
 
-import * as Test from '../../blog/test.md';
 import media from '../../src/styled/media';
 import Icon from '../../src/components/UI/Icon';
 import Link from '../../src/components/UI/Link';
 import { H1 } from '../../src/components/UI/Heading';
+import * as Announcing20 from '../../blog/announcing-react-pdf-v2.md';
 
 const BLOG_POSTS = {
-  test: Test,
+  'announcing-react-pdf-v2': Announcing20,
 };
 
 const Main = styled.main`
