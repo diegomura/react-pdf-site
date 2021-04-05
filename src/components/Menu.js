@@ -9,15 +9,15 @@ import GitHubIcon from './GitHubIcon';
 import VersionPicker from './VersionPicker';
 
 const Nav = styled.nav`
-  top: 0;
   left: 0;
-  height: 100%;
+  top: 50px;
   z-index: 500;
   display: flex;
   position: fixed;
   align-items: center;
   transition: all 0.5s;
   flex-direction: column;
+  height: calc(100% - 50px);
   width: ${(props) => props.width || '285px'};
   min-width: ${(props) => props.width || '285px'};
   background-color: ${({ theme }) => theme.gray3};

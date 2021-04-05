@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 
+import Icon from './Icon';
 import Menu from './Menu';
+import Link from './Link';
 import Header from './Header';
 import media from '../styled/media';
+import PageBanner from './PageBanner';
 
 const Section = styled.section`
   flex: 1;
@@ -54,7 +57,15 @@ const Frame = ({ children }) => {
 
   return (
     <>
+      <PageBanner>
+        New react-pdf 2.0 was relesed.{' '}
+        <Link href="/blog/announcing-react-pdf-v2">
+          Read about the announcement <Icon type="arrow-right" />
+        </Link>
+      </PageBanner>
+
       <Header onMenuClick={() => setMenuOpen(!menuOpen)} />
+
       <Main>
         <Menu opened={menuOpen} onItemClick={() => setMenuOpen(false)} />
         <Section menuOpened={menuOpen} onClick={() => setMenuOpen(false)}>

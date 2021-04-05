@@ -1,4 +1,5 @@
 import React from 'react';
+import App from 'next/app';
 import { MDXProvider } from '@mdx-js/react';
 import { ThemeProvider } from 'emotion-theming';
 
@@ -15,11 +16,7 @@ require('../public/styles/prism.css');
 require('../public/styles/tooltips.css');
 require('../public/styles/codemirror.css');
 
-import App from 'next/app';
-
-
 class MyApp extends App {
-  console.log('v1');
   render() {
     const { Component, pageProps, router } = this.props;
     const AppFrame = router.pathname === '/repl' ? 'div' : Frame;
