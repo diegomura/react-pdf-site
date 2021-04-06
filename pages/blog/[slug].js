@@ -148,10 +148,31 @@ const Blog = ({ slug }) => {
           property="og:description"
           content="React renderer for creating PDF files on the browser and server"
         />
-        <meta property="og:image" content={metadata.image?.url || '/images/og-banner.png'} />
-        <meta property="og:image:width" content={metadata.image?.width || '950'} />
-        <meta property="og:image:height" content={metadata.image?.height || '650'} />
+        <meta
+          property="og:image"
+          content={metadata.image?.url || '/images/og-banner.png'}
+        />
+        <meta
+          property="og:image:width"
+          content={metadata.image?.width || '950'}
+        />
+        <meta
+          property="og:image:height"
+          content={metadata.image?.height || '650'}
+        />
         <meta property="og:url" content="http://react-pdf.org" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta
+          name="twitter:description"
+          content="React renderer for creating PDF files on the browser and server"
+        />
+        <meta name="twitter:url" content={`https://react-pdf.org/blog/${slug}`} />
+        <meta name="twitter:image" content={metadata.image?.url || '/images/og-banner.png'} />
+        <meta name="twitter:label1" content="Written by" />
+        <meta name="twitter:data1" content={metadata.author} />
+        <meta name="twitter:creator" content={metadata.author} />
       </Head>
 
       <Section>
