@@ -36,7 +36,7 @@ Used to trigger a document re-render. By default, changing the document instance
 
 The update function takes no arguments and does not return anything.
 
-> For more information about how this hook is used please refer to [Using the usePDF hook](http://v2.localhost:3000/advanced#using-the-usepdf-hook) section
+> For more information about how this hook is used please refer to [Using the usePDF hook](/advanced#using-the-usepdf-hook) section
 
 ---
 
