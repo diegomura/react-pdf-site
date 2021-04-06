@@ -103,6 +103,7 @@ const Blog = ({ slug }) => {
   const Post = BLOG_POSTS[slug];
   const metadata = Post.metadata;
   const title = `React-pdf - ${metadata.title}`;
+  const image = metadata.image?.url || '/images/og-banner.png';
 
   return (
     <Main>
@@ -150,7 +151,7 @@ const Blog = ({ slug }) => {
         />
         <meta
           property="og:image"
-          content={metadata.image?.url || '/images/og-banner.png'}
+          content={image}
         />
         <meta
           property="og:image:width"
@@ -169,7 +170,7 @@ const Blog = ({ slug }) => {
           content="React renderer for creating PDF files on the browser and server"
         />
         <meta name="twitter:url" content={`https://react-pdf.org/blog/${slug}`} />
-        <meta name="twitter:image" content={metadata.image?.url || '/images/og-banner.png'} />
+        <meta name="twitter:image" content={`https://react-pdf.org${image}`} />
         <meta name="twitter:label1" content="Written by" />
         <meta name="twitter:data1" content={metadata.author} />
         <meta name="twitter:creator" content={metadata.author} />
