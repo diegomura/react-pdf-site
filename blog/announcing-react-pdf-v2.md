@@ -38,7 +38,7 @@ Previous react-pdf versions dealt with this by keeping class instances in memory
 Under this perspective, immutability is a must have. If I could find a way of making the renderer work with immutable structures I would make bugs easier to debug but also make each render truly independent from the previous or future ones.
 ### 3. Performance
 
-I believe react-pdf can be much much faster than what currently is. It is already faster than other solutions out there such as HTML-to-PDF, at least for most use cases, by my goal is to keep pushing this to the limit.
+I believe react-pdf can be much much faster than what v1 currently is. It is already faster than other solutions out there such as HTML-to-PDF, at least for most use cases, by my goal is to keep pushing this to the limit.
 
 There are some bottlenecks we can't avoid, such as assets fetching or Yoga layout time, but there's a lot of room for improvements. However, the old implementation made it very difficult to both measure and improve rendering times, at least without being unsure something didn't break along the way.
 
@@ -108,7 +108,7 @@ In addition, for anyone using or excited about this project, kind reminder to co
 
 ### Is the new version going to be incompatible with the old one?
 
-No! 2.0 will be backwards compatible. The reason why the major version is increased it's mostly because 2.0 is a complete reimplementation of the library.
+No! 2.0 will be backwards compatible. Because of this, there should be no reason to remain on v1. Please report any bugs to our issue tracker, preferably with a REPL link.
 
 ### Will the v1.X version still be maintained after 2.0 gets released?
 
