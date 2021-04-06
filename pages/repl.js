@@ -1,28 +1,39 @@
-import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import styled from '@emotion/styled';
 import { useAsync } from 'react-use';
 import { withRouter } from 'next/router';
+import React, { useState, useMemo } from 'react';
 
 import media from '../src/styled/media';
-import Icon from '../src/components/Icon';
-import Logo from '../src/components/Logo';
-import Loading from '../src/components/Loading';
-import BackButton from '../src/components/BackButton';
-import ReplHeader from '../src/components/ReplHeader';
-import ReplFooter from '../src/components/ReplFooter';
-import GitHubIcon from '../src/components/GitHubIcon';
-import { decompress } from '../src/lib/compress';
+import Icon from '../src/components/UI/Icon';
+import Logo from '../src/components/UI/Logo';
+import Spinner from '../src/components/UI/Spinner';
+import BackButton from '../src/components/Repl/BackButton';
+import ReplHeader from '../src/components/Repl/ReplHeader';
+import ReplFooter from '../src/components/Repl/ReplFooter';
+import GitHubIcon from '../src/components/Layout/GitHubIcon';
+import { compress, decompress } from '../src/lib/compress';
 
-const Repl = dynamic(import('../src/components/Repl'), { loading: Loading });
+const Repl = dynamic(import('../src/components/Repl'), { loading: Spinner });
 
 const examples = {
+  g: require('raw-loader!../examples/g.txt'),
+  svg: require('raw-loader!../examples/svg.txt'),
+  line: require('raw-loader!../examples/line.txt'),
+  path: require('raw-loader!../examples/path.txt'),
+  rect: require('raw-loader!../examples/rect.txt'),
   text: require('raw-loader!../examples/text.txt'),
   emoji: require('raw-loader!../examples/emoji.txt'),
   knobs: require('raw-loader!../examples/knobs.txt'),
+  circle: require('raw-loader!../examples/circle.txt'),
   styles: require('raw-loader!../examples/styles.txt'),
   resume: require('raw-loader!../examples/resume.txt'),
   images: require('raw-loader!../examples/images.txt'),
+  svgtext: require('raw-loader!../examples/svgtext.txt'),
+  ellipse: require('raw-loader!../examples/ellipse.txt'),
+  polygon: require('raw-loader!../examples/polygon.txt'),
+  clippath: require('raw-loader!../examples/clippath.txt'),
+  polyline: require('raw-loader!../examples/polyline.txt'),
   fractals: require('raw-loader!../examples/fractals.txt'),
   'page-wrap': require('raw-loader!../examples/page-wrap.txt'),
   'page-breaks': require('raw-loader!../examples/page-breaks.txt'),
@@ -30,6 +41,8 @@ const examples = {
   'page-numbers': require('raw-loader!../examples/page-numbers.txt'),
   'mixed-styles': require('raw-loader!../examples/mixed-styles.txt'),
   'inline-styles': require('raw-loader!../examples/inline-styles.txt'),
+  lineargradient: require('raw-loader!../examples/lineargradient.txt'),
+  radialgradient: require('raw-loader!../examples/radialgradient.txt'),
   'font-register': require('raw-loader!../examples/font-register.txt'),
   'media-queries': require('raw-loader!../examples/media-queries.txt'),
   'disable-wrapping': require('raw-loader!../examples/disable-wrapping.txt'),
@@ -90,29 +103,39 @@ const SmallLogo = styled(Logo)`
   margin-top: 64px;
 `;
 
-const ReplPage = ({ router, shareUrl }) => {
+const ReplPage = ({ router }) => {
   const [code, setCode] = useState('');
-
-  const [initialCode, setInitialCode] = useState('');
 
   const [activeTab, setActiveTab] = useState('pdf');
 
   const [documentUrl, setDocumentUrl] = useState(null);
 
-  useAsync(async () => {
-    let initialValue = '';
-    const { code, example } = router.query;
+  const query = router.query;
 
-    if (code) {
-      initialValue = setInitialValueFromCode(code);
-    } else if (example) {
-      initialValue = await setInitialValueFromExample(example);
+  const initialCode = useAsync(async () => {
+    let initialValue = '';
+
+    if (query.code) {
+      initialValue = setInitialValueFromCode(query.code);
+    } else if (query.example) {
+      initialValue = await setInitialValueFromExample(query.example);
     } else {
       initialValue = await setInitialValueFromExample('page-wrap');
     }
 
-    setInitialCode(initialValue);
-  }, []);
+    return initialValue || '';
+  }, [query.code, query.example]);
+
+  const shareUrl = useMemo(() => {
+    return (
+      process.browser &&
+      `${window.location.protocol}//${
+        window.location.host
+      }/repl?code=${compress(code)}`
+    );
+  }, [code]);
+
+  if (initialCode.loading) return null;
 
   return (
     <Main>
@@ -128,7 +151,7 @@ const ReplPage = ({ router, shareUrl }) => {
       <Section>
         <ReplHeader activeTab={activeTab} onTabClick={setActiveTab} />
         <Repl
-          value={initialCode}
+          value={initialCode.value}
           activeTab={activeTab}
           onChange={setCode}
           onUrlChange={setDocumentUrl}

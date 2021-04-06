@@ -1,7 +1,7 @@
-import List from '../src/components/List'
-import EditButton from '../src/components/EditButton'
-import GoToExample from '../src/components/GoToExample'
-import NavigationButtons from '../src/components/NavigationButtons'
+import List from '../src/components/UI/List'
+import EditButton from '../src/components/Docs/EditButton'
+import GoToExample from '../src/components/Docs/GoToExample'
+import NavigationButtons from '../src/components/Docs/NavigationButtons'
 
 <EditButton to="https://github.com/react-pdf/site/blob/master/docs/styling.md" />
 
@@ -170,6 +170,8 @@ const MyDocument = () => (
 - position
 - right
 - top
+- overflow
+- zIndex
 
 #### Dimension
 
@@ -265,8 +267,8 @@ const MyDocument = () => (
 - borderBottomLeftRadius
 
 <NavigationButtons
-  backSrc="/components"
-  backText="Components"
-  nextSrc="/advanced"
-  nextText="Advanced"
+  backSrc="/hooks"
+  backText="Hooks"
+  nextSrc="/fonts"
+  nextText="Fonts"
 />

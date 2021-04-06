@@ -1,7 +1,8 @@
-import EditButton from '../src/components/EditButton'
-import NavigationButtons from '../src/components/NavigationButtons'
-import PageWrapping from './page-wrapping.md'
+import EditButton from '../src/components/Docs/EditButton'
+import NavigationButtons from '../src/components/Docs/NavigationButtons'
+
 import OnTheFly from './on-the-fly.md'
+import PageWrapping from './page-wrapping.md'
 import OrphanWidowProtection from './orphan-widow-protection.md'
 import DynamicContent from './dynamic-content.md'
 import Hyphenation from './hyphenation.md'

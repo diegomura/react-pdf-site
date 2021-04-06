@@ -1,5 +1,5 @@
-import DebugSample from '../src/components/DebugSample'
-import GoToExample from '../src/components/GoToExample'
+import DebugSample from '../src/components/Docs/DebugSample'
+import GoToExample from '../src/components/Docs/GoToExample'
 
 ### Debugging
 

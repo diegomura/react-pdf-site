@@ -65,12 +65,12 @@ class MyDocument extends Document {
           <meta property="og:title" content="React-pdf" />
           <meta
             property="og:description"
-            content="React renderer for creating PDF files on the browser, mobile and server"
+            content="React renderer for creating PDF files on the browser and server"
           />
           <meta property="og:image" content="/images/og-banner.png" />
           <meta property="og:image:width" content="950" />
           <meta property="og:image:height" content="650" />
-          <meta property="og:url" content="http://react-pdf.js.org" />
+          <meta property="og:url" content="http://react-pdf.org" />
         </Head>
         <body>
           <Main />
