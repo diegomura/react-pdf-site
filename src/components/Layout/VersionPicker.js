@@ -70,7 +70,8 @@ const VersionPicker = ({ selected = 'v2' }) => {
 
   const onItemClick = (v) => {
     const hostname = location.hostname.replace(/^(v\d\.)/, '')
-    const url = `${location.protocol}//${v}.${hostname}:${location.port}${location.pathname}`;
+    const subdomain = v === 'v2' ? '' : `${v}.` ;
+    const url = `${location.protocol}//${subdomain}${hostname}:${location.port}${location.pathname}`;
 
     window.location.replace(url);
   }
