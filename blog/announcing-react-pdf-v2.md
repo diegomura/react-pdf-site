@@ -1,5 +1,5 @@
 export const metadata = {
-  date: '03/31/2021',
+  date: '04/06/2021',
   author: 'diegomura',
   title: 'Announcing react-pdf v2.0',
   image: {
