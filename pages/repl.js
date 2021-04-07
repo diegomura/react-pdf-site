@@ -112,7 +112,7 @@ const ReplPage = ({ router }) => {
 
   const query = router.query;
 
-  const initialCode = useAsync(async () => {
+  const mount = useAsync(async () => {
     let initialValue = '';
 
     if (query.code) {
@@ -123,7 +123,7 @@ const ReplPage = ({ router }) => {
       initialValue = await setInitialValueFromExample('page-wrap');
     }
 
-    return initialValue || '';
+    setCode(initialValue || '');
   }, [query.code, query.example]);
 
   const shareUrl = useMemo(() => {
@@ -135,7 +135,7 @@ const ReplPage = ({ router }) => {
     );
   }, [code]);
 
-  if (initialCode.loading) return null;
+  if (mount.loading) return null;
 
   return (
     <Main>
@@ -151,7 +151,7 @@ const ReplPage = ({ router }) => {
       <Section>
         <ReplHeader activeTab={activeTab} onTabClick={setActiveTab} />
         <Repl
-          value={initialCode.value}
+          value={code}
           activeTab={activeTab}
           onChange={setCode}
           onUrlChange={setDocumentUrl}

@@ -70,7 +70,7 @@ const ReplFooter = ({ documentUrl, shareUrl, code }) => (
         Share
       </BannerButton>
     </Clipboard>
-    <Clipboard text={code}>
+    <Clipboard text={code} tooltip="Code copied to clipboard!">
       <BannerButton icon="copy" component="button" secondary>
         Copy
       </BannerButton>

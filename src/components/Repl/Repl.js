@@ -80,7 +80,12 @@ const Repl = ({ activeTab, value, onChange, onUrlChange }) => {
         setElement(null);
       }
 
-      debounceTranspile(code, setElement, setError);
+      const callback = value => {
+        onChange?.(code);
+        setElement(value);
+      }
+
+      debounceTranspile(code, callback, setError);
     },
     [onChange],
   );

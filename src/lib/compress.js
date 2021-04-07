@@ -1,6 +1,6 @@
 import LZString from 'lz-string';
 
-const decimalToHex = d => {
+const decimalToHex = (d) => {
   let hex = Number(d).toString(16);
   const padding = 2;
 
@@ -11,15 +11,17 @@ const decimalToHex = d => {
   return hex;
 };
 
-const hexToDecimal = h => parseInt(h, 16);
+const hexToDecimal = (h) => parseInt(h, 16);
 
-export const compress = str =>
-  LZString.compressToUint8Array(str).reduce(
+export const compress = (str) => {
+  console.log(str);
+  return LZString.compressToUint8Array(str).reduce(
     (acc, value) => `${acc}${decimalToHex(value)}`,
     '',
   );
+};
 
-export const decompress = str => {
+export const decompress = (str) => {
   const compressed = str.match(/.{2}/g).map(hexToDecimal);
   return LZString.decompressFromUint8Array(compressed);
 };
