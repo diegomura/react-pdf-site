@@ -32,7 +32,7 @@ const [instance, update] = usePDF({ document });
 
 #### Update function
 
-Used to trigger a document re-render. By default, changing the document instance does not triggers a enw PDF file creation. This is very helpful specially when just rendering a download button or similar, where you might want to render the document right before the action get's triggered.
+Used to trigger a document re-render. By default, changing the document instance does not triggers a new PDF file creation. This is very helpful specially when just rendering a download button or similar, where you might want to render the document right before the action get's triggered.
 
 The update function takes no arguments and does not return anything.
 
