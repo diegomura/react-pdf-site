@@ -181,6 +181,7 @@ const Menu = ({ opened }) => (
       <Item to="/node#rendertofile" title="renderToFile" />
       <Item to="/node#rendertostring" title="renderToString" />
       <Item to="/node#rendertostream" title="renderToStream" />
+      <Item to="/node#express" title="Usage with Express.js" />
       </Item>
 
       <Item to="/advanced" title="Advanced">
