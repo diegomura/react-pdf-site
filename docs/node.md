@@ -87,17 +87,6 @@ const stream = await renderToStream(<MyDocument />);
 
 PDF document Stream
 
-### `Express` Send PDF in a response
-```jsx
-import React from 'react';
-import ReactPDF from '@react-pdf/renderer';
-
-const pdfStream = await ReactPDF.renderToStream(<MyDocument />);
-res.setHeader('Content-Type', 'application/pdf');
-pdfStream.pipe(res);
-pdfStream.on('end', () => console.log('Done streaming, response sent.'));
-```
-
 <NavigationButtons
   backSrc="/fonts"
   backText="Fonts"

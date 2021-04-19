@@ -181,7 +181,6 @@ const Menu = ({ opened }) => (
       <Item to="/node#rendertofile" title="renderToFile" />
       <Item to="/node#rendertostring" title="renderToString" />
       <Item to="/node#rendertostream" title="renderToStream" />
-      <Item to="/node#express" title="Usage with Express.js" />
       </Item>
 
       <Item to="/advanced" title="Advanced">
@@ -197,6 +196,7 @@ const Menu = ({ opened }) => (
         <Item to="/advanced#dynamic-content" title="Dynamic content" />
         <Item to="/advanced#debugging" title="Debugging" />
         <Item to="/advanced#hyphenation" title="Hyphenation" />
+        <Item to="/advanced#usage-with-express.js" title="Usage with Express.js" />
         <Item to="/advanced#webpack-config" title="Webpack config" />
       </Item>
 
