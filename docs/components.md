@@ -152,13 +152,13 @@ React-pdf does not check how much space your drawing takes, so make sure you alw
 
 Prop used to perform drawings inside the Canvas. It takes 3 arguments:
 
-- `Painter object`: Wrapper arround _pdfkit_ drawing methods. Use this to draw inside the Canvas
+- `Painter object`: Wrapper around _pdfkit_ drawing methods. Use this to draw inside the Canvas
 - `availableWidth`: Width of the Canvas element.
 - `availableHeight`: Height of the Canvas element.
 
 ##### Painter object
 
-Wrapper arround _pdfkit_ methods you can use to draw inside the Canvas. All operations are chainable. For more information about how these methods work, please refer to [pdfkit documentation](http://pdfkit.org/).
+Wrapper around _pdfkit_ methods you can use to draw inside the Canvas. All operations are chainable. For more information about how these methods work, please refer to [pdfkit documentation](http://pdfkit.org/).
 
 Available methods:
 
