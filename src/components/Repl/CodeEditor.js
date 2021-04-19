@@ -56,10 +56,6 @@ const CodeEditor = ({ value, onLoad, onChange }) => {
   }, []);
 
   useEffect(() => {
-    codeMirror.current?.setValue(value);
-  }, [value]);
-
-  useEffect(() => {
     changeHandler.current = onChange;
   }, [onChange]);
 

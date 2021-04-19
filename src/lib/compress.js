@@ -14,7 +14,6 @@ const decimalToHex = (d) => {
 const hexToDecimal = (h) => parseInt(h, 16);
 
 export const compress = (str) => {
-  console.log(str);
   return LZString.compressToUint8Array(str).reduce(
     (acc, value) => `${acc}${decimalToHex(value)}`,
     '',
