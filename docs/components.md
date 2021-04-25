@@ -22,6 +22,7 @@ This component represents the PDF document itself. It _must_ be the root of your
 | creator    |              Sets creator info on the document's metadata               |   _String_ | _"react-pdf"_ |
 | producer   |              Sets producer info on the document's metadata              |   _String_ | _"react-pdf"_ |
 | pdfVersion |                 Sets PDF version for generated document                 |   _String_ |       _"1.3"_ |
+| language   |                        Sets PDF default language                        |   _String_ |   _undefined_ |
 | onRender   | Callback after document renders. Receives document blob argument in web | _Function_ |   _undefined_ |
 
 ---
@@ -32,13 +33,13 @@ Represents single page inside the PDF documents, or a subset of them if using th
 
 #### Valid props
 
-| Prop name   |                                                                                                  Description                                                                                                   |                                  Type |      Default |
-| ----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ------------------------------------: | -----------: |
+| Prop name   |                                                                                                         Description                                                                                                         |                                  Type |      Default |
+| ----------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ------------------------------------: | -----------: |
 | size        | Defines page size. If _String_, must be one of the [available page sizes](https://github.com/diegomura/react-pdf/blob/master/packages/layout/src/page/getSize.js). Height is optional, if ommited it will behave as "auto". | _String_, _Array_, _Number_, _Object_ |       _"A4"_ |
-| orientation |                                                                      Defines page orientation. _Valid values: "portrait" or "landscape"_                                                                       |                              _String_ | _"portrait"_ |
-| wrap        |                                                                    Enables page wrapping for this page. [See more](/advanced#page-wrapping)                                                                    |                             _Boolean_ |       _true_ |
-| style       |                                                                                   Defines page styles. [See more](/styling)                                                                                    |                     _Object_, _Array_ |  _undefined_ |
-| debug       |                                                                    Enables debug mode on page bounding box. [See more](/advanced#debugging)                                                                    |                             _Boolean_ |      _false_ |
+| orientation |                                                                             Defines page orientation. _Valid values: "portrait" or "landscape"_                                                                             |                              _String_ | _"portrait"_ |
+| wrap        |                                                                          Enables page wrapping for this page. [See more](/advanced#page-wrapping)                                                                           |                             _Boolean_ |       _true_ |
+| style       |                                                                                          Defines page styles. [See more](/styling)                                                                                          |                     _Object_, _Array_ |  _undefined_ |
+| debug       |                                                                          Enables debug mode on page bounding box. [See more](/advanced#debugging)                                                                           |                             _Boolean_ |      _false_ |
 
 ---
 
