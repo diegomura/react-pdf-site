@@ -1333,20 +1333,20 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@react-pdf/font@^2.0.6":
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/@react-pdf/font/-/font-2.0.6.tgz#c106621faeeaa35dce4c95f77158a4e578fe1022"
-  integrity sha512-730EQEnW3sF1Fl9juoG8iCs4mbQYvvNfiehVmAcpJ1UZ3Cv/9LRn8iEy+kCyPuvcDyxMozj151oBmSBI6TJ8Bw==
+"@react-pdf/font@^2.0.7":
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/@react-pdf/font/-/font-2.0.7.tgz#46f88add7c9da754f5c5947978dfdef9df35ad5d"
+  integrity sha512-oMFel9ewyu0FgyD7G1kS3P2Yol4n0Pa8FomX8zd268NWYP7D9+26si8tOGxM2b8kaYYBiTRg5/oY2xHKGpy7Mg==
   dependencies:
-    "@react-pdf/fontkit" "^2.0.4"
+    "@react-pdf/fontkit" "^2.0.5"
     "@react-pdf/types" "^2.0.1"
     cross-fetch "^3.0.4"
     is-url "^1.2.4"
 
-"@react-pdf/fontkit@^2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@react-pdf/fontkit/-/fontkit-2.0.4.tgz#a6c30bc3ae96e95cee27f77aef467e02eaaa1362"
-  integrity sha512-gZLzZ+qrfwvNJB4vhtQot7DgQZKRmyoCr5mGzmQwAwvt3N0EQ2gdzXsPJr4HTiEVDcG18KE7btXptodTE7idOA==
+"@react-pdf/fontkit@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@react-pdf/fontkit/-/fontkit-2.0.5.tgz#fed940c055754b4c28e71a3f68e0385b14ac26e7"
+  integrity sha512-YJgKGJUs3MZXqBIP1tY0kbPje37yrmlqz6/m7EWGOQqmfAl8FrkpxaGhxJZ25Ejl777gg58d0oFP92sva82Dyw==
   dependencies:
     "@react-pdf/unicode-properties" "^2.4.1"
     brotli "^1.2.0"
@@ -1365,14 +1365,14 @@
     "@react-pdf/png-js" "^2.0.2"
     cross-fetch "^3.0.4"
 
-"@react-pdf/layout@^2.0.10":
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/@react-pdf/layout/-/layout-2.0.10.tgz#383d5c86c2171405d303720e077678a12df9c3ee"
-  integrity sha512-cwSYWmULCDC0Jz3RuaPqV4aRW3YTkaeaEIrZEPDO6sKi2OwAbaH1FRvYJNO87UZkyq0DRVHmg5nFuTnpcF4j7Q==
+"@react-pdf/layout@^2.0.11":
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/@react-pdf/layout/-/layout-2.0.11.tgz#361a8f940348dd78c5ebd1c9789e8f704a8c93b6"
+  integrity sha512-dU2src3iZNUWCez4kXMgPFzsv4us54Vd0310GBVlzRhwYnbmrMdBgTSTv2UTqLQoODaysuRDnIub6dcoaMtcBQ==
   dependencies:
     "@babel/runtime" "^7.6.2"
     "@react-pdf/image" "^2.0.3"
-    "@react-pdf/pdfkit" "^2.0.6"
+    "@react-pdf/pdfkit" "^2.0.7"
     "@react-pdf/primitives" "^2.0.0"
     "@react-pdf/stylesheet" "^2.0.5"
     "@react-pdf/textkit" "^2.0.3"
@@ -1383,12 +1383,12 @@
     queue "^6.0.1"
     ramda "^0.26.1"
 
-"@react-pdf/pdfkit@^2.0.6":
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/@react-pdf/pdfkit/-/pdfkit-2.0.6.tgz#46334a6d069377425fff0f39eb1c2a7268b52d90"
-  integrity sha512-h69yf+PrUnfIAt6dNg1FDssZnQHpBz6AI9tXrv4Fs9YsvVMGj+pqn8DdAw/wWnQ7ul+hAp4ZuPc9C24UeTCDLA==
+"@react-pdf/pdfkit@^2.0.7":
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/@react-pdf/pdfkit/-/pdfkit-2.0.7.tgz#1920d49002830643ca93a5e72aae63d808d2da47"
+  integrity sha512-6dcqjiCb6TC3gexPkPOB/zA1FMLrFDL5OJQS0SSy43GMHTYz/v0wk2gMhVOF5S0QR/2gA+RZ2BaJ2RXEaQZ52Q==
   dependencies:
-    "@react-pdf/fontkit" "^2.0.4"
+    "@react-pdf/fontkit" "^2.0.5"
     "@react-pdf/png-js" "^2.0.2"
     crypto-js "^4.0.0"
     lz-string "^1.4.4"
@@ -1418,15 +1418,15 @@
     ramda "^0.26.1"
     svg-arc-to-cubic-bezier "^3.2.0"
 
-"@react-pdf/renderer@2.0.10":
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-2.0.10.tgz#33b4c3371954791f38672201d8dac1f1b072a575"
-  integrity sha512-bDZyZJarOPiHNkDFeu+GlM5o3dAbcUMe2cqIHYGE0kxgGyjmQ4ZtfNRfvUC1OBzoTGzDpqU4xXddeUo/dcrd+A==
+"@react-pdf/renderer@2.0.11":
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-2.0.11.tgz#0ae810222bc1a3c74e1783b1d08f86ae70475a66"
+  integrity sha512-+FLIRvbF6GNeU2J0HBhiYtvX348sHlyPuaQWacFtynybccwd40YC+wJTabvPJjlXJ5fw+fMvGxCwgO7Gv/n3bw==
   dependencies:
     "@babel/runtime" "^7.6.2"
-    "@react-pdf/font" "^2.0.6"
-    "@react-pdf/layout" "^2.0.10"
-    "@react-pdf/pdfkit" "^2.0.6"
+    "@react-pdf/font" "^2.0.7"
+    "@react-pdf/layout" "^2.0.11"
+    "@react-pdf/pdfkit" "^2.0.7"
     "@react-pdf/primitives" "^2.0.0"
     "@react-pdf/render" "^2.0.7"
     "@react-pdf/types" "^2.0.1"
