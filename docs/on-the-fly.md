@@ -1,6 +1,6 @@
 ### On the fly rendering `Web only`
 
-There are some cases in which you may need to generate a document without showing it on screen. For those scenarios, react-pdf provides tree different solutions:
+There are some cases in which you may need to generate a document without showing it on screen. For those scenarios, react-pdf provides three different solutions:
 
 #### Download link
 
