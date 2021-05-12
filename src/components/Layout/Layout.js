@@ -58,7 +58,7 @@ const Frame = ({ children }) => {
   return (
     <>
       <PageBanner>
-        New react-pdf 2.0 was relesed.{' '}
+        New react-pdf 2.0 was released.{' '}
         <Link href="/blog/announcing-react-pdf-v2">
           Read about the announcement <Icon type="arrow-right" />
         </Link>
