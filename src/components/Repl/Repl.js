@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import styled from '@emotion/styled';
+import { useMount } from 'react-use';
 import debounce from 'lodash.debounce';
 import React, { useCallback, useState } from 'react';
 
@@ -89,6 +90,10 @@ const Repl = ({ activeTab, value, onChange, onUrlChange }) => {
     },
     [onChange],
   );
+
+  useMount(() => {
+    if (value) debounceTranspile(value, setElement, setError);
+  })
 
   return (
     <>

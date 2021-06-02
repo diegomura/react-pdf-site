@@ -18,7 +18,7 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@mdx-js/loader": "^1.5.1",
     "@next/mdx": "^9.1.1",
-    "@react-pdf/renderer": "2.0.12",
+    "@react-pdf/renderer": "2.0.14",
     "@zeit/next-workers": "^1.0.0",
     "add": "^2.0.6",
     "buble": "^0.19.3",
@@ -42,8 +42,7 @@
     "react-tippy": "^1.2.2",
     "react-use": "^15.3.4",
     "recompose": "^0.30.0",
-    "worker-loader": "^3.0.1",
-    "yarn": "^1.22.4"
+    "worker-loader": "^3.0.1"
   },
   "devDependencies": {
     "babel-plugin-prismjs": "^1.0.2",
