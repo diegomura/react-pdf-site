@@ -6,7 +6,6 @@ import Header from './Header';
 import Icon from '../UI/Icon';
 import Link from '../UI/Link';
 import media from '../../styled/media';
-import PageBanner from '../UI/PageBanner';
 
 const Section = styled.section`
   flex: 1;
@@ -57,13 +56,6 @@ const Frame = ({ children }) => {
 
   return (
     <>
-      <PageBanner>
-        New react-pdf 2.0 was released.{' '}
-        <Link href="/blog/announcing-react-pdf-v2">
-          Read about the announcement <Icon type="arrow-right" />
-        </Link>
-      </PageBanner>
-
       <Header onMenuClick={() => setMenuOpen(!menuOpen)} />
 
       <Main>
