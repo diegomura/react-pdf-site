@@ -10,7 +10,7 @@ import VersionPicker from './VersionPicker';
 
 const Nav = styled.nav`
   left: 0;
-  top: 50px;
+  top: 0px;
   z-index: 500;
   display: flex;
   position: fixed;
