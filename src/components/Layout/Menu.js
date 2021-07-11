@@ -12,12 +12,12 @@ const Nav = styled.nav`
   left: 0;
   top: 0px;
   z-index: 500;
+  height: 100%;
   display: flex;
   position: fixed;
   align-items: center;
   transition: all 0.5s;
   flex-direction: column;
-  height: calc(100% - 50px);
   width: ${(props) => props.width || '285px'};
   min-width: ${(props) => props.width || '285px'};
   background-color: ${({ theme }) => theme.gray3};
