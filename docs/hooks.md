@@ -7,7 +7,7 @@ import NavigationButtons from '../src/components/Docs/NavigationButtons'
 
 ### usePDF `Web only`
 
-React-pdf now ships a hook called `usePDF` that enables accessing all PDF creation capabilities via a React hook API. This is great if you need more control over how the document get's rendered or how often it's updated.
+React-pdf now ships a hook called `usePDF` that enables accessing all PDF creation capabilities via a React hook API. This is great if you need more control over how the document gets rendered or how often it's updated.
 
 #### Usage
 
@@ -32,7 +32,7 @@ const [instance, update] = usePDF({ document });
 
 #### Update function
 
-Used to trigger a document re-render. By default, changing the document instance does not triggers a new PDF file creation. This is very helpful specially when just rendering a download button or similar, where you might want to render the document right before the action get's triggered.
+Used to trigger a document re-render. By default, changing the document instance does not triggers a new PDF file creation. This is very helpful specially when just rendering a download button or similar, where you might want to render the document right before the action gets triggered.
 
 The update function takes no arguments and does not return anything.
 
