@@ -1,9 +1,7 @@
-import pdfjs from 'pdfjs-dist';
 import styled from '@emotion/styled';
 import React, { useEffect, useState } from 'react';
-import Page from 'react-pdf/dist/Page';
 import { pdf } from '@react-pdf/renderer';
-import Document from 'react-pdf/dist/Document';
+import { Document, Page, pdfjs } from 'react-pdf';
 import PdfjsWorker from 'pdfjs-dist/build/pdf.worker.js';
 
 import PageNavigator from './PageNavigator';
