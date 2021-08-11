@@ -2,12 +2,12 @@ import styled from '@emotion/styled';
 import React, { useEffect, useState } from 'react';
 import { pdf } from '@react-pdf/renderer';
 import { Document, Page, pdfjs } from 'react-pdf';
-import PdfjsWorker from 'pdfjs-dist/build/pdf.worker.js';
+import src from 'pdfjs-dist/build/pdf.worker.js';
 
 import PageNavigator from './PageNavigator';
 import { useAsync } from 'react-use';
 
-pdfjs.GlobalWorkerOptions.workerPort = new PdfjsWorker();
+pdfjs.GlobalWorkerOptions.workerSrc = src;
 
 const Wrapper = styled.div`
   flex: 1;
@@ -83,7 +83,7 @@ const PDFViewer = ({ value, onUrlChange, onRenderError }) => {
 
       <DocumentWrapper>
         <Document file={render.value} onLoadSuccess={onDocumentLoad}>
-          <Page renderMode="svg" pageNumber={currentPage} />
+          <Page pageNumber={currentPage} />
         </Document>
       </DocumentWrapper>
 
