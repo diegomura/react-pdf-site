@@ -32,7 +32,7 @@
     "lodash.debounce": "^4.0.8",
     "lz-string": "^1.4.4",
     "next": "^9.5.1",
-    "prismjs": "^1.15.0",
+    "prismjs": "^1.25.0",
     "prop-types": "^15.6.2",
     "react": "^16.8.6",
     "react-copy-to-clipboard": "^5.0.1",
