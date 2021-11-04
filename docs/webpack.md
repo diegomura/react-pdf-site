@@ -25,7 +25,7 @@ If you use webpack you may need to include the following settings to your config
 #### Webpack 5
 
 Webpack 5 doesn't include node shims automatically anymore and we must
-opt-in to all shims we want. We can do this we have to add a few
+opt-in to all shims we want. To do this we have to add a few
 dependencies to our project:
 
 ```shell
