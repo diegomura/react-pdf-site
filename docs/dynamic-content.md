@@ -28,12 +28,14 @@ const doc = () => (
 
 #### Available arguments
 
-| Name                   |                 Description                 |      Type |
-| ---------------------- | :-----------------------------------------: | --------: |
-| pageNumber             |             Current page number             | _Integer_ |
-| totalPages `Text only` | Total amount of pages in the final document | _Integer_ |
+| Name                          |                 Description                 |      Type |
+| ----------------------        | :-----------------------------------------: | --------: |
+| pageNumber                    |             Current page number             | _Integer_ |
+| totalPages `Text only`        | Total amount of pages in the final document | _Integer_ |
+| subPageNumber                 | Current subpage in the Page component       | _Integer_ |
+| subPageTotalPages `Text only` | Total amount of pages in the Page component | _Integer_ |
 
-Bare in mind that the `render` function is called twice for `<Text />` elements: once for layout on the page wrapping process, and another one after it's know how many pages the document will have.
+Bear in mind that the `render` function is called twice for `<Text />` elements: once for layout on the page wrapping process, and another one after it's know how many pages the document will have.
 
 > **Protip:** Use this API in conjunction with fixed elements to render page number indicators
 
