@@ -18,7 +18,6 @@ const Wrapper = styled.div`
 
 const LogoImage = styled.img`
   width: ${(props) => props.size || '54px'};
-  animation: 4s ${rotate360} linear infinite;
 `;
 
 const Title = styled(H1)`
