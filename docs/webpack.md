@@ -70,4 +70,14 @@ module.exports = {
 
 #### Create React App
 
-If you are using _create-react-app_, those are already included.
+- If you are using _create-react-app@v4_, those are already included.
+- If you are using _create-react-app@v5_, those are no longer included, possible solutions:
+  - Run `npm-eject`, comit the above changes to `config/webpack.config.js` file.
+  - Overide the webpack configration using [craco](https://github.com/gsoft-inc/craco) or [react-app-rewired](https://github.com/timarney/react-app-rewired)
+
+Then, initiate the browser window with `process` and `Buffer` installed before.
+```js
+// src/index.js
+window.Buffer = window.Buffer || Buffer;
+window.process = window.process || process;
+```
