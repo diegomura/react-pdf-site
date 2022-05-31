@@ -82,9 +82,9 @@ Defines the source of an image. Can be in any of these four valid forms:
 | ----------- | :---------------------------------------------------------------------------------------------------------------------------------: | ---------------------------------------------------------- |
 | String      |                                           Valid image URL or filesystem path (Node only)                                            | `www.react-pdf.org/test.jpg`                               |
 | URL object  |                                       Enables to pass extra parameters on how to fetch images                                       | `{ uri: valid-url, method: 'GET', headers: {}, body: '' }` |
-| Buffer      | Renders image directly from Buffer. Image format (png or jpg) will be guessed based on Buffer.                                      | `Buffer`                                                   |
-| Data buffer | Renders buffer image via the _data_ key. It's also recommended to provide the image _format_ so the engine knows how to proccess it | `{ data: Buffer, format: 'png' \| 'jpg' }`                  |
-| Function    |                    A function that returns (can also return a promise that resolves to) any of the above formats                    | `() => String \| Promise<String>`                           |
+| Buffer      |                   Renders image directly from Buffer. Image format (png or jpg) will be guessed based on Buffer.                    | `Buffer`                                                   |
+| Data buffer | Renders buffer image via the _data_ key. It's also recommended to provide the image _format_ so the engine knows how to proccess it | `{ data: Buffer, format: 'png' \| 'jpg' }`                 |
+| Function    |                    A function that returns (can also return a promise that resolves to) any of the above formats                    | `() => String \| Promise<String>`                          |
 
 ---
 
@@ -94,14 +94,14 @@ A React component for displaying text. Text supports nesting of other Text or Li
 
 #### Valid props
 
-| Prop name           |                                  Description                                   |              Type |     Default |
-| ------------------- | :----------------------------------------------------------------------------: | ----------------: | ----------: |
-| wrap                | Enables/disables page wrapping for element [See more](/advanced#page-wrapping) |         _Boolean_ |      _true_ |
-| render              | Renders dynamic content based on context [See more](/advanced#dynamic-content) |        _Function_ | _undefined_ |
-| style               |                   Defines view styles. [See more](/styling)                    | _Object_, _Array_ | _undefined_ |
-| debug               |    Enables debug mode on view bounding box. [See more](/advanced#debugging)    |         _Boolean_ |     _false_ |
-| fixed               |  Renders component in all wrapped pages. [See more](/advanced#page-wrapping)   |         _Boolean_ |     _false_ |
-| hyphenationCallback |             Specifies how much hyphenated breaks should be avoided             |         _Integer_ |       _600_ |
+| Prop name           |                                       Description                                       |              Type |     Default |
+| ------------------- | :-------------------------------------------------------------------------------------: | ----------------: | ----------: |
+| wrap                |     Enables/disables page wrapping for element [See more](/advanced#page-wrapping)      |         _Boolean_ |      _true_ |
+| render              |     Renders dynamic content based on context [See more](/advanced#dynamic-content)      |        _Function_ | _undefined_ |
+| style               |                        Defines view styles. [See more](/styling)                        | _Object_, _Array_ | _undefined_ |
+| debug               |        Enables debug mode on view bounding box. [See more](/advanced#debugging)         |         _Boolean_ |     _false_ |
+| fixed               |       Renders component in all wrapped pages. [See more](/advanced#page-wrapping)       |         _Boolean_ |     _false_ |
+| hyphenationCallback | Specify hyphenation callback at a text level. See [hypthenation](/advanced#hyphenation) |        _Function_ | _undefined_ |
 
 ---
 
@@ -206,13 +206,14 @@ Iframe PDF viewer for client-side generated documents.
 
 #### Valid props
 
-| Prop name |          Description          |               Type |     Default |
-| --------- | :---------------------------: | -----------------: | ----------: |
-| style     |     Defines iframe styles     |  _Object_, _Array_ | _undefined_ |
-| className |   Defines iframe class name   |          _String _ | _undefined_ |
-| children  |  PDF document implementation  |         _Document_ | _undefined_ |
-| width     | Width of embedded PDF iframe  | _String_, _Number_ | _undefined_ |
-| height    | Height of embedded PDF iframe | _String_, _Number_ | _undefined_ |
+| Prop name   |                       Description                        |               Type |     Default |
+| ----------- | :------------------------------------------------------: | -----------------: | ----------: |
+| style       |                  Defines iframe styles                   |  _Object_, _Array_ | _undefined_ |
+| className   |                Defines iframe class name                 |          _String _ | _undefined_ |
+| children    |               PDF document implementation                |         _Document_ | _undefined_ |
+| width       |               Width of embedded PDF iframe               | _String_, _Number_ | _undefined_ |
+| height      |              Height of embedded PDF iframe               | _String_, _Number_ | _undefined_ |
+| showToolbar | Render the toolbar. Supported on Chrome, Edge and Safari |          _Boolean_ |      _true_ |
 
 Other props are passed through to the iframe.
 

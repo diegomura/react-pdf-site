@@ -46,6 +46,7 @@ const examples = {
   'font-register': require('raw-loader!../examples/font-register.txt'),
   'media-queries': require('raw-loader!../examples/media-queries.txt'),
   'disable-wrapping': require('raw-loader!../examples/disable-wrapping.txt'),
+  'orphans-and-widows': require('raw-loader!../examples/orphans-and-widows.txt'),
   'disable-hyphenation': require('raw-loader!../examples/disable-hyphenation.txt'),
   'hyphenation-callback': require('raw-loader!../examples/hyphenation-callback.txt'),
   'breakable-unbreakable': require('raw-loader!../examples/breakable-unbreakable.txt'),

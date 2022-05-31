@@ -14,6 +14,6 @@ But react-pdf does not reserve this protection just for text. You can adjust thi
 
 > **Protip:** You can use this API to ensure that headings do not get rendered at the bottom of a page
 
-<GoToExample />
+<GoToExample name="orphans-and-widows" />
 
 ---
