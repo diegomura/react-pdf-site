@@ -8,7 +8,7 @@ import NavigationButtons from '../src/components/Docs/NavigationButtons'
 
 React-pdf is shipped with a `Font` module that enables to load fonts from different sources, handle how words are wrapped and defined an emoji source to embed these glyphs on your document.
 
-You can define multiple sources for the same font family, each with a different `fontStyle` or `fontWeight`. React-pdf will pick the appropiate font for each `<Text />` based on its style and the registered fonts.
+You can define multiple sources for the same font family, each with a different `fontStyle` or `fontWeight`. React-pdf will pick the appropriate font for each `<Text />` based on its style and the registered fonts.
 
 ```
 import { StyleSheet, Font } from '@react-pdf/renderer'
@@ -28,7 +28,22 @@ const styles = StyleSheet.create({
 
 ### `register`
 
-Fonts really make the difference when it comes on styling a document. For obvious reasons, react-pdf cannot ship a wide amount of them. That's why we provide an easy way to load your custom fonts from many different sources via the `register` method very easily.
+Fonts really make the difference when it comes on styling a document. For obvious reasons, react-pdf cannot ship a wide amount of them. Here's a list of available font families that are supported out of the box:
+
+- `Courier`
+- `Courier-Bold`
+- `Courier-Oblique`
+- `Courier-BoldOblique`
+- `Helvetica`
+- `Helvetica-Bold`
+- `Helvetica-Oblique`
+- `Helvetica-BoldOblique`
+- `Times-Roman`
+- `Times-Bold`
+- `Times-Italic`
+- `Times-BoldItalic`
+
+In case you want to use a different font, you may load additional font files from many different sources via the `register` method very easily.
 
 ```
 import { Font } from '@react-pdf/renderer'
