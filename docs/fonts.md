@@ -33,12 +33,15 @@ Fonts really make the difference when it comes on styling a document. For obviou
 - `Courier`
 - `Courier-Bold`
 - `Courier-Oblique`
+- `Courier-BoldOblique`
 - `Helvetica`
 - `Helvetica-Bold`
 - `Helvetica-Oblique`
+- `Helvetica-BoldOblique`
 - `Times-Roman`
 - `Times-Bold`
 - `Times-Italic`
+- `Times-BoldItalic`
 
 In case you want to use a different font, you may load additional font files from many different sources via the `register` method very easily.
 
