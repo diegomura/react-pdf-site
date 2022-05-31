@@ -160,7 +160,6 @@ const MyDocument = () => (
 - flexShrink
 - flexBasis
 - justifyContent
-- order
 
 #### Layout
 
