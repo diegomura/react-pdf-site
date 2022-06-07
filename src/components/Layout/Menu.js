@@ -185,6 +185,7 @@ const Menu = ({ opened }) => (
 
       <Item to="/advanced" title="Advanced">
         <Item to="/advanced#page-wrapping" title="Page wrapping" />
+        <Item to="/advanced#bookmarks" title="Bookmarks" />
         <Item
           to="/advanced#on-the-fly-rendering"
           title="On the fly rendering"
