@@ -18,7 +18,9 @@ const doc = () => (
 
 The example above will create a table of content of 2 nested items: The parent will be the book's name, and the child the chapter's name. You can nest as many bookmarks as you want.
 
-#### Bookmark type
+##### Bookmark type
+
+Object that matches the following schema:
 
 | Value                 |                                     Description                                     |      Type |
 | --------------------- | :---------------------------------------------------------------------------------: | --------: |
