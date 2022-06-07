@@ -3,6 +3,7 @@ import NavigationButtons from '../src/components/Docs/NavigationButtons'
 
 import OnTheFly from './on-the-fly.md'
 import PageWrapping from './page-wrapping.md'
+import Bookmarks from './bookmarks.md'
 import OrphanWidowProtection from './orphan-widow-protection.md'
 import DynamicContent from './dynamic-content.md'
 import Hyphenation from './hyphenation.md'
@@ -15,6 +16,7 @@ import Webpack from './webpack.md'
 ## Advanced
 
 <PageWrapping components={components} />
+<Bookmarks components={components} />
 <OnTheFly components={components} />
 <OrphanWidowProtection components={components} />
 <DynamicContent components={components} />

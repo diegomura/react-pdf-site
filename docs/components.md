@@ -40,6 +40,7 @@ Represents single page inside the PDF documents, or a subset of them if using th
 | wrap        |                                                                          Enables page wrapping for this page. [See more](/advanced#page-wrapping)                                                                           |                             _Boolean_ |       _true_ |
 | style       |                                                                                          Defines page styles. [See more](/styling)                                                                                          |                     _Object_, _Array_ |  _undefined_ |
 | debug       |                                                                          Enables debug mode on page bounding box. [See more](/advanced#debugging)                                                                           |                             _Boolean_ |      _false_ |
+| bookmark    |                                                                                 Attach bookmark to element. [See more](/advanced#bookmarks)                                                                                 |                  _String_ or Bookmark |  _undefined_ |
 
 ---
 
@@ -49,13 +50,14 @@ The most fundamental component for building a UI and is designed to be nested in
 
 #### Valid props
 
-| Prop name |                                  Description                                  |              Type |     Default |
-| --------- | :---------------------------------------------------------------------------: | ----------------: | ----------: |
-| wrap      | Enable/disable page wrapping for element [See more](/advanced#page-wrapping)  |         _Boolean_ |      _true_ |
-| style     |                   Defines view styles. [See more](/styling)                   | _Object_, _Array_ | _undefined_ |
-| render    | Render dynamic content based on context [See more](/advanced#dynamic-content) |        _Function_ | _undefined_ |
-| debug     |   Enables debug mode on view bounding box. [See more](/advanced#debugging)    |         _Boolean_ |     _false_ |
-| fixed     |  Render component in all wrapped pages. [See more](/advanced#page-wrapping)   |         _Boolean_ |     _false_ |
+| Prop name |                                  Description                                  |                 Type |     Default |
+| --------- | :---------------------------------------------------------------------------: | -------------------: | ----------: |
+| wrap      | Enable/disable page wrapping for element [See more](/advanced#page-wrapping)  |            _Boolean_ |      _true_ |
+| style     |                   Defines view styles. [See more](/styling)                   |    _Object_, _Array_ | _undefined_ |
+| render    | Render dynamic content based on context [See more](/advanced#dynamic-content) |           _Function_ | _undefined_ |
+| debug     |   Enables debug mode on view bounding box. [See more](/advanced#debugging)    |            _Boolean_ |     _false_ |
+| fixed     |  Render component in all wrapped pages. [See more](/advanced#page-wrapping)   |            _Boolean_ |     _false_ |
+| bookmark  |          Attach bookmark to element. [See more](/advanced#bookmarks)          | _String_ or Bookmark | _undefined_ |
 
 ---
 
@@ -65,14 +67,15 @@ A React component for displaying network or local (Node only) JPG or PNG images,
 
 #### Valid props
 
-| Prop name |                                 Description                                 |              Type |     Default |
-| --------- | :-------------------------------------------------------------------------: | ----------------: | ----------: |
-| src       |     Source of the image [See Source object](/components#source-object)      |   _Source object_ | _undefined_ |
-| source    |        Alias of _src_ [See Source object](/components#source-object)        |   _Source object_ | _undefined_ |
-| style     |                  Defines view styles. [See more](/styling)                  | _Object_, _Array_ | _undefined_ |
-| debug     |  Enables debug mode on view bounding box. [See more](/advanced#debugging)   |         _Boolean_ |     _false_ |
-| fixed     | Renders component in all wrapped pages. [See more](/advanced#page-wrapping) |         _Boolean_ |     _false_ |
-| cache     |              Enables image caching between consecutive renders              |         _Boolean_ |      _true_ |
+| Prop name |                                 Description                                 |                 Type |     Default |
+| --------- | :-------------------------------------------------------------------------: | -------------------: | ----------: |
+| src       |     Source of the image [See Source object](/components#source-object)      |      _Source object_ | _undefined_ |
+| source    |        Alias of _src_ [See Source object](/components#source-object)        |      _Source object_ | _undefined_ |
+| style     |                  Defines view styles. [See more](/styling)                  |    _Object_, _Array_ | _undefined_ |
+| debug     |  Enables debug mode on view bounding box. [See more](/advanced#debugging)   |            _Boolean_ |     _false_ |
+| fixed     | Renders component in all wrapped pages. [See more](/advanced#page-wrapping) |            _Boolean_ |     _false_ |
+| cache     |              Enables image caching between consecutive renders              |            _Boolean_ |      _true_ |
+| bookmark  |         Attach bookmark to element. [See more](/advanced#bookmarks)         | _String_ or Bookmark | _undefined_ |
 
 ##### Source object
 
@@ -94,14 +97,15 @@ A React component for displaying text. Text supports nesting of other Text or Li
 
 #### Valid props
 
-| Prop name           |                                       Description                                       |              Type |     Default |
-| ------------------- | :-------------------------------------------------------------------------------------: | ----------------: | ----------: |
-| wrap                |     Enables/disables page wrapping for element [See more](/advanced#page-wrapping)      |         _Boolean_ |      _true_ |
-| render              |     Renders dynamic content based on context [See more](/advanced#dynamic-content)      |        _Function_ | _undefined_ |
-| style               |                        Defines view styles. [See more](/styling)                        | _Object_, _Array_ | _undefined_ |
-| debug               |        Enables debug mode on view bounding box. [See more](/advanced#debugging)         |         _Boolean_ |     _false_ |
-| fixed               |       Renders component in all wrapped pages. [See more](/advanced#page-wrapping)       |         _Boolean_ |     _false_ |
-| hyphenationCallback | Specify hyphenation callback at a text level. See [hypthenation](/advanced#hyphenation) |        _Function_ | _undefined_ |
+| Prop name           |                                       Description                                       |                 Type |     Default |
+| ------------------- | :-------------------------------------------------------------------------------------: | -------------------: | ----------: |
+| wrap                |     Enables/disables page wrapping for element [See more](/advanced#page-wrapping)      |            _Boolean_ |      _true_ |
+| render              |     Renders dynamic content based on context [See more](/advanced#dynamic-content)      |           _Function_ | _undefined_ |
+| style               |                        Defines view styles. [See more](/styling)                        |    _Object_, _Array_ | _undefined_ |
+| debug               |        Enables debug mode on view bounding box. [See more](/advanced#debugging)         |            _Boolean_ |     _false_ |
+| fixed               |       Renders component in all wrapped pages. [See more](/advanced#page-wrapping)       |            _Boolean_ |     _false_ |
+| hyphenationCallback | Specify hyphenation callback at a text level. See [hypthenation](/advanced#hyphenation) |           _Function_ | _undefined_ |
+| bookmark            |               Attach bookmark to element. [See more](/advanced#bookmarks)               | _String_ or Bookmark | _undefined_ |
 
 ---
 
@@ -111,13 +115,14 @@ A React component for displaying an hyperlink. Link’s can be nested inside a T
 
 #### Valid props
 
-| Prop name |                                 Description                                  |              Type |     Default |
-| --------- | :--------------------------------------------------------------------------: | ----------------: | ----------: |
-| src       |                                  Valid URL                                   |          _String_ | _undefined_ |
-| wrap      | Enable/disable page wrapping for element [See more](/advanced#page-wrapping) |         _Boolean_ |      _true_ |
-| style     |                  Defines view styles. [See more](/styling)                   | _Object_, _Array_ | _undefined_ |
-| debug     |   Enables debug mode on view bounding box. [See more](/advanced#debugging)   |         _Boolean_ |     _false_ |
-| fixed     |  Render component in all wrapped pages. [See more](/advanced#page-wrapping)  |         _Boolean_ |     _false_ |
+| Prop name |                                 Description                                  |                 Type |     Default |
+| --------- | :--------------------------------------------------------------------------: | -------------------: | ----------: |
+| src       |                                  Valid URL                                   |             _String_ | _undefined_ |
+| wrap      | Enable/disable page wrapping for element [See more](/advanced#page-wrapping) |            _Boolean_ |      _true_ |
+| style     |                  Defines view styles. [See more](/styling)                   |    _Object_, _Array_ | _undefined_ |
+| debug     |   Enables debug mode on view bounding box. [See more](/advanced#debugging)   |            _Boolean_ |     _false_ |
+| fixed     |  Render component in all wrapped pages. [See more](/advanced#page-wrapping)  |            _Boolean_ |     _false_ |
+| bookmark  |         Attach bookmark to element. [See more](/advanced#bookmarks)          | _String_ or Bookmark | _undefined_ |
 
 ---
 
@@ -141,12 +146,13 @@ A React component for freely drawing any content on the page.
 
 #### Valid props
 
-| Prop name |                                 Description                                 |              Type |     Default |
-| --------- | :-------------------------------------------------------------------------: | ----------------: | ----------: |
-| style     |                  Defines view styles. [See more](/styling)                  | _Object_, _Array_ | _undefined_ |
-| paint     |                              Painter function                               |        _Function_ | _undefined_ |
-| debug     |  Enables debug mode on view bounding box. [See more](/advanced#debugging)   |         _Boolean_ |     _false_ |
-| fixed     | Renders component in all wrapped pages. [See more](/advanced#page-wrapping) |         _Boolean_ |     _false_ |
+| Prop name |                                 Description                                 |                 Type |     Default |
+| --------- | :-------------------------------------------------------------------------: | -------------------: | ----------: |
+| style     |                  Defines view styles. [See more](/styling)                  |    _Object_, _Array_ | _undefined_ |
+| paint     |                              Painter function                               |           _Function_ | _undefined_ |
+| debug     |  Enables debug mode on view bounding box. [See more](/advanced#debugging)   |            _Boolean_ |     _false_ |
+| fixed     | Renders component in all wrapped pages. [See more](/advanced#page-wrapping) |            _Boolean_ |     _false_ |
+| bookmark  |         Attach bookmark to element. [See more](/advanced#bookmarks)         | _String_ or Bookmark | _undefined_ |
 
 React-pdf does not check how much space your drawing takes, so make sure you always define a `width` and `height` on the `style` prop.
 
