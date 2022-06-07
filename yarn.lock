@@ -1421,10 +1421,10 @@
   resolved "https://registry.yarnpkg.com/@react-pdf/png-js/-/png-js-2.1.0.tgz#1a6b8858fb7ad6c3e17ae628078928ac8faea951"
   integrity sha512-S5T5qGOlDK6VUJBVGkltNcPFEOWJW5FAD5IWkp9ATYPehC7L1d0CwuFlkFDaHh9ySmm46fKRHfn4YNQguq9gmw==
 
-"@react-pdf/primitives@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf/primitives/-/primitives-3.0.0.tgz#4f51e6dd8adc61fb48cf2a84eed459befa8099b0"
-  integrity sha512-90mDfcfvvksHR1wxfNCfeU/8p9owucVvkMayOY9wZFcsYB3tHCVlUyW6SW3++awxYEMg3hAZGwLmAD32MX7KPw==
+"@react-pdf/primitives@3.0.1", "@react-pdf/primitives@^3.0.0":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@react-pdf/primitives/-/primitives-3.0.1.tgz#3b2bfebdb1fef6fc7f99214ccfd0932267b8e0cd"
+  integrity sha512-0HGcknrLNwyhxe+SZCBL29JY4M85mXKdvTZE9uhjNbADGgTc8wVnkc5+e4S/lDvugbVISXyuIhZnYwtK9eDnyQ==
 
 "@react-pdf/render@^3.1.0":
   version "3.1.0"
