@@ -40,6 +40,7 @@ Represents single page inside the PDF documents, or a subset of them if using th
 | wrap        |                                                                          Enables page wrapping for this page. [See more](/advanced#page-wrapping)                                                                           |                             _Boolean_ |       _true_ |
 | style       |                                                                                          Defines page styles. [See more](/styling)                                                                                          |                     _Object_, _Array_ |  _undefined_ |
 | debug       |                                                                          Enables debug mode on page bounding box. [See more](/advanced#debugging)                                                                           |                             _Boolean_ |      _false_ |
+| dpi         |                                                                                       Enables setting a custom DPI for page contents.                                                                                       |                              _Number_ |         _72_ |
 | bookmark    |                                                                                 Attach bookmark to element. [See more](/advanced#bookmarks)                                                                                 |                  _String_ or Bookmark |  _undefined_ |
 
 ---
