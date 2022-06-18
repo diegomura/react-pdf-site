@@ -235,6 +235,9 @@ const MyDocument = () => (
 - transform:translate
 - transform:translateX
 - transform:translateY
+- transform:skew
+- transform:skewX
+- transform:skewY
 - transform:matrix
 - transformOrigin
 
