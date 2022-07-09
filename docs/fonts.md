@@ -53,7 +53,7 @@ Font.register({ family: 'FamilyName', src: source, fontStyle: 'normal', fontWeig
 
 #### source
 
-Specifies the source of the font. This can either be a valid URL, or an absolute path if you're using react-pdf on Node.
+Specifies the source of the font. This can either be a valid URL, or an absolute path if you're using react-pdf on Node. Only .ttf files are supported.
 
 #### family
 
