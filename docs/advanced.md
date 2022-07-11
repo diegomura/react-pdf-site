@@ -9,7 +9,6 @@ import DynamicContent from './dynamic-content.md'
 import Hyphenation from './hyphenation.md'
 import Debugging from './debugging.md'
 import Express from './express.md'
-import Webpack from './webpack.md'
 
 <EditButton to="https://github.com/react-pdf/site/blob/master/docs/advanced.md" />
 
@@ -23,7 +22,6 @@ import Webpack from './webpack.md'
 <Debugging components={components} />
 <Hyphenation components={components} />
 <Express components={components} />
-<Webpack components={components} />
 
 <NavigationButtons
   backSrc="/styling"
