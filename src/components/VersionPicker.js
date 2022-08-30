@@ -85,6 +85,7 @@ const VersionPicker = ({ selected = 'v2' }) => {
       <Popup open={menuOpen} onMouseLeave={toggleMenu}>
         <div onClick={() => onItemClick('v1')}>v1</div>
         <div onClick={() => onItemClick('v2')}>v2</div>
+        <div onClick={() => onItemClick('v3')}>v3</div>
       </Popup>
     </Wrapper>
   );
