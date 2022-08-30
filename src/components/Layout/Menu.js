@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styled from '@emotion/styled';
 import { withRouter } from 'next/router';
 
+import Ads from './Ads';
 import Logo from '../UI/Logo';
 import GitHubIcon from './GitHubIcon';
 import media from '../../styled/media';
@@ -67,6 +68,7 @@ const List = styled.ul`
   width: 100%;
   overflow: auto;
   list-style: none;
+  alignitems: 'center';
 
   ${media.phone} {
     margin: 35px 0px;
@@ -97,12 +99,16 @@ const Item = withRouter(({ router, to, title, children, ...props }) => {
   return (
     <ItemWrapper>
       {isAbsoluteUrl && (
-        <MenuLink href={to} target="_blank" {...props} active={active}>{title}</MenuLink>
+        <MenuLink href={to} target="_blank" {...props} active={active}>
+          {title}
+        </MenuLink>
       )}
 
       {!isAbsoluteUrl && (
         <Link href={to} {...props}>
-          <MenuLink href={to} active={active}>{title}</MenuLink>
+          <MenuLink href={to} active={active}>
+            {title}
+          </MenuLink>
         </Link>
       )}
       {children && <SubItems active={active}>{children}</SubItems>}
@@ -178,9 +184,9 @@ const Menu = ({ opened }) => (
       </Item>
 
       <Item to="/node" title="Node API">
-      <Item to="/node#rendertofile" title="renderToFile" />
-      <Item to="/node#rendertostring" title="renderToString" />
-      <Item to="/node#rendertostream" title="renderToStream" />
+        <Item to="/node#rendertofile" title="renderToFile" />
+        <Item to="/node#rendertostring" title="renderToString" />
+        <Item to="/node#rendertostream" title="renderToStream" />
       </Item>
 
       <Item to="/advanced" title="Advanced">
@@ -197,13 +203,18 @@ const Menu = ({ opened }) => (
         <Item to="/advanced#dynamic-content" title="Dynamic content" />
         <Item to="/advanced#debugging" title="Debugging" />
         <Item to="/advanced#hyphenation" title="Hyphenation" />
-        <Item to="/advanced#usage-with-express.js" title="Usage with Express.js" />
+        <Item
+          to="/advanced#usage-with-express.js"
+          title="Usage with Express.js"
+        />
       </Item>
 
       <Item to="/repl" title="Playground / REPL" />
 
       <Item to="https://opencollective.com/react-pdf" title="Donate" />
     </List>
+
+    <Ads />
 
     <GitHubIcon />
   </Nav>
