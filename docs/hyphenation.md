@@ -18,7 +18,7 @@ const hyphenationCallback = (word) => {
 Font.registerHyphenationCallback(hyphenationCallback);
 ```
 
-You can use the [default hyphenation callback](https://github.com/diegomura/react-pdf/blob/master/src/layout/linebreaker/formatter.js#L65) as a starting point.
+You can use the [default hyphenation callback](https://github.com/diegomura/react-pdf/blob/master/packages/textkit/src/engines/wordHyphenation/index.js) as a starting point.
 
 > **Protip:** If you don't want to hyphenate words at all, just provide a callback that returns the same words it receives. More information [here](/fonts#registerHyphenationCallback)
 
