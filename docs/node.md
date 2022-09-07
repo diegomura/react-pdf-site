@@ -27,9 +27,9 @@ await renderToFile(<MyDocument />, `${__dirname}/my-doc.pdf`);
 
 | Prop name |                     Description                     | Default     |
 | --------- | :-------------------------------------------------: | ----------- |
-| document  |       Document's root element tp be rendered        | _undefined_ |
+| document  |       Document's root element to be rendered        | _undefined_ |
 | path      | File system path where the document will be created | _undefined_ |
-| callback  |  Function to be called after renderig is finished   | _undefined_ |
+| callback  |  Function to be called after rendering is finished   | _undefined_ |
 
 ### renderToString
 
