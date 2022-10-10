@@ -24,6 +24,22 @@ const DocumentWrapper = styled.div`
   z-index: 500;
   align-items: center;
   justify-content: center;
+
+  .react-pdf__Document {
+    &.previous-document {
+      canvas {
+        opacity: 0.5;
+      }
+    }
+
+    &.rendering-document {
+      position: absolute;
+
+      .react-pdf__Page {
+        box-shadow: none;
+      }
+    }
+  }
 `;
 
 const Message = styled.div`
@@ -46,6 +62,8 @@ const PDFViewer = ({ value, onUrlChange, onRenderError }) => {
   const [numPages, setNumPages] = useState(null);
 
   const [currentPage, setCurrentPage] = useState(1);
+
+  const [previousRenderValue, setPreviousRenderValue] = useState(null);
 
   const render = useAsync(async () => {
     if (!value) return null;
@@ -73,17 +91,45 @@ const PDFViewer = ({ value, onUrlChange, onRenderError }) => {
     setCurrentPage((prev) => Math.min(prev, d.numPages));
   };
 
+  const isFirstRendering = !previousRenderValue;
+
+  const isLatestValueRendered = previousRenderValue === render.value;
+  const isBusy = render.loading || !isLatestValueRendered;
+
+  const shouldShowTextLoader = isFirstRendering && isBusy;
+  const shouldShowPreviousDocument = !isFirstRendering && isBusy;
+
   return (
     <Wrapper>
-      <Message active={render.loading}>Rendering PDF...</Message>
+      <Message active={shouldShowTextLoader}>Rendering PDF...</Message>
 
       <Message active={!render.loading && !value}>
         You are not rendering a valid document
       </Message>
 
       <DocumentWrapper>
-        <Document file={render.value} onLoadSuccess={onDocumentLoad}>
-          <Page pageNumber={currentPage} />
+        {shouldShowPreviousDocument && previousRenderValue ? (
+          <Document
+            key={previousRenderValue}
+            className="previous-document"
+            file={previousRenderValue}
+            loading={null}
+          >
+            <Page key={currentPage} pageNumber={currentPage} />
+          </Document>
+        ) : null}
+        <Document
+          key={render.value}
+          className={shouldShowPreviousDocument ? 'rendering-document' : null}
+          file={render.value}
+          loading={null}
+          onLoadSuccess={onDocumentLoad}
+        >
+          <Page
+            key={currentPage}
+            pageNumber={currentPage}
+            onRenderSuccess={() => setPreviousRenderValue(render.value)}
+          />
         </Document>
       </DocumentWrapper>
 
