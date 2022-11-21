@@ -284,7 +284,7 @@ SVG presentation attributes are CSS properties that can be used as attributes on
 | strokeLinecap    |          Defines the shape to be used at the end of open subpaths when they are stroked.           |           _String_ |      _butt_ |
 | strokeDasharray  |           Defines the pattern of dashes and gaps used to paint the outline of the shape.           |           _String_ | _undefined_ |
 | transform        | Defines a list of transform definitions that are applied to an element and the element's children. |           _String_ | _undefined_ |
-| textAnchor       |                          Defines the vertical alignment a string of text.                          |           _String_ | _undefined_ |
+| textAnchor       |                       Defines the horizontal alignment of a string of text.                        |           _String_ | _undefined_ |
 | visibility       |                       Lets you control the visibility of graphical elements.                       |           _String_ |   _visible_ |
 
 <NavigationButtons
