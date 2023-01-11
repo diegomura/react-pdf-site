@@ -11,6 +11,29 @@ React-pdf follows the [React primitives](https://github.com/lelandrichardson/rea
 
 This component represents the PDF document itself. It _must_ be the root of your tree element structure, and under no circumstances should it be used as child of another react-pdf component. In addition, it should only have children of type `<Page />`.
 
+````jsx
+import React from 'react'
+import {
+  Page,
+  Document ,
+  StyleSheet,
+} from "@react-pdf/renderer"
+
+export default function PDF() {
+ const styles = StyleSheet.create({
+    page: {
+    ...
+    }})
+return(
+  <Document ref={pdfRef}>
+          <Page size="A4" style={styles.page}>
+              ....
+           </Page>
+  </Document>
+  )
+}
+````
+
 #### Valid props
 
 | Prop name  |                               Description                               |                                      Type |       Default |
