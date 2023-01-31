@@ -62,13 +62,14 @@ Represents single page inside the PDF documents, or a subset of them if using th
 #### Valid props
 
 | Prop name   |                                                                                                         Description                                                                                                         |                                            Type |      Default |
-| ----------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ----------------------------------------------: | -----------: |
+|-------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|------------------------------------------------:|-------------:|
 | size        | Defines page size. If _String_, must be one of the [available page sizes](https://github.com/diegomura/react-pdf/blob/master/packages/layout/src/page/getSize.js). Height is optional, if ommited it will behave as "auto". |           _String_, _Array_, _Number_, _Object_ |       _"A4"_ |
 | orientation |                                                                             Defines page orientation. _Valid values: "portrait" or "landscape"_                                                                             |                                        _String_ | _"portrait"_ |
 | wrap        |                                                                          Enables page wrapping for this page. [See more](/advanced#page-wrapping)                                                                           |                                       _Boolean_ |       _true_ |
 | style       |                                                                                          Defines page styles. [See more](/styling)                                                                                          |                               _Object_, _Array_ |  _undefined_ |
 | debug       |                                                                          Enables debug mode on page bounding box. [See more](/advanced#debugging)                                                                           |                                       _Boolean_ |      _false_ |
 | dpi         |                                                                                       Enables setting a custom DPI for page contents.                                                                                       |                                        _Number_ |         _72_ |
+| id          |                                                                       Destination to link to. Must begin with `#`. [See more](/advanced#destinations)                                                                       |                                        _String_ |  _undefined_ |
 | bookmark    |                                                                                 Attach bookmark to element. [See more](/advanced#bookmarks)                                                                                 | _String_ or [Bookmark](/advanced#bookmark-type) |  _undefined_ |
 
 ---
@@ -79,14 +80,15 @@ The most fundamental component for building a UI and is designed to be nested in
 
 #### Valid props
 
-| Prop name |                                  Description                                  |                                            Type |     Default |
-| --------- | :---------------------------------------------------------------------------: | ----------------------------------------------: | ----------: |
-| wrap      | Enable/disable page wrapping for element [See more](/advanced#page-wrapping)  |                                       _Boolean_ |      _true_ |
-| style     |                   Defines view styles. [See more](/styling)                   |                               _Object_, _Array_ | _undefined_ |
-| render    | Render dynamic content based on context [See more](/advanced#dynamic-content) |                                      _Function_ | _undefined_ |
-| debug     |   Enables debug mode on view bounding box. [See more](/advanced#debugging)    |                                       _Boolean_ |     _false_ |
-| fixed     |  Render component in all wrapped pages. [See more](/advanced#page-wrapping)   |                                       _Boolean_ |     _false_ |
-| bookmark  |          Attach bookmark to element. [See more](/advanced#bookmarks)          | _String_ or [Bookmark](/advanced#bookmark-type) | _undefined_ |
+| Prop name |                                   Description                                   |                                            Type |     Default |
+|-----------|:-------------------------------------------------------------------------------:|------------------------------------------------:|------------:|
+| wrap      |  Enable/disable page wrapping for element [See more](/advanced#page-wrapping)   |                                       _Boolean_ |      _true_ |
+| style     |                    Defines view styles. [See more](/styling)                    |                               _Object_, _Array_ | _undefined_ |
+| render    |  Render dynamic content based on context [See more](/advanced#dynamic-content)  |                                      _Function_ | _undefined_ |
+| debug     |    Enables debug mode on view bounding box. [See more](/advanced#debugging)     |                                       _Boolean_ |     _false_ |
+| fixed     |   Render component in all wrapped pages. [See more](/advanced#page-wrapping)    |                                       _Boolean_ |     _false_ |
+| id        | Destination to link to. Must begin with `#`. [See more](/advanced#destinations) |                                        _String_ | _undefined_ |
+| bookmark  |           Attach bookmark to element. [See more](/advanced#bookmarks)           | _String_ or [Bookmark](/advanced#bookmark-type) | _undefined_ |
 
 ---
 
@@ -127,13 +129,14 @@ A React component for displaying text. Text supports nesting of other Text or Li
 #### Valid props
 
 | Prop name           |                                       Description                                       |                                            Type |     Default |
-| ------------------- | :-------------------------------------------------------------------------------------: | ----------------------------------------------: | ----------: |
+|---------------------|:---------------------------------------------------------------------------------------:|------------------------------------------------:|------------:|
 | wrap                |     Enables/disables page wrapping for element [See more](/advanced#page-wrapping)      |                                       _Boolean_ |      _true_ |
 | render              |     Renders dynamic content based on context [See more](/advanced#dynamic-content)      |                                      _Function_ | _undefined_ |
 | style               |                        Defines view styles. [See more](/styling)                        |                               _Object_, _Array_ | _undefined_ |
 | debug               |        Enables debug mode on view bounding box. [See more](/advanced#debugging)         |                                       _Boolean_ |     _false_ |
 | fixed               |       Renders component in all wrapped pages. [See more](/advanced#page-wrapping)       |                                       _Boolean_ |     _false_ |
 | hyphenationCallback | Specify hyphenation callback at a text level. See [hypthenation](/advanced#hyphenation) |                                      _Function_ | _undefined_ |
+| id                  |     Destination to link to. Must begin with `#`. [See more](/advanced#destinations)     |                                        _String_ | _undefined_ |
 | bookmark            |               Attach bookmark to element. [See more](/advanced#bookmarks)               | _String_ or [Bookmark](/advanced#bookmark-type) | _undefined_ |
 
 ---
@@ -144,14 +147,14 @@ A React component for displaying an hyperlink. Link’s can be nested inside a T
 
 #### Valid props
 
-| Prop name |                                 Description                                  |                                            Type |     Default |
-| --------- | :--------------------------------------------------------------------------: | ----------------------------------------------: | ----------: |
-| src       |                                  Valid URL                                   |                                        _String_ | _undefined_ |
-| wrap      | Enable/disable page wrapping for element [See more](/advanced#page-wrapping) |                                       _Boolean_ |      _true_ |
-| style     |                  Defines view styles. [See more](/styling)                   |                               _Object_, _Array_ | _undefined_ |
-| debug     |   Enables debug mode on view bounding box. [See more](/advanced#debugging)   |                                       _Boolean_ |     _false_ |
-| fixed     |  Render component in all wrapped pages. [See more](/advanced#page-wrapping)  |                                       _Boolean_ |     _false_ |
-| bookmark  |         Attach bookmark to element. [See more](/advanced#bookmarks)          | _String_ or [Bookmark](/advanced#bookmark-type) | _undefined_ |
+| Prop name |                                  Description                                  |                                            Type |     Default |
+|-----------|:-----------------------------------------------------------------------------:|------------------------------------------------:|------------:|
+| src       |       Valid URL or destination name. [See more](/advanced#destinations)       |                                        _String_ | _undefined_ |
+| wrap      | Enable/disable page wrapping for element. [See more](/advanced#page-wrapping) |                                       _Boolean_ |      _true_ |
+| style     |                   Defines view styles. [See more](/styling)                   |                               _Object_, _Array_ | _undefined_ |
+| debug     |   Enables debug mode on view bounding box. [See more](/advanced#debugging)    |                                       _Boolean_ |     _false_ |
+| fixed     |  Render component in all wrapped pages. [See more](/advanced#page-wrapping)   |                                       _Boolean_ |     _false_ |
+| bookmark  |          Attach bookmark to element. [See more](/advanced#bookmarks)          | _String_ or [Bookmark](/advanced#bookmark-type) | _undefined_ |
 
 ---
 
