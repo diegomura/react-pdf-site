@@ -1,4 +1,34 @@
-### Bookmarks `v2.2.0`
+### Document Navigation
+
+There are two main ways to make a document navigable:
+
+#### Destinations `v2.0.0`
+
+Destinations are the simplest form of navigation. They allow to create interactive links that take the user directly to the defined place within the document.
+
+A destination can be created by setting the `id` prop to a _String_ with the leading hash (`#`) symbol on any supported element ([see more](/components)), and then linking to that id with the `<Link />` element:
+
+```js
+import { Document, Link, Page, Text } from '@react-pdf/renderer'
+
+const doc = () => (
+  <Document>
+    <Page>
+      <Link src='Footnote'> // No hash symbol
+        Click me to get to the footnote
+      </Link>
+
+      // Other content here
+
+      <Text id='#Footnote'> // Notice the leading hash symbol
+        You are here because you clicked the link above
+      </Text>
+    </Page>
+  </Document>
+);
+```
+
+#### Bookmarks `v2.2.0`
 
 Bookmarks allow the user to navigate interactively from one part of the document to another. They form a tree-structured hierarchy of items, which serve as a visual table of contents to display the document’s structure to the user.
 
@@ -17,6 +47,8 @@ const doc = () => (
 ```
 
 The example above will create a table of content of 2 nested items: The parent will be the book's name, and the child the chapter's name. You can nest as many bookmarks as you want.
+
+Note that some older PDF viewers may not support bookmarks.
 
 ##### Bookmark type
 

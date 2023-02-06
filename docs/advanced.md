@@ -1,9 +1,9 @@
 import EditButton from '../src/components/Docs/EditButton'
 import NavigationButtons from '../src/components/Docs/NavigationButtons'
 
-import OnTheFly from './on-the-fly.md'
 import PageWrapping from './page-wrapping.md'
-import Bookmarks from './bookmarks.md'
+import DocumentNavigation from './document-navigation.md'
+import OnTheFly from './on-the-fly.md'
 import OrphanWidowProtection from './orphan-widow-protection.md'
 import DynamicContent from './dynamic-content.md'
 import Hyphenation from './hyphenation.md'
@@ -15,7 +15,7 @@ import Express from './express.md'
 ## Advanced
 
 <PageWrapping components={components} />
-<Bookmarks components={components} />
+<DocumentNavigation components={components} />
 <OnTheFly components={components} />
 <OrphanWidowProtection components={components} />
 <DynamicContent components={components} />
