@@ -14,7 +14,7 @@ This component represents the PDF document itself. It _must_ be the root of your
 #### Valid props
 
 | Prop name  |                               Description                               |                                      Type |       Default |
-| ---------- | :---------------------------------------------------------------------: | ----------------------------------------: | ------------: |
+|------------|:-----------------------------------------------------------------------:|------------------------------------------:|--------------:|
 | title      |               Sets title info on the document's metadata                |                                  _String_ |   _undefined_ |
 | author     |               Sets author info on the document's metadata               |                                  _String_ |   _undefined_ |
 | subject    |              Sets subject info on the document's metadata               |                                  _String_ |   _undefined_ |
@@ -32,7 +32,7 @@ This component represents the PDF document itself. It _must_ be the root of your
 `pageMode` prop can take one of the following values. Take into account some viewers might ignore this setting.
 
 | Value          |                                   Description                                    |
-| -------------- | :------------------------------------------------------------------------------: |
+|----------------|:--------------------------------------------------------------------------------:|
 | useNone        |             Neither document bookmarks nor thumbnail images visible              |
 | useOutlines    |                            Document bookmarks visible                            |
 | useThumbs      |                             Thumbnail images visible                             |
@@ -45,7 +45,7 @@ This component represents the PDF document itself. It _must_ be the root of your
 `pageLayout` prop can take one of the following values. Take into account some viewers might ignore this setting.
 
 | Value          |                              Description                               |
-| -------------- | :--------------------------------------------------------------------: |
+|----------------|:----------------------------------------------------------------------:|
 | singlePage     |                       Display one page at a time                       |
 | oneColumn      |                    Display the pages in one column                     |
 | twoColumnLeft  | Display the pages in two columns, with odd numbered pages on the left  |
@@ -69,7 +69,7 @@ Represents single page inside the PDF documents, or a subset of them if using th
 | style       |                                                                                          Defines page styles. [See more](/styling)                                                                                          |                               _Object_, _Array_ |  _undefined_ |
 | debug       |                                                                          Enables debug mode on page bounding box. [See more](/advanced#debugging)                                                                           |                                       _Boolean_ |      _false_ |
 | dpi         |                                                                                       Enables setting a custom DPI for page contents.                                                                                       |                                        _Number_ |         _72_ |
-| id          |                                                                       Destination to link to. Must begin with `#`. [See more](/advanced#destinations)                                                                       |                                        _String_ |  _undefined_ |
+| id          |                                                                             Destination ID to be linked to. [See more](/advanced#destinations)                                                                              |                                        _String_ |  _undefined_ |
 | bookmark    |                                                                                 Attach bookmark to element. [See more](/advanced#bookmarks)                                                                                 | _String_ or [Bookmark](/advanced#bookmark-type) |  _undefined_ |
 
 ---
@@ -80,15 +80,15 @@ The most fundamental component for building a UI and is designed to be nested in
 
 #### Valid props
 
-| Prop name |                                   Description                                   |                                            Type |     Default |
-|-----------|:-------------------------------------------------------------------------------:|------------------------------------------------:|------------:|
-| wrap      |  Enable/disable page wrapping for element [See more](/advanced#page-wrapping)   |                                       _Boolean_ |      _true_ |
-| style     |                    Defines view styles. [See more](/styling)                    |                               _Object_, _Array_ | _undefined_ |
-| render    |  Render dynamic content based on context [See more](/advanced#dynamic-content)  |                                      _Function_ | _undefined_ |
-| debug     |    Enables debug mode on view bounding box. [See more](/advanced#debugging)     |                                       _Boolean_ |     _false_ |
-| fixed     |   Render component in all wrapped pages. [See more](/advanced#page-wrapping)    |                                       _Boolean_ |     _false_ |
-| id        | Destination to link to. Must begin with `#`. [See more](/advanced#destinations) |                                        _String_ | _undefined_ |
-| bookmark  |           Attach bookmark to element. [See more](/advanced#bookmarks)           | _String_ or [Bookmark](/advanced#bookmark-type) | _undefined_ |
+| Prop name |                                  Description                                   |                                            Type |     Default |
+|-----------|:------------------------------------------------------------------------------:|------------------------------------------------:|------------:|
+| wrap      | Enable/disable page wrapping for element. [See more](/advanced#page-wrapping)  |                                       _Boolean_ |      _true_ |
+| style     |                   Defines view styles. [See more](/styling)                    |                               _Object_, _Array_ | _undefined_ |
+| render    | Render dynamic content based on context. [See more](/advanced#dynamic-content) |                                      _Function_ | _undefined_ |
+| debug     |    Enables debug mode on view bounding box. [See more](/advanced#debugging)    |                                       _Boolean_ |     _false_ |
+| fixed     |   Render component in all wrapped pages. [See more](/advanced#page-wrapping)   |                                       _Boolean_ |     _false_ |
+| id        |       Destination ID to be linked to. [See more](/advanced#destinations)       |                                        _String_ | _undefined_ |
+| bookmark  |          Attach bookmark to element. [See more](/advanced#bookmarks)           | _String_ or [Bookmark](/advanced#bookmark-type) | _undefined_ |
 
 ---
 
@@ -99,9 +99,9 @@ A React component for displaying network or local (Node only) JPG or PNG images,
 #### Valid props
 
 | Prop name |                                 Description                                 |                                            Type |     Default |
-| --------- | :-------------------------------------------------------------------------: | ----------------------------------------------: | ----------: |
-| src       |     Source of the image [See Source object](/components#source-object)      |                                 _Source object_ | _undefined_ |
-| source    |        Alias of _src_ [See Source object](/components#source-object)        |                                 _Source object_ | _undefined_ |
+|-----------|:---------------------------------------------------------------------------:|------------------------------------------------:|------------:|
+| src       |         Source of the image. [See more](/components#source-object)          |                                 _Source object_ | _undefined_ |
+| source    |            Alias of _src_. [See more](/components#source-object)            |                                 _Source object_ | _undefined_ |
 | style     |                  Defines view styles. [See more](/styling)                  |                               _Object_, _Array_ | _undefined_ |
 | debug     |  Enables debug mode on view bounding box. [See more](/advanced#debugging)   |                                       _Boolean_ |     _false_ |
 | fixed     | Renders component in all wrapped pages. [See more](/advanced#page-wrapping) |                                       _Boolean_ |     _false_ |
@@ -113,7 +113,7 @@ A React component for displaying network or local (Node only) JPG or PNG images,
 Defines the source of an image. Can be in any of these four valid forms:
 
 | Form type   |                                                             Description                                                             | Example                                                    |
-| ----------- | :---------------------------------------------------------------------------------------------------------------------------------: | ---------------------------------------------------------- |
+|-------------|:-----------------------------------------------------------------------------------------------------------------------------------:|------------------------------------------------------------|
 | String      |                                           Valid image URL or filesystem path (Node only)                                            | `www.react-pdf.org/test.jpg`                               |
 | URL object  |                                       Enables to pass extra parameters on how to fetch images                                       | `{ uri: valid-url, method: 'GET', headers: {}, body: '' }` |
 | Buffer      |                   Renders image directly from Buffer. Image format (png or jpg) will be guessed based on Buffer.                    | `Buffer`                                                   |
@@ -130,13 +130,13 @@ A React component for displaying text. Text supports nesting of other Text or Li
 
 | Prop name           |                                       Description                                       |                                            Type |     Default |
 |---------------------|:---------------------------------------------------------------------------------------:|------------------------------------------------:|------------:|
-| wrap                |     Enables/disables page wrapping for element [See more](/advanced#page-wrapping)      |                                       _Boolean_ |      _true_ |
-| render              |     Renders dynamic content based on context [See more](/advanced#dynamic-content)      |                                      _Function_ | _undefined_ |
+| wrap                |     Enables/disables page wrapping for element. [See more](/advanced#page-wrapping)     |                                       _Boolean_ |      _true_ |
+| render              |     Renders dynamic content based on context. [See more](/advanced#dynamic-content)     |                                      _Function_ | _undefined_ |
 | style               |                        Defines view styles. [See more](/styling)                        |                               _Object_, _Array_ | _undefined_ |
 | debug               |        Enables debug mode on view bounding box. [See more](/advanced#debugging)         |                                       _Boolean_ |     _false_ |
 | fixed               |       Renders component in all wrapped pages. [See more](/advanced#page-wrapping)       |                                       _Boolean_ |     _false_ |
 | hyphenationCallback | Specify hyphenation callback at a text level. See [hypthenation](/advanced#hyphenation) |                                      _Function_ | _undefined_ |
-| id                  |     Destination to link to. Must begin with `#`. [See more](/advanced#destinations)     |                                        _String_ | _undefined_ |
+| id                  |           Destination ID to be linked to. [See more](/advanced#destinations)            |                                        _String_ | _undefined_ |
 | bookmark            |               Attach bookmark to element. [See more](/advanced#bookmarks)               | _String_ or [Bookmark](/advanced#bookmark-type) | _undefined_ |
 
 ---
@@ -147,14 +147,14 @@ A React component for displaying an hyperlink. Link’s can be nested inside a T
 
 #### Valid props
 
-| Prop name |                                  Description                                  |                                            Type |     Default |
-|-----------|:-----------------------------------------------------------------------------:|------------------------------------------------:|------------:|
-| src       |       Valid URL or destination name. [See more](/advanced#destinations)       |                                        _String_ | _undefined_ |
-| wrap      | Enable/disable page wrapping for element. [See more](/advanced#page-wrapping) |                                       _Boolean_ |      _true_ |
-| style     |                   Defines view styles. [See more](/styling)                   |                               _Object_, _Array_ | _undefined_ |
-| debug     |   Enables debug mode on view bounding box. [See more](/advanced#debugging)    |                                       _Boolean_ |     _false_ |
-| fixed     |  Render component in all wrapped pages. [See more](/advanced#page-wrapping)   |                                       _Boolean_ |     _false_ |
-| bookmark  |          Attach bookmark to element. [See more](/advanced#bookmarks)          | _String_ or [Bookmark](/advanced#bookmark-type) | _undefined_ |
+| Prop name |                                          Description                                          |                                            Type |     Default |
+|-----------|:---------------------------------------------------------------------------------------------:|------------------------------------------------:|------------:|
+| src       | Valid URL or destination ID. ID must be prefixed with `#`. [See more](/advanced#destinations) |                                        _String_ | _undefined_ |
+| wrap      |         Enable/disable page wrapping for element. [See more](/advanced#page-wrapping)         |                                       _Boolean_ |      _true_ |
+| style     |                           Defines view styles. [See more](/styling)                           |                               _Object_, _Array_ | _undefined_ |
+| debug     |           Enables debug mode on view bounding box. [See more](/advanced#debugging)            |                                       _Boolean_ |     _false_ |
+| fixed     |          Render component in all wrapped pages. [See more](/advanced#page-wrapping)           |                                       _Boolean_ |     _false_ |
+| bookmark  |                  Attach bookmark to element. [See more](/advanced#bookmarks)                  | _String_ or [Bookmark](/advanced#bookmark-type) | _undefined_ |
 
 ---
 
@@ -165,7 +165,7 @@ A React component for displaying a note annotation inside the document.
 #### Valid props
 
 | Prop name |                                 Description                                 |              Type |     Default |
-| --------- | :-------------------------------------------------------------------------: | ----------------: | ----------: |
+|-----------|:---------------------------------------------------------------------------:|------------------:|------------:|
 | style     |                  Defines view styles. [See more](/styling)                  | _Object_, _Array_ | _undefined_ |
 | children  |                             Note string content                             |          _String_ | _undefined_ |
 | fixed     | Renders component in all wrapped pages. [See more](/advanced#page-wrapping) |         _Boolean_ |     _false_ |
@@ -179,7 +179,7 @@ A React component for freely drawing any content on the page.
 #### Valid props
 
 | Prop name |                                 Description                                 |                                            Type |     Default |
-| --------- | :-------------------------------------------------------------------------: | ----------------------------------------------: | ----------: |
+|-----------|:---------------------------------------------------------------------------:|------------------------------------------------:|------------:|
 | style     |                  Defines view styles. [See more](/styling)                  |                               _Object_, _Array_ | _undefined_ |
 | paint     |                              Painter function                               |                                      _Function_ | _undefined_ |
 | debug     |  Enables debug mode on view bounding box. [See more](/advanced#debugging)   |                                       _Boolean_ |     _false_ |
@@ -245,7 +245,7 @@ Iframe PDF viewer for client-side generated documents.
 #### Valid props
 
 | Prop name   |                       Description                        |               Type |     Default |
-| ----------- | :------------------------------------------------------: | -----------------: | ----------: |
+|-------------|:--------------------------------------------------------:|-------------------:|------------:|
 | style       |                  Defines iframe styles                   |  _Object_, _Array_ | _undefined_ |
 | className   |                Defines iframe class name                 |          _String _ | _undefined_ |
 | children    |               PDF document implementation                |         _Document_ | _undefined_ |
@@ -265,7 +265,7 @@ Refer to [on the fly rendering](/advanced#on-the-fly-rendering) for more informa
 #### Valid props
 
 | Prop name |          Description          |                   Type |     Default |
-| --------- | :---------------------------: | ---------------------: | ----------: |
+|-----------|:-----------------------------:|-----------------------:|------------:|
 | document  |  PDF document implementation  |             _Document_ | _undefined_ |
 | fileName  |    Download PDF file name     |               _String_ | _undefined_ |
 | style     |   Defines anchor tag styles   |      _Object_, _Array_ | _undefined_ |
@@ -282,7 +282,7 @@ Refer to [on the fly rendering](/advanced#on-the-fly-rendering) for more informa
 #### Valid props
 
 | Prop name |                           Description                            |       Type |     Default |
-| --------- | :--------------------------------------------------------------: | ---------: | ----------: |
+|-----------|:----------------------------------------------------------------:|-----------:|------------:|
 | document  |                   PDF document implementation                    | _Document_ | _undefined_ |
 | children  | Render prop with blob, url, error and loading state as arguments | _Function_ | _undefined_ |
 
