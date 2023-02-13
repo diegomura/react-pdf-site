@@ -6,7 +6,7 @@ There are two main ways to make a document navigable:
 
 Destinations are the simplest form of navigation. They allow to create interactive links that take the user directly to the defined place within the document.
 
-A destination can be created by setting the `id` prop to a _String_ with the leading hash (`#`) symbol on any supported element ([see more](/components)), and then linking to that id with the `<Link />` element:
+A destination can be created by setting the `id` prop to a _String_ on any supported element ([see more](/components)). After that, the destination can be linked to by setting the `src` prop on the `<Link />` element to the same _String_, but with the leading hash (`#`) symbol:
 
 ```js
 import { Document, Link, Page, Text } from '@react-pdf/renderer'
@@ -14,13 +14,13 @@ import { Document, Link, Page, Text } from '@react-pdf/renderer'
 const doc = () => (
   <Document>
     <Page>
-      <Link src='Footnote'> // No hash symbol
+      <Link src='#Footnote'> // Notice the hash symbol
         Click me to get to the footnote
       </Link>
 
       // Other content here
 
-      <Text id='#Footnote'> // Notice the leading hash symbol
+      <Text id='Footnote'> // No hash symbol
         You are here because you clicked the link above
       </Text>
     </Page>
@@ -55,7 +55,7 @@ Note that some older PDF viewers may not support bookmarks.
 Object that matches the following schema:
 
 | Value                 |                                     Description                                     |      Type |
-| --------------------- | :---------------------------------------------------------------------------------: | --------: |
+|-----------------------|:-----------------------------------------------------------------------------------:|----------:|
 | title                 |                                   Bookmark value                                    |  _String_ |
 | top _(Optional)_      |  Y coodinate from the document top edge where user get's redirected. Defaults to 0  |  _Number_ |
 | left _(Optional)_     |  X coodinate from the document top edge where user get's redirected. Defaults to 0  |  _Number_ |
