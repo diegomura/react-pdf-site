@@ -28,6 +28,20 @@ const doc = () => (
 );
 ```
 
+Once a URL is set as the destination, and the `src` prop is set as a `url`, the widget will be redirected to the specified link. Make sure to wrap inner content into `Text` Component.
+
+```js
+const doc = () => (
+  <Document>
+    <Page>
+      <Link src="www.example.com">
+        <Text>Click me to redirect into www.example.com</Text>
+      </Link>
+    </Page>
+  </Document>
+);
+```
+
 #### Bookmarks `v2.2.0`
 
 Bookmarks allow the user to navigate interactively from one part of the document to another. They form a tree-structured hierarchy of items, which serve as a visual table of contents to display the document’s structure to the user.
