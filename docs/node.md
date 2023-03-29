@@ -53,7 +53,7 @@ const value = await renderToString(<MyDocument />);
 
 | Prop name |              Description               | Default     |
 | --------- | :------------------------------------: | ----------- |
-| document  | Document's root element tp be rendered | _undefined_ |
+| document  | Document's root element to be rendered | _undefined_ |
 
 #### Returns
 
