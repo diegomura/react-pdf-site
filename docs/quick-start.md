@@ -18,7 +18,7 @@ yarn add @react-pdf/renderer
 npm install @react-pdf/renderer --save
 ```
 
-Since a renderer simply implements _how elements render into something_, you still need to have React to make it work (and react-dom for client-side document generation). You can find instructions on how to do that [here](https://reactjs.org/docs/add-react-to-an-existing-app.html).
+Since a renderer simply implements _how elements render into something_, you still need to have React to make it work (and react-dom for client-side document generation). You can find instructions on how to do that [here](https://react.dev/learn/add-react-to-an-existing-project).
 
 ### 2. Create your PDF document
 
