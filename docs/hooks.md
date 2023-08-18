@@ -34,7 +34,7 @@ const [instance, update] = usePDF({ document });
 
 Used to trigger a document re-render. By default, changing the document instance does not triggers a new PDF file creation. This is especially helpful when rendering a download button or something similar, where you might want to render the document right before the action gets triggered.
 
-The update function takes no arguments and does not return anything.
+The update function takes takes the new document and does not return anything.
 
 > For more information about how this hook is used please refer to the [Using the usePDF hook](/advanced#using-the-usepdf-hook) section
 
