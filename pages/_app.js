@@ -13,6 +13,7 @@ require('../public/styles/fonts.css');
 require('../public/styles/prism.css');
 require('../public/styles/tooltips.css');
 require('../public/styles/codemirror.css');
+require('../public/styles/carbon.css');
 
 import App from 'next/app';
 
