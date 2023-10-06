@@ -198,6 +198,7 @@ const Menu = ({ opened }) => (
         <Item to="/advanced#debugging" title="Debugging" />
         <Item to="/advanced#hyphenation" title="Hyphenation" />
         <Item to="/advanced#usage-with-express.js" title="Usage with Express.js" />
+        <Item to="/advanced#rendering-large-documents-in-the-browser" title="Rendering large documents" />
       </Item>
 
       <Item to="/repl" title="Playground / REPL" />
