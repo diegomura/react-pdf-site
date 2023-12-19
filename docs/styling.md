@@ -148,6 +148,7 @@ const MyDocument = () => (
 ### Valid CSS properties
 
 #### Flexbox
+**By default react-pdf uses flexDirection col.** 
 
 - alignContent
 - alignItems
