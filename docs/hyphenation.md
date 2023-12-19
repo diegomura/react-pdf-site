@@ -20,6 +20,6 @@ Font.registerHyphenationCallback(hyphenationCallback);
 
 You can use the [default hyphenation callback](https://github.com/diegomura/react-pdf/blob/master/packages/textkit/src/engines/wordHyphenation/index.js) as a starting point.
 
-> **Protip:** If you don't want to hyphenate words at all, just provide a callback that returns the same words it receives. More information [here](/fonts#registerHyphenationCallback)
+> **Protip:** If you don't want to hyphenate words at all, just provide a callback that returns the same words it receives. More information [here](/fonts#registerhyphenationcallback)
 
 <GoToExample name="hyphenation-callback" />
