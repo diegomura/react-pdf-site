@@ -545,10 +545,10 @@
     "@react-pdf/png-js" "^2.2.0"
     cross-fetch "^3.1.5"
 
-"@react-pdf/layout@^3.7.0":
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf/layout/-/layout-3.7.0.tgz#e751f9b2f8cfcc029c74aab85e2d19c52d295f2e"
-  integrity sha512-KdDBUvRzZRKSnhC0xBAk1S0cS0RxgTbCTpT7WvMTKVSGPYP26c4g6jxaXqomfS73jlF+JdzjYjhnARSSQrfP6A==
+"@react-pdf/layout@^3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@react-pdf/layout/-/layout-3.8.0.tgz#240b0634427b91272cc74cd8149dc4d4aeaf5e83"
+  integrity sha512-SxoX4jX1l2ykjyyuzeEDudpTc8RCbt5RcNjMya0ADi/rfW2aHy/kK44fUgrC0+Z2Y6+Sd9aIzcvtU93mcL7szw==
   dependencies:
     "@babel/runtime" "^7.20.13"
     "@react-pdf/fns" "2.0.1"
@@ -603,14 +603,14 @@
     parse-svg-path "^0.1.2"
     svg-arc-to-cubic-bezier "^3.2.0"
 
-"@react-pdf/renderer@3.1.16":
-  version "3.1.16"
-  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-3.1.16.tgz#3c5b22fc61f89e5a4aa4b3fb6470efb0f1043b76"
-  integrity sha512-c+Q6lBfCSvAsrht6iwwZlkTkWTwnKPpQAL09D2SQQmhS6kZtFTjSeMxvr9JAKX25Nod5KrQo54jGwaxHcA3uPQ==
+"@react-pdf/renderer@3.1.17":
+  version "3.1.17"
+  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-3.1.17.tgz#838f2e691b913a1f9a00ec40b6ba4b2217afbcd9"
+  integrity sha512-jZfTFaW1VH3HZvqk3t/DoWvUB5iKZRirSf5GJuwrGY/+Zf0HMjJJebwRYeLh/PD4oiD6t3zyynOqwYOfBqUSyA==
   dependencies:
     "@babel/runtime" "^7.20.13"
     "@react-pdf/font" "^2.3.8"
-    "@react-pdf/layout" "^3.7.0"
+    "@react-pdf/layout" "^3.8.0"
     "@react-pdf/pdfkit" "^3.0.4"
     "@react-pdf/primitives" "^3.0.0"
     "@react-pdf/render" "^3.2.8"
