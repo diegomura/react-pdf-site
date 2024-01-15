@@ -101,7 +101,7 @@ const Item = withRouter(({ router, to, title, children, ...props }) => {
       )}
 
       {!isAbsoluteUrl && (
-        <Link href={to} {...props}>
+        <Link href={to} {...props} legacyBehavior>
           <MenuLink href={to} active={active}>{title}</MenuLink>
         </Link>
       )}

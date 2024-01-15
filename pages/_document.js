@@ -1,5 +1,6 @@
 import { extractCritical } from 'emotion-server'
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -21,9 +22,8 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <html>
+      <Html>
         <Head>
-          <title>React-pdf</title>
           <link
             rel="stylesheet"
             href="https://unpkg.com/codemirror@5.39.2/lib/codemirror.css"
@@ -59,7 +59,7 @@ class MyDocument extends Document {
             content="/favicons/browserconfig.xml?v=qABAGbMGwd"
           />
           <meta name="theme-color" content="#ffffff" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 
           {/* OG Tags */}
           <meta property="og:title" content="React-pdf" />
@@ -72,11 +72,12 @@ class MyDocument extends Document {
           <meta property="og:image:height" content="650" />
           <meta property="og:url" content="http://react-pdf.org" />
         </Head>
+
         <body>
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

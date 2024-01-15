@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 
 const EditButton = ({ to }) => (
   <Wrapper>
-    <Button href={to} target="_blank" terciary>
+    <Button href={to} target="_blank" terciary="true">
       Edit
     </Button>
   </Wrapper>
