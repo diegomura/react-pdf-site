@@ -28,7 +28,7 @@ const HeroWrapper = styled.div`
 const Hero = () => (
   <HeroWrapper>
     <DocumentGraphicImage src="/images/document-graphic.png" />
-    <Link href="/repl">
+    <Link href="/repl" legacyBehavior>
       <Button primary>Try it out!</Button>
     </Link>
   </HeroWrapper>

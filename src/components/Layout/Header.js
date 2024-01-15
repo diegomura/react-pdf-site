@@ -46,7 +46,7 @@ const Header = ({ router, onMenuClick }) => (
       }}
     />
     {router.pathname !== '/' && (
-      <Link href="/">
+      <Link href="/" legacyBehavior>
         <HeaderLogo
           withText
           size="28px"

@@ -24,14 +24,14 @@ const NavigationButtons = ({ backSrc, backText, nextSrc, nextText }) => (
   <Wrapper>
     <Cell align="left">
       {backSrc && (
-        <Link href={backSrc} prefetch>
+        <Link href={backSrc} prefetch legacyBehavior>
           <Button primary>{`← ${backText}`}</Button>
         </Link>
       )}
     </Cell>
     <Cell align="right">
       {nextSrc && (
-        <Link href={nextSrc} prefetch>
+        <Link href={nextSrc} prefetch legacyBehavior>
           <Button primary>{`${nextText} →`}</Button>
         </Link>
       )}

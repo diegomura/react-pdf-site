@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `;
 
 const GoToExample = ({ name }) => (
-  <Link href={`/repl?example=${name}`}>
+  <Link href={`/repl?example=${name}`} legacyBehavior>
     <Wrapper>
       <Button primary>See it in action →</Button>
     </Wrapper>
