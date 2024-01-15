@@ -1,11 +1,11 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
+import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider } from 'emotion-theming';
 import Head from 'next/head';
 
 import theme from '../src/styled/theme';
 import components from '../src/lib/markdown';
-import trackAnalytics from '../src/lib/analytics';
 
 // Global styles
 require('react-tippy/dist/tippy.css');
@@ -33,9 +33,11 @@ class MyApp extends App {
             <Component {...pageProps} />
           </ThemeProvider>
         </MDXProvider>
+
+        <Analytics />
       </>
     );
   }
 }
 
-export default trackAnalytics(MyApp);
+export default MyApp;
