@@ -1,14 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from '@emotion/styled';
+import dynamic from 'next/dynamic';
 
 import media from '../src/styled/media';
-import Content from '../docs/quick-start.md';
 import Logo from '../src/components/UI/Logo';
 import Layout from '../src/components/Layout';
 import Title from '../src/components/UI/Title';
 import Button from '../src/components/UI/Button';
 import EditButton from '../src/components/Docs/EditButton';
+const Content = dynamic(() => import('../docs/quick-start.md'), { ssr: false });
 
 const DocumentGraphicImage = styled.img`
   margin: 50px;
@@ -29,7 +30,7 @@ const Hero = () => (
   <HeroWrapper>
     <DocumentGraphicImage src="/images/document-graphic.png" />
     <Link href="/repl" legacyBehavior>
-      <Button primary>Try it out!</Button>
+      <Button primary="true">Try it out!</Button>
     </Link>
   </HeroWrapper>
 );

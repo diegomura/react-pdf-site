@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 const GoToExample = ({ name }) => (
   <Link href={`/repl?example=${name}`} legacyBehavior>
     <Wrapper>
-      <Button primary>See it in action →</Button>
+      <Button primary="true">See it in action →</Button>
     </Wrapper>
   </Link>
 );
