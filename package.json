@@ -31,7 +31,7 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "lodash.debounce": "^4.0.8",
     "lz-string": "^1.4.4",
-    "next": "^11",
+    "next": "^13",
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
     "react": "^16.8.6",
