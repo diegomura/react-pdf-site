@@ -93,6 +93,6 @@ Just by that, the `<View />` component will be placed repeatedly throughout all 
 
 > **Protip:** This feature can be very handy for creating nice headers, footers or page numbers, among other use cases. You can even absolutely position fixed elements on your page to create more complex layouts!
 
-<GoToExample />
+<GoToExample name="fixed-components" />
 
 ---
