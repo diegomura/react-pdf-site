@@ -47,8 +47,8 @@ The creation of the PDF document itself. For this task, we use the awesome [pdfk
 Once in this stage, we have our internal tree structure with all the needed data to generate our document. All it remains is deciding what we want to do with this data. This will vary depending on the binding you are using, but basically it means either displaying or saving it.
 
 <NavigationButtons
-  backSrc="/"
-  backText="Quick start guide"
+  backSrc="/compatibility"
+  backText="Compatibility"
   nextSrc="/components"
   nextText="Components"
 />
