@@ -124,6 +124,8 @@ const Menu = ({ opened }) => (
     <List>
       <Item to="/" title="Quick start guide" />
 
+      <Item to="/compatibility" title="Compatibility" />
+
       <Item to="/rendering-process" title="Rendering process" />
 
       <Item to="/components" title="Components">
@@ -178,9 +180,9 @@ const Menu = ({ opened }) => (
       </Item>
 
       <Item to="/node" title="Node API">
-      <Item to="/node#rendertofile" title="renderToFile" />
-      <Item to="/node#rendertostring" title="renderToString" />
-      <Item to="/node#rendertostream" title="renderToStream" />
+        <Item to="/node#rendertofile" title="renderToFile" />
+        <Item to="/node#rendertostring" title="renderToString" />
+        <Item to="/node#rendertostream" title="renderToStream" />
       </Item>
 
       <Item to="/advanced" title="Advanced">

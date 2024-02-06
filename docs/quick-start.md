@@ -101,6 +101,6 @@ ReactDOM.render(<App />, document.getElementById('root'));
 Maybe the most important step — make use of all react-pdf capabilities to create beautiful and awesome documents!
 
 <NavigationButtons
-  nextSrc="/rendering-process"
-  nextText="Rendering process"
+  nextSrc="/compatibility"
+  nextText="Compatibility"
 />
