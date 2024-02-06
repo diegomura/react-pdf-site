@@ -6,16 +6,28 @@ import NavigationButtons from '../src/components/Docs/NavigationButtons'
 
 Starting with react-pdf is extremely simple.
 
+#### Using npm
+
+```
+npm install @react-pdf/renderer --save
+```
+
 #### Using Yarn
 
 ```
 yarn add @react-pdf/renderer
 ```
 
-#### Using npm
+#### Using pnpm
 
 ```
-npm install @react-pdf/renderer --save
+pnpm add @react-pdf/renderer
+```
+
+#### Using Bun
+
+```
+bun add @react-pdf/renderer
 ```
 
 Since a renderer simply implements _how elements render into something_, you still need to have React to make it work (and react-dom for client-side document generation). You can find instructions on how to do that [here](https://react.dev/learn/add-react-to-an-existing-project).
