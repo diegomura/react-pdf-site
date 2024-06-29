@@ -2,7 +2,7 @@ import GoToExample from '../src/components/Docs/GoToExample'
 
 ### Page wrapping
 
-Semantically, the `<Page />` component represents a single page in the rendered document. However, there are scenarios in which you would expect to have page breaks whenever the page contents exceed their limits, specially when handling big chunks of text. After all, PDFs are paged documents. React-pdf has a build-in wrapping engine that is enabled by default, so you can start creating paged documents right out of the box. If that's not what you need, you can disable this very easily by doing:
+Semantically, the `<Page />` component represents a single page in the rendered document. However, there are scenarios in which you would expect to have page breaks whenever the page contents exceed their limits, specially when handling big chunks of text. After all, PDFs are paged documents. React-pdf has a built-in wrapping engine that is enabled by default, so you can start creating paged documents right out of the box. If that's not what you need, you can disable this very easily by doing:
 
 ```
 import { Document, Page } from '@react-pdf/renderer'
