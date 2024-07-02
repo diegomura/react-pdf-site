@@ -160,6 +160,7 @@ const MyDocument = () => (
 - flexShrink
 - flexBasis
 - justifyContent
+- gap
 
 #### Layout
 
