@@ -93,7 +93,7 @@ const App = () => {
 
   if (instance.loading) return <div>Loading ...</div>;
 
-  if (instance.error) return <div>Something went wrong: {error}</div>;
+  if (instance.error) return <div>Something went wrong: {instance.error}</div>;
 
   return (
     <a href={instance.url} download="test.pdf">
