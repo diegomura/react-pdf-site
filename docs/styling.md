@@ -161,6 +161,8 @@ const MyDocument = () => (
 - flexBasis
 - justifyContent
 - gap
+- rowGap
+- columnGap
 
 #### Layout
 
