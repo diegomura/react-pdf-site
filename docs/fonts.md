@@ -10,7 +10,7 @@ React-pdf is shipped with a `Font` module that enables to load fonts from differ
 
 You can define multiple sources for the same font family, each with a different `fontStyle` or `fontWeight`. React-pdf will pick the appropriate font for each `<Text />` based on its style and the registered fonts.
 
-Currently, [only TTF fonts files are supported](https://github.com/diegomura/react-pdf/issues/334). A list of available TTF fonts from Google can be found [here](https://gist.github.com/sadikay/d5457c52e7fb2347077f5b0fe5ba9300).
+Currently, [only TTF and WOFF fonts files are supported](https://github.com/diegomura/react-pdf/issues/334). A list of available TTF fonts from Google can be found [here](https://gist.github.com/sadikay/d5457c52e7fb2347077f5b0fe5ba9300).
 
 ```
 import { StyleSheet, Font } from '@react-pdf/renderer'
