@@ -87,6 +87,7 @@ const VersionPicker = ({ selected = 'v3' }) => {
         <div onClick={() => onItemClick('v1')}>v1</div>
         <div onClick={() => onItemClick('v2')}>v2</div>
         <div onClick={() => onItemClick('v3')}>v3</div>
+        <div onClick={() => onItemClick('v4')}>v4</div>
       </Popup>
     </Wrapper>
   );
