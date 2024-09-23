@@ -9,7 +9,7 @@ import media from '../../styled/media';
 import VersionPicker from './VersionPicker';
 
 const Nav = styled.nav`
-  left: 0;
+  left: 50px;
   top: 0px;
   z-index: 500;
   height: 100%;
@@ -18,6 +18,7 @@ const Nav = styled.nav`
   align-items: center;
   transition: all 0.5s;
   flex-direction: column;
+  height: calc(100vh - 50px);
   width: ${(props) => props.width || '285px'};
   min-width: ${(props) => props.width || '285px'};
   background-color: ${({ theme }) => theme.gray3};
