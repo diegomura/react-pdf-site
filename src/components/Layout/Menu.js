@@ -9,8 +9,8 @@ import media from '../../styled/media';
 import VersionPicker from './VersionPicker';
 
 const Nav = styled.nav`
-  left: 50px;
-  top: 0px;
+  left: 0px;
+  top: 50px;
   z-index: 500;
   height: 100%;
   display: flex;
