@@ -65,12 +65,12 @@ const Popup = styled.div`
   }
 `;
 
-const VersionPicker = ({ selected = 'v3' }) => {
+const VersionPicker = ({ selected = 'v4' }) => {
   const [menuOpen, toggleMenu] = useToggle(false);
 
   const onItemClick = (v) => {
     const hostname = location.hostname.replace(/^(v\d\.)/, '')
-    const subdomain = v === 'v3' ? '' : `${v}.` ;
+    const subdomain = v === 'v4' ? '' : `${v}.` ;
     const url = `${location.protocol}//${subdomain}${hostname}:${location.port}${location.pathname}`;
 
     window.location.replace(url);
@@ -87,6 +87,7 @@ const VersionPicker = ({ selected = 'v3' }) => {
         <div onClick={() => onItemClick('v1')}>v1</div>
         <div onClick={() => onItemClick('v2')}>v2</div>
         <div onClick={() => onItemClick('v3')}>v3</div>
+        <div onClick={() => onItemClick('v4')}>v4</div>
       </Popup>
     </Wrapper>
   );
