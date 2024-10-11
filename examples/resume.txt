@@ -249,7 +249,7 @@ const Skills = () => (
       skills={[
         'Completed Jedi Master training and built a lightsaber from scratch in order to do battle against the Empire',
         'Defeated the Rancor and rescued Princess Leia from Jabba the Hutt',
-        'Competent fighter pilot as well as an excelent shot with nearly any weapon',
+        'Competent fighter pilot as well as an excellent shot with nearly any weapon',
       ]}
     />
   </View>
@@ -287,7 +287,7 @@ const Experience = () => (
       details={[
         'Started a new Jedi Temple in order to train the next generation of Jedi Masters',
         'Discovered and trained a new generation of Jedi Knights, which he recruited from within the New Republic',
-        'Comunees with decesased Jedi Masters such as Anakin Skywalker, Yoda, Obi-Wan Kenobi in order to learn the secrets of the Jedi Order',
+        'Communes with deceased Jedi Masters such as Anakin Skywalker, Yoda, Obi-Wan Kenobi in order to learn the secrets of the Jedi Order',
       ]}
       position="Head Jedi Master"
     />
@@ -295,7 +295,7 @@ const Experience = () => (
       company="Revel Alliance"
       date="A long, long time ago"
       details={[
-        'Lead legions of troops into battle while demostrating bravery, competence and honor',
+        'Lead legions of troops into battle while demonstrating bravery, competence and honor',
         'Created complicated battle plans in conjunction with other Rebel leaders in order to ensure the greatest chance of success',
         'Defeated Darth Vader in single-combat, and convinced him to betray his mentor, the Emperor',
       ]}
@@ -316,10 +316,10 @@ const Experience = () => (
       company="Tatooine Moisture Refinery"
       date="A long, long time ago"
       details={[
-        'Replaced damaged power convereters',
-        'Performed menial labor thoughout the farm in order to ensure its continued operation',
+        'Replaced damaged power converters',
+        'Performed menial labor throughout the farm in order to ensure its continued operation',
       ]}
-      position="Mousture Farmer"
+      position="Moisture Farmer"
     />
   </View>
 );
