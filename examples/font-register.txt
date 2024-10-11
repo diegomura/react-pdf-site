@@ -2,19 +2,19 @@ Font.register({
   family: 'Roboto',
   fonts: [
     {
-      src: `/Roboto-Regular.ttf`
+      src: `fonts/Roboto-Regular.ttf`
     },
     {
-      src: `/Roboto-Bold.ttf`,
+      src: `fonts/Roboto-Bold.ttf`,
       fontWeight: 'bold'
     },
     {
-      src: `/Roboto-Italic.ttf`,
+      src: `fonts/Roboto-Italic.ttf`,
       fontWeight: 'normal',
       fontStyle: 'italic'
     },
     {
-      src: `/Roboto-BoldItalic.ttf`,
+      src: `fonts/Roboto-BoldItalic.ttf`,
       fontWeight: 'bold',
       fontStyle: 'italic'
     }
