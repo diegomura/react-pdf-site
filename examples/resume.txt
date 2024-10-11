@@ -1,3 +1,26 @@
+Font.register({
+  family: 'SourceSansPro',
+  fonts: [
+    {
+      src: `fonts/SourceSansPro-Regular.ttf`
+    },
+    {
+      src: `fonts/SourceSansPro-Bold.ttf`,
+      fontWeight: 'bold'
+    },
+    {
+      src: `fonts/SourceSansPro-Italic.ttf`,
+      fontWeight: 'normal',
+      fontStyle: 'italic'
+    },
+    {
+      src: `fonts/SourceSansPro-BoldItalic.ttf`,
+      fontWeight: 'bold',
+      fontStyle: 'italic'
+    }
+  ]
+})
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
@@ -72,7 +95,7 @@ const styles = StyleSheet.create({
   },
   itemContent: {
     fontSize: 10,
-    fontFamily: 'Lato',
+    fontFamily: 'SourceSansPro',
   },
   headerContainer: {
     flexDirection: 'row',
