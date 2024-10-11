@@ -325,23 +325,25 @@ const Experience = () => (
 );
 
 const resume = (
-  <Page size="A4">
-    <Header />
-    <View style={styles.container}>
-      <View style={styles.leftColumn}>
-        <Image
-          src="https://images.gr-assets.com/characters/1264613782p8/1783.jpg"
-          style={styles.image}
-        />
-        <Education />
-        <Skills />
+  <Document>
+    <Page size="A4">
+      <Header />
+      <View style={styles.container}>
+        <View style={styles.leftColumn}>
+          <Image
+            src="images/luke.jpg"
+            style={styles.image}
+          />
+          <Education />
+          <Skills />
+        </View>
+        <View style={styles.rightColumn}>
+          <Experience />
+        </View>
       </View>
-      <View style={styles.rightColumn}>
-        <Experience />
-      </View>
-    </View>
-    <Text style={styles.footer}>This IS the candidate you are looking for</Text>
-  </Page>
+      <Text style={styles.footer}>This IS the candidate you are looking for</Text>
+    </Page>
+  </Document>
 );
 
 ReactPDF.render(resume);
