@@ -546,10 +546,10 @@
     cross-fetch "^3.1.5"
     jay-peg "^1.1.0"
 
-"@react-pdf/layout@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf/layout/-/layout-4.0.0.tgz#fc736ab3e18e65610662f86b520a4b88156d3ee3"
-  integrity sha512-BNipDwULk9ehvf0V5HLrP2QIujkfj2LzHs8yfCQ/Z8TkAX6dEt1AgwDttBpBLfzcu8w8HFjgpLR1TNOTXiOsAQ==
+"@react-pdf/layout@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@react-pdf/layout/-/layout-4.1.0.tgz#a0daa11641bf2eda5dbd5be6ccc2ced4aa679373"
+  integrity sha512-4PXXEv4vjbQ9bQIwOIsxDCDMZ9D+ZWpb4AeQG0uBQQFCjKOMZGqM43xyQ+zTVQ1/xzCAs/YIU1BaGKq8ylhA2g==
   dependencies:
     "@babel/runtime" "^7.20.13"
     "@react-pdf/fns" "3.0.0"
@@ -589,6 +589,11 @@
   resolved "https://registry.yarnpkg.com/@react-pdf/primitives/-/primitives-4.0.0.tgz#0a710664923547c315386e82a643e58008612844"
   integrity sha512-yp4E0rDL03NaUp/CnDBz3HQNfH2Mzdlgku57yhTMGNzetwB0NJusXcjYg5XsTGIXnR7Tv80JKI4O4ajj+oaLeQ==
 
+"@react-pdf/reconciler@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@react-pdf/reconciler/-/reconciler-1.0.1.tgz#f5f032480dbdb27d204ab956952724b1c7fb3f86"
+  integrity sha512-oIrH9e5HDbVD5qo9B8n8IOEp6HMRKbgdl2q1ltIw1kylqeM3Z10UFMhIQZtioVlnZYb9YJnqQlr1S4PBq+2mnw==
+
 "@react-pdf/render@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@react-pdf/render/-/render-4.0.0.tgz#ee368153328cc644c47427d4baf04928634bedca"
@@ -605,16 +610,17 @@
     parse-svg-path "^0.1.2"
     svg-arc-to-cubic-bezier "^3.2.0"
 
-"@react-pdf/renderer@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-4.0.0.tgz#cb858789e40a67181ec5d34b1162f123b7a4c7ae"
-  integrity sha512-yDObqmnF08Mwc24W8axmT/y+JPxJkweVQ/EM3GOXh0qyZN5VP5JvKDiCqmftI6QEKfvTFNsquuEQm13GBjkbMg==
+"@react-pdf/renderer@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-4.0.2.tgz#fa3bfe2f2830c4a9ca830f206384c340a1a9080a"
+  integrity sha512-kIOXXKwn/PTcNT9jimpuc4JkPKDfNqBWB0GGTratMAN+x9voDYNsXSxAbitE5wN32uOYej1T272nEao9NGGT2w==
   dependencies:
     "@babel/runtime" "^7.20.13"
     "@react-pdf/font" "^3.0.0"
-    "@react-pdf/layout" "^4.0.0"
+    "@react-pdf/layout" "^4.1.0"
     "@react-pdf/pdfkit" "^4.0.0"
     "@react-pdf/primitives" "^4.0.0"
+    "@react-pdf/reconciler" "^1.0.1"
     "@react-pdf/render" "^4.0.0"
     "@react-pdf/types" "^2.7.0"
     events "^3.3.0"
