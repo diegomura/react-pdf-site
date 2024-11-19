@@ -2,12 +2,14 @@ import styled from '@emotion/styled';
 import React, { useEffect, useState } from 'react';
 import { pdf } from '@react-pdf/renderer';
 import { Document, Page, pdfjs } from 'react-pdf';
-import src from 'pdfjs-dist/build/pdf.worker.js';
+import pdfWorker from 'pdfjs-dist/build/pdf.worker.mjs';
+import 'react-pdf/dist/Page/TextLayer.css';
+import 'react-pdf/dist/Page/AnnotationLayer.css';
 
 import PageNavigator from './PageNavigator';
 import { useAsync } from 'react-use';
 
-pdfjs.GlobalWorkerOptions.workerSrc = src;
+pdfjs.GlobalWorkerOptions.workerSrc = import.meta.url + 'pdfjs-dist/build/pdf.worker.mjs';
 
 const Wrapper = styled.div`
   flex: 1;
@@ -114,6 +116,7 @@ const PDFViewer = ({ value, onUrlChange, onRenderError }) => {
             className="previous-document"
             file={previousRenderValue}
             loading={null}
+            renderForms={true}
           >
             <Page key={currentPage} pageNumber={currentPage} />
           </Document>
@@ -129,6 +132,7 @@ const PDFViewer = ({ value, onUrlChange, onRenderError }) => {
             key={currentPage}
             pageNumber={currentPage}
             onRenderSuccess={() => setPreviousRenderValue(render.value)}
+            renderForms={true}
           />
         </Document>
       </DocumentWrapper>
