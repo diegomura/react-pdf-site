@@ -41,8 +41,8 @@ The update function takes the new document and does not return anything.
 ---
 
 <NavigationButtons
-  backSrc="/svg"
-  backText="SVG Images"
+  backSrc="/form"
+  backText="Forms"
   nextSrc="/styling"
   nextText="Styling"
 />

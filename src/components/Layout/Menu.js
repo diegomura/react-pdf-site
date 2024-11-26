@@ -161,6 +161,14 @@ const Menu = ({ opened }) => (
         <Item to="/svg#radialgradient" title="RadialGradient" />
       </Item>
 
+      <Item to="/form" title="Forms">
+      <Item to="/form#textinput" title="TextInput" />
+        <Item to="/form#checkbox" title="Checkbox" />
+        <Item to="/form#picker" title="Picker" />
+        <Item to="/form#formlist" title="FormList" />
+        <Item to="/form#formfield" title="FormField" />
+      </Item>
+
       <Item to="/hooks" title="Hooks" />
 
       <Item to="/styling" title="Styling">

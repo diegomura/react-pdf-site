@@ -291,6 +291,6 @@ SVG presentation attributes are CSS properties that can be used as attributes on
 <NavigationButtons
   backSrc="/components"
   backText="Components"
-  nextSrc="/hooks"
-  nextText="Hooks"
+  nextSrc="/form"
+  nextText="Forms"
 />
