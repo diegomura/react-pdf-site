@@ -20,6 +20,16 @@ Font.registerHyphenationCallback(hyphenationCallback);
 
 You can use the [default hyphenation callback](https://github.com/diegomura/react-pdf/blob/master/packages/textkit/src/engines/wordHyphenation/index.js) as a starting point.
 
+Example of a custom implementation (German):
+```
+import { Font } from "@react-pdf/renderer";
+import { hyphenateSync as hyphenateDE } from "hyphen/de";
+
+const hyphenationCallback = (word) => {
+  return hyphenateDE(word).split("\u00AD");
+};
+```
+
 > **Protip:** If you don't want to hyphenate words at all, just provide a callback that returns the same words it receives. More information [here](/fonts#registerhyphenationcallback)
 
 <GoToExample name="hyphenation-callback" />
