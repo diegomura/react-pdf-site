@@ -28,6 +28,8 @@ import { hyphenateSync as hyphenateDE } from "hyphen/de";
 const hyphenationCallback = (word) => {
   return hyphenateDE(word).split("\u00AD");
 };
+
+Font.registerHyphenationCallback(hyphenationCallback);
 ```
 
 > **Protip:** If you don't want to hyphenate words at all, just provide a callback that returns the same words it receives. More information [here](/fonts#registerhyphenationcallback)
