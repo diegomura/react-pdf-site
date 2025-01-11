@@ -264,7 +264,7 @@ const ExperienceEntry = ({ company, details, position, date }) => {
         <View style={styles.experienceLeftColumn}>
           <Text style={styles.experienceTitle}>{title}</Text>
         </View>
-        <View style={styles.experneiceRightColumn}>
+        <View style={styles.experienceRightColumn}>
           <Text style={styles.date}>{date}</Text>
         </View>
       </View>
@@ -283,7 +283,7 @@ const Experience = () => (
   <View>
     <Title>Experience</Title>
     <ExperienceEntry
-      company="Jedi Temple, Coruseant"
+      company="Jedi Temple, Coruscant"
       date="A long, long time ago"
       details={[
         'Started a new Jedi Temple in order to train the next generation of Jedi Masters',
@@ -293,7 +293,7 @@ const Experience = () => (
       position="Head Jedi Master"
     />
     <ExperienceEntry
-      company="Revel Alliance"
+      company="Rebel Alliance"
       date="A long, long time ago"
       details={[
         'Lead legions of troops into battle while demonstrating bravery, competence and honor',
@@ -303,11 +303,11 @@ const Experience = () => (
       position="General"
     />
     <ExperienceEntry
-      company="Revel Alliance"
+      company="Rebel Alliance"
       date="A long, long time ago"
       details={[
         'Destroyed the Death Star by using the force to find its only weakness and delivering a torpedo into the center of the ship',
-        'Commander of squadron of TIE-fighters into battle',
+        'Commander of squadron of X-Wings into battle',
         'Defeated an enemy AT-AT single handedly after his ship was destroyed',
         'Awarded a medal for valor and bravery in battle for his successful destruction of the Death Star',
       ]}
