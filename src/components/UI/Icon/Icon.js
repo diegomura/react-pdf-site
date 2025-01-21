@@ -18,6 +18,7 @@ import {
   faChevronLeft,
   faChevronRight,
   faArrowRight,
+  faTimes,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -29,6 +30,7 @@ export const BUNDLED_ICON_TYPES = {
   menu: faBars,
   save: faSave,
   file: faFile,
+  close: faTimes,
   github: faGithub,
   download: faDownload,
   paragraph: faParagraph,
