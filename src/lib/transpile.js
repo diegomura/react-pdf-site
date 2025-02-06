@@ -24,6 +24,11 @@ import {
   ClipPath,
   LinearGradient,
   RadialGradient,
+  FieldSet,
+  TextInput,
+  Select,
+  Checkbox,
+  List,
   StyleSheet,
 } from '@react-pdf/renderer';
 
@@ -54,6 +59,11 @@ const primitives = {
   ClipPath,
   LinearGradient,
   RadialGradient,
+  FieldSet,
+  TextInput,
+  Select,
+  Checkbox,
+  List,
   StyleSheet,
 };
 
