@@ -31,3 +31,5 @@ import WebWorkers from './web-workers.md'
   nextSrc="/repl"
   nextText="REPL"
 />
+
+#Integrated with love by https://biela.dev
