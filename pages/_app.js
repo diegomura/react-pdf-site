@@ -19,7 +19,6 @@ require('../public/styles/tooltips.css');
 require('../public/styles/codemirror.css');
 
 import App from 'next/app';
-import TalkToUs from '../src/components/TalkToUs/TalkToUs';
 
 class MyApp extends App {
   render() {
@@ -35,7 +34,6 @@ class MyApp extends App {
         <MDXProvider components={components}>
           <ThemeProvider theme={theme}>
             <Component {...pageProps} />
-            <TalkToUs />
           </ThemeProvider>
         </MDXProvider>
 
