@@ -14,7 +14,7 @@ import ReplFooter from '../src/components/Repl/ReplFooter';
 import GitHubIcon from '../src/components/Layout/GitHubIcon';
 import { compress, decompress } from '../src/lib/compress';
 
-const Repl = dynamic(import('../src/components/Repl'), { loading: Spinner });
+const Repl = dynamic(import('../src/components/Repl'), { loading: Spinner, ssr: false });
 
 const examples = {
   g: require('raw-loader!../examples/g.txt'),
