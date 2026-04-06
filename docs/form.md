@@ -21,6 +21,8 @@ The `<TextInput />` element represents a text field for inputting single- or mul
 | password  |        If set to true the text will be masked with e. g. *         |                                   _Boolean_ |     _false_ |
 | noSpell   |   If set to true tells the pdf viewer to not spellcheck the text   |                                   _Boolean_ |     _false_ |
 | format    |      Defines the format the textinput should be formatted to       | [TextInputFormatting](#textinputformatting) | _undefined_ |
+| fontSize  | Defines the font size for the text input. Set to `0` for auto-size |                                   _Number_ | _undefined_ |
+| maxLength |              Defines the maximum number of characters               |                                   _Number_ | _undefined_ |
 
 See also [Common Form Attributes](#common-form-attributes)
 
@@ -80,9 +82,9 @@ See also [Common Form Attributes](#common-form-attributes)
 
 ---
 
-### Picker
+### Select
 
-The `<Picker />` element represents a dropdown menu for the selection of predefined options.
+The `<Select />` element represents a dropdown menu for the selection of predefined options.
 
 #### Valid props
 
@@ -91,27 +93,27 @@ The `<Picker />` element represents a dropdown menu for the selection of predefi
 | edit      |               If set to true allows the user to enter a value in the field                | _Boolean_ | _false_ |
 | noSpell   | If set to true and edit is set to true it tells the pdf viewer to not spellcheck the text | _Boolean_ | _false_ |
 
-For more attributes head to [Picker and FormList Attributes](#picker-and-formlist-attributes).
+For more attributes head to [Select and List Attributes](#select-and-list-attributes).
 
 <GoToExample name="picker-formlist" />
 
 ---
 
-### FormList
+### List
 
-The `<FormList />` element represents a scrollable list for the selection of predefined options.
+The `<List />` element represents a scrollable list for the selection of predefined options.
 
 #### Valid props
 
-For attributes head to [Picker and FormList Attributes](#picker-and-formlist-attributes).
+For attributes head to [Select and List Attributes](#select-and-list-attributes).
 
 <GoToExample name="picker-formlist" />
 
 ---
 
-### Picker and FormList Attributes
+### Select and List Attributes
 
-These attributes are shared by the picker and formlist elements.
+These attributes are shared by the Select and List elements.
 
 #### Valid props
 
@@ -125,15 +127,15 @@ See also [Common Form Attributes](#common-form-attributes)
 
 ---
 
-### FormField
+### FieldSet
 
-The `<FormField />` element is used to group other form elements together. On the form level this creates a hierarchical structure most important for data extraction and naming clearance. It is fully invisible. The usage of this element is optional and not required by any other element. Because of not beeing a element on its own the FormField is the only element not sharing the common form attributes.
+The `<FieldSet />` element is used to group other form elements together. On the form level this creates a hierarchical structure most important for data extraction and naming clearance. It is fully invisible. The usage of this element is optional and not required by any other element. Because of not being an element on its own the FieldSet is the only element not sharing the common form attributes.
 
 #### Valid props
 
-| Prop name |        Description        |     Type |     Default |
-| --------- | :-----------------------: | -------: | ----------: |
-| name      | The name of the FormField | _String_ | _undefined_ |
+| Prop name |        Description         |     Type |     Default |
+| --------- | :------------------------: | -------: | ----------: |
+| name      | The name of the FieldSet   | _String_ | _undefined_ |
 
 <GoToExample name="formfield" />
 

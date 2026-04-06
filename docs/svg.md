@@ -235,12 +235,15 @@ The `<LinearGradient />` element lets authors define linear gradients that can b
 
 #### Valid props
 
-| Prop name |                                                   Description                                                   |               Type |     Default |
-| --------- | :-------------------------------------------------------------------------------------------------------------: | -----------------: | ----------: |
-| x1        | Defines the x coordinate of the starting point of the vector gradient along which the linear gradient is drawn. | _String_, _Number_ | _undefined_ |
-| x2        |  Defines the x coordinate of the ending point of the vector gradient along which the linear gradient is drawn.  | _String_, _Number_ | _undefined_ |
-| y1        | Defines the y coordinate of the starting point of the vector gradient along which the linear gradient is drawn. | _String_, _Number_ | _undefined_ |
-| y2        |  Defines the y coordinate of the ending point of the vector gradient along which the linear gradient is drawn.  | _String_, _Number_ | _undefined_ |
+| Prop name         |                                                   Description                                                   |               Type |     Default |
+| ----------------- | :-------------------------------------------------------------------------------------------------------------: | -----------------: | ----------: |
+| x1                | Defines the x coordinate of the starting point of the vector gradient along which the linear gradient is drawn. | _String_, _Number_ | _undefined_ |
+| x2                |  Defines the x coordinate of the ending point of the vector gradient along which the linear gradient is drawn.  | _String_, _Number_ | _undefined_ |
+| y1                | Defines the y coordinate of the starting point of the vector gradient along which the linear gradient is drawn. | _String_, _Number_ | _undefined_ |
+| y2                |  Defines the y coordinate of the ending point of the vector gradient along which the linear gradient is drawn.  | _String_, _Number_ | _undefined_ |
+| xlinkHref         | Reference to another gradient to inherit its stops and attributes from.                                          |           _String_ | _undefined_ |
+| gradientTransform | Defines a transformation to be applied to the gradient.                                                          |           _String_ | _undefined_ |
+| gradientUnits     | Defines the coordinate system for the gradient attributes. _Valid values: "userSpaceOnUse" or "objectBoundingBox"_ |           _String_ | _undefined_ |
 
 <GoToExample name="lineargradient" />
 
@@ -252,13 +255,17 @@ The `<RadialGradient />` element lets authors define radial gradients that can b
 
 #### Valid props
 
-| Prop name |                                                                             Description                                                                             |               Type |     Default |
-| --------- | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------: | -----------------: | ----------: |
-| cx        |                                                 Defines the x coordinate of the end circle of the radial gradient.                                                  | _String_, _Number_ | _undefined_ |
-| cy        |                                                 Defines the y coordinate of the end circle of the radial gradient.                                                  | _String_, _Number_ | _undefined_ |
-| fr        | Defines the radius of the start circle of the radial gradient. The gradient will be drawn such that the 0% `<Stop>` is mapped to the perimeter of the start circle. | _String_, _Number_ | _undefined_ |
-| fx        |                                                Defines the x coordinate of the start circle of the radial gradient.                                                 | _String_, _Number_ | _undefined_ |
-| fy        |                                                Defines the y coordinate of the start circle of the radial gradient.                                                 | _String_, _Number_ | _undefined_ |
+| Prop name         |                                                                             Description                                                                             |               Type |     Default |
+| ----------------- | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------: | -----------------: | ----------: |
+| cx                |                                                 Defines the x coordinate of the end circle of the radial gradient.                                                  | _String_, _Number_ | _undefined_ |
+| cy                |                                                 Defines the y coordinate of the end circle of the radial gradient.                                                  | _String_, _Number_ | _undefined_ |
+| r                 |                                                        Defines the radius of the end circle of the radial gradient.                                                 | _String_, _Number_ | _undefined_ |
+| fr                | Defines the radius of the start circle of the radial gradient. The gradient will be drawn such that the 0% `<Stop>` is mapped to the perimeter of the start circle. | _String_, _Number_ | _undefined_ |
+| fx                |                                                Defines the x coordinate of the start circle of the radial gradient.                                                 | _String_, _Number_ | _undefined_ |
+| fy                |                                                Defines the y coordinate of the start circle of the radial gradient.                                                 | _String_, _Number_ | _undefined_ |
+| xlinkHref         | Reference to another gradient to inherit its stops and attributes from.                                                                                              |           _String_ | _undefined_ |
+| gradientTransform | Defines a transformation to be applied to the gradient.                                                                                                              |           _String_ | _undefined_ |
+| gradientUnits     | Defines the coordinate system for the gradient attributes. _Valid values: "userSpaceOnUse" or "objectBoundingBox"_                                                   |           _String_ | _undefined_ |
 
 <GoToExample name="radialgradient" />
 

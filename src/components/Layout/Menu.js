@@ -133,6 +133,7 @@ const Menu = ({ opened }) => (
         <Item to="/components#page" title="Page" />
         <Item to="/components#view" title="View" />
         <Item to="/components#image" title="Image" />
+        <Item to="/components#imagebackground" title="ImageBackground" />
         <Item to="/components#text" title="Text" />
         <Item to="/components#link" title="Link" />
         <Item to="/components#note" title="Note" />
@@ -164,9 +165,9 @@ const Menu = ({ opened }) => (
       <Item to="/form" title="Forms">
       <Item to="/form#textinput" title="TextInput" />
         <Item to="/form#checkbox" title="Checkbox" />
-        <Item to="/form#picker" title="Picker" />
-        <Item to="/form#formlist" title="FormList" />
-        <Item to="/form#formfield" title="FormField" />
+        <Item to="/form#select" title="Select" />
+        <Item to="/form#list" title="List" />
+        <Item to="/form#fieldset" title="FieldSet" />
       </Item>
 
       <Item to="/hooks" title="Hooks" />
@@ -189,6 +190,7 @@ const Menu = ({ opened }) => (
 
       <Item to="/node" title="Node API">
         <Item to="/node#rendertofile" title="renderToFile" />
+        <Item to="/node#rendertobuffer" title="renderToBuffer" />
         <Item to="/node#rendertostring" title="renderToString" />
         <Item to="/node#rendertostream" title="renderToStream" />
       </Item>

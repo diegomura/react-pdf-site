@@ -59,6 +59,34 @@ const value = await renderToString(<MyDocument />);
 
 String representation of PDF document
 
+### renderToBuffer
+
+Helper function to render a PDF into a Node Buffer.
+
+#### Usage
+
+```js
+const MyDocument = () => (
+  <Document>
+    <Page>
+      <Text>React-pdf</Text>
+    </Page>
+  </Document>
+);
+
+const buffer = await renderToBuffer(<MyDocument />);
+```
+
+#### Arguments
+
+| Prop name |              Description               | Default     |
+| --------- | :------------------------------------: | ----------- |
+| document  | Document's root element to be rendered | _undefined_ |
+
+#### Returns
+
+Buffer representation of PDF document
+
 ### renderToStream
 
 Helper function to render a PDF into a Node Stream.

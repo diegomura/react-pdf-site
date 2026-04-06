@@ -25,6 +25,11 @@ This component represents the PDF document itself. It _must_ be the root of your
 | language   |                        Sets PDF default language                        |                                  _String_ |   _undefined_ |
 | pageMode   |       Specifying how the document should be displayed when opened       |     [PageMode](/components#pagemode-type) |     _useNone_ |
 | pageLayout |        This controls how (some) PDF viewers choose to show pages        | [PageLayout](/components#pagelayout-type) |  _singlePage_ |
+| creationDate | Sets the creation date on the document's metadata | _Date_ | _undefined_ |
+| modificationDate | Sets the modification date on the document's metadata | _Date_ | _undefined_ |
+| ownerPassword | Sets an owner password on the document. Owner password is required for setting permissions | _String_ | _undefined_ |
+| userPassword | Sets a user password on the document. When set, viewers will ask for the password before opening the file | _String_ | _undefined_ |
+| permissions | Defines document permissions. Requires `ownerPassword` to be set. [See more](/components#permissions-type) | [Permissions](/components#permissions-type) | _undefined_ |
 | onRender   | Callback after document renders. Receives document blob argument in web |                                _Function_ |   _undefined_ |
 
 ##### PageMode type
@@ -39,6 +44,20 @@ This component represents the PDF document itself. It _must_ be the root of your
 | fullScreen     | Full-screen mode, with no menu bar, window controls, or any other window visible |
 | useOC          |                       Optional content group panel visible                       |
 | useAttachments |                            Attachments panel visible                             |
+
+##### Permissions type
+
+`permissions` prop accepts an object with the following optional boolean fields. All default to `true` when an owner password is set without specifying permissions.
+
+| Value                  |                             Description                             |
+|------------------------|:-------------------------------------------------------------------:|
+| printing               |           Whether the user can print the document                   |
+| modifying              |           Whether the user can modify the document                  |
+| copying                |        Whether the user can copy text and images                    |
+| annotating             |       Whether the user can add or modify annotations                |
+| fillingForms           |           Whether the user can fill in form fields                  |
+| contentAccessibility   | Whether content can be extracted for accessibility purposes         |
+| documentAssembly       | Whether the user can assemble the document (insert, rotate, delete pages) |
 
 ##### PageLayout type
 
@@ -106,6 +125,8 @@ A React component for displaying network or local (Node only) JPG or PNG images,
 | debug     |  Enables debug mode on view bounding box. [See more](/advanced#debugging)   |                                       _Boolean_ |     _false_ |
 | fixed     | Renders component in all wrapped pages. [See more](/advanced#page-wrapping) |                                       _Boolean_ |     _false_ |
 | cache     |              Enables image caching between consecutive renders              |                                       _Boolean_ |      _true_ |
+| srcSet    | Responsive image sources for resolution-based selection. E.g. `"small.jpg 300w, medium.jpg 600w"` | _String_ | _undefined_ |
+| sizes     |              Display width used for `srcSet` source selection               |                            _String_, _Number_ | _undefined_ |
 | bookmark  |         Attach bookmark to element. [See more](/advanced#bookmarks)         | _String_ or [Bookmark](/advanced#bookmark-type) | _undefined_ |
 
 ##### Source object
@@ -119,6 +140,27 @@ Defines the source of an image. Can be in any of these four valid forms:
 | Buffer      |                   Renders image directly from Buffer. Image format (png or jpg) will be guessed based on Buffer.                    | `Buffer`                                                   |
 | Data buffer | Renders buffer image via the _data_ key. It's also recommended to provide the image _format_ so the engine knows how to proccess it | `{ data: Buffer, format: 'png' \| 'jpg' }`                 |
 | Function    |                    A function that returns (can also return a promise that resolves to) any of the above formats                    | `() => String \| Promise<String>`                          |
+
+---
+
+### ImageBackground
+
+A React component for displaying an image behind child content. It works like `Image` but acts as a container — any children are rendered on top of the image.
+
+#### Valid props
+
+| Prop name  |                                 Description                                 |                                            Type |     Default |
+|------------|:---------------------------------------------------------------------------:|------------------------------------------------:|------------:|
+| src        |         Source of the image. [See more](/components#source-object)          |                                 _Source object_ | _undefined_ |
+| source     |            Alias of _src_. [See more](/components#source-object)            |                                 _Source object_ | _undefined_ |
+| style      |                  Defines view styles. [See more](/styling)                  |                               _Object_, _Array_ | _undefined_ |
+| imageStyle |              Defines styles applied to the background image                 |                               _Object_, _Array_ | _undefined_ |
+| debug      |  Enables debug mode on view bounding box. [See more](/advanced#debugging)   |                                       _Boolean_ |     _false_ |
+| fixed      | Renders component in all wrapped pages. [See more](/advanced#page-wrapping) |                                       _Boolean_ |     _false_ |
+| cache      |              Enables image caching between consecutive renders              |                                       _Boolean_ |      _true_ |
+| srcSet     | Responsive image sources for resolution-based selection                     |                                        _String_ | _undefined_ |
+| sizes      |              Display width used for `srcSet` source selection               |                            _String_, _Number_ | _undefined_ |
+| bookmark   |         Attach bookmark to element. [See more](/advanced#bookmarks)         | _String_ or [Bookmark](/advanced#bookmark-type) | _undefined_ |
 
 ---
 
@@ -150,10 +192,12 @@ A React component for displaying an hyperlink. Link’s can be nested inside a T
 | Prop name |                                          Description                                          |                                            Type |     Default |
 |-----------|:---------------------------------------------------------------------------------------------:|------------------------------------------------:|------------:|
 | src       | Valid URL or destination ID. ID must be prefixed with `#`. [See more](/advanced#destinations) |                                        _String_ | _undefined_ |
+| href      | Alias of _src_. Valid URL for external links                                                  |                                        _String_ | _undefined_ |
 | wrap      |         Enable/disable page wrapping for element. [See more](/advanced#page-wrapping)         |                                       _Boolean_ |      _true_ |
 | style     |                           Defines view styles. [See more](/styling)                           |                               _Object_, _Array_ | _undefined_ |
 | debug     |           Enables debug mode on view bounding box. [See more](/advanced#debugging)            |                                       _Boolean_ |     _false_ |
 | fixed     |          Render component in all wrapped pages. [See more](/advanced#page-wrapping)           |                                       _Boolean_ |     _false_ |
+| hitSlop   | Expands the clickable area beyond the visible bounds of the link | _Number_ or _Object_ `{ top, bottom, left, right }` | _undefined_ |
 | bookmark  |                  Attach bookmark to element. [See more](/advanced#bookmarks)                  | _String_ or [Bookmark](/advanced#bookmark-type) | _undefined_ |
 
 ---
@@ -251,6 +295,7 @@ Iframe PDF viewer for client-side generated documents.
 | children    |               PDF document implementation                |         _Document_ | _undefined_ |
 | width       |               Width of embedded PDF iframe               | _String_, _Number_ | _undefined_ |
 | height      |              Height of embedded PDF iframe               | _String_, _Number_ | _undefined_ |
+| innerRef    | Ref to the underlying iframe element                     |              _Ref_ | _undefined_ |
 | showToolbar | Render the toolbar. Supported on Chrome, Edge and Safari |          _Boolean_ |      _true_ |
 
 Other props are passed through to the iframe.
@@ -271,6 +316,7 @@ Refer to [on the fly rendering](/advanced#on-the-fly-rendering) for more informa
 | style     |   Defines anchor tag styles   |      _Object_, _Array_ | _undefined_ |
 | className | Defines anchor tag class name |               _String_ | _undefined_ |
 | children  |      Anchor tag content       | _DOM node_, _Function_ | _undefined_ |
+| onClick   | Click handler. Receives click event and PDF instance as arguments | _Function_ | _undefined_ |
 
 ---
 

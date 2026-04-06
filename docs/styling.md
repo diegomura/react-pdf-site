@@ -166,10 +166,11 @@ const MyDocument = () => (
 
 #### Layout
 
+- aspectRatio
 - bottom
 - display
 - left
-- position
+- position _(relative, absolute, static)_
 - right
 - top
 - overflow
@@ -192,6 +193,7 @@ const MyDocument = () => (
 
 #### Text
 
+- direction _(ltr, rtl)_
 - fontSize
 - fontFamily
 - fontStyle
@@ -206,6 +208,7 @@ const MyDocument = () => (
 - textIndent
 - textOverflow
 - textTransform
+- verticalAlign _(sub, super)_
 
 #### Sizing/positioning
 
