@@ -30,6 +30,11 @@ import {
   Checkbox,
   List,
   StyleSheet,
+  TextInput,
+  FormField,
+  Checkbox,
+  FormList,
+  Picker
 } from '@react-pdf/renderer';
 
 const Document = 'DOCUMENT';

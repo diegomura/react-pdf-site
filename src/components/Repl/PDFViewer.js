@@ -116,6 +116,7 @@ const PDFViewer = ({ value, onUrlChange, onRenderError }) => {
             className="previous-document"
             file={previousRenderValue}
             loading={null}
+            renderForms={true}
           >
             <Page key={currentPage} pageNumber={currentPage} />
           </Document>
@@ -132,6 +133,7 @@ const PDFViewer = ({ value, onUrlChange, onRenderError }) => {
             key={currentPage}
             pageNumber={currentPage}
             onRenderSuccess={() => setPreviousRenderValue(render.value)}
+            renderForms={true}
           />
         </Document>
       </DocumentWrapper>
