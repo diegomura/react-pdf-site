@@ -1,4 +1,5 @@
 module.exports = {
+  swcMinify: false,
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.md/,
@@ -9,11 +10,13 @@ module.exports = {
       test: /\.worker\.(min\.)?js$/,
       loader: 'file-loader',
       options: {
-        name: "[contenthash].[ext]",
-        publicPath: "_next/static/worker",
-        outputPath: "static/worker"
-      }
+        name: '[contenthash].[ext]',
+        publicPath: '_next/static/worker',
+        outputPath: 'static/worker',
+      },
     });
+
+    config.resolve.alias.canvas = false;
 
     return config;
   },

@@ -9,6 +9,9 @@ import components from '../src/lib/markdown';
 
 // Global styles
 require('react-tippy/dist/tippy.css');
+require('react-pdf/dist/Page/AnnotationLayer.css');
+require('react-pdf/dist/Page/TextLayer.css');
+
 require('../public/styles/index.css');
 require('../public/styles/fonts.css');
 require('../public/styles/prism.css');

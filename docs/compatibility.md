@@ -11,7 +11,7 @@ While we don't officially support Bun, we have received reports that it works we
 
 ### Compatibility with React
 
-react-pdf is compatible with React 16 (16.8.0 or later), React 17, and React 18.
+`@react-pdf/renderer` is compatible with React 16 (16.8.0 or later), React 17, React 18 and React 19 (since v4.1.0)
 
 ### Compatibility with Next.js
 
@@ -31,7 +31,7 @@ const nextConfig = {
   experimental: {
     // …
     serverComponentsExternalPackages: ['@react-pdf/renderer'],
-  }
+  },
 };
 ```
 

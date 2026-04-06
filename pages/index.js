@@ -9,6 +9,7 @@ import Layout from '../src/components/Layout';
 import Title from '../src/components/UI/Title';
 import Button from '../src/components/UI/Button';
 import EditButton from '../src/components/Docs/EditButton';
+
 const Content = dynamic(() => import('../docs/quick-start.md'), { ssr: false });
 
 const DocumentGraphicImage = styled.img`
