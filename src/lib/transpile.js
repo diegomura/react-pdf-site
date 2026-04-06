@@ -31,6 +31,7 @@ import {
   List,
   StyleSheet,
 } from '@react-pdf/renderer';
+import { Math } from '@react-pdf/math';
 
 const Document = 'DOCUMENT';
 
@@ -64,6 +65,7 @@ const primitives = {
   Select,
   Checkbox,
   List,
+  Math,
   StyleSheet,
 };
 

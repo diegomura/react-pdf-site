@@ -10,6 +10,7 @@ import Hyphenation from './hyphenation.md'
 import Debugging from './debugging.md'
 import Express from './express.md'
 import WebWorkers from './web-workers.md'
+import Math from './math.md'
 
 <EditButton to="https://github.com/react-pdf/site/blob/master/docs/advanced.md" />
 
@@ -24,6 +25,7 @@ import WebWorkers from './web-workers.md'
 <Hyphenation components={components} />
 <Express components={components} />
 <WebWorkers components={components} />
+<Math components={components} />
 
 <NavigationButtons
   backSrc="/styling"
