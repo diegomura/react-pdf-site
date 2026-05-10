@@ -11,8 +11,13 @@ const styles = StyleSheet.create({
 });
 
 Font.registerEmojiSource({
-  format: 'png',
-  url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/',
+  withVariationSelectors: true,
+  builder(code) {
+    const filename = code.includes('200d')
+      ? code
+      : code.replaceAll('fe0f', '').replaceAll(/--|^-|-$/g, '')
+    return 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/' + filename + '.png'
+  },
 });
 
 const MyDocument = () => (
@@ -20,7 +25,7 @@ const MyDocument = () => (
     <Page>
       <View style={styles.container}>
         <Text style={styles.text}>
-          😀💩👻🙈
+          😀💩👻🙈🕊️🧙‍♂️
         </Text>
       </View>
     </Page>
