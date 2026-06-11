@@ -30,6 +30,33 @@ const styles = StyleSheet.create({
 
 ---
 
+### OpenType font features
+
+React-pdf supports the `fontFeatureSettings` style property to control OpenType font features, such as tabular numbers, small capitals, fractions, or ligatures.
+
+A common use case is enabling tabular numbers with `tnum`, so digits use equal widths and align nicely in tables, invoices, counters, or other numeric layouts.
+
+It accepts either an array of feature tags, which enables and appends them to the default font features, or an object to turn individual features on or off:
+
+```
+const styles = StyleSheet.create({
+  tabularNumbers: {
+    fontFeatureSettings: ['tnum'],
+  },
+  noLigatures: {
+    fontFeatureSettings: {
+      liga: 0,
+    },
+  },
+});
+```
+
+Feature availability depends on the registered font file. If a font does not contain a given OpenType feature, enabling it will have no visible effect.
+
+<GoToExample name="font-feature-settings" />
+
+---
+
 ### `register`
 
 Fonts really make the difference when it comes on styling a document. For obvious reasons, react-pdf cannot ship a wide amount of them. Here's a list of available font families that are supported out of the box:

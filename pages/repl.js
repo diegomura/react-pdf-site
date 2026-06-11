@@ -57,6 +57,7 @@ const examples = {
   'disable-hyphenation': require('raw-loader!../examples/disable-hyphenation.txt'),
   'hyphenation-callback': require('raw-loader!../examples/hyphenation-callback.txt'),
   'breakable-unbreakable': require('raw-loader!../examples/breakable-unbreakable.txt'),
+  'font-feature-settings': require('raw-loader!../examples/font-feature-settings.txt'),
 };
 
 const NAV_WIDTH = 64;
