@@ -178,6 +178,7 @@ A React component for displaying text. Text supports nesting of other Text or Li
 | debug               |        Enables debug mode on view bounding box. [See more](/advanced#debugging)         |                                       _Boolean_ |     _false_ |
 | fixed               |       Renders component in all wrapped pages. [See more](/advanced#page-wrapping)       |                                       _Boolean_ |     _false_ |
 | hyphenationCallback | Specify hyphenation callback at a text level. See [hypthenation](/advanced#hyphenation) |                                      _Function_ | _undefined_ |
+| hyphenationPenalty  |    Specify at what level words are hyphenated. [See more](/fonts#hyphenationpenalty)    |                                        _Number_ | _undefined_ |
 | id                  |           Destination ID to be linked to. [See more](/advanced#destinations)            |                                        _String_ | _undefined_ |
 | bookmark            |               Attach bookmark to element. [See more](/advanced#bookmarks)               | _String_ or [Bookmark](/advanced#bookmark-type) | _undefined_ |
 
