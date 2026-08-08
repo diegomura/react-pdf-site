@@ -136,6 +136,28 @@ Font.registerHyphenationCallback(word => [word]);
 
 ---
 
+### `hyphenationPenalty`
+
+In some cases you can avoid the need for custom break logic by tuning/adjusting at what level a word is sliced for hyphenation. Providing the `hyphenationPenalty` prop on `Text` components allows you to tune this. Higher values makes the algorithm more reluctant to break words across lines:
+
+```
+import { Text } from '@react-pdf/renderer'
+
+<Text hyphenationPenalty={200}>
+  Lorem ipsum dolor sit amet consectetur adipiscing elit
+</Text>
+```
+
+It defaults to `100` for justified text and `600` otherwise. Setting it to `Infinity` disables automatic hyphenation entirely for that text block, so lines break only at word boundaries:
+
+```
+<Text hyphenationPenalty={Infinity}>
+  Lorem ipsum dolor sit amet consectetur adipiscing elit
+</Text>
+```
+
+---
+
 ### `registerEmojiSource`
 
 PDF documents do not support color emoji fonts. This is a bummer for the ones out there who love their expressiveness and simplicity. The only way of rendering this glyphs on a PDF document, is by embedding them as images.
