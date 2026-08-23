@@ -45,6 +45,7 @@ const examples = {
   'page-numbers': require('raw-loader!../examples/page-numbers.txt'),
   'mixed-styles': require('raw-loader!../examples/mixed-styles.txt'),
   'inline-styles': require('raw-loader!../examples/inline-styles.txt'),
+  float: require('raw-loader!../examples/float.txt'),
   math: require('raw-loader!../examples/math.txt'),
   lineargradient: require('raw-loader!../examples/lineargradient.txt'),
   radialgradient: require('raw-loader!../examples/radialgradient.txt'),

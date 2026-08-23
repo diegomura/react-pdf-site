@@ -168,10 +168,13 @@ const MyDocument = () => (
 
 - aspectRatio
 - bottom
+- clear _(left, right, both, none)_
 - display
+- float _(left, right)_
 - left
 - position _(relative, absolute, static)_
 - right
+- shapeOutside _(circle, ellipse, polygon, inset)_
 - top
 - overflow
 - zIndex
