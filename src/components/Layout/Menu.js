@@ -206,6 +206,7 @@ const Menu = ({ opened }) => (
           to="/advanced#orphan-&-widow-protection"
           title="Orphan and widow protection"
         />
+        <Item to="/advanced#floats" title="Floats" />
         <Item to="/advanced#dynamic-content" title="Dynamic content" />
         <Item to="/advanced#debugging" title="Debugging" />
         <Item to="/advanced#hyphenation" title="Hyphenation" />

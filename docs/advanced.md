@@ -5,6 +5,7 @@ import PageWrapping from './page-wrapping.md'
 import DocumentNavigation from './document-navigation.md'
 import OnTheFly from './on-the-fly.md'
 import OrphanWidowProtection from './orphan-widow-protection.md'
+import Floats from './floats.md'
 import DynamicContent from './dynamic-content.md'
 import Hyphenation from './hyphenation.md'
 import Debugging from './debugging.md'
@@ -20,6 +21,7 @@ import Math from './math.md'
 <DocumentNavigation components={components} />
 <OnTheFly components={components} />
 <OrphanWidowProtection components={components} />
+<Floats components={components} />
 <DynamicContent components={components} />
 <Debugging components={components} />
 <Hyphenation components={components} />
