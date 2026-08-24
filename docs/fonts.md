@@ -149,6 +149,15 @@ const hyphenationCallback = (word) => {
 Font.registerHyphenationCallback(hyphenationCallback);
 ```
 
+To hyphenate a language other than the default `en-us`, register a `syllables` function from [@react-pdf/hyphenate](https://github.com/diegomura/react-pdf/tree/master/packages/hyphenate):
+
+```
+import { Font } from '@react-pdf/renderer';
+import { syllables } from '@react-pdf/hyphenate/de';
+
+Font.registerHyphenationCallback(syllables);
+```
+
 <GoToExample name="hyphenation-callback" />
 
 #### Disabling hyphenation
