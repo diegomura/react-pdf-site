@@ -1,144 +1,44 @@
-const styles = StyleSheet.create({
+Font.register({
+  family: 'Open Sans',
+  src: `https://fonts.gstatic.com/s/opensans/v17/mem8YaGs126MiZpBA-UFVZ0e.ttf`,
+});
+
+Font.register({
+  family: 'Lato',
+  src: `https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wWw.ttf`,
+});
+
+Font.register({
+  family: 'Lato Italic',
+  src: `https://fonts.gstatic.com/s/lato/v16/S6u8w4BMUTPHjxsAXC-v.ttf`,
+});
+
+Font.register({
+  family: 'Lato Bold',
+  src: `https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPHA.ttf`,
+});
+
+const IMAGE_SRC =
+  'https://i.guim.co.uk/img/media/a23aeb1f7ff20bb80f68852da17743b0e557f8ed/0_224_3504_2102/master/3504.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=9e9a99e479ee60270b69ede4d869b20f';
+
+
+
+const experienceStyles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
+    flex: 1,
+    paddingTop: 30,
+    paddingLeft: 15,
     '@media max-width: 400': {
-      flexDirection: 'column',
+      paddingTop: 10,
+      paddingLeft: 0,
     },
   },
-  image: {
-    marginBottom: 10,
-    '@media max-width: 400': {
-      width: 290,
-    },
-  },
-  title: {
-    fontSize: 14,
-    marginBottom: 10,
-    textTransform: 'uppercase',
-  },
-  leftColumn: {
-    flexDirection: 'column',
-    width: 170,
-    marginLeft: 30,
-    marginRight: 15,
-    marginTop: 20,
-    '@media max-width: 400': {
-      width: 290,
-      marginRight: 30,
-    },
-    '@media orientation: landscape': {
-      width: 200,
-      marginRight: 50,
-    },
-  },
-  rightColumn: {
-    flexDirection: 'column',
-    flexGrow: 1,
-    marginLeft: 15,
-    marginRight: 30,
-    marginTop: 20,
-    '@media max-width: 400': {
-      marginTop: 10,
-      marginLeft: 30,
-    },
-  },
-  footer: {
-    fontSize: 12,
-    textAlign: 'center',
-    marginTop: 25,
-    marginHorizontal: 30,
-    paddingVertical: 10,
-    borderWidth: 3,
-    borderColor: 'gray',
-    borderStyle: 'dashed',
-    '@media orientation: landscape': {
-      marginTop: 10,
-    },
-  },
-  item: {
-    flexDirection: 'row',
-    marginBottom: 5,
-  },
-  itemLeftColumn: {
-    flexDirection: 'column',
-    marginRight: 10,
-  },
-  itemRightColumn: {
-    flexDirection: 'column',
-    flexGrow: 9,
-  },
-  bulletPoint: {
-    fontSize: 10,
-  },
-  itemContent: {
-    fontSize: 10,
-    fontFamily: 'Lato',
-  },
-  headerContainer: {
-    flexDirection: 'row',
-    marginTop: 30,
-    marginLeft: 30,
-    marginRight: 30,
-    marginBottom: 0,
-    borderBottomWidth: 2,
-    borderBottomColor: '#112131',
-    borderBottomStyle: 'solid',
-    alignItems: 'stretch',
-  },
-  detailColumn: {
-    flexDirection: 'column',
-    flexGrow: 9,
-  },
-  linkColumn: {
-    flexDirection: 'column',
-    flexGrow: 2,
-    alignSelf: 'flex-end',
-    justifySelf: 'flex-end',
-  },
-  name: {
-    fontSize: 24,
-    textTransform: 'uppercase',
-  },
-  subtitle: {
-    fontSize: 10,
-    justifySelf: 'flex-end',
-    textTransform: 'uppercase',
-  },
-  link: {
-    fontSize: 10,
-    color: 'black',
-    textDecoration: 'none',
-    alignSelf: 'flex-end',
-    justifySelf: 'flex-end',
-  },
-  educationContainer: {
-    marginBottom: 10,
-  },
-  school: {
-    fontSize: 10,
-  },
-  degree: {
-    fontSize: 10,
-  },
-  candidate: {
-    fontSize: 10,
-  },
-  skillTitle: {
-    fontSize: 11,
-    marginBottom: 10,
-  },
-  skills: {
-    fontSize: 10,
-    marginBottom: 10,
-  },
-  experienceContainer: {
+  entryContainer: {
     marginBottom: 10,
   },
   date: {
     fontSize: 11,
-  },
-  detailContainer: {
-    flexDirection: 'row',
+    fontFamily: 'Lato Italic',
   },
   detailLeftColumn: {
     flexDirection: 'column',
@@ -154,67 +54,236 @@ const styles = StyleSheet.create({
   },
   details: {
     fontSize: 10,
+    fontFamily: 'Lato',
   },
   headerContainer: {
     flexDirection: 'row',
+    marginBottom: 10,
   },
-  experienceLeftColumn: {
+  leftColumn: {
     flexDirection: 'column',
     flexGrow: 9,
   },
-  experienceRightColumn: {
+  rightColumn: {
     flexDirection: 'column',
     flexGrow: 1,
     alignItems: 'flex-end',
     justifySelf: 'flex-end',
   },
-  experienceTitle: {
+  title: {
     fontSize: 11,
     color: 'black',
     textDecoration: 'none',
+    fontFamily: 'Lato Bold',
+  },
+});
+
+const ExperienceEntry = ({ company, details, position, date }) => {
+  const title = `${company} | ${position}`;
+  return (
+    <View style={experienceStyles.entryContainer}>
+      <View style={experienceStyles.headerContainer}>
+        <View style={experienceStyles.leftColumn}>
+          <Text style={experienceStyles.title}>{title}</Text>
+        </View>
+        <View style={experienceStyles.rightColumn}>
+          <Text style={experienceStyles.date}>{date}</Text>
+        </View>
+      </View>
+      <List>
+        {details.map((detail) => (
+          <Item key={detail.company}>{detail}</Item>
+        ))}
+      </List>
+    </View>
+  );
+};
+
+const experienceData = [
+  {
+    company: 'Jedi Temple, Coruseant',
+    date: 'A long time ago...',
+    details: [
+      'Started a new Jedi Temple in order to train the next generation of Jedi Masters',
+      'Discovered and trained a new generation of Jedi Knights, which he recruited from within the New Republic',
+      'Communicates with decesased Jedi Masters such as Anakin Skywalker, Yoda, Obi-Wan Kenobi in order to learn the secrets of the Jedi Order',
+    ],
+    position: 'Head Jedi Master',
+  },
+  {
+    company: 'Rebel Alliance',
+    date: 'A long time ago...',
+    details: [
+      'Lead legions of troops into battle while demonstrating bravery, competence and honor',
+      'Created complicated battle plans in conjunction with other Rebel leaders in order to ensure the greatest chance of success',
+      'Defeated Darth Vader in single-combat, and convinced him to betray his mentor, the Emperor',
+    ],
+    position: 'General',
+  },
+  {
+    company: 'Rebel Alliance',
+    date: 'A long time ago...',
+    details: [
+      'Destroyed the Death Star by using the force to find its only weakness and delivering a torpedo into the center of the ship',
+      'Commanded of squadron of X-Wings into battle',
+      'Defeated an enemy AT-AT single handedly after his ship was destroyed',
+      'Awarded a medal for valor and bravery in battle for his successful destruction of the Death Star',
+    ],
+    position: 'Lieutenant Commander',
+  },
+  {
+    company: 'Tatooine Moisture Refinery',
+    date: 'A long time ago...',
+    details: [
+      'Replaced damaged power converters',
+      'Performed menial labor thoughout the farm in order to ensure its continued operation',
+    ],
+    position: 'Moisture Farmer',
+  },
+];
+
+const Experience = () => (
+  <View style={experienceStyles.container}>
+    <Title>Experience</Title>
+    {experienceData.map(({ company, date, details, position }) => (
+      <ExperienceEntry
+        company={company}
+        date={date}
+        details={details}
+        key={company + position}
+        position={position}
+      />
+    ))}
+  </View>
+);
+
+
+const educationStyles = StyleSheet.create({
+  container: {
+    marginBottom: 10,
+  },
+  school: {
+    fontFamily: 'Lato Bold',
+    fontSize: 10,
+  },
+  degree: {
+    fontFamily: 'Lato',
+    fontSize: 10,
+  },
+  candidate: {
+    fontFamily: 'Lato Italic',
+    fontSize: 10,
+  },
+});
+
+const Education = () => (
+  <View style={educationStyles.container}>
+    <Title>Education</Title>
+    <Text style={educationStyles.school}>Jedi Academy</Text>
+    <Text style={educationStyles.degree}>Jedi Master</Text>
+    <Text style={educationStyles.candidate}>A long, long time ago</Text>
+  </View>
+);
+
+
+const headerStyles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    borderBottomWidth: 2,
+    borderBottomColor: '#112131',
+    borderBottomStyle: 'solid',
+    alignItems: 'stretch',
+  },
+  detailColumn: {
+    flexDirection: 'column',
+    flexGrow: 9,
+    textTransform: 'uppercase',
+  },
+  linkColumn: {
+    flexDirection: 'column',
+    flexGrow: 2,
+    alignSelf: 'flex-end',
+    justifySelf: 'flex-end',
+  },
+  name: {
+    fontSize: 24,
+    fontFamily: 'Lato Bold',
+  },
+  subtitle: {
+    fontSize: 10,
+    justifySelf: 'flex-end',
+    fontFamily: 'Lato',
+  },
+  link: {
+    fontFamily: 'Lato',
+    fontSize: 10,
+    color: 'black',
+    textDecoration: 'none',
+    alignSelf: 'flex-end',
+    justifySelf: 'flex-end',
   },
 });
 
 const Header = () => (
-  <View style={styles.headerContainer}>
-    <View style={styles.detailColumn}>
-      <Text style={styles.name}>Luke Skywalker</Text>
-      <Text style={styles.subtitle}>Jedi Master</Text>
+  <View style={headerStyles.container}>
+    <View style={headerStyles.detailColumn}>
+      <Text style={headerStyles.name}>Luke Skywalker</Text>
+      <Text style={headerStyles.subtitle}>Jedi Master</Text>
     </View>
-    <View style={styles.linkColumn}>
-      <Link style={styles.link}>luke@theforce.com</Link>
+    <View style={headerStyles.linkColumn}>
+      <Link href="mailto:luke@theforce.com" style={headerStyles.link}>
+        luke@theforce.com
+      </Link>
     </View>
   </View>
 );
 
-const Title = ({ children }) => <Text style={styles.title}>{children}</Text>;
+const listStyles = StyleSheet.create({
+  item: {
+    flexDirection: 'row',
+    marginBottom: 5,
+  },
+  bulletPoint: {
+    width: 10,
+    fontSize: 10,
+  },
+  itemContent: {
+    flex: 1,
+    fontSize: 10,
+    fontFamily: 'Lato',
+  },
+});
 
 const List = ({ children }) => children;
 
 const Item = ({ children }) => (
-  <View style={styles.item}>
-    <View style={styles.itemLeftColumn}>
-      <Text style={styles.bulletPoint}>•</Text>
-    </View>
-    <View style={styles.itemRightColumn}>
-      <Text style={styles.itemContent}>{children}</Text>
-    </View>
+  <View style={listStyles.item}>
+    <Text style={listStyles.bulletPoint}>•</Text>
+    <Text style={listStyles.itemContent}>{children}</Text>
   </View>
 );
 
-const Education = () => (
-  <View style={styles.educationContainer}>
-    <Title>Education</Title>
-    <Text style={styles.school}>Jedi Academy</Text>
-    <Text style={styles.degree}>Jedi Master</Text>
-    <Text style={styles.candidate}>A long, long time ago</Text>
-  </View>
-);
+const skillStyles = StyleSheet.create({
+  title: {
+    fontFamily: 'Lato Bold',
+    fontSize: 11,
+    marginBottom: 10,
+  },
+  skills: {
+    fontFamily: 'Lato',
+    fontSize: 10,
+    marginBottom: 10,
+  },
+});
 
 const SkillEntry = ({ name, skills }) => (
   <View>
-    <Text style={styles.skillTitle}>{name}</Text>
-    <List>{skills.map((skill, i) => <Item key={i}>{skill}</Item>)}</List>
+    <Text style={skillStyles.title}>{name}</Text>
+    <List>
+      {skills.map((skill) => (
+        <Item key={skill}>{skill}</Item>
+      ))}
+    </List>
   </View>
 );
 
@@ -232,93 +301,85 @@ const Skills = () => (
   </View>
 );
 
-const ExperienceEntry = ({ company, details, position, date }) => {
-  const title = `${company} | ${position}`;
-  return (
-    <View style={styles.experienceContainer}>
-      <View style={styles.headerContainer}>
-        <View style={styles.experienceLeftColumn}>
-          <Text style={styles.experienceTitle}>{title}</Text>
-        </View>
-        <View style={styles.experneiceRightColumn}>
-          <Text style={styles.date}>{date}</Text>
-        </View>
-      </View>
-      <List>
-        {details.map((detail, i) => (
-          <Item key={i} style={styles.detailContainer}>
-            {detail}
-          </Item>
-        ))}
-      </List>
-    </View>
-  );
-};
+const titleStyles = StyleSheet.create({
+  title: {
+    fontFamily: 'Lato Bold',
+    fontSize: 14,
+    marginBottom: 10,
+    textTransform: 'uppercase',
+  },
+});
 
-const Experience = () => (
-  <View>
-    <Title>Experience</Title>
-    <ExperienceEntry
-      company="Jedi Temple, Coruseant"
-      date="A long, long time ago"
-      details={[
-        'Started a new Jedi Temple in order to train the next generation of Jedi Masters',
-        'Discovered and trained a new generation of Jedi Knights, which he recruited from within the New Republic',
-        'Comunees with decesased Jedi Masters such as Anakin Skywalker, Yoda, Obi-Wan Kenobi in order to learn the secrets of the Jedi Order',
-      ]}
-      position="Head Jedi Master"
-    />
-    <ExperienceEntry
-      company="Revel Alliance"
-      date="A long, long time ago"
-      details={[
-        'Lead legions of troops into battle while demostrating bravery, competence and honor',
-        'Created complicated battle plans in conjunction with other Rebel leaders in order to ensure the greatest chance of success',
-        'Defeated Darth Vader in single-combat, and convinced him to betray his mentor, the Emperor',
-      ]}
-      position="General"
-    />
-    <ExperienceEntry
-      company="Revel Alliance"
-      date="A long, long time ago"
-      details={[
-        'Destroyed the Death Star by using the force to find its only weakness and delivering a torpedo into the center of the ship',
-        'Commander of squadron of TIE-fighters into battle',
-        'Defeated an enemy AT-AT single handedly after his ship was destroyed',
-        'Awarded a medal for valor and bravery in battle for his successful destruction of the Death Star',
-      ]}
-      position="Lieutenant Commander"
-    />
-    <ExperienceEntry
-      company="Tatooine Moisture Refinery"
-      date="A long, long time ago"
-      details={[
-        'Replaced damaged power convereters',
-        'Performed menial labor thoughout the farm in order to ensure its continued operation',
-      ]}
-      position="Mousture Farmer"
-    />
-  </View>
-);
+const Title = ({ children }) => <Text style={titleStyles.title}>{children}</Text>;
 
-const resume = (
-  <Page size="A4">
+const resumeStyles = StyleSheet.create({
+  page: {
+    padding: 30,
+  },
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    '@media max-width: 400': {
+      flexDirection: 'column',
+    },
+  },
+  image: {
+    marginBottom: 10,
+  },
+  leftColumn: {
+    flexDirection: 'column',
+    width: 170,
+    paddingTop: 30,
+    paddingRight: 15,
+    '@media max-width: 400': {
+      width: '100%',
+      paddingRight: 0,
+    },
+    '@media orientation: landscape': {
+      width: 200,
+    },
+  },
+  footer: {
+    fontSize: 12,
+    fontFamily: 'Lato Bold',
+    textAlign: 'center',
+    marginTop: 15,
+    paddingTop: 5,
+    borderWidth: 3,
+    borderColor: 'gray',
+    borderStyle: 'dashed',
+    '@media orientation: landscape': {
+      marginTop: 10,
+    },
+  },
+});
+
+const Resume = (props) => (
+  <Page {...props} style={resumeStyles.page}>
     <Header />
-    <View style={styles.container}>
-      <View style={styles.leftColumn}>
-        <Image
-          src="https://images.gr-assets.com/characters/1264613782p8/1783.jpg"
-          style={styles.image}
-        />
+    <View style={resumeStyles.container}>
+      <View style={resumeStyles.leftColumn}>
+        <Image src={IMAGE_SRC} style={resumeStyles.image} />
         <Education />
         <Skills />
       </View>
-      <View style={styles.rightColumn}>
-        <Experience />
-      </View>
+      <Experience />
     </View>
-    <Text style={styles.footer}>This IS the candidate you are looking for</Text>
+    <Text style={resumeStyles.footer}>This IS the candidate you are looking for</Text>
   </Page>
 );
 
-ReactPDF.render(resume);
+const ResumeDocument = () => (
+  <Document
+    author="Luke Skywalker"
+    keywords="awesome, resume, start wars"
+    subject="The resume of Luke Skywalker"
+    title="Resume"
+  >
+    <Resume size="A4" />
+    <Resume orientation="landscape" size="A4" />
+    <Resume size={[380, 1250]} />
+  </Document>
+);
+
+ReactPDF.render(ResumeDocument);
